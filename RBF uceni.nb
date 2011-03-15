@@ -1,0 +1,147 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      4719,        138]
+NotebookOptionsPosition[      3891,        106]
+NotebookOutlinePosition[      4355,        123]
+CellTagsIndexPosition[      4312,        120]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[{
+ "U\[CHacek]en\[IAcute] RBF s\[IAcute]t\[EHacek]\n",
+ StyleBox["Demonstrace pokryt\[IAcute] vstupn\[IAcute]ch dat RBF s\[IAcute]t\
+\[IAcute].", "Subtitle"]
+}], "Title",
+ CellChangeTimes->{{3.506788333052947*^9, 3.5067883454315195`*^9}, {
+   3.5073590076481843`*^9, 3.507359032449834*^9}, 3.5073599568952236`*^9, {
+   3.5073600002592297`*^9, 3.507360001479885*^9}, {3.507360051770771*^9, 
+   3.5073600524743605`*^9}, {3.507360282704596*^9, 3.507360287426696*^9}, {
+   3.5073607144794245`*^9, 3.5073607224504366`*^9}, {3.5091842641177597`*^9, 
+   3.5091842969344263`*^9}, 3.5091845406333723`*^9}],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Na\[CHacek]ten\[IAcute] knihovny NeuralNetworks\
+\>", "Section",
+ CellChangeTimes->{{3.5073602800352573`*^9, 3.5073603289964743`*^9}}],
+
+Cell["\<\
+Nejd\[RHacek]\[IAcute]ve na\[CHacek]teme knihovnu neuronov\[YAcute]ch s\
+\[IAcute]t\[IAcute].\
+\>", "Text",
+ CellChangeTimes->{{3.507360408586581*^9, 3.507360469435308*^9}, {
+  3.5073605129338317`*^9, 3.5073605139169564`*^9}, {3.507360599217788*^9, 
+  3.50736063908185*^9}, {3.5073606876975236`*^9, 3.5073607032795024`*^9}, {
+  3.5073607601777277`*^9, 3.5073607715351696`*^9}, {3.5084334105739098`*^9, 
+  3.5084334111769867`*^9}}],
+
+Cell[BoxData[
+ StyleBox[
+  RowBox[{"<<", " ", "NeuralNetworks`"}], "Input"]], "Input",
+ CellChangeTimes->{{3.507360750489497*^9, 3.5073607641152277`*^9}}],
+
+Cell["\<\
+Pokud pracujete v Mathematice 8.0, vypn\[EHacek]te je\[SHacek]t\[EHacek] \
+zobrazov\[AAcute]n\[IAcute] chybov\[EAcute] hl\[AAcute]\[SHacek]ky \
+Remove::rmnsm. Tuto hl\[AAcute]\[SHacek]ku vyhazuj\[IAcute] funkce knihovny \
+NeuralNetworks. Na funkci knihovny toto nem\[AAcute] \[ZHacek]\[AAcute]dn\
+\[YAcute] vliv.\
+\>", "Text",
+ CellChangeTimes->{{3.5073722663308234`*^9, 3.5073724902892623`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Off", "[", 
+  StyleBox[
+   RowBox[{"Remove", "::", "rmnsm"}], "MessageName"], "]"}]], "Input",
+ CellChangeTimes->{{3.507372496128004*^9, 3.5073725146658583`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["P\[RHacek]\[IAcute]prava tr\[EAcute]novac\[IAcute]ch dat", "Section",
+ CellChangeTimes->{{3.507360869997173*^9, 3.507360875055815*^9}}],
+
+Cell["\<\
+Pokryt\[IAcute] vstupn\[IAcute]ch dat budeme demonstovat na \
+jednoduch\[YAcute]ch dvoudimenzion\[AAcute]ln\[IAcute]ch datech, \
+kter\[EAcute] obsahuj\[IAcute] dva dob\[RHacek]e odd\[EHacek]len\[EAcute] \
+shluky dat.\
+\>", "Text",
+ CellChangeTimes->{{3.5073620917938213`*^9, 3.5073621035783176`*^9}, {
+  3.509184354274708*^9, 3.509184489889429*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["U\[CHacek]en\[IAcute] RBF s\[IAcute]t\[EHacek]",
+ FontWeight->"Bold"]], "Section",
+ CellChangeTimes->{{3.507363963934553*^9, 3.507363968614147*^9}, {
+  3.5091845043382635`*^9, 3.509184508578802*^9}}],
+
+Cell["\<\
+Tato jednoduch\[AAcute] data budeme cht\[IAcute]t klasifikovat pomoc\[IAcute] \
+RBF s\[IAcute]t\[EHacek] s jedn\[IAcute]m RBF neuronem.\
+\>", "Text",
+ CellChangeTimes->{{3.507364306112504*^9, 3.5073643547376785`*^9}, {
+   3.50736439199541*^9, 3.507364483879078*^9}, {3.5073675354855824`*^9, 
+   3.5073675413523273`*^9}, 3.5073821199755774`*^9, {3.507382157226308*^9, 
+   3.5073821575873537`*^9}, {3.509184558199103*^9, 3.509184568014349*^9}, {
+   3.509184612875046*^9, 3.5091846397659607`*^9}}]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{707, 547},
+WindowMargins->{{209, Automatic}, {Automatic, 19}},
+Magnification->0.8999999761581421,
+FrontEndVersion->"8.0 for Microsoft Windows (32-bit) (November 13, 2010)",
+StyleDefinitions->FrontEnd`FileName[{"Creative"}, "NaturalColor.nb", 
+  CharacterEncoding -> "WindowsEastEurope"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 610, 10, 84, "Title"],
+Cell[CellGroupData[{
+Cell[1214, 36, 144, 3, 67, "Section"],
+Cell[1361, 41, 440, 8, 26, "Text"],
+Cell[1804, 51, 154, 3, 36, "Input"],
+Cell[1961, 56, 406, 7, 43, "Text"],
+Cell[2370, 65, 186, 4, 36, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2593, 74, 141, 1, 67, "Section"],
+Cell[2737, 77, 359, 7, 43, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3133, 89, 223, 3, 67, "Section"],
+Cell[3359, 94, 504, 8, 26, "Text"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
