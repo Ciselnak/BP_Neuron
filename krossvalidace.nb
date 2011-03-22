@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[     56888,       1299]
-NotebookOptionsPosition[     53831,       1201]
-NotebookOutlinePosition[     54281,       1218]
-CellTagsIndexPosition[     54238,       1215]
+NotebookDataLength[     57586,       1318]
+NotebookOptionsPosition[     54415,       1216]
+NotebookOutlinePosition[     54865,       1233]
+CellTagsIndexPosition[     54822,       1230]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -1196,6 +1196,21 @@ Cell[BoxData[
   3.509802103028918*^9, 3.509802135866088*^9, 3.509802184821804*^9, 
   3.5098023360425067`*^9, 3.5098024423450055`*^9}]
 }, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Prohl\[AAcute]\[SHacek]en\[IAcute]", "Section",
+ CellChangeTimes->{{3.5097371225552454`*^9, 3.50973712447849*^9}}],
+
+Cell["\<\
+Tento text je vypracov\[AAcute]n jako sou\[CHacek]\[AAcute]st bakal\[AAcute]\
+\[RHacek]sk\[EAcute] pr\[AAcute]ce Adama \[CapitalCHacek]in\[CHacek]ury \
+\[OpenCurlyDoubleQuote]Demonstra\[CHacek]n\[IAcute] aplikace pro podporu \
+kurzu neuronov\[YAcute]ch s\[IAcute]t\[IAcute]\[CloseCurlyDoubleQuote] na FEL \
+\[CapitalCHacek]VUT 2011.\
+\>", "Text",
+ CellChangeTimes->{{3.5097371492406344`*^9, 3.509737233504834*^9}}]
 }, Open  ]]
 }, Open  ]]
 },
@@ -1299,6 +1314,10 @@ Cell[52632, 1173, 391, 7, 40, "Output"],
 Cell[53026, 1182, 380, 6, 40, "Output"],
 Cell[53409, 1190, 382, 6, 40, "Output"]
 }, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[53840, 1202, 120, 1, 75, "Section"],
+Cell[53963, 1205, 424, 7, 29, "Text"]
 }, Open  ]]
 }, Open  ]]
 }
