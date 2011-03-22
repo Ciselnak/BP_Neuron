@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[     38961,        828]
-NotebookOptionsPosition[     37134,        766]
-NotebookOutlinePosition[     37584,        783]
-CellTagsIndexPosition[     37541,        780]
+NotebookDataLength[     56888,       1299]
+NotebookOptionsPosition[     53831,       1201]
+NotebookOutlinePosition[     54281,       1218]
+CellTagsIndexPosition[     54238,       1215]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -156,12 +156,13 @@ Cell[BoxData[{
   3.5097796890377026`*^9, 3.5097797016193*^9}}],
 
 Cell["\<\
-Data odsahuj\[IAcute] 4 vstupn\[IAcute] parametry, v\[YAcute]stup je \
-klasifikov\[AAcute]n do t\[RHacek]ech t\[RHacek]\[IAcute]d.\
+Data odsahuj\[IAcute] 4 vstupn\[IAcute] parametry, podle kter\[YAcute]ch \
+budeme klasifikovat do t\[RHacek]ech t\[RHacek]\[IAcute]d.\
 \>", "Text",
  CellChangeTimes->{{3.5091899511879253`*^9, 3.5091899961536355`*^9}, {
    3.509199898841117*^9, 3.5091999040332766`*^9}, 3.509780075712304*^9, {
-   3.5097801142466974`*^9, 3.509780153306157*^9}}]
+   3.5097801142466974`*^9, 3.509780153306157*^9}, {3.509797865768854*^9, 
+   3.509797878930025*^9}}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -176,7 +177,7 @@ Cell[TextData[StyleBox["K\[RHacek]\[IAcute]\[ZHacek]ov\[AAcute] validace \
 Cell["\<\
 Nejprve si vytvo\[RHacek]\[IAcute]me neuronovou s\[IAcute]\[THacek], kterou \
 budeme pomoc\[IAcute] k\[RHacek]\[IAcute]\[ZHacek]ov\[EAcute] validace \
-vyhodnocovat\
+vyhodnocovat.\
 \>", "Text",
  CellChangeTimes->{{3.507364306112504*^9, 3.5073643547376785`*^9}, {
    3.50736439199541*^9, 3.507364483879078*^9}, {3.5073675354855824`*^9, 
@@ -186,7 +187,7 @@ vyhodnocovat\
    3.509191115018713*^9}, {3.5091911934891777`*^9, 3.5091912007325974`*^9}, {
    3.509191231249973*^9, 3.509191234974946*^9}, {3.5096877679125023`*^9, 
    3.50968778089115*^9}, {3.5097809266208553`*^9, 3.5097810285562997`*^9}, {
-   3.5097811343027277`*^9, 3.509781148396017*^9}}],
+   3.5097811343027277`*^9, 3.509781148396017*^9}, 3.509797893893426*^9}],
 
 Cell[CellGroupData[{
 
@@ -195,10 +196,8 @@ Cell[BoxData[
   RowBox[{"InitializeFeedForwardNet", "[", 
    RowBox[{"inData", ",", "outData", ",", 
     RowBox[{"{", 
-     RowBox[{"6", ",", "3"}], "}"}], ",", 
-    RowBox[{"LinearPart", "\[Rule]", "True"}], ",", 
-    RowBox[{"OutputNonlinearity", "\[Rule]", "Sigmoid"}], ",", " ", 
-    RowBox[{"RandomInitialization", "\[Rule]", "True"}]}], "]"}]}]], "Input",
+     RowBox[{"3", ",", "2"}], "}"}], ",", 
+    RowBox[{"Neuron", "\[Rule]", "Sigmoid"}]}], "]"}]}]], "Input",
  CellChangeTimes->{{3.509191256344159*^9, 3.509191261831356*^9}, {
    3.5091913993403177`*^9, 3.509191400535469*^9}, {3.509191482896428*^9, 
    3.5091914836660256`*^9}, {3.50919160095642*^9, 3.509191643892872*^9}, 
@@ -234,7 +233,9 @@ Cell[BoxData[
    3.509708073681507*^9, 3.5097080737960215`*^9}, {3.509781041719471*^9, 
    3.5097811021181407`*^9}, {3.5097855822190413`*^9, 3.509785622402644*^9}, {
    3.509785786049925*^9, 3.5097857861764407`*^9}, {3.509785855928298*^9, 
-   3.5097858787812*^9}}],
+   3.5097858787812*^9}, {3.50979072490908*^9, 3.509790724978589*^9}, {
+   3.5097907570251584`*^9, 3.509790758760379*^9}, {3.5097976428060417`*^9, 
+   3.5097976674961767`*^9}}],
 
 Cell[BoxData[
  TagBox[
@@ -242,10 +243,8 @@ Cell[BoxData[
    RowBox[{"FeedForwardNet", "[", 
     RowBox[{
      RowBox[{"{", 
-      RowBox[{
-       RowBox[{"{", 
-        RowBox[{"w1", ",", "w2", ",", "w3"}], "}"}], ",", "\[Chi]"}], "}"}], 
-     ",", 
+      RowBox[{"{", 
+       RowBox[{"w1", ",", "w2", ",", "w3"}], "}"}], "}"}], ",", 
      RowBox[{"{", 
       RowBox[{
        RowBox[{"Neuron", " ", "\[Rule]", " ", "Sigmoid"}], ",", " ", 
@@ -255,10 +254,10 @@ Cell[BoxData[
        RowBox[{"CreationDate", " ", "\[Rule]", " ", 
         RowBox[{"{", 
          RowBox[{
-         "2011", ",", " ", "3", ",", " ", "22", ",", " ", "13", ",", " ", 
-          "31", ",", " ", "20.3298967`9.060710106521675"}], "}"}]}], ",", " ", 
-       RowBox[{"OutputNonlinearity", " ", "\[Rule]", " ", "Sigmoid"}], ",", 
-       " ", 
+         "2011", ",", " ", "3", ",", " ", "22", ",", " ", "18", ",", " ", "5",
+           ",", " ", "10.7882999`8.785527972626651"}], "}"}]}], ",", " ", 
+       RowBox[{"OutputNonlinearity", " ", "\[Rule]", " ", "None"}], ",", " ", 
+       
        RowBox[{"NumberOfInputs", " ", "\[Rule]", " ", "4"}]}], "}"}]}], "]"}],
    
    Null,
@@ -298,15 +297,18 @@ Cell[BoxData[
    3.509711461544711*^9, {3.5097115159621215`*^9, 3.5097115974959745`*^9}, 
    3.5097116275892963`*^9, 3.5097116618806505`*^9, {3.5097810917253213`*^9, 
    3.509781102804728*^9}, 3.509785586508586*^9, 3.509785624727439*^9, 
-   3.5097857877131357`*^9, {3.5097858590922*^9, 3.5097858803388977`*^9}}]
+   3.5097857877131357`*^9, {3.5097858590922*^9, 3.5097858803388977`*^9}, 
+   3.5097967889346137`*^9, 3.509797002051676*^9, 3.5097973381108503`*^9, 
+   3.5097974918338704`*^9, 3.509797669404919*^9, 3.5097980163114705`*^9, 
+   3.5098000864328423`*^9, 3.5098023107913003`*^9}]
 }, Open  ]],
 
 Cell["\<\
-Zobraz\[IAcute]me si informace o s\[IAcute]t\[IAcute]. T\[IAcute]m se ujist\
-\[IAcute]me \[ZHacek]e s\[IAcute]\[THacek] je opravdu takov\[AAcute] jakou \
-jsme cht\[EHacek]li.\
+M\[URing]\[ZHacek]eme si zobrazit informace o s\[IAcute]ti.\
 \>", "Text",
- CellChangeTimes->{{3.5091916569450293`*^9, 3.509191694743829*^9}}],
+ CellChangeTimes->{{3.5091916569450293`*^9, 3.509191694743829*^9}, {
+  3.5097977959064827`*^9, 3.5097978086165967`*^9}, {3.50979789833749*^9, 
+  3.509797900921818*^9}}],
 
 Cell[CellGroupData[{
 
@@ -314,11 +316,10 @@ Cell[BoxData[
  RowBox[{"NetInformation", "[", "net", "]"}]], "Input",
  CellChangeTimes->{{3.509191700853605*^9, 3.5091917111199083`*^9}}],
 
-Cell[BoxData["\<\"FeedForward network created 2011-3-22 at 13:30. The network \
+Cell[BoxData["\<\"FeedForward network created 2011-3-22 at 18:05. The network \
 has 4 inputs and 3 outputs. It consists of 2 hidden layers with number of \
-neurons per layer given by {4, 3}. The neuron activation function is of \
-Sigmoid type. The network has a linear submodel. There is a nonlinearity at \
-the output of type Sigmoid.\"\>"], "Output",
+neurons per layer given by {3, 2}. The neuron activation function is of \
+Sigmoid type. \"\>"], "Output",
  CellChangeTimes->{
   3.509615612045724*^9, 3.509687826351923*^9, 3.509687923791796*^9, 
    3.50968811825749*^9, 3.5096882143506927`*^9, 3.5096892871979265`*^9, 
@@ -384,161 +385,225 @@ the output of type Sigmoid.\"\>"], "Output",
    3.509711314706565*^9}, {3.509711356238339*^9, 3.509711415066809*^9}, 
    3.5097114615692143`*^9, {3.5097115159936256`*^9, 3.509711597530979*^9}, 
    3.509711627624301*^9, 3.509711661906654*^9, 3.509781112525462*^9, 
-   3.5097856285544252`*^9, {3.5097858448043857`*^9, 3.5097858615755153`*^9}}]
+   3.5097856285544252`*^9, {3.5097858448043857`*^9, 3.5097858615755153`*^9}, 
+   3.509796789091634*^9, 3.5097970022442007`*^9, 3.5097974918668747`*^9, 
+   3.509797906733056*^9, 3.5097980165079956`*^9, 3.5098000864633465`*^9, 
+   3.5098023109673223`*^9}]
 }, Open  ]],
 
 Cell["\<\
-Nau\[CHacek]\[IAcute]me vytvo\[RHacek]enou s\[IAcute]\[THacek] na \
-na\[SHacek]ich datech.\
+Rozhodneme  se kolikastup\[NHacek]ovou k\[RHacek]\[IAcute]\[ZHacek]ovou \
+validaci provedeme (na kolik \[CHacek]\[AAcute]st\[IAcute] (fold\[URing]) \
+rozd\[EHacek]l\[IAcute]me tr\[EAcute]novac\[IAcute] data).\
 \>", "Text",
  CellChangeTimes->{{3.509193140000353*^9, 3.5091931557753563`*^9}, 
-   3.509193215716468*^9}],
+   3.509193215716468*^9, {3.5097981857794905`*^9, 3.5097981900425315`*^9}, {
+   3.509798228417905*^9, 3.50979825058422*^9}, {3.5097982850846004`*^9, 
+   3.5097983407506695`*^9}, {3.509799481824067*^9, 3.50979949665495*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"folds", " ", "=", " ", "15"}], ";"}]], "Input"],
+
+Cell["\<\
+Zjist\[IAcute]me kolik m\[AAcute]me tr\[EAcute]novac\[IAcute]ch dat, podle \
+toho ur\[CHacek]\[IAcute]me jak\[EAcute] mno\[ZHacek]stv\[IAcute] dat bude \
+obsahovat jeden fold.\
+\>", "Text",
+ CellChangeTimes->{{3.5097984557662745`*^9, 3.5097984721103497`*^9}, {
+  3.5097985172060757`*^9, 3.509798594613906*^9}, {3.509798839207465*^9, 
+  3.509798850059843*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"vectors", " ", "=", " ", 
+   RowBox[{"Take", "[", 
+    RowBox[{
+     RowBox[{"Dimensions", "[", "inData", "]"}], ",", " ", "1"}], "]"}]}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{"vectorsInFold", " ", "=", " ", 
+   RowBox[{"IntegerPart", "[", 
+    RowBox[{"vectors", "/", "folds"}], "]"}]}], ";"}]}], "Input"],
+
+Cell["\<\
+Spoj\[IAcute]me tr\[EAcute]novac\[IAcute] a testovac\[IAcute] data do jedn\
+\[EAcute] mno\[ZHacek]iny a na t\[EAcute]to mno\[ZHacek]in\[EHacek] provedeme \
+permutaci (zam\[IAcute]ch\[AAcute]me po\[RHacek]ad\[IAcute]). Za \
+prvn\[IAcute] fold prohl\[AAcute]s\[IAcute]me data s indexy 1 a\[ZHacek] \
+\[OpenCurlyDoubleQuote]velikost fodu\[CloseCurlyDoubleQuote],  za druh\
+\[YAcute] fold data s indexy \[OpenCurlyDoubleQuote]velikost foldu + 1\
+\[CloseCurlyDoubleQuote] a\[ZHacek] \[OpenCurlyDoubleQuote]2 * velikost foldu\
+\[CloseCurlyDoubleQuote]... D\[IAcute]ky permutaci jsou data v t\[EHacek]chto \
+foldech n\[AAcute]hodn\[AAcute].\
+\>", "Text",
+ CellChangeTimes->{{3.509798882669484*^9, 3.5097988895973635`*^9}, {
+   3.5097989457654963`*^9, 3.5097989979691253`*^9}, {3.5097990397304287`*^9, 
+   3.509799222609651*^9}, 3.5097992791743336`*^9, {3.5097993113719225`*^9, 
+   3.5097994072600985`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"completeData", " ", "=", " ", 
+   RowBox[{"Join", "[", 
+    RowBox[{"inData", ",", " ", "outData", ",", " ", "2"}], "]"}]}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{"completeData", " ", "=", " ", 
+   RowBox[{"RandomSample", "[", "completeData", "]"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.509798914640044*^9, 3.5097989161887407`*^9}, 
+   3.5097994203622627`*^9, 3.5097995856217475`*^9}],
+
+Cell["\<\
+Nyn\[IAcute] p\[RHacek]istoup\[IAcute]me k samotn\[EAcute] \
+k\[RHacek]\[IAcute]\[ZHacek]ov\[EAcute] validaci. V prvn\[IAcute]m \
+b\[EHacek]hu pou\[ZHacek]ijeme prvn\[IAcute] fold jako valida\[CHacek]n\
+\[IAcute] mno\[ZHacek]inu a ostatn\[IAcute] data jako tr\[EAcute]novac\
+\[IAcute], v druh\[EAcute]m b\[EHacek]hu pou\[ZHacek]ijeme druh\[YAcute] fold \
+jako valida\[CHacek]n\[IAcute] mno\[ZHacek]inu a ostatn\[IAcute] data jako tr\
+\[EAcute]novac\[IAcute]. Tatko budeme pokra\[CHacek]ovat dokud \
+nevy\[CHacek]erp\[AAcute]me v\[SHacek]echny foldy. V pr\[URing]b\[EHacek]hu k\
+\[RHacek]\[IAcute]\[ZHacek]ov\[EAcute] validace si budeme udr\[ZHacek]ovat \
+informace o nejlep\[SHacek]\[IAcute]m, nejhor\[SHacek]\[IAcute]m a \
+pr\[URing]m\[EHacek]rn\[EAcute]m v\[YAcute]sledku s\[IAcute]t\[EHacek].\
+\>", "Text",
+ CellChangeTimes->{{3.5097994617800217`*^9, 3.5097994714402485`*^9}, {
+  3.5097995181316776`*^9, 3.5097997931020947`*^9}}],
+
+Cell["\<\
+U\[CHacek]en\[IAcute] neuronov\[EAcute] s\[IAcute]t\[EHacek] s \
+valida\[CHacek]n\[IAcute] mno\[ZHacek]inou prob\[IAcute]h\[AAcute], dokud se \
+v\[YAcute]sledky s\[IAcute]t\[EHacek] na valida\[CHacek]n\[IAcute] mno\
+\[ZHacek]in\[EHacek] zlep\[SHacek]uj\[IAcute]. Pokud by se za\[CHacek]aly \
+zhor\[SHacek]ovat, je u\[CHacek]en\[IAcute] p\[RHacek]eru\[SHacek]eno a \
+zobrazena hl\[AAcute]\[SHacek]ka NeuralFit::StoppedSearch. Pokud nehccete \
+tuto h\[AAcute]\[SHacek]ku zobrazovat, m\[URing]\[ZHacek]ete jej\[IAcute] \
+zobrazen\[IAcute] vypnout.\
+\>", "Text",
+ CellChangeTimes->{{3.509799937013869*^9, 3.509800053709687*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Off", "[", 
+   StyleBox[
+    RowBox[{"NeuralFit", "::", "StoppedSearch"}], "MessageName"], "]"}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.5098000716589665`*^9, 3.509800078148791*^9}}],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[{
  RowBox[{
-  RowBox[{"folds", "=", " ", "5"}], ";"}], "\[IndentingNewLine]", 
+  RowBox[{"best", " ", "=", " ", "1"}], ";"}], "\n", 
  RowBox[{
-  RowBox[{"completeData", "=", 
-   RowBox[{"Join", "[", 
-    RowBox[{"inData", ",", "outData", ",", "2"}], "]"}]}], 
-  ";"}], "\[IndentingNewLine]", 
+  RowBox[{"worst", " ", "=", " ", "0"}], ";"}], "\n", 
  RowBox[{
-  RowBox[{"vectors", "=", 
-   RowBox[{"Take", "[", 
-    RowBox[{
-     RowBox[{"Dimensions", "[", "inData", "]"}], ",", "1"}], "]"}]}], 
-  ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"vectorsInFold", "=", 
-   RowBox[{"IntegerPart", "[", 
-    RowBox[{"vectors", "/", "folds"}], "]"}]}], 
-  ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"completeData", "=", 
-   RowBox[{"RandomSample", "[", "completeData", "]"}]}], 
-  ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"best", "=", "1"}], ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"worst", "=", "0"}], ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"average", "=", "0"}], ";"}], "\[IndentingNewLine]", 
+  RowBox[{"average", " ", "=", " ", "0"}], ";"}], "\[IndentingNewLine]", 
  RowBox[{"For", "[", 
   RowBox[{
-   RowBox[{"i", "=", "1"}], ",", 
-   RowBox[{"i", "<=", "folds"}], ",", 
+   RowBox[{"i", " ", "=", " ", "1"}], ",", " ", 
+   RowBox[{"i", " ", "<=", " ", "folds"}], ",", " ", 
    RowBox[{"i", "++"}], ",", 
    RowBox[{"(*", 
     RowBox[{"kod", " ", "jednoho", " ", "kola", " ", "krossvalidace"}], 
-    "*)"}], "\[IndentingNewLine]", 
+    "*)"}], "\n", " ", 
    RowBox[{
-    RowBox[{"validationData", "=", 
+    RowBox[{"validationData", " ", "=", " ", 
      RowBox[{"completeData", "[", 
       RowBox[{"[", 
        RowBox[{
-        RowBox[{"1", "+", 
+        RowBox[{"1", " ", "+", " ", 
          RowBox[{
           RowBox[{"(", 
-           RowBox[{"i", "-", "1"}], ")"}], "*", 
+           RowBox[{"i", " ", "-", " ", "1"}], ")"}], "*", 
           RowBox[{"vectorsInFold", "[", 
-           RowBox[{"[", "1", "]"}], "]"}]}]}], ";;", 
+           RowBox[{"[", "1", "]"}], "]"}]}]}], " ", ";;", " ", 
         RowBox[{"i", "*", 
          RowBox[{"vectorsInFold", "[", 
-          RowBox[{"[", "1", "]"}], "]"}]}]}], "]"}], "]"}]}], ";", 
-    "\[IndentingNewLine]", 
+          RowBox[{"[", "1", "]"}], "]"}]}]}], "]"}], "]"}]}], ";", "\n", " ", 
+    
     RowBox[{"learnData", " ", "=", " ", 
      RowBox[{"Drop", "[", 
-      RowBox[{"completeData", ",", 
+      RowBox[{"completeData", ",", " ", 
        RowBox[{"{", 
         RowBox[{
-         RowBox[{"1", "+", 
+         RowBox[{"1", " ", "+", " ", 
           RowBox[{
            RowBox[{"(", 
-            RowBox[{"i", "-", "1"}], ")"}], "*", 
+            RowBox[{"i", " ", "-", " ", "1"}], ")"}], "*", 
            RowBox[{"vectorsInFold", "[", 
-            RowBox[{"[", "1", "]"}], "]"}]}]}], ",", 
+            RowBox[{"[", "1", "]"}], "]"}]}]}], ",", " ", 
          RowBox[{"i", "*", 
           RowBox[{"vectorsInFold", "[", 
-           RowBox[{"[", "1", "]"}], "]"}]}]}], "}"}]}], "]"}]}], ";", 
-    "\[IndentingNewLine]", 
-    RowBox[{"validationDataIn", "=", 
+           RowBox[{"[", "1", "]"}], "]"}]}]}], "}"}]}], "]"}]}], ";", "\n", 
+    " ", 
+    RowBox[{"validationDataIn", " ", "=", " ", 
      RowBox[{"validationData", "[", 
       RowBox[{"[", 
-       RowBox[{"All", ",", 
-        RowBox[{"1", ";;", "4"}]}], "]"}], "]"}]}], ";", 
-    "\[IndentingNewLine]", 
+       RowBox[{"All", ",", " ", 
+        RowBox[{"1", " ", ";;", " ", "4"}]}], "]"}], "]"}]}], ";", "\n", " ", 
+    
     RowBox[{"validationDataOut", " ", "=", " ", 
      RowBox[{"validationData", "[", 
       RowBox[{"[", 
-       RowBox[{"All", ",", 
-        RowBox[{"5", ";;", "7"}]}], "]"}], "]"}]}], ";", 
-    "\[IndentingNewLine]", 
-    RowBox[{"learnDataIn", "=", " ", 
+       RowBox[{"All", ",", " ", 
+        RowBox[{"5", " ", ";;", " ", "7"}]}], "]"}], "]"}]}], ";", "\n", " ", 
+    
+    RowBox[{"learnDataIn", " ", "=", " ", 
      RowBox[{"learnData", "[", 
       RowBox[{"[", 
-       RowBox[{"All", ",", 
-        RowBox[{"1", ";;", "4"}]}], "]"}], "]"}]}], ";", 
-    "\[IndentingNewLine]", 
+       RowBox[{"All", ",", " ", 
+        RowBox[{"1", " ", ";;", " ", "4"}]}], "]"}], "]"}]}], ";", "\n", " ", 
+    
     RowBox[{"learnDataOut", " ", "=", " ", 
      RowBox[{"learnData", "[", 
       RowBox[{"[", 
-       RowBox[{"All", ",", 
-        RowBox[{"5", ";;", "7"}]}], "]"}], "]"}]}], ";", 
-    "\[IndentingNewLine]", 
+       RowBox[{"All", ",", " ", 
+        RowBox[{"5", " ", ";;", " ", "7"}]}], "]"}], "]"}]}], ";", "\n", " ", 
+    
     RowBox[{
      RowBox[{"{", 
-      RowBox[{"net2", ",", "record"}], "}"}], "=", 
+      RowBox[{"net2", ",", " ", "record"}], "}"}], " ", "=", " ", 
      RowBox[{"NeuralFit", "[", 
       RowBox[{
-      "net", ",", "learnDataIn", ",", "learnDataOut", ",", "validationDataIn",
-        ",", "validationDataOut", ",", 
-       RowBox[{"CriterionLog", "\[Rule]", "False"}], ",", 
-       RowBox[{"CriterionPlot", "\[Rule]", "False"}]}], "]"}]}], ";", 
-    "\[IndentingNewLine]", 
-    RowBox[{"current", " ", "=", 
+      "net", ",", " ", "learnDataIn", ",", " ", "learnDataOut", ",", " ", 
+       "validationDataIn", ",", " ", "validationDataOut", ",", " ", 
+       RowBox[{"CriterionLog", " ", "->", " ", "False"}], ",", " ", 
+       RowBox[{"CriterionPlot", " ", "->", " ", "False"}]}], "]"}]}], ";", 
+    "\n", " ", 
+    RowBox[{"current", " ", "=", " ", 
      RowBox[{"Take", "[", 
       RowBox[{
        RowBox[{"CriterionValidationValues", " ", "/.", " ", 
         RowBox[{"record", "[", 
-         RowBox[{"[", "2", "]"}], "]"}]}], ",", 
-       RowBox[{"-", "1"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+         RowBox[{"[", "2", "]"}], "]"}]}], ",", " ", 
+       RowBox[{"-", "1"}]}], "]"}]}], ";", "\n", " ", 
     RowBox[{"If", "[", 
      RowBox[{
       RowBox[{
        RowBox[{"current", "[", 
-        RowBox[{"[", "1", "]"}], "]"}], "<", "best"}], ",", 
-      RowBox[{"best", "=", 
+        RowBox[{"[", "1", "]"}], "]"}], " ", "<", " ", "best"}], ",", " ", 
+      RowBox[{"best", " ", "=", " ", 
        RowBox[{"current", "[", 
-        RowBox[{"[", "1", "]"}], "]"}]}], ",", 
-      RowBox[{"best", "=", "best"}]}], "]"}], ";", "\[IndentingNewLine]", 
+        RowBox[{"[", "1", "]"}], "]"}]}], ",", " ", 
+      RowBox[{"best", " ", "=", " ", "best"}]}], "]"}], ";", "\n", " ", 
     RowBox[{"If", "[", 
      RowBox[{
       RowBox[{
        RowBox[{"current", "[", 
-        RowBox[{"[", "1", "]"}], "]"}], ">", "worst"}], ",", 
-      RowBox[{"worst", "=", 
+        RowBox[{"[", "1", "]"}], "]"}], " ", ">", " ", "worst"}], ",", " ", 
+      RowBox[{"worst", " ", "=", " ", 
        RowBox[{"current", "[", 
-        RowBox[{"[", "1", "]"}], "]"}]}], ",", 
-      RowBox[{"worst", "=", "worst"}]}], "]"}], ";", "\[IndentingNewLine]", 
-    RowBox[{"average", "=", 
-     RowBox[{"average", "+", "current"}]}], ";", "\[IndentingNewLine]", 
+        RowBox[{"[", "1", "]"}], "]"}]}], ",", " ", 
+      RowBox[{"worst", " ", "=", " ", "worst"}]}], "]"}], ";", "\n", " ", 
+    RowBox[{"average", " ", "=", " ", 
+     RowBox[{"average", " ", "+", " ", "current"}]}], ";", "\n", " ", 
     RowBox[{"Print", "[", 
      RowBox[{
-      RowBox[{"i", " ", "\"\<. fold = \>\""}], ",", 
+      RowBox[{"i", " ", "\"\<. fold = \>\""}], ",", " ", 
       RowBox[{"current", "[", 
-       RowBox[{"[", "1", "]"}], "]"}]}], "]"}], ";"}]}], 
-  "\[IndentingNewLine]", "]"}], "\[IndentingNewLine]", 
- RowBox[{"\"\< = nejlep\[SHacek]\[IAcute] v\[YAcute]sledek\>\"", 
-  "best"}], "\[IndentingNewLine]", 
- RowBox[{"\"\< = nejhor\[SHacek]\[IAcute] v\[YAcute]sledek\>\"", 
-  "worst"}], "\[IndentingNewLine]", 
- RowBox[{"\"\< = pr\[URing]m\[EHacek]rn\[YAcute] v\[YAcute]sledek\>\"", 
-  RowBox[{
-   RowBox[{"(", 
-    RowBox[{"average", "/", "folds"}], ")"}], "[", 
-   RowBox[{"[", "1", "]"}], "]"}]}]}], "Input",
+       RowBox[{"[", "1", "]"}], "]"}]}], "]"}], ";"}]}], "\n", " ", 
+  "]"}]}], "Input",
  CellChangeTimes->{{3.402214100997976*^9, 3.402214109762068*^9}, {
    3.402214234036181*^9, 3.402214235441436*^9}, {3.402214368377231*^9, 
    3.402214374682622*^9}, {3.402214419526277*^9, 3.402214425215911*^9}, {
@@ -600,172 +665,542 @@ Cell[BoxData[{
    3.5097896684534273`*^9}, {3.5097897758530655`*^9, 3.509789813076292*^9}, {
    3.5097898482342567`*^9, 3.5097898921673355`*^9}, {3.5097899295280795`*^9, 
    3.5097899314203196`*^9}, {3.509789961814679*^9, 3.5097899739102154`*^9}, {
-   3.5097900590320244`*^9, 3.509790148560893*^9}}],
+   3.5097900590320244`*^9, 3.509790148560893*^9}, {3.509790679726843*^9, 
+   3.5097906843014235`*^9}, {3.5097907681220675`*^9, 
+   3.5097907706118836`*^9}, {3.5097908499844627`*^9, 3.509790860396785*^9}, {
+   3.5097967711463547`*^9, 3.5097967722464943`*^9}, {3.5097968507544637`*^9, 
+   3.509796910523053*^9}, {3.5097969671622458`*^9, 3.509796967755821*^9}, {
+   3.509797066416849*^9, 3.5097971170672812`*^9}, {3.5097972491970596`*^9, 
+   3.5097972777736883`*^9}, {3.5097973341148424`*^9, 3.509797373997407*^9}, {
+   3.5097974102035046`*^9, 3.509797430333561*^9}, {3.5097974631472273`*^9, 
+   3.509797486175152*^9}, {3.509797958630146*^9, 3.50979799126379*^9}, {
+   3.5097980573276787`*^9, 3.5097980583863134`*^9}, {3.5097981453648586`*^9, 
+   3.5097981584175158`*^9}, 3.5097983467394295`*^9, {3.5097988676540775`*^9, 
+   3.509798868256154*^9}, {3.5097994191531086`*^9, 3.509799423680684*^9}, {
+   3.509799835183938*^9, 3.5097998424908657`*^9}, 3.509800104077083*^9, {
+   3.5098001794926596`*^9, 3.509800187502177*^9}}],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
  InterpretationBox[
-  RowBox[{"\<\". fold = \"\>", "\[InvisibleSpace]", "0.5872266644268388`"}],
-  SequenceForm[". fold = ", 0.5872266644268388],
+  RowBox[{"\<\". fold = \"\>", "\[InvisibleSpace]", "0.1307717910486609`"}],
+  SequenceForm[". fold = ", 0.1307717910486609],
   Editable->False]], "Print",
- CellChangeTimes->{
-  3.5097891109296308`*^9, 3.509789157904596*^9, 3.5097892730592184`*^9, 
-   3.50978935355494*^9, {3.509789394092588*^9, 3.509789418448681*^9}, {
-   3.509789448618512*^9, 3.5097894778332214`*^9}, 3.509789513737281*^9, 
-   3.509789566274452*^9, 3.5097896014609203`*^9, 3.5097896510347157`*^9, 
-   3.509789781192243*^9, 3.5097898589591184`*^9, 3.5097899402234373`*^9, 
-   3.5097899766570644`*^9, {3.5097900821624613`*^9, 3.509790094791065*^9}, {
-   3.5097901387521477`*^9, 3.509790152399881*^9}}],
+ CellChangeTimes->{3.5098000872919517`*^9, 3.509800183686692*^9, 
+  3.5098023118239317`*^9}],
 
 Cell[BoxData[
  InterpretationBox[
   RowBox[{
    RowBox[{"2", " ", "\<\". fold = \"\>"}], "\[InvisibleSpace]", 
-   "0.5889298070629384`"}],
-  SequenceForm[2 ". fold = ", 0.5889298070629384],
+   "0.16457519017476124`"}],
+  SequenceForm[2 ". fold = ", 0.16457519017476124`],
   Editable->False]], "Print",
- CellChangeTimes->{
-  3.5097891109296308`*^9, 3.509789157904596*^9, 3.5097892730592184`*^9, 
-   3.50978935355494*^9, {3.509789394092588*^9, 3.509789418448681*^9}, {
-   3.509789448618512*^9, 3.5097894778332214`*^9}, 3.509789513737281*^9, 
-   3.509789566274452*^9, 3.5097896014609203`*^9, 3.5097896510347157`*^9, 
-   3.509789781192243*^9, 3.5097898589591184`*^9, 3.5097899402234373`*^9, 
-   3.5097899766570644`*^9, {3.5097900821624613`*^9, 3.509790094791065*^9}, {
-   3.5097901387521477`*^9, 3.5097901544801445`*^9}}],
+ CellChangeTimes->{3.5098000872919517`*^9, 3.509800183686692*^9, 
+  3.5098023125805273`*^9}],
 
 Cell[BoxData[
  InterpretationBox[
   RowBox[{
    RowBox[{"3", " ", "\<\". fold = \"\>"}], "\[InvisibleSpace]", 
-   "0.5797228757287188`"}],
-  SequenceForm[3 ". fold = ", 0.5797228757287188],
+   "0.042099333371769194`"}],
+  SequenceForm[3 ". fold = ", 0.042099333371769194`],
   Editable->False]], "Print",
- CellChangeTimes->{
-  3.5097891109296308`*^9, 3.509789157904596*^9, 3.5097892730592184`*^9, 
-   3.50978935355494*^9, {3.509789394092588*^9, 3.509789418448681*^9}, {
-   3.509789448618512*^9, 3.5097894778332214`*^9}, 3.509789513737281*^9, 
-   3.509789566274452*^9, 3.5097896014609203`*^9, 3.5097896510347157`*^9, 
-   3.509789781192243*^9, 3.5097898589591184`*^9, 3.5097899402234373`*^9, 
-   3.5097899766570644`*^9, {3.5097900821624613`*^9, 3.509790094791065*^9}, {
-   3.5097901387521477`*^9, 3.5097901564783983`*^9}}]
-}, Open  ]],
-
-Cell[BoxData[
- RowBox[{
-  StyleBox[
-   RowBox[{"NeuralFit", "::", "StoppedSearch"}], "MessageName"], 
-  RowBox[{
-  ":", " "}], "\<\"The net parameters are obtained by stopped search using \
-the supplied validation data. The neural net is given at the \[NoBreak]\\!\\(\
-\\\"21st\\\"\\)\[NoBreak] training iteration.\"\>"}]], "Message", "MSG",
- CellChangeTimes->{
-  3.509789165906612*^9, 3.5097892730332155`*^9, 3.5097893575809517`*^9, {
-   3.5097893981055975`*^9, 3.5097894205974536`*^9}, {3.5097894546637793`*^9, 
-   3.50978948427804*^9}, 3.509789519786049*^9, 3.509789566238948*^9, 
-   3.5097896069286146`*^9, 3.509789655056726*^9, 3.5097897832520046`*^9, 
-   3.5097898589361153`*^9, 3.509789944250949*^9, 3.509789978641316*^9, {
-   3.509790086150968*^9, 3.5097901027650776`*^9}, {3.509790140718397*^9, 
-   3.509790158521158*^9}}],
+ CellChangeTimes->{3.5098000872919517`*^9, 3.509800183686692*^9, 
+  3.509802313285117*^9}],
 
 Cell[BoxData[
  InterpretationBox[
   RowBox[{
    RowBox[{"4", " ", "\<\". fold = \"\>"}], "\[InvisibleSpace]", 
-   "0.5474841008644648`"}],
-  SequenceForm[4 ". fold = ", 0.5474841008644648],
+   "0.03036654226976187`"}],
+  SequenceForm[4 ". fold = ", 0.03036654226976187],
   Editable->False]], "Print",
- CellChangeTimes->{
-  3.5097891109296308`*^9, 3.509789157904596*^9, 3.5097892730592184`*^9, 
-   3.50978935355494*^9, {3.509789394092588*^9, 3.509789418448681*^9}, {
-   3.509789448618512*^9, 3.5097894778332214`*^9}, 3.509789513737281*^9, 
-   3.509789566274452*^9, 3.5097896014609203`*^9, 3.5097896510347157`*^9, 
-   3.509789781192243*^9, 3.5097898589591184`*^9, 3.5097899402234373`*^9, 
-   3.5097899766570644`*^9, {3.5097900821624613`*^9, 3.509790094791065*^9}, {
-   3.5097901387521477`*^9, 3.5097901585446606`*^9}}],
-
-Cell[BoxData[
- RowBox[{
-  StyleBox[
-   RowBox[{"NeuralFit", "::", "StoppedSearch"}], "MessageName"], 
-  RowBox[{
-  ":", " "}], "\<\"The net parameters are obtained by stopped search using \
-the supplied validation data. The neural net is given at the \[NoBreak]\\!\\(\
-\\\"11th\\\"\\)\[NoBreak] training iteration.\"\>"}]], "Message", "MSG",
- CellChangeTimes->{
-  3.509789165906612*^9, 3.5097892730332155`*^9, 3.5097893575809517`*^9, {
-   3.5097893981055975`*^9, 3.5097894205974536`*^9}, {3.5097894546637793`*^9, 
-   3.50978948427804*^9}, 3.509789519786049*^9, 3.509789566238948*^9, 
-   3.5097896069286146`*^9, 3.509789655056726*^9, 3.5097897832520046`*^9, 
-   3.5097898589361153`*^9, 3.509789944250949*^9, 3.509789978641316*^9, {
-   3.509790086150968*^9, 3.5097901027650776`*^9}, {3.509790140718397*^9, 
-   3.5097901605859203`*^9}}],
+ CellChangeTimes->{3.5098000872919517`*^9, 3.509800183686692*^9, 
+  3.509802314113722*^9}],
 
 Cell[BoxData[
  InterpretationBox[
   RowBox[{
    RowBox[{"5", " ", "\<\". fold = \"\>"}], "\[InvisibleSpace]", 
-   "0.6450730714848074`"}],
-  SequenceForm[5 ". fold = ", 0.6450730714848074],
+   "0.22591661727007084`"}],
+  SequenceForm[5 ". fold = ", 0.22591661727007084`],
   Editable->False]], "Print",
- CellChangeTimes->{
-  3.5097891109296308`*^9, 3.509789157904596*^9, 3.5097892730592184`*^9, 
-   3.50978935355494*^9, {3.509789394092588*^9, 3.509789418448681*^9}, {
-   3.509789448618512*^9, 3.5097894778332214`*^9}, 3.509789513737281*^9, 
-   3.509789566274452*^9, 3.5097896014609203`*^9, 3.5097896510347157`*^9, 
-   3.509789781192243*^9, 3.5097898589591184`*^9, 3.5097899402234373`*^9, 
-   3.5097899766570644`*^9, {3.5097900821624613`*^9, 3.509790094791065*^9}, {
-   3.5097901387521477`*^9, 3.509790160622425*^9}}],
+ CellChangeTimes->{3.5098000872919517`*^9, 3.509800183686692*^9, 
+  3.5098023149118233`*^9}],
 
 Cell[BoxData[
- RowBox[{"0.5474841008644648`", 
-  " ", "\<\" = nejlep\[SHacek]\[IAcute] v\[YAcute]sledek\"\>"}]], "Output",
- CellChangeTimes->{{3.50978853840843*^9, 3.5097885739179387`*^9}, 
-   3.5097886518873396`*^9, 3.5097891190221586`*^9, 3.509789165959119*^9, 
-   3.509789282054861*^9, 3.509789361758482*^9, {3.509789403112733*^9, 
-   3.5097894862982965`*^9}, 3.509789521912819*^9, 3.509789574345477*^9, 
-   3.5097896112686653`*^9, 3.5097896591537466`*^9, 3.509789789377783*^9, 
-   3.509789867065648*^9, 3.509789948359971*^9, 3.509789984797598*^9, {
-   3.5097900903750043`*^9, 3.5097901027895813`*^9}, {3.5097901469111834`*^9, 
-   3.5097901606444273`*^9}}],
+ InterpretationBox[
+  RowBox[{
+   RowBox[{"6", " ", "\<\". fold = \"\>"}], "\[InvisibleSpace]", 
+   "0.004426722404926367`"}],
+  SequenceForm[6 ". fold = ", 0.004426722404926367],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.5098000872919517`*^9, 3.509800183686692*^9, 
+  3.509802315741429*^9}],
 
 Cell[BoxData[
- RowBox[{"0.6450730714848074`", 
-  " ", "\<\" = nejhor\[SHacek]\[IAcute] v\[YAcute]sledek\"\>"}]], "Output",
- CellChangeTimes->{{3.50978853840843*^9, 3.5097885739179387`*^9}, 
-   3.5097886518873396`*^9, 3.5097891190221586`*^9, 3.509789165959119*^9, 
-   3.509789282054861*^9, 3.509789361758482*^9, {3.509789403112733*^9, 
-   3.5097894862982965`*^9}, 3.509789521912819*^9, 3.509789574345477*^9, 
-   3.5097896112686653`*^9, 3.5097896591537466`*^9, 3.509789789377783*^9, 
-   3.509789867065648*^9, 3.509789948359971*^9, 3.509789984797598*^9, {
-   3.5097900903750043`*^9, 3.5097901027895813`*^9}, {3.5097901469111834`*^9, 
-   3.509790160647928*^9}}],
+ InterpretationBox[
+  RowBox[{
+   RowBox[{"7", " ", "\<\". fold = \"\>"}], "\[InvisibleSpace]", 
+   "0.03443058998777568`"}],
+  SequenceForm[7 ". fold = ", 0.03443058998777568],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.5098000872919517`*^9, 3.509800183686692*^9, 
+  3.5098023164870234`*^9}],
 
 Cell[BoxData[
- RowBox[{"0.5896873039135536`", 
-  " ", "\<\" = pr\[URing]m\[EHacek]rn\[YAcute] v\[YAcute]sledek\"\>"}]], \
-"Output",
- CellChangeTimes->{{3.50978853840843*^9, 3.5097885739179387`*^9}, 
-   3.5097886518873396`*^9, 3.5097891190221586`*^9, 3.509789165959119*^9, 
-   3.509789282054861*^9, 3.509789361758482*^9, {3.509789403112733*^9, 
-   3.5097894862982965`*^9}, 3.509789521912819*^9, 3.509789574345477*^9, 
-   3.5097896112686653`*^9, 3.5097896591537466`*^9, 3.509789789377783*^9, 
-   3.509789867065648*^9, 3.509789948359971*^9, 3.509789984797598*^9, {
-   3.5097900903750043`*^9, 3.5097901027895813`*^9}, {3.5097901469111834`*^9, 
-   3.509790160653429*^9}}]
+ InterpretationBox[
+  RowBox[{
+   RowBox[{"8", " ", "\<\". fold = \"\>"}], "\[InvisibleSpace]", 
+   "0.008662893160768265`"}],
+  SequenceForm[8 ". fold = ", 0.008662893160768265],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.5098000872919517`*^9, 3.509800183686692*^9, 
+  3.509802317233118*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   RowBox[{"9", " ", "\<\". fold = \"\>"}], "\[InvisibleSpace]", 
+   "0.021613178162204646`"}],
+  SequenceForm[9 ". fold = ", 0.021613178162204646`],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.5098000872919517`*^9, 3.509800183686692*^9, 
+  3.509802317923706*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   RowBox[{"10", " ", "\<\". fold = \"\>"}], "\[InvisibleSpace]", 
+   "0.11283178680126012`"}],
+  SequenceForm[10 ". fold = ", 0.11283178680126012`],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.5098000872919517`*^9, 3.509800183686692*^9, 
+  3.509802318688803*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   RowBox[{"11", " ", "\<\". fold = \"\>"}], "\[InvisibleSpace]", 
+   "0.034044051790346884`"}],
+  SequenceForm[11 ". fold = ", 0.034044051790346884`],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.5098000872919517`*^9, 3.509800183686692*^9, 
+  3.509802319409895*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   RowBox[{"12", " ", "\<\". fold = \"\>"}], "\[InvisibleSpace]", 
+   "0.26042699985136036`"}],
+  SequenceForm[12 ". fold = ", 0.26042699985136036`],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.5098000872919517`*^9, 3.509800183686692*^9, 
+  3.509802320153489*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   RowBox[{"13", " ", "\<\". fold = \"\>"}], "\[InvisibleSpace]", 
+   "0.007494013023025246`"}],
+  SequenceForm[13 ". fold = ", 0.007494013023025246],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.5098000872919517`*^9, 3.509800183686692*^9, 
+  3.5098023209260874`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   RowBox[{"14", " ", "\<\". fold = \"\>"}], "\[InvisibleSpace]", 
+   "0.2055495326983039`"}],
+  SequenceForm[14 ". fold = ", 0.2055495326983039],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.5098000872919517`*^9, 3.509800183686692*^9, 
+  3.509802321619675*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   RowBox[{"15", " ", "\<\". fold = \"\>"}], "\[InvisibleSpace]", 
+   "0.04390585393045227`"}],
+  SequenceForm[15 ". fold = ", 0.04390585393045227],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.5098000872919517`*^9, 3.509800183686692*^9, 
+  3.509802322344267*^9}]
+}, Open  ]]
 }, Open  ]],
 
 Cell["\<\
-Pod\[IAcute]vejme se jak na\[SHacek]e s\[IAcute]\[THacek] klasifikuje data. \
+Vypsaly se v\[YAcute]sledky s\[IAcute]t\[EHacek] pro ka\[ZHacek]d\[YAcute] \
+fold. V\[SHacek]imn\[EHacek]te si, \[ZHacek]e jednotliv\[EAcute] \
+v\[YAcute]sledky s\[IAcute]t\[EHacek] se zna\[CHacek]n\[EHacek] li\[SHacek]\
+\[IAcute] a jsou z\[AAcute]visl\[EAcute] na konkr\[EAcute]tn\[IAcute]m rozd\
+\[EHacek]len\[IAcute] dat. Pokud bychom nepou\[ZHacek]ili k\[RHacek]\[IAcute]\
+\[ZHacek]ovou validaci a m\[IAcute]sto n\[IAcute] pou\[ZHacek]ili jak jedno \
+konkr\[EAcute]tn\[IAcute] rozd\[EHacek]len\[IAcute] dat, byly by na\[SHacek]e \
+informace o v\[YAcute]konu neuronov\[EAcute] s\[IAcute]t\[EHacek] \
+zna\[CHacek]n\[EHacek] nep\[RHacek]esn\[EAcute].\
 \>", "Text",
- CellChangeTimes->{{3.509193868514863*^9, 3.509193933344595*^9}, {
-   3.509199332720729*^9, 3.509199338327941*^9}, {3.5091997539452176`*^9, 
-   3.50919978396653*^9}, 3.5092070083589115`*^9}]
+ CellChangeTimes->{{3.509800242772195*^9, 3.5098003439450426`*^9}, {
+  3.5098003804426775`*^9, 3.5098005113432994`*^9}, {3.509802542306199*^9, 
+  3.509802548354467*^9}}],
+
+Cell["\<\
+Zobraz\[IAcute]me si celkov\[EAcute] v\[YAcute]sledky s\[IAcute]t\[EHacek].  \
+Pr\[URing]m\[EHacek]rn\[YAcute] v\[YAcute]sledek n\[AAcute]m d\[AAcute]v\
+\[AAcute] dobr\[YAcute] odhad o v\[YAcute]sledc\[IAcute]ch s\[IAcute]t\
+\[EHacek].\
+\>", "Text",
+ CellChangeTimes->{{3.5097998468714223`*^9, 3.5097998759271116`*^9}, {
+  3.509800541791666*^9, 3.509800581330187*^9}, {3.509800631816598*^9, 
+  3.5098006475971017`*^9}, {3.5098025988068733`*^9, 3.509802603361452*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"\"\< = pr\[URing]m\[EHacek]rn\[YAcute] v\[YAcute]sledek\>\"", " ", 
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{"average", "/", "folds"}], ")"}], "[", 
+   RowBox[{"[", "1", "]"}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"\"\< = nejlep\[SHacek]\[IAcute] v\[YAcute]sledek\>\"", " ", 
+  "best"}], "\n", 
+ RowBox[{"\"\< = nejhor\[SHacek]\[IAcute] v\[YAcute]sledek\>\"", " ", 
+  "worst"}]}], "Input",
+ CellChangeTimes->{
+  3.509799880842236*^9, {3.509800524223435*^9, 3.509800529452099*^9}}],
+
+Cell[BoxData[
+ RowBox[{"0.08847433972969652`", 
+  " ", "\<\" = pr\[URing]m\[EHacek]rn\[YAcute] v\[YAcute]sledek\"\>"}]], \
+"Output",
+ CellChangeTimes->{
+  3.5097968838531666`*^9, 3.509796951791794*^9, 3.509797042900863*^9, 
+   3.509797125098301*^9, 3.5097973204036016`*^9, {3.509797383397601*^9, 
+   3.509797409259885*^9}, {3.5097974415449843`*^9, 3.5097974518117886`*^9}, 
+   3.509797517446623*^9, 3.509797694165563*^9, 3.509797980518426*^9, 
+   3.509798030254741*^9, 3.50979807686516*^9, 3.509799885236294*^9, 
+   3.5098000981503305`*^9, {3.509800205240429*^9, 3.509800221326972*^9}, 
+   3.509801851708504*^9, 3.509802322460782*^9}],
+
+Cell[BoxData[
+ RowBox[{"0.004426722404926367`", 
+  " ", "\<\" = nejlep\[SHacek]\[IAcute] v\[YAcute]sledek\"\>"}]], "Output",
+ CellChangeTimes->{
+  3.5097968838531666`*^9, 3.509796951791794*^9, 3.509797042900863*^9, 
+   3.509797125098301*^9, 3.5097973204036016`*^9, {3.509797383397601*^9, 
+   3.509797409259885*^9}, {3.5097974415449843`*^9, 3.5097974518117886`*^9}, 
+   3.509797517446623*^9, 3.509797694165563*^9, 3.509797980518426*^9, 
+   3.509798030254741*^9, 3.50979807686516*^9, 3.509799885236294*^9, 
+   3.5098000981503305`*^9, {3.509800205240429*^9, 3.509800221326972*^9}, 
+   3.509801851708504*^9, 3.5098023224642825`*^9}],
+
+Cell[BoxData[
+ RowBox[{"0.26042699985136036`", 
+  " ", "\<\" = nejhor\[SHacek]\[IAcute] v\[YAcute]sledek\"\>"}]], "Output",
+ CellChangeTimes->{
+  3.5097968838531666`*^9, 3.509796951791794*^9, 3.509797042900863*^9, 
+   3.509797125098301*^9, 3.5097973204036016`*^9, {3.509797383397601*^9, 
+   3.509797409259885*^9}, {3.5097974415449843`*^9, 3.5097974518117886`*^9}, 
+   3.509797517446623*^9, 3.509797694165563*^9, 3.509797980518426*^9, 
+   3.509798030254741*^9, 3.50979807686516*^9, 3.509799885236294*^9, 
+   3.5098000981503305`*^9, {3.509800205240429*^9, 3.509800221326972*^9}, 
+   3.509801851708504*^9, 3.5098023224667826`*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["K\[RHacek]\[IAcute]\[ZHacek]ov\[AAcute] validace vlastn\[IAcute] s\
+\[IAcute]t\[EHacek]", "Section",
+ CellChangeTimes->{{3.509802229134431*^9, 3.5098022433472357`*^9}}],
+
+Cell["\<\
+Zde si m\[URing]\[ZHacek]ete nechat prov\[EAcute]st krossvalidaci vlastn\
+\[IAcute] s\[IAcute]t\[EHacek] s vlastn\[IAcute]mi daty.\
+\>", "Text",
+ CellChangeTimes->{{3.5098006979694977`*^9, 3.5098007544281673`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"yourNet", "=", 
+    RowBox[{"InitializeFeedForwardNet", "[", 
+     RowBox[{"inData", ",", "outData", ",", 
+      RowBox[{"{", 
+       RowBox[{"3", ",", "2"}], "}"}], ",", 
+      RowBox[{"Neuron", "\[Rule]", "Sigmoid"}]}], "]"}]}], ";"}], 
+  RowBox[{"(*", 
+   RowBox[{
+   "Va\[SHacek]e", " ", "dop\[RHacek]edn\[AAcute]", " ", "nebo", " ", "RBF", 
+    " ", "s\[IAcute]\[THacek]"}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"yourInData", " ", "=", " ", "inData"}], ";", 
+   RowBox[{"(*", 
+    RowBox[{
+    "Va\[SHacek]e", " ", "p\[RHacek]ipraven\[EAcute]", " ", "vstupn\[IAcute]",
+      " ", "data"}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"yourOutData", " ", "=", " ", "outData"}], ";"}], 
+  RowBox[{"(*", 
+   RowBox[{
+   "Va\[SHacek]e", " ", "p\[RHacek]ipraven\[EAcute]", " ", 
+    "v\[YAcute]stupn\[IAcute]", " ", "data"}], 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"yourFolds", " ", "=", " ", "folds"}], ";", 
+  RowBox[{"(*", 
+   RowBox[{"V\[AAcute]\[SHacek]", " ", "po\[CHacek]et", " ", "fold\[URing]"}],
+    "*)"}]}]}], "Input",
+ CellChangeTimes->{{3.5098008166715713`*^9, 3.50980085674866*^9}, {
+  3.509800953594458*^9, 3.5098009648893924`*^9}, {3.5098010483424892`*^9, 
+  3.509801205365429*^9}, {3.5098014407343173`*^9, 3.5098014593301783`*^9}, {
+  3.509802249489016*^9, 3.5098022742741632`*^9}, {3.5098024280406895`*^9, 
+  3.509802437834933*^9}, {3.5098026335002794`*^9, 3.5098026357990713`*^9}}],
+
+Cell["\<\
+N\[AAcute]sleduj\[IAcute]c\[IAcute] blok spus\[THacek]te pro vyhodnocen\
+\[IAcute] vlastn\[IAcute] s\[IAcute]t\[EHacek].\
+\>", "Text",
+ CellChangeTimes->{{3.5098012334354935`*^9, 3.5098012560883703`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Off", "[", 
+   StyleBox[
+    RowBox[{"NeuralFit", "::", "StoppedSearch"}], "MessageName"], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"yourVectors", " ", "=", " ", 
+   RowBox[{"Take", "[", 
+    RowBox[{
+     RowBox[{"Dimensions", "[", "yourInData", "]"}], ",", " ", "1"}], "]"}]}],
+   ";"}], "\n", 
+ RowBox[{
+  RowBox[{"inDataDimensions", "=", 
+   RowBox[{"Take", "[", 
+    RowBox[{
+     RowBox[{"Dimensions", "[", "yourInData", "]"}], ",", 
+     RowBox[{"-", "1"}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"outDataDimensions", "=", 
+   RowBox[{"Take", "[", 
+    RowBox[{
+     RowBox[{"Dimensions", "[", "yourOutData", "]"}], ",", 
+     RowBox[{"-", "1"}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"yourVectorsInFold", " ", "=", " ", 
+   RowBox[{"IntegerPart", "[", 
+    RowBox[{"yourVectors", "/", "yourFolds"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"yourCompleteData", " ", "=", " ", 
+   RowBox[{"Join", "[", 
+    RowBox[{"yourInData", ",", " ", "yourOutData", ",", " ", "2"}], "]"}]}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{"yourCompleteData", " ", "=", " ", 
+   RowBox[{"RandomSample", "[", "yourCompleteData", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"yourBest", " ", "=", " ", "1"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"yourWorst", " ", "=", " ", "0"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"yourAverage", " ", "=", " ", "0"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"For", "[", 
+  RowBox[{
+   RowBox[{"i", " ", "=", " ", "1"}], ",", " ", 
+   RowBox[{"i", " ", "<=", " ", "yourFolds"}], ",", " ", 
+   RowBox[{"i", "++"}], ",", 
+   RowBox[{"(*", 
+    RowBox[{"kod", " ", "jednoho", " ", "kola", " ", "krossvalidace"}], 
+    "*)"}], "\n", " ", 
+   RowBox[{
+    RowBox[{"yourValidationData", " ", "=", " ", 
+     RowBox[{"yourCompleteData", "[", 
+      RowBox[{"[", 
+       RowBox[{
+        RowBox[{"1", " ", "+", " ", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{"i", " ", "-", " ", "1"}], ")"}], "*", 
+          RowBox[{"yourVectorsInFold", "[", 
+           RowBox[{"[", "1", "]"}], "]"}]}]}], " ", ";;", " ", 
+        RowBox[{"i", "*", 
+         RowBox[{"yourVectorsInFold", "[", 
+          RowBox[{"[", "1", "]"}], "]"}]}]}], "]"}], "]"}]}], ";", "\n", " ", 
+    
+    RowBox[{"yourLearnData", " ", "=", " ", 
+     RowBox[{"Drop", "[", 
+      RowBox[{"yourCompleteData", ",", " ", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"1", " ", "+", " ", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{"i", " ", "-", " ", "1"}], ")"}], "*", 
+           RowBox[{"yourVectorsInFold", "[", 
+            RowBox[{"[", "1", "]"}], "]"}]}]}], ",", " ", 
+         RowBox[{"i", "*", 
+          RowBox[{"yourVectorsInFold", "[", 
+           RowBox[{"[", "1", "]"}], "]"}]}]}], "}"}]}], "]"}]}], ";", "\n", 
+    " ", 
+    RowBox[{"yourValidationDataIn", " ", "=", " ", 
+     RowBox[{"yourValidationData", "[", 
+      RowBox[{"[", 
+       RowBox[{"All", ",", " ", 
+        RowBox[{"1", " ", ";;", " ", 
+         RowBox[{"inDataDimensions", "[", 
+          RowBox[{"[", "1", "]"}], "]"}]}]}], "]"}], "]"}]}], ";", " ", 
+    RowBox[{"yourValidationDataOut", " ", "=", " ", 
+     RowBox[{"yourValidationData", "[", 
+      RowBox[{"[", 
+       RowBox[{"All", ",", " ", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"inDataDimensions", "[", 
+           RowBox[{"[", "1", "]"}], "]"}], "+", "1"}], " ", ";;", " ", 
+         RowBox[{
+          RowBox[{"inDataDimensions", "[", 
+           RowBox[{"[", "1", "]"}], "]"}], "+", 
+          RowBox[{"outDataDimensions", "[", 
+           RowBox[{"[", "1", "]"}], "]"}]}]}]}], "]"}], "]"}]}], ";", "\n", 
+    " ", 
+    RowBox[{"yourLearnDataIn", " ", "=", " ", 
+     RowBox[{"yourLearnData", "[", 
+      RowBox[{"[", 
+       RowBox[{"All", ",", " ", 
+        RowBox[{"1", " ", ";;", " ", "4"}]}], "]"}], "]"}]}], ";", "\n", " ", 
+    
+    RowBox[{"yourLearnDataOut", " ", "=", " ", 
+     RowBox[{"yourLearnData", "[", 
+      RowBox[{"[", 
+       RowBox[{"All", ",", " ", 
+        RowBox[{"5", " ", ";;", " ", "7"}]}], "]"}], "]"}]}], ";", "\n", " ", 
+    
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"net2", ",", " ", "record"}], "}"}], " ", "=", " ", 
+     RowBox[{"NeuralFit", "[", 
+      RowBox[{
+      "yourNet", ",", " ", "yourLearnDataIn", ",", " ", "yourLearnDataOut", 
+       ",", " ", "yourValidationDataIn", ",", " ", "yourValidationDataOut", 
+       ",", " ", 
+       RowBox[{"CriterionLog", " ", "->", " ", "False"}], ",", " ", 
+       RowBox[{"CriterionPlot", " ", "->", " ", "False"}]}], "]"}]}], ";", 
+    "\n", " ", 
+    RowBox[{"current", " ", "=", " ", 
+     RowBox[{"Take", "[", 
+      RowBox[{
+       RowBox[{"CriterionValidationValues", " ", "/.", " ", 
+        RowBox[{"record", "[", 
+         RowBox[{"[", "2", "]"}], "]"}]}], ",", " ", 
+       RowBox[{"-", "1"}]}], "]"}]}], ";", "\n", " ", 
+    RowBox[{"If", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"current", "[", 
+        RowBox[{"[", "1", "]"}], "]"}], " ", "<", " ", "yourBest"}], ",", " ", 
+      RowBox[{"yourBest", " ", "=", " ", 
+       RowBox[{"current", "[", 
+        RowBox[{"[", "1", "]"}], "]"}]}], ",", " ", 
+      RowBox[{"yourBest", " ", "=", " ", "yourBest"}]}], "]"}], ";", "\n", 
+    " ", 
+    RowBox[{"If", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"current", "[", 
+        RowBox[{"[", "1", "]"}], "]"}], " ", ">", " ", "yourWorst"}], ",", 
+      " ", 
+      RowBox[{"yourWorst", " ", "=", " ", 
+       RowBox[{"current", "[", 
+        RowBox[{"[", "1", "]"}], "]"}]}], ",", " ", 
+      RowBox[{"yourWorst", " ", "=", " ", "yourWorst"}]}], "]"}], ";", "\n", 
+    " ", 
+    RowBox[{"yourAverage", " ", "=", " ", 
+     RowBox[{"yourAverage", " ", "+", " ", "current"}]}], ";", "\n", " ", 
+    RowBox[{"Print", "[", 
+     RowBox[{
+      RowBox[{"i", " ", "\"\<. fold = \>\""}], ",", " ", 
+      RowBox[{"current", "[", 
+       RowBox[{"[", "1", "]"}], "]"}]}], "]"}], ";"}]}], "\n", " ", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"\"\< = pr\[URing]m\[EHacek]rn\[YAcute] v\[YAcute]sledek\>\"", " ", 
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{"yourAverage", "/", "yourFolds"}], ")"}], "[", 
+   RowBox[{"[", "1", "]"}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"\"\< = nejlep\[SHacek]\[IAcute] v\[YAcute]sledek\>\"", " ", 
+  "yourBest"}], "\n", 
+ RowBox[{"\"\< = nejhor\[SHacek]\[IAcute] v\[YAcute]sledek\>\"", " ", 
+  "yourWorst"}]}], "Input",
+ CellChangeTimes->{{3.5098012896116266`*^9, 3.509801423007566*^9}, {
+   3.509801464161292*^9, 3.5098017820686607`*^9}, {3.5098018141857395`*^9, 
+   3.5098018215866795`*^9}, {3.509801863682025*^9, 3.5098018638455453`*^9}, {
+   3.5098018989209995`*^9, 3.509802065373136*^9}, {3.509802100320574*^9, 
+   3.5098021017967615`*^9}, 3.5098021355115423`*^9, {3.509802179348609*^9, 
+   3.5098022169323816`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\". fold = \"\>", "\[InvisibleSpace]", "0.10430947190517166`"}],
+  SequenceForm[". fold = ", 0.10430947190517166`],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.5098017944282303`*^9, 3.509801826449297*^9, 
+  3.509801868582647*^9, 3.509802031705861*^9, 3.509802067504407*^9, 
+  3.5098021030494204`*^9, 3.5098021358890905`*^9, 3.509802185553897*^9, 
+  3.509802323314891*^9, 3.509802441760931*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   RowBox[{"2", " ", "\<\". fold = \"\>"}], "\[InvisibleSpace]", 
+   "0.18579159556013242`"}],
+  SequenceForm[2 ". fold = ", 0.18579159556013242`],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.5098017944282303`*^9, 3.509801826449297*^9, 
+  3.509801868582647*^9, 3.509802031705861*^9, 3.509802067504407*^9, 
+  3.5098021030494204`*^9, 3.5098021358890905`*^9, 3.509802185553897*^9, 
+  3.509802323314891*^9, 3.5098024423380046`*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"0.14505053373265203`", 
+  " ", "\<\" = pr\[URing]m\[EHacek]rn\[YAcute] v\[YAcute]sledek\"\>"}]], \
+"Output",
+ CellChangeTimes->{3.5098017945567465`*^9, 3.5098018371346536`*^9, 
+  3.509801879279005*^9, 3.509802031841878*^9, 3.5098020676434245`*^9, 
+  3.509802103028918*^9, 3.509802135866088*^9, 3.509802184821804*^9, 
+  3.5098023360425067`*^9, 3.5098024423405046`*^9}],
+
+Cell[BoxData[
+ RowBox[{"0.10430947190517166`", 
+  " ", "\<\" = nejlep\[SHacek]\[IAcute] v\[YAcute]sledek\"\>"}]], "Output",
+ CellChangeTimes->{3.5098017945567465`*^9, 3.5098018371346536`*^9, 
+  3.509801879279005*^9, 3.509802031841878*^9, 3.5098020676434245`*^9, 
+  3.509802103028918*^9, 3.509802135866088*^9, 3.509802184821804*^9, 
+  3.5098023360425067`*^9, 3.509802442343005*^9}],
+
+Cell[BoxData[
+ RowBox[{"0.18579159556013242`", 
+  " ", "\<\" = nejhor\[SHacek]\[IAcute] v\[YAcute]sledek\"\>"}]], "Output",
+ CellChangeTimes->{3.5098017945567465`*^9, 3.5098018371346536`*^9, 
+  3.509801879279005*^9, 3.509802031841878*^9, 3.5098020676434245`*^9, 
+  3.509802103028918*^9, 3.509802135866088*^9, 3.509802184821804*^9, 
+  3.5098023360425067`*^9, 3.5098024423450055`*^9}]
+}, Open  ]]
 }, Open  ]]
 }, Open  ]]
 },
 WindowSize->{1036, 692},
-WindowMargins->{{68, Automatic}, {Automatic, 22}},
+WindowMargins->{{87, Automatic}, {Automatic, 11}},
 ShowSelection->True,
 FrontEndVersion->"8.0 for Microsoft Windows (32-bit) (November 13, 2010)",
 StyleDefinitions->FrontEnd`FileName[{"Creative"}, "NaturalColor.nb", 
@@ -797,37 +1232,73 @@ Cell[2849, 78, 563, 9, 47, "Text"],
 Cell[3415, 89, 305, 8, 41, "Input"],
 Cell[3723, 99, 380, 7, 29, "Text"],
 Cell[4106, 108, 1556, 47, 142, "Input"],
-Cell[5665, 157, 350, 6, 29, "Text"]
+Cell[5665, 157, 403, 7, 29, "Text"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[6052, 168, 343, 5, 75, "Section"],
-Cell[6398, 175, 835, 13, 29, "Text"],
+Cell[6105, 169, 343, 5, 75, "Section"],
+Cell[6451, 176, 858, 13, 29, "Text"],
 Cell[CellGroupData[{
-Cell[7258, 192, 2996, 44, 62, "Input"],
-Cell[10257, 238, 3583, 62, 60, "Output"]
+Cell[7334, 193, 3014, 44, 41, "Input"],
+Cell[10351, 239, 3739, 63, 60, "Output"]
 }, Open  ]],
-Cell[13855, 303, 266, 5, 29, "Text"],
+Cell[14105, 305, 252, 5, 29, "Text"],
 Cell[CellGroupData[{
-Cell[14146, 312, 137, 2, 41, "Input"],
-Cell[14286, 316, 5174, 70, 79, "Output"]
+Cell[14382, 314, 137, 2, 41, "Input"],
+Cell[14522, 318, 5259, 72, 60, "Output"]
 }, Open  ]],
-Cell[19475, 389, 208, 5, 29, "Text"],
+Cell[19796, 393, 524, 8, 29, "Text"],
+Cell[20323, 403, 82, 2, 41, "Input"],
+Cell[20408, 407, 369, 7, 29, "Text"],
+Cell[20780, 416, 342, 10, 62, "Input"],
+Cell[21125, 428, 909, 14, 47, "Text"],
+Cell[22037, 444, 424, 10, 62, "Input"],
+Cell[22464, 456, 942, 14, 65, "Text"],
+Cell[23409, 472, 634, 10, 47, "Text"],
+Cell[24046, 484, 220, 6, 41, "Input"],
 Cell[CellGroupData[{
-Cell[19708, 398, 9741, 204, 542, "Input"],
+Cell[24291, 494, 9770, 186, 382, "Input"],
 Cell[CellGroupData[{
-Cell[29474, 606, 703, 12, 23, "Print"],
-Cell[30180, 620, 735, 14, 23, "Print"],
-Cell[30918, 636, 735, 14, 23, "Print"]
+Cell[34086, 684, 282, 6, 23, "Print"],
+Cell[34371, 692, 315, 8, 23, "Print"],
+Cell[34689, 702, 315, 8, 23, "Print"],
+Cell[35007, 712, 312, 8, 23, "Print"],
+Cell[35322, 722, 315, 8, 23, "Print"],
+Cell[35640, 732, 314, 8, 23, "Print"],
+Cell[35957, 742, 314, 8, 23, "Print"],
+Cell[36274, 752, 314, 8, 23, "Print"],
+Cell[36591, 762, 315, 8, 23, "Print"],
+Cell[36909, 772, 315, 8, 23, "Print"],
+Cell[37227, 782, 317, 8, 23, "Print"],
+Cell[37547, 792, 315, 8, 23, "Print"],
+Cell[37865, 802, 318, 8, 23, "Print"],
+Cell[38186, 812, 312, 8, 23, "Print"],
+Cell[38501, 822, 314, 8, 23, "Print"]
+}, Open  ]]
 }, Open  ]],
-Cell[31668, 653, 831, 15, 21, "Message"],
-Cell[32502, 670, 735, 14, 23, "Print"],
-Cell[33240, 686, 833, 15, 21, "Message"],
-Cell[34076, 703, 733, 14, 23, "Print"],
-Cell[34812, 719, 659, 10, 40, "Output"],
-Cell[35474, 731, 657, 10, 40, "Output"],
-Cell[36134, 743, 666, 11, 40, "Output"]
+Cell[38842, 834, 845, 13, 47, "Text"],
+Cell[39690, 849, 477, 8, 29, "Text"],
+Cell[CellGroupData[{
+Cell[40192, 861, 509, 11, 82, "Input"],
+Cell[40704, 874, 634, 11, 40, "Output"],
+Cell[41341, 887, 628, 10, 40, "Output"],
+Cell[41972, 899, 627, 10, 40, "Output"]
+}, Open  ]]
 }, Open  ]],
-Cell[36815, 757, 291, 5, 29, "Text"]
+Cell[CellGroupData[{
+Cell[42648, 915, 174, 2, 75, "Section"],
+Cell[42825, 919, 224, 4, 29, "Text"],
+Cell[43052, 925, 1496, 35, 122, "Input"],
+Cell[44551, 962, 214, 4, 29, "Text"],
+Cell[CellGroupData[{
+Cell[44790, 970, 6873, 176, 602, "Input"],
+Cell[CellGroupData[{
+Cell[51688, 1150, 447, 8, 23, "Print"],
+Cell[52138, 1160, 479, 10, 23, "Print"]
+}, Open  ]],
+Cell[52632, 1173, 391, 7, 40, "Output"],
+Cell[53026, 1182, 380, 6, 40, "Output"],
+Cell[53409, 1190, 382, 6, 40, "Output"]
+}, Open  ]]
 }, Open  ]]
 }, Open  ]]
 }
