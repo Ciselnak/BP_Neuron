@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       145,          7]
-NotebookDataLength[    332583,       7396]
-NotebookOptionsPosition[    326608,       7199]
-NotebookOutlinePosition[    327077,       7217]
-CellTagsIndexPosition[    327034,       7214]
+NotebookDataLength[    333249,       7411]
+NotebookOptionsPosition[    327235,       7213]
+NotebookOutlinePosition[    327703,       7231]
+CellTagsIndexPosition[    327660,       7228]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -2385,14 +2385,19 @@ Cell[BoxData[
           Style[47.62947182471159, {
             GrayLevel[0]}], "Tooltip"]& ]}}, {}, {}}}, GraphicsGroup3DBox[
      {GrayLevel[0], 
-      StyleBox[{
-        Text3DBox["1", Offset[{0, 0, 0}, {3.5200000000000005`, 0.5, 0.}], {0, 
-         0}], Text3DBox["1", Offset[{0, 0, 0}, {0.5, -0.3, 0.}], {0, -0.3}], 
-        Text3DBox["2", Offset[{0, 0, 0}, {1.6, -0.3, 0.}], {0, -0.3}], 
-        Text3DBox["3", Offset[{0, 0, 0}, {2.7, -0.3, 0.}], {0, -0.3}], 
-        Text3DBox["2", 
+      StyleBox[{Text3DBox[
+         FormBox["1", StandardForm], 
+         Offset[{0, 0, 0}, {3.5200000000000005`, 0.5, 0.}], {0, 0}], Text3DBox[
+         FormBox["1", StandardForm], Offset[{0, 0, 0}, {0.5, -0.3, 0.}], {
+         0, -0.3}], Text3DBox[
+         FormBox["2", StandardForm], Offset[{0, 0, 0}, {1.6, -0.3, 0.}], {
+         0, -0.3}], Text3DBox[
+         FormBox["3", StandardForm], Offset[{0, 0, 0}, {2.7, -0.3, 0.}], {
+         0, -0.3}], Text3DBox[
+         FormBox["2", StandardForm], 
          Offset[{0, 0, 0}, {3.5200000000000005`, 1.7000000000000002`, 0.}], {
-         0, 0}], Text3DBox["3", 
+         0, 0}], Text3DBox[
+         FormBox["3", StandardForm], 
          Offset[{0, 0, 0}, {3.5200000000000005`, 2.9000000000000004`, 0.}], {
          0, 0}]},
        Antialiasing->False]}]}},
@@ -7176,7 +7181,16 @@ Cell[BoxData[
              RowBox[{"2.493185813152665`", " ", "x4"}]}]]}]]}]]}], 
       ")"}]}]}]}], "}"}]], "Output",
  CellChangeTimes->{3.510391918767424*^9}]
-}, Open  ]]
+}, Open  ]],
+
+Cell["\<\
+V n\[AAcute]sleduj\[IAcute]c\[IAcute]m notebooku si uk\[AAcute]\[ZHacek]eme \
+podrobn\[EHacek]j\[SHacek]\[IAcute] vyhodnocen\[IAcute] v\[YAcute]stupu \
+neuronov\[EAcute] s\[IAcute]t\[EHacek] a tak\[EAcute] jin\[YAcute] p\[RHacek]\
+\[IAcute]stup k u\[CHacek]en\[IAcute] s\[IAcute]t\[EHacek].\
+\>", "Text",
+ CellChangeTimes->{{3.51039440408952*^9, 3.510394448656679*^9}, {
+  3.5104170100006065`*^9, 3.5104170357128716`*^9}}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -7198,7 +7212,7 @@ s\[IAcute]t\[IAcute]\" na FEL \[CapitalCHacek]VUT 2011. Vznikl \
 }, Open  ]]
 },
 WindowSize->{737, 687},
-WindowMargins->{{Automatic, 177}, {21, Automatic}},
+WindowMargins->{{Automatic, 177}, {Automatic, 0}},
 ShowSelection->True,
 Magnification->1.,
 FrontEndVersion->"8.0 for Microsoft Windows (32-bit) (November 13, 2010)",
@@ -7378,24 +7392,25 @@ Cell[62626, 1455, 6673, 137, 457, "Output"]
 Cell[69314, 1595, 562, 9, 47, "Text"],
 Cell[CellGroupData[{
 Cell[69901, 1608, 611, 10, 41, "Input"],
-Cell[70515, 1620, 34976, 811, 376, "Output"]
+Cell[70515, 1620, 35168, 816, 376, "Output"]
 }, Open  ]],
-Cell[105506, 2434, 460, 8, 47, "Text"],
+Cell[105698, 2439, 460, 8, 47, "Text"],
 Cell[CellGroupData[{
-Cell[105991, 2446, 565, 9, 41, "Input"],
-Cell[106559, 2457, 208716, 4499, 457, 188551, 4167, "CachedBoxData", \
+Cell[106183, 2451, 565, 9, 41, "Input"],
+Cell[106751, 2462, 208716, 4499, 457, 188551, 4167, "CachedBoxData", \
 "BoxData", "Output"]
 }, Open  ]],
-Cell[315290, 6959, 430, 7, 47, "Text"],
-Cell[315723, 6968, 317, 6, 29, "Text"],
+Cell[315482, 6964, 430, 7, 47, "Text"],
+Cell[315915, 6973, 317, 6, 29, "Text"],
 Cell[CellGroupData[{
-Cell[316065, 6978, 194, 4, 41, "Input"],
-Cell[316262, 6984, 9625, 193, 570, "Output"]
-}, Open  ]]
+Cell[316257, 6983, 194, 4, 41, "Input"],
+Cell[316454, 6989, 9625, 193, 570, "Output"]
+}, Open  ]],
+Cell[326094, 7185, 432, 7, 47, "Text"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[325936, 7183, 121, 1, 75, "Section"],
-Cell[326060, 7186, 520, 9, 47, "Text"]
+Cell[326563, 7197, 121, 1, 75, "Section"],
+Cell[326687, 7200, 520, 9, 47, "Text"]
 }, Open  ]]
 }, Open  ]]
 }
