@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       145,          7]
-NotebookDataLength[   1959483,      33388]
-NotebookOptionsPosition[   1947839,      33016]
-NotebookOutlinePosition[   1948306,      33034]
-CellTagsIndexPosition[   1948263,      33031]
+NotebookDataLength[   1959566,      33389]
+NotebookOptionsPosition[   1947921,      33017]
+NotebookOutlinePosition[   1948388,      33035]
+CellTagsIndexPosition[   1948345,      33032]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -33005,12 +33005,13 @@ Cell["\<\
 Tento text je sou\[CHacek]\[AAcute]st\[IAcute] bakal\[AAcute]\[RHacek]sk\
 \[EAcute] pr\[AAcute]ce Adama \[CapitalCHacek]in\[CHacek]ury \
 \[OpenCurlyDoubleQuote]Demonstra\[CHacek]n\[IAcute] aplikace pro podporu \
-kurzu neuronov\[YAcute]ch s\[IAcute]t\[IAcute]\[CloseCurlyDoubleQuote], \
-vznikl \[UAcute]pravou textu Petra Chlumsk\[EAcute]ho.\
+kurzu neuronov\[YAcute]ch s\[IAcute]t\[IAcute]\[CloseCurlyDoubleQuote] na FEL \
+\[CapitalCHacek]VUT 2011. Vznikl \[UAcute]pravou textu Petra \
+Chlumsk\[EAcute]ho.\
 \>", "Text",
  CellChangeTimes->{{3.418480638421875*^9, 3.41848078665625*^9}, {
   3.510388721589434*^9, 3.51038874746122*^9}, {3.5103887953197966`*^9, 
-  3.510388886823416*^9}}]
+  3.510388886823416*^9}, {3.5103899191720076`*^9, 3.510389930751478*^9}}]
 }, Open  ]]
 }, Open  ]]
 },
@@ -33387,7 +33388,7 @@ Cell[1946553, 32977, 471, 15, 40, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
 Cell[1947085, 32999, 195, 2, 75, "Section"],
-Cell[1947283, 33003, 528, 9, 29, "Text"]
+Cell[1947283, 33003, 610, 10, 29, "Text"]
 }, Open  ]]
 }, Open  ]]
 }
