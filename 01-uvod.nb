@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       145,          7]
-NotebookDataLength[   1959517,      33389]
-NotebookOptionsPosition[   1947873,      33017]
-NotebookOutlinePosition[   1948340,      33035]
-CellTagsIndexPosition[   1948297,      33032]
+NotebookDataLength[   1959483,      33388]
+NotebookOptionsPosition[   1947839,      33016]
+NotebookOutlinePosition[   1948306,      33034]
+CellTagsIndexPosition[   1948263,      33031]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -32997,10 +32997,9 @@ Cell[BoxData[
 
 Cell[CellGroupData[{
 
-Cell[TextData[StyleBox["Prohl\[AAcute]\[SHacek]en\[IAcute]\[SHacek]en\[IAcute]\
-", "Subsubsection"]], "Section",
+Cell["Prohl\[AAcute]\[SHacek]en\[IAcute]", "Section",
  CellChangeTimes->{{3.418480577171875*^9, 3.418480581203125*^9}, {
-  3.510388584019465*^9, 3.5103885948203363`*^9}}],
+   3.510388584019465*^9, 3.5103885948203363`*^9}, 3.5103891071008883`*^9}],
 
 Cell["\<\
 Tento text je sou\[CHacek]\[AAcute]st\[IAcute] bakal\[AAcute]\[RHacek]sk\
@@ -33158,7 +33157,7 @@ Cell[18439, 562, 718, 23, 40, "Output"]
 Cell[19172, 588, 264, 5, 29, "Text"],
 Cell[CellGroupData[{
 Cell[19461, 597, 135, 2, 41, "Input"],
-Cell[19599, 601, 794, 26, 186, "Output"]
+Cell[19599, 601, 794, 26, 172, "Output"]
 }, Open  ]],
 Cell[20408, 630, 367, 7, 29, "Text"],
 Cell[20778, 639, 280, 5, 29, "Text"],
@@ -33260,7 +33259,7 @@ Cell[1918467, 32146, 94, 1, 40, "Output"]
 Cell[1918576, 32150, 567, 9, 47, "Text"],
 Cell[CellGroupData[{
 Cell[1919168, 32163, 265, 6, 41, "Input"],
-Cell[1919436, 32171, 310, 9, 54, "Output"]
+Cell[1919436, 32171, 310, 9, 40, "Output"]
 }, Open  ]],
 Cell[1919761, 32183, 259, 5, 29, "Text"],
 Cell[1920023, 32190, 341, 7, 29, "Text"],
@@ -33301,7 +33300,7 @@ Cell[1926788, 32398, 343, 10, 57, "Output"]
 Cell[1927146, 32411, 174, 2, 29, "Text"],
 Cell[CellGroupData[{
 Cell[1927345, 32417, 131, 2, 41, "Input"],
-Cell[1927479, 32421, 754, 24, 54, "Output"]
+Cell[1927479, 32421, 754, 24, 40, "Output"]
 }, Open  ]],
 Cell[1928248, 32448, 510, 15, 41, "Text"],
 Cell[CellGroupData[{
@@ -33387,8 +33386,8 @@ Cell[1946553, 32977, 471, 15, 40, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[1947085, 32999, 229, 3, 69, "Section"],
-Cell[1947317, 33004, 528, 9, 29, "Text"]
+Cell[1947085, 32999, 195, 2, 75, "Section"],
+Cell[1947283, 33003, 528, 9, 29, "Text"]
 }, Open  ]]
 }, Open  ]]
 }
