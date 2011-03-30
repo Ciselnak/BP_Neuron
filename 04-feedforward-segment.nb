@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       145,          7]
-NotebookDataLength[     80111,       1777]
-NotebookOptionsPosition[     77089,       1679]
-NotebookOutlinePosition[     77537,       1696]
-CellTagsIndexPosition[     77494,       1693]
+NotebookDataLength[     80604,       1783]
+NotebookOptionsPosition[     77581,       1685]
+NotebookOutlinePosition[     78029,       1702]
+CellTagsIndexPosition[     77986,       1699]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -1643,14 +1643,19 @@ Cell["\<\
 Sami si m\[URing]\[ZHacek]ete porovnat, kter\[YAcute] p\[RHacek]\[IAcute]stup \
 k u\[CHacek]en\[IAcute] s\[IAcute]t\[EHacek] je efektivn\[EHacek]j\[SHacek]\
 \[IAcute], pro lep\[SHacek]\[IAcute] p\[RHacek]edstavu vyhodno\[THacek]te \
-notebook n\[EHacek]kolikr\[AAcute]t (Ctrl +A a Shift + Enter) a porovnejte v\
+notebook n\[EHacek]kolikr\[AAcute]t (Ctrl + A a Shift + Enter) a porovnejte v\
 \[YAcute]sledky na v\[IAcute]ce rozd\[EHacek]len\[IAcute] tr\[EAcute]novac\
-\[IAcute]/testovac\[IAcute] data.\
+\[IAcute]/testovac\[IAcute] data. U\[CHacek]en\[IAcute] s valida\[CHacek]n\
+\[IAcute] mno\[ZHacek]inou pod\[AAcute]v\[AAcute] v pr\[URing]m\[EHacek]ru \
+lep\[SHacek]\[IAcute] v\[YAcute]sledky, ale v\[YAcute]jime\[CHacek]n\[EHacek] \
+m\[URing]\[ZHacek]e nastat i opa\[CHacek]n\[YAcute] p\[RHacek]\[IAcute]pad.\
 \>", "Text",
  CellChangeTimes->{{3.5104202997188473`*^9, 3.510420327396862*^9}, 
    3.5104250535685096`*^9, {3.51042509271198*^9, 3.5104251282924986`*^9}, {
    3.5104254235379896`*^9, 3.510425448970219*^9}, {3.510425614099688*^9, 
-   3.5104257254523277`*^9}}],
+   3.5104257254523277`*^9}, {3.5104609234412136`*^9, 3.51046095042714*^9}, {
+   3.5104609937036357`*^9, 3.510461040586089*^9}, {3.510461199056712*^9, 
+   3.5104612236823397`*^9}}],
 
 Cell["\<\
 Pokud bychom se rozhodli nerozd\[EHacek]lovat data ani na testovac\[IAcute] a \
@@ -1669,11 +1674,12 @@ Cell["Prohl\[AAcute]\[SHacek]en\[IAcute]", "Section",
 
 Cell["\<\
 Tento text byl vypracov\[AAcute]n jako sou\[CHacek]\[AAcute]st bakal\[AAcute]\
-\[RHacek]sk\[EAcute] pr\[AAcute]ce Petra Chlumsk\[EAcute]ho \"Demonstra\
-\[CHacek]n\[IAcute] aplikace pro podporu kurzu neuronov\[YAcute]ch \
-s\[IAcute]t\[IAcute]\" na FEL \[CapitalCHacek]VUT 2008.\
+\[RHacek]sk\[EAcute] pr\[AAcute]ce Adama \[CapitalCHacek]in\[CHacek]ury \
+\"Demonstra\[CHacek]n\[IAcute] aplikace pro podporu kurzu neuronov\[YAcute]ch \
+s\[IAcute]t\[IAcute]\" na FEL \[CapitalCHacek]VUT 2011.\
 \>", "Text",
- CellChangeTimes->{{3.418480638421875*^9, 3.41848078665625*^9}}]
+ CellChangeTimes->{{3.418480638421875*^9, 3.41848078665625*^9}, {
+  3.5104610849427214`*^9, 3.5104610999351254`*^9}}]
 }, Open  ]]
 }, Open  ]]
 },
@@ -1771,12 +1777,12 @@ Cell[CellGroupData[{
 Cell[73114, 1602, 306, 7, 41, "Input"],
 Cell[73423, 1611, 1967, 27, 40, "Output"]
 }, Open  ]],
-Cell[75405, 1641, 691, 11, 47, "Text"],
-Cell[76099, 1654, 436, 7, 47, "Text"]
+Cell[75405, 1641, 1118, 16, 65, "Text"],
+Cell[76526, 1659, 436, 7, 47, "Text"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[76572, 1666, 121, 1, 75, "Section"],
-Cell[76696, 1669, 365, 6, 47, "Text"]
+Cell[76999, 1671, 121, 1, 75, "Section"],
+Cell[77123, 1674, 430, 7, 47, "Text"]
 }, Open  ]]
 }, Open  ]]
 }
