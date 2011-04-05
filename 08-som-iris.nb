@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       145,          7]
-NotebookDataLength[     49956,       1362]
-NotebookOptionsPosition[     46471,       1241]
-NotebookOutlinePosition[     46940,       1259]
-CellTagsIndexPosition[     46897,       1256]
+NotebookDataLength[     78721,       2137]
+NotebookOptionsPosition[     75143,       2013]
+NotebookOutlinePosition[     75611,       2031]
+CellTagsIndexPosition[     75568,       2028]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -90,11 +90,18 @@ adres\[AAcute]\[RHacek]i.\
    3.403530800561324*^9, {3.40760445378125*^9, 3.4076045060625*^9}, 
    3.510994181252946*^9}],
 
+Cell[CellGroupData[{
+
 Cell[BoxData[
  RowBox[{"SetDirectory", "[", 
   RowBox[{"NotebookDirectory", "[", "]"}], "]"}]], "Input",
  CellChangeTimes->{{3.401698774119277*^9, 3.401698786252544*^9}, {
   3.413532641375*^9, 3.4135326460625*^9}}],
+
+Cell[BoxData["\<\"D:\\\\Dokumenty\\\\\[CapitalSHacek]KOLA\\\\\[CapitalCHacek]\
+VUT\\\\BP\\\\BP_Neuron\"\>"], "Output",
+ CellChangeTimes->{3.511001659601076*^9, 3.5110017468866596`*^9}]
+}, Open  ]],
 
 Cell[BoxData[
  RowBox[{
@@ -213,13 +220,14 @@ Cell["Zpracov\[AAcute]n\[IAcute] dat neuronovou s\[IAcute]t\[IAcute]", \
 
 Cell["\<\
 Nejd\[RHacek]\[IAcute]ve se pod\[IAcute]v\[AAcute]me na rozlo\[ZHacek]en\
-\[IAcute] jednotliv\[YAcute]ch skupin vzork\[URing] v datech. \
+\[IAcute] jednotliv\[YAcute]ch t\[RHacek]\[IAcute]d v datech. \
 N\[AAcute]sleduj\[IAcute]c\[IAcute] p\[RHacek]\[IAcute]kaz vykresl\[IAcute] \
 vstupn\[IAcute] data a jejich mno\[ZHacek]stv\[IAcute] v jednotliv\[YAcute]ch \
-skupin\[AAcute]ch.\
+t\[RHacek]\[IAcute]d\[AAcute]ch.\
 \>", "Text",
  CellChangeTimes->{{3.41415999278125*^9, 3.41416229634375*^9}, {
-  3.416571186515625*^9, 3.41657118690625*^9}}],
+  3.416571186515625*^9, 3.41657118690625*^9}, {3.5110007152496586`*^9, 
+  3.5110007277567463`*^9}}],
 
 Cell[CellGroupData[{
 
@@ -249,69 +257,133 @@ Cell[BoxData[
 
 Cell[BoxData[
  GraphicsBox[{
-   {Hue[0.4], EdgeForm[Opacity[0.5]], 
-    RectangleBox[{0.615, 0}, {1.385, 50}]}, 
-   {Hue[0.5], EdgeForm[Opacity[0.5]], 
-    RectangleBox[{1.615, 0}, {2.385, 50}]}, 
-   {Hue[0.6], EdgeForm[Opacity[0.5]], RectangleBox[{2.615, 0}, {3.385, 50}]}},
-  
-  AlignmentPoint->Center,
+   {Opacity[0], PointBox[{{0.4545454545454546, 0.}}]}, 
+   {RGBColor[0.798413061722744, 0.824719615472648, 0.968322270542458], 
+    EdgeForm[Opacity[0.7]], {}, 
+    {RGBColor[0.798413061722744, 0.824719615472648, 0.968322270542458], 
+     EdgeForm[Opacity[0.7]], 
+     {RGBColor[
+      0.9215686274509803, 0.49411764705882355`, 0.43137254901960786`], 
+      EdgeForm[Opacity[0.7]], 
+      TagBox[
+       TooltipBox[
+        TagBox[
+         DynamicBox[{
+           FEPrivate`If[
+            CurrentValue["MouseOver"], 
+            EdgeForm[{
+              GrayLevel[0.5], 
+              AbsoluteThickness[1.5], 
+              Opacity[0.66]}], {}, {}], 
+           
+           RectangleBox[{0.5454545454545454, 0.}, {1.4545454545454546`, 50.}, 
+            "RoundingRadius" -> 0]},
+          
+          ImageSizeCache->{{25.76159554730982, 
+           119.37755102040816`}, {-94.56476317367417, 95.32660448996718}}],
+         StatusArea[#, 50]& ,
+         TagBoxNote->"50"],
+        StyleBox["50", {
+          GrayLevel[0]}, StripOnInput -> False]],
+       Annotation[#, 
+        Style[50, {
+          GrayLevel[0]}], "Tooltip"]& ]}, 
+     {RGBColor[1., 0.7215686274509804, 0.2196078431372549], EdgeForm[Opacity[
+      0.7]], 
+      TagBox[
+       TooltipBox[
+        TagBox[
+         DynamicBox[{
+           FEPrivate`If[
+            CurrentValue["MouseOver"], 
+            EdgeForm[{
+              GrayLevel[0.5], 
+              AbsoluteThickness[1.5], 
+              Opacity[0.66]}], {}, {}], 
+           
+           RectangleBox[{1.5454545454545454`, 0.}, {2.4545454545454546`, 50.},
+             "RoundingRadius" -> 0]},
+          
+          ImageSizeCache->{{127.63914656771797`, 
+           221.2551020408163}, {-94.56476317367417, 95.32660448996718}}],
+         StatusArea[#, 50]& ,
+         TagBoxNote->"50"],
+        StyleBox["50", {
+          GrayLevel[0]}, StripOnInput -> False]],
+       Annotation[#, 
+        Style[50, {
+          GrayLevel[0]}], "Tooltip"]& ]}, 
+     {RGBColor[0.9490196078431372, 0.8627450980392157, 0.43529411764705883`], 
+      EdgeForm[Opacity[0.7]], 
+      TagBox[
+       TooltipBox[
+        TagBox[
+         DynamicBox[{
+           FEPrivate`If[
+            CurrentValue["MouseOver"], 
+            EdgeForm[{
+              GrayLevel[0.5], 
+              AbsoluteThickness[1.5], 
+              Opacity[0.66]}], {}, {}], 
+           
+           RectangleBox[{2.5454545454545454`, 0.}, {3.4545454545454546`, 50.},
+             "RoundingRadius" -> 0]},
+          
+          ImageSizeCache->{{229.51669758812614`, 
+           323.13265306122446`}, {-94.56476317367417, 95.32660448996718}}],
+         StatusArea[#, 50]& ,
+         TagBoxNote->"50"],
+        StyleBox["50", {
+          GrayLevel[0]}, StripOnInput -> False]],
+       Annotation[#, 
+        Style[50, {
+          GrayLevel[0]}], 
+        "Tooltip"]& ]}}, {}, {}}, {}, {{{{{{{}, {}}, {}}, {{{}, {}}, {}}, \
+{{{}, {}}, {}}}, {}}, {}}, {}}, GraphicsGroupBox[
+    {GrayLevel[0], 
+     StyleBox[
+      GraphicsGroupBox[{
+        LineBox[{{{0.5454545454545454, 0.}, 
+           Offset[{0, -4}, {0.5454545454545454, 0.}]}, {{3.4545454545454546`, 
+           0.}, Offset[{0, -4}, {3.4545454545454546`, 0.}]}}], InsetBox[
+         PaneBox["\<\"1\"\>"], Offset[{0, -2}, {1., 0.}], 
+         ImageScaled[{Rational[1, 2], 1}]], InsetBox[
+         PaneBox["\<\"2\"\>"], Offset[{0, -2}, {2., 0.}], 
+         ImageScaled[{Rational[1, 2], 1}]], InsetBox[
+         PaneBox["\<\"3\"\>"], Offset[{0, -2}, {3., 0.}], 
+         ImageScaled[{Rational[1, 2], 1}]]}],
+      Antialiasing->False]}]},
   AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
-  Axes->True,
+  Axes->{True, True},
   AxesLabel->{
     FormBox["\"Class\"", TraditionalForm], 
     FormBox["\"Samples\"", TraditionalForm]},
-  AxesOrigin->{0.3999999999999999, 0},
-  AxesStyle->{},
-  Background->None,
-  BaseStyle->{},
-  BaselinePosition->Automatic,
-  ColorOutput->Automatic,
-  ContentSelectable->Automatic,
-  DisplayFunction:>$DisplayFunction,
-  Epilog->{},
-  FormatType:>TraditionalForm,
-  Frame->False,
-  FrameLabel->None,
-  FrameStyle->{},
-  FrameTicks->{{{1, 
-      FormBox["1", TraditionalForm], 0}, {2, 
-      FormBox["2", TraditionalForm], 0}, {3, 
-      FormBox["3", TraditionalForm], 0}}, Automatic},
-  FrameTicksStyle->{},
-  GridLines->None,
-  GridLinesStyle->{},
+  AxesOrigin->{0.4545454545454546, 0},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
   ImageMargins->0.,
-  ImagePadding->All,
   ImageSize->Automatic,
-  LabelStyle->{},
-  Method->Automatic,
-  PlotLabel->None,
-  PlotRange->{{0.3999999999999999, 3.6}, All},
-  PlotRangeClipping->True,
-  PlotRangePadding->Automatic,
-  PlotRegion->Automatic,
-  PreserveImageOptions->Automatic,
-  Prolog->{},
-  RotateLabel->True,
-  Ticks->{{{1, 
-      FormBox["1", TraditionalForm]}, {2, 
-      FormBox["2", TraditionalForm]}, {3, 
-      FormBox["3", TraditionalForm]}}, Automatic},
-  TicksStyle->{}]], "Output",
+  PlotRangePadding->Scaled[0.02],
+  Ticks->{None, Automatic}]], "Output",
  CellChangeTimes->{3.42260665559375*^9, 3.422616249390625*^9, 
-  3.422616338921875*^9}]
+  3.422616338921875*^9, 3.511001660982251*^9, 3.5110017478127775`*^9}]
 }, Open  ]],
 
 Cell["\<\
 Vstupn\[IAcute] data namapujeme s\[IAcute]t\[IAcute], jej\[IAcute]\[ZHacek] \
 uspo\[RHacek]\[AAcute]d\[AAcute]n\[IAcute] m\[URing]\[ZHacek]eme zadat. \
 \[CapitalCHacek]\[IAcute]m v\[IAcute]c neuron\[URing] pou\[ZHacek]ijeme, t\
-\[IAcute]m bude l\[EAcute]pe pokryt prostor vstupn\[IAcute]ch dat. \t\
+\[IAcute]m bude l\[EAcute]pe pokryt prostor vstupn\[IAcute]ch dat. \
+Po\[CHacek]et neuron\[URing] se zad\[AAcute] jako kladn\[EAcute] cel\[EAcute] \
+\[CHacek]\[IAcute]slo, struktura s\[IAcute]t\[EHacek] se ur\[CHacek]\[IAcute] \
+pomoc\[IAcute] parametru SOM. Struktura je ur\[CHacek]ena seznamem {3,2} \
+znamen\[AAcute] s\[IAcute]\[THacek] t\[RHacek]ikr\[AAcute]t dva neurony. \
 \>", "Text",
  CellChangeTimes->{{3.40353370945933*^9, 3.403533723564199*^9}, {
    3.407607079734375*^9, 3.407607097453125*^9}, {3.41416327184375*^9, 
-   3.414163912734375*^9}, 3.41725914690625*^9}],
+   3.414163912734375*^9}, 3.41725914690625*^9, {3.511000794002159*^9, 
+   3.511000860623618*^9}, {3.511000915356569*^9, 3.511000918776503*^9}, {
+   3.5110011555730724`*^9, 3.5110011784724803`*^9}, {3.5110012277552385`*^9, 
+   3.5110012298530045`*^9}, {3.5110012711847534`*^9, 3.511001355729989*^9}}],
 
 Cell[CellGroupData[{
 
@@ -328,20 +400,21 @@ Cell[BoxData[
  CellChangeTimes->{{3.402214088623496*^9, 3.402214091901377*^9}, {
   3.414084927828125*^9, 3.414084929828125*^9}, {3.414162348890625*^9, 
   3.414164294109375*^9}, {3.417104189546875*^9, 3.417105322609375*^9}, {
-  3.417454815859375*^9, 3.41745597853125*^9}}],
+  3.417454815859375*^9, 3.41745597853125*^9}, {3.511001102996396*^9, 
+  3.51100112869866*^9}, {3.51100123367299*^9, 3.511001249212963*^9}, {
+  3.511001740773383*^9, 3.511001745151439*^9}}],
 
 Cell[BoxData[
  GraphicsBox[{{}, {}, 
    {Hue[0.67, 0.6, 0.6], LineBox[CompressedData["
-1:eJxTTMoPSmViYGCQB2IQDQO6kYmKs67/s4fwPti/4zh1Qyb7N5TP4NCz6Mu6
-/uhfUD6Hg09k4xKFmz+hfAEHuwgWX7FdML6IA9/qpd1Mb/9A+RIO6SobGQ/u
-/gHlyzjI35ysFcT8GcpXcMi+2KQVIvYJyldyqFNdyJwa9hHKV3GYr3afrevJ
-WyhfzeHNwtoj6gavoHwNB+WO1MOlIW+gfC2HFeH3xc7awdTrOGz/337mi8Fz
-KF/P4aDPh8aOR8+gfAOH+RpbV3ze8gLKN3S4Fy9yNLf3CZRv5PCrJ6z7uugj
-KN/YocZY9DLr7sdQvolDSV3fgo0zHkD5pg4vFNwOr7v4EMo3c5DxUM5hi4Tp
-N3eYwxH//8MsmLyFw375Y9JvOWDylg4bF189YBUBk7dyaI3clLHqLoxv7RAw
-j+n5xigY38bhue+PT2wtMPttHT6mRZf90YDx7Rzi3hl6fpZ6YA8AHHOPbw==
-
+1:eJxTTMoPSmViYGCQB2IQDQOiDv5/Hp/7Zw/hfbA3lQlIP7H+N5TP4OCje8vv
+XcwvKJ/D4aEw38+tE2B8AQf2Ain/W7EwvoiDw6XNAZYVMP0SDmadqabGd79B
++TIO3rbnT3ju/wTlKzgUH0mxLEv9AOUrOWy4636o+dArKF/FIeT3ra3Sd19D
++WoO13tflim9fgblazj8XBRv5/HrCZSv5dC0m+nBFRWYvI7Dsr2HM+WXP4Ly
+9RwuXd26xI71MZRv4DBZUYzviwWMb+iw75/69V0JMPVGDkFC9V+j82B8Y4cl
+BywE1uvA+CYO+bLv16SbwfimDhs6vocWi8D4Zg4lW1VahRbA+OYOMSqW8RYG
+ML6Fw+fm2BdrZGB8SwfVTa991V48hPKtHN6YLju77iaMb+1wWtM5gv0hjG/j
+EFrtIzLlAYxv65D7Xfao6i0Y384hMG27r8D1h/YAekWPPA==
      "]]}},
   AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
   AxesOrigin->{0, 0.6000000000000001},
@@ -360,8 +433,8 @@ j+n5xigY38bhue+PT2wtMPttHT6mRZf90YDx7Rzi3hl6fpZ6YA8AHHOPbw==
   PlotRange->{All, All},
   PlotRangeClipping->True,
   PlotRangePadding->{Automatic, Automatic}]], "Print",
- CellChangeTimes->{3.42260665653125*^9, 3.4226162504375*^9, 
-  3.42261633978125*^9, 3.42261644325*^9}]
+ CellChangeTimes->{{3.511001244425355*^9, 3.511001251130707*^9}, 
+   3.511001662302919*^9, 3.5110017492314577`*^9}]
 }, Open  ]],
 
 Cell["\<\
@@ -392,20 +465,23 @@ Cell[BoxData[
   RowBox[{"{", 
    RowBox[{"1", ",", "2"}], "}"}], "}"}]], "Output",
  CellChangeTimes->{3.42260665659375*^9, 3.42261625053125*^9, 
-  3.422616339859375*^9}]
+  3.422616339859375*^9, 3.511001417393319*^9, 3.511001662445937*^9, 
+  3.5110017493039665`*^9}]
 }, Open  ]],
 
 Cell["\<\
 Pod\[IAcute]vejme se na vyhodnocenou s\[IAcute]\[THacek]. Pole \
 odpov\[IAcute]daj\[IAcute] jednotliv\[YAcute]m neuron\[URing]m. Neuron, kter\
 \[YAcute] m\[EHacek]l nejv\[EHacek]t\[SHacek]\[IAcute] odezvu, se stal \
-reprezentantem dan\[EAcute] skupiny - prvn\[IAcute] \[CHacek]\[IAcute]slo, \
-druh\[EAcute] \[CHacek]\[IAcute]slo ud\[AAcute]v\[AAcute] po\[CHacek]et prvk\
-\[URing], kter\[EAcute] k n\[EHacek]mu n\[AAcute]le\[ZHacek]\[IAcute].\
+reprezentantem dan\[EAcute] t\[RHacek]\[IAcute]dy - prvn\[IAcute] \[CHacek]\
+\[IAcute]slo ud\[AAcute]v\[AAcute] t\[RHacek]\[IAcute]du, druh\[EAcute] \
+\[CHacek]\[IAcute]slo ud\[AAcute]v\[AAcute] po\[CHacek]et prvk\[URing], kter\
+\[EAcute] k n\[EHacek]mu n\[AAcute]le\[ZHacek]\[IAcute].\
 \>", "Text",
  CellChangeTimes->{{3.403534011770277*^9, 3.403534054914394*^9}, {
    3.407607285296875*^9, 3.40760732721875*^9}, {3.4141645655625*^9, 
-   3.41416490434375*^9}, 3.41725917871875*^9}],
+   3.41416490434375*^9}, 3.41725917871875*^9, {3.5110015084588833`*^9, 
+   3.511001510938198*^9}, {3.511018721622177*^9, 3.511018733251154*^9}}],
 
 Cell[CellGroupData[{
 
@@ -422,52 +498,135 @@ Cell[BoxData[
    3.4141618418125*^9}}],
 
 Cell[BoxData[
- GraphicsBox[{InsetBox[
-    TagBox[
-     StyleBox["\<\"1:50\"\>",
-      FontSize->14],
-     StyleForm[#, FontSize -> 14]& ], {0, 1}, {-1, -1}], InsetBox[
-    TagBox[
-     StyleBox["\<\"2:24\"\>",
-      FontSize->14],
-     StyleForm[#, FontSize -> 14]& ], {1, 0}, {-1, -1}], InsetBox[
-    TagBox[
-     StyleBox["\<\"3:1\"\>",
-      FontSize->14],
-     StyleForm[#, FontSize -> 14]& ], 
-    NCache[{1, Rational[1, 2]}, {1, 0.5}], {-1, -1}], InsetBox[
-    TagBox[
-     StyleBox["\<\"2:3\"\>",
-      FontSize->14],
-     StyleForm[#, FontSize -> 14]& ], {1, 1}, {-1, -1}], InsetBox[
-    TagBox[
-     StyleBox["\<\"3:32\"\>",
-      FontSize->14],
-     StyleForm[#, FontSize -> 14]& ], {2, 0}, {-1, -1}], InsetBox[
-    TagBox[
-     StyleBox["\<\"2:23\"\>",
-      FontSize->14],
-     StyleForm[#, FontSize -> 14]& ], {2, 1}, {-1, -1}], InsetBox[
-    TagBox[
-     StyleBox["\<\"3:17\"\>",
-      FontSize->14],
-     StyleForm[#, FontSize -> 14]& ], 
-    NCache[{2, Rational[3, 2]}, {2, 1.5}], {-1, -1}]},
-  AspectRatio->0.6666666666666666,
-  GridLines->{{0, 1, 2, 3}, {0, 1, 2}},
-  PlotLabel->FormBox["\"SOM Clustering\"", TraditionalForm],
-  PlotRange->{{0, 3}, {0, 2}}]], "Output",
- CellChangeTimes->{3.422606656765625*^9, 3.42261625059375*^9, 
-  3.422616339921875*^9}]
+ TagBox[GridBox[{
+    {
+     InterpretationBox[Cell[BoxData[
+       TagBox[
+        StyleBox["\<\"SOM Clustering\"\>",
+         FontSize->14],
+        StyleForm[#, FontSize -> 14]& ]], "Text", "TR"],
+      Text[
+       StyleForm["SOM Clustering", FontSize -> 14]]]},
+    {
+     TagBox[GridBox[{
+        {"\<\" \"\>", 
+         TagBox[GridBox[{
+            {
+             InterpretationBox[Cell[BoxData[
+               TagBox[
+                StyleBox["\<\"2:24\"\>",
+                 FontSize->14],
+                StyleForm[#, FontSize -> 14]& ]], "Text", "TR"],
+              Text[
+               StyleForm["2:24", FontSize -> 14]]]},
+            {
+             InterpretationBox[Cell[BoxData[
+               TagBox[
+                StyleBox["\<\"3:1\"\>",
+                 FontSize->14],
+                StyleForm[#, FontSize -> 14]& ]], "Text", "TR"],
+              Text[
+               StyleForm["3:1", FontSize -> 14]]]}
+           },
+           AutoDelete->False,
+           
+           GridBoxItemSize->{
+            "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+          "Grid"], 
+         TagBox[GridBox[{
+            {
+             InterpretationBox[Cell[BoxData[
+               TagBox[
+                StyleBox["\<\"3:33\"\>",
+                 FontSize->14],
+                StyleForm[#, FontSize -> 14]& ]], "Text", "TR"],
+              Text[
+               StyleForm["3:33", FontSize -> 14]]]}
+           },
+           AutoDelete->False,
+           
+           GridBoxItemSize->{
+            "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+          "Grid"]},
+        {
+         TagBox[GridBox[{
+            {
+             InterpretationBox[Cell[BoxData[
+               TagBox[
+                StyleBox["\<\"1:50\"\>",
+                 FontSize->14],
+                StyleForm[#, FontSize -> 14]& ]], "Text", "TR"],
+              Text[
+               StyleForm["1:50", FontSize -> 14]]]}
+           },
+           AutoDelete->False,
+           
+           GridBoxItemSize->{
+            "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+          "Grid"], 
+         TagBox[GridBox[{
+            {
+             InterpretationBox[Cell[BoxData[
+               TagBox[
+                StyleBox["\<\"2:3\"\>",
+                 FontSize->14],
+                StyleForm[#, FontSize -> 14]& ]], "Text", "TR"],
+              Text[
+               StyleForm["2:3", FontSize -> 14]]]}
+           },
+           AutoDelete->False,
+           
+           GridBoxItemSize->{
+            "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+          "Grid"], 
+         TagBox[GridBox[{
+            {
+             InterpretationBox[Cell[BoxData[
+               TagBox[
+                StyleBox["\<\"2:23\"\>",
+                 FontSize->14],
+                StyleForm[#, FontSize -> 14]& ]], "Text", "TR"],
+              Text[
+               StyleForm["2:23", FontSize -> 14]]]},
+            {
+             InterpretationBox[Cell[BoxData[
+               TagBox[
+                StyleBox["\<\"3:16\"\>",
+                 FontSize->14],
+                StyleForm[#, FontSize -> 14]& ]], "Text", "TR"],
+              Text[
+               StyleForm["3:16", FontSize -> 14]]]}
+           },
+           AutoDelete->False,
+           
+           GridBoxItemSize->{
+            "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+          "Grid"]}
+       },
+       AutoDelete->False,
+       GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+       GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+      "Grid"]}
+   },
+   AutoDelete->False,
+   GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+  "Grid"]], "Output",
+ CellChangeTimes->{
+  3.422606656765625*^9, 3.42261625059375*^9, 3.422616339921875*^9, {
+   3.5110014689978724`*^9, 3.511001474164028*^9}, 3.5110016625299473`*^9, 
+   3.511001749384977*^9}]
 }, Open  ]],
 
 Cell["\<\
 T\[IAcute]mto p\[RHacek]\[IAcute]kazem si m\[URing]\[ZHacek]eme \
-prohl\[EAcute]dnout pr\[URing]b\[EHacek]h u\[CHacek]en\[IAcute].\
+prohl\[EAcute]dnout i pr\[URing]b\[EHacek]h u\[CHacek]en\[IAcute], jen m\
+\[IAcute]sto s\[IAcute]t\[EHacek] zad\[AAcute]me jako parametr z\[AAcute]znam \
+o u\[CHacek]en\[IAcute].\
 \>", "Text",
  CellChangeTimes->{{3.403534095618766*^9, 3.403534145991551*^9}, {
   3.407607344359375*^9, 3.407607388375*^9}, {3.414165087609375*^9, 
-  3.414165135765625*^9}}],
+  3.414165135765625*^9}, {3.5110015590513077`*^9, 3.5110015869743533`*^9}}],
 
 Cell[CellGroupData[{
 
@@ -483,286 +642,835 @@ Cell[BoxData[
    3.41416181375*^9, 3.414161830890625*^9}}],
 
 Cell[BoxData[
- GraphicsBox[{{}, {InsetBox[
-     GraphicsBox[{InsetBox[
-        TagBox[
-         StyleBox["\<\"1:49\"\>",
-          FontSize->14],
-         StyleForm[#, FontSize -> 14]& ], {0, 0}, {-1, -1}], InsetBox[
-        TagBox[
-         StyleBox["\<\"1:1\"\>",
-          FontSize->14],
-         StyleForm[#, FontSize -> 14]& ], {0, 1}, {-1, -1}], InsetBox[
-        TagBox[
-         StyleBox["\<\"2:8\"\>",
-          FontSize->14],
-         StyleForm[#, FontSize -> 14]& ], 
-        NCache[{0, Rational[3, 2]}, {0, 1.5}], {-1, -1}], InsetBox[
-        TagBox[
-         StyleBox["\<\"2:42\"\>",
-          FontSize->14],
-         StyleForm[#, FontSize -> 14]& ], {1, 0}, {-1, -1}], InsetBox[
-        TagBox[
-         StyleBox["\<\"3:50\"\>",
-          FontSize->14],
-         StyleForm[#, FontSize -> 14]& ], 
-        NCache[{1, Rational[1, 2]}, {1, 0.5}], {-1, -1}]},
-      AspectRatio->0.6666666666666666,
-      GridLines->{{0, 1, 2, 3}, {0, 1, 2}},
-      PlotLabel->FormBox["\"Iteration: 0\"", TraditionalForm],
-      PlotRange->{{0, 3}, {0, 2}}], {189., -130.5}, 
-     ImageScaled[{0.5, 0.5}], {360., 240.}], InsetBox[
-     GraphicsBox[{InsetBox[
-        TagBox[
-         StyleBox["\<\"1:50\"\>",
-          FontSize->14],
-         StyleForm[#, FontSize -> 14]& ], {0, 1}, {-1, -1}], InsetBox[
-        TagBox[
-         StyleBox["\<\"2:1\"\>",
-          FontSize->14],
-         StyleForm[#, FontSize -> 14]& ], 
-        NCache[{0, Rational[3, 2]}, {0, 1.5}], {-1, -1}], InsetBox[
-        TagBox[
-         StyleBox["\<\"2:2\"\>",
-          FontSize->14],
-         StyleForm[#, FontSize -> 14]& ], {1, 0}, {-1, -1}], InsetBox[
-        TagBox[
-         StyleBox["\<\"2:2\"\>",
-          FontSize->14],
-         StyleForm[#, FontSize -> 14]& ], {1, 1}, {-1, -1}], InsetBox[
-        TagBox[
-         StyleBox["\<\"2:44\"\>",
-          FontSize->14],
-         StyleForm[#, FontSize -> 14]& ], {2, 0}, {-1, -1}], InsetBox[
-        TagBox[
-         StyleBox["\<\"3:50\"\>",
-          FontSize->14],
-         StyleForm[#, FontSize -> 14]& ], 
-        NCache[{2, Rational[1, 2]}, {2, 0.5}], {-1, -1}], InsetBox[
-        TagBox[
-         StyleBox["\<\"2:1\"\>",
-          FontSize->14],
-         StyleForm[#, FontSize -> 14]& ], {2, 1}, {-1, -1}]},
-      AspectRatio->0.6666666666666666,
-      GridLines->{{0, 1, 2, 3}, {0, 1, 2}},
-      PlotLabel->FormBox["\"Iteration: 5\"", TraditionalForm],
-      PlotRange->{{0, 3}, {0, 2}}], {189., -391.5}, 
-     ImageScaled[{0.5, 0.5}], {360., 240.}], InsetBox[
-     GraphicsBox[{InsetBox[
-        TagBox[
-         StyleBox["\<\"2:5\"\>",
-          FontSize->14],
-         StyleForm[#, FontSize -> 14]& ], {0, 0}, {-1, -1}], InsetBox[
-        TagBox[
-         StyleBox["\<\"1:50\"\>",
-          FontSize->14],
-         StyleForm[#, FontSize -> 14]& ], {0, 1}, {-1, -1}], InsetBox[
-        TagBox[
-         StyleBox["\<\"2:23\"\>",
-          FontSize->14],
-         StyleForm[#, FontSize -> 14]& ], {1, 0}, {-1, -1}], InsetBox[
-        TagBox[
-         StyleBox["\<\"3:1\"\>",
-          FontSize->14],
-         StyleForm[#, FontSize -> 14]& ], 
-        NCache[{1, Rational[1, 2]}, {1, 0.5}], {-1, -1}], InsetBox[
-        TagBox[
-         StyleBox["\<\"2:12\"\>",
-          FontSize->14],
-         StyleForm[#, FontSize -> 14]& ], {2, 0}, {-1, -1}], InsetBox[
-        TagBox[
-         StyleBox["\<\"3:49\"\>",
-          FontSize->14],
-         StyleForm[#, FontSize -> 14]& ], 
-        NCache[{2, Rational[1, 2]}, {2, 0.5}], {-1, -1}], InsetBox[
-        TagBox[
-         StyleBox["\<\"2:10\"\>",
-          FontSize->14],
-         StyleForm[#, FontSize -> 14]& ], {2, 1}, {-1, -1}]},
-      AspectRatio->0.6666666666666666,
-      GridLines->{{0, 1, 2, 3}, {0, 1, 2}},
-      PlotLabel->FormBox["\"Iteration: 10\"", TraditionalForm],
-      PlotRange->{{0, 3}, {0, 2}}], {189., -652.5}, 
-     ImageScaled[{0.5, 0.5}], {360., 240.}], InsetBox[
-     GraphicsBox[{InsetBox[
-        TagBox[
-         StyleBox["\<\"1:50\"\>",
-          FontSize->14],
-         StyleForm[#, FontSize -> 14]& ], {0, 1}, {-1, -1}], InsetBox[
-        TagBox[
-         StyleBox["\<\"2:22\"\>",
-          FontSize->14],
-         StyleForm[#, FontSize -> 14]& ], {1, 0}, {-1, -1}], InsetBox[
-        TagBox[
-         StyleBox["\<\"3:1\"\>",
-          FontSize->14],
-         StyleForm[#, FontSize -> 14]& ], 
-        NCache[{1, Rational[1, 2]}, {1, 0.5}], {-1, -1}], InsetBox[
-        TagBox[
-         StyleBox["\<\"2:3\"\>",
-          FontSize->14],
-         StyleForm[#, FontSize -> 14]& ], {1, 1}, {-1, -1}], InsetBox[
-        TagBox[
-         StyleBox["\<\"2:7\"\>",
-          FontSize->14],
-         StyleForm[#, FontSize -> 14]& ], {2, 0}, {-1, -1}], InsetBox[
-        TagBox[
-         StyleBox["\<\"3:46\"\>",
-          FontSize->14],
-         StyleForm[#, FontSize -> 14]& ], 
-        NCache[{2, Rational[1, 2]}, {2, 0.5}], {-1, -1}], InsetBox[
-        TagBox[
-         StyleBox["\<\"2:18\"\>",
-          FontSize->14],
-         StyleForm[#, FontSize -> 14]& ], {2, 1}, {-1, -1}], InsetBox[
-        TagBox[
-         StyleBox["\<\"3:3\"\>",
-          FontSize->14],
-         StyleForm[#, FontSize -> 14]& ], 
-        NCache[{2, Rational[3, 2]}, {2, 1.5}], {-1, -1}]},
-      AspectRatio->0.6666666666666666,
-      GridLines->{{0, 1, 2, 3}, {0, 1, 2}},
-      PlotLabel->FormBox["\"Iteration: 15\"", TraditionalForm],
-      PlotRange->{{0, 3}, {0, 2}}], {189., -913.5}, 
-     ImageScaled[{0.5, 0.5}], {360., 240.}], InsetBox[
-     GraphicsBox[{InsetBox[
-        TagBox[
-         StyleBox["\<\"1:50\"\>",
-          FontSize->14],
-         StyleForm[#, FontSize -> 14]& ], {0, 1}, {-1, -1}], InsetBox[
-        TagBox[
-         StyleBox["\<\"2:24\"\>",
-          FontSize->14],
-         StyleForm[#, FontSize -> 14]& ], {1, 0}, {-1, -1}], InsetBox[
-        TagBox[
-         StyleBox["\<\"3:1\"\>",
-          FontSize->14],
-         StyleForm[#, FontSize -> 14]& ], 
-        NCache[{1, Rational[1, 2]}, {1, 0.5}], {-1, -1}], InsetBox[
-        TagBox[
-         StyleBox["\<\"2:3\"\>",
-          FontSize->14],
-         StyleForm[#, FontSize -> 14]& ], {1, 1}, {-1, -1}], InsetBox[
-        TagBox[
-         StyleBox["\<\"3:36\"\>",
-          FontSize->14],
-         StyleForm[#, FontSize -> 14]& ], {2, 0}, {-1, -1}], InsetBox[
-        TagBox[
-         StyleBox["\<\"2:23\"\>",
-          FontSize->14],
-         StyleForm[#, FontSize -> 14]& ], {2, 1}, {-1, -1}], InsetBox[
-        TagBox[
-         StyleBox["\<\"3:13\"\>",
-          FontSize->14],
-         StyleForm[#, FontSize -> 14]& ], 
-        NCache[{2, Rational[3, 2]}, {2, 1.5}], {-1, -1}]},
-      AspectRatio->0.6666666666666666,
-      GridLines->{{0, 1, 2, 3}, {0, 1, 2}},
-      PlotLabel->FormBox["\"Iteration: 20\"", TraditionalForm],
-      PlotRange->{{0, 3}, {0, 2}}], {189., -1174.5}, 
-     ImageScaled[{0.5, 0.5}], {360., 240.}], InsetBox[
-     GraphicsBox[{InsetBox[
-        TagBox[
-         StyleBox["\<\"1:50\"\>",
-          FontSize->14],
-         StyleForm[#, FontSize -> 14]& ], {0, 1}, {-1, -1}], InsetBox[
-        TagBox[
-         StyleBox["\<\"2:24\"\>",
-          FontSize->14],
-         StyleForm[#, FontSize -> 14]& ], {1, 0}, {-1, -1}], InsetBox[
-        TagBox[
-         StyleBox["\<\"3:1\"\>",
-          FontSize->14],
-         StyleForm[#, FontSize -> 14]& ], 
-        NCache[{1, Rational[1, 2]}, {1, 0.5}], {-1, -1}], InsetBox[
-        TagBox[
-         StyleBox["\<\"2:3\"\>",
-          FontSize->14],
-         StyleForm[#, FontSize -> 14]& ], {1, 1}, {-1, -1}], InsetBox[
-        TagBox[
-         StyleBox["\<\"2:1\"\>",
-          FontSize->14],
-         StyleForm[#, FontSize -> 14]& ], {2, 0}, {-1, -1}], InsetBox[
-        TagBox[
-         StyleBox["\<\"3:36\"\>",
-          FontSize->14],
-         StyleForm[#, FontSize -> 14]& ], 
-        NCache[{2, Rational[1, 2]}, {2, 0.5}], {-1, -1}], InsetBox[
-        TagBox[
-         StyleBox["\<\"2:22\"\>",
-          FontSize->14],
-         StyleForm[#, FontSize -> 14]& ], {2, 1}, {-1, -1}], InsetBox[
-        TagBox[
-         StyleBox["\<\"3:13\"\>",
-          FontSize->14],
-         StyleForm[#, FontSize -> 14]& ], 
-        NCache[{2, Rational[3, 2]}, {2, 1.5}], {-1, -1}]},
-      AspectRatio->0.6666666666666666,
-      GridLines->{{0, 1, 2, 3}, {0, 1, 2}},
-      PlotLabel->FormBox["\"Iteration: 25\"", TraditionalForm],
-      PlotRange->{{0, 3}, {0, 2}}], {189., -1435.5}, 
-     ImageScaled[{0.5, 0.5}], {360., 240.}], InsetBox[
-     GraphicsBox[{InsetBox[
-        TagBox[
-         StyleBox["\<\"1:50\"\>",
-          FontSize->14],
-         StyleForm[#, FontSize -> 14]& ], {0, 1}, {-1, -1}], InsetBox[
-        TagBox[
-         StyleBox["\<\"2:24\"\>",
-          FontSize->14],
-         StyleForm[#, FontSize -> 14]& ], {1, 0}, {-1, -1}], InsetBox[
-        TagBox[
-         StyleBox["\<\"3:1\"\>",
-          FontSize->14],
-         StyleForm[#, FontSize -> 14]& ], 
-        NCache[{1, Rational[1, 2]}, {1, 0.5}], {-1, -1}], InsetBox[
-        TagBox[
-         StyleBox["\<\"2:3\"\>",
-          FontSize->14],
-         StyleForm[#, FontSize -> 14]& ], {1, 1}, {-1, -1}], InsetBox[
-        TagBox[
-         StyleBox["\<\"3:32\"\>",
-          FontSize->14],
-         StyleForm[#, FontSize -> 14]& ], {2, 0}, {-1, -1}], InsetBox[
-        TagBox[
-         StyleBox["\<\"2:23\"\>",
-          FontSize->14],
-         StyleForm[#, FontSize -> 14]& ], {2, 1}, {-1, -1}], InsetBox[
-        TagBox[
-         StyleBox["\<\"3:17\"\>",
-          FontSize->14],
-         StyleForm[#, FontSize -> 14]& ], 
-        NCache[{2, Rational[3, 2]}, {2, 1.5}], {-1, -1}]},
-      AspectRatio->0.6666666666666666,
-      GridLines->{{0, 1, 2, 3}, {0, 1, 2}},
-      PlotLabel->FormBox["\"Iteration: 30\"", TraditionalForm],
-      PlotRange->{{0, 3}, {0, 2}}], {189., -1696.5}, 
-     ImageScaled[{0.5, 0.5}], {360., 240.}]}, 
-   StyleBox[{{}, {LineBox[{{0, 0}, {0, -261.}}], 
-      LineBox[{{0, -261.}, {0, -522.}}], LineBox[{{0, -522.}, {0, -783.}}], 
-      LineBox[{{0, -783.}, {0, -1044.}}], LineBox[{{0, -1044.}, {0, -1305.}}],
-       LineBox[{{0, -1305.}, {0, -1566.}}], 
-      LineBox[{{0, -1566.}, {0, -1827.}}], 
-      LineBox[{{378., 0}, {378., -261.}}], 
-      LineBox[{{378., -261.}, {378., -522.}}], 
-      LineBox[{{378., -522.}, {378., -783.}}], 
-      LineBox[{{378., -783.}, {378., -1044.}}], 
-      LineBox[{{378., -1044.}, {378., -1305.}}], 
-      LineBox[{{378., -1305.}, {378., -1566.}}], 
-      LineBox[{{378., -1566.}, {378., -1827.}}], LineBox[{{0, 0}, {378., 0}}],
-       LineBox[{{0, -261.}, {378., -261.}}], 
-      LineBox[{{0, -522.}, {378., -522.}}], 
-      LineBox[{{0, -783.}, {378., -783.}}], 
-      LineBox[{{0, -1044.}, {378., -1044.}}], 
-      LineBox[{{0, -1305.}, {378., -1305.}}], 
-      LineBox[{{0, -1566.}, {378., -1566.}}], 
-      LineBox[{{0, -1827.}, {378., -1827.}}]}},
-    Antialiasing->False]},
-  ContentSelectable->True,
-  ImageSize->{184., Automatic},
-  PlotLabel->FormBox["\"Unsupervised Clustering after\"", TraditionalForm],
-  PlotRangePadding->{6, 5}]], "Output",
- CellChangeTimes->{3.422606657171875*^9, 3.422616251*^9, 3.4226163403125*^9}]
+ TagBox[GridBox[{
+    {
+     InterpretationBox[Cell[BoxData[
+       TagBox[
+        StyleBox["\<\"Unsupervised Clustering after\"\>",
+         FontSize->14],
+        StyleForm[#, FontSize -> 14]& ]], "Text", "TR"],
+      Text[
+       StyleForm["Unsupervised Clustering after", FontSize -> 14]]]},
+    {
+     TagBox[GridBox[{
+        {"\<\"Iteration: 0\"\>"},
+        {
+         TagBox[GridBox[{
+            {
+             TagBox[GridBox[{
+                {
+                 InterpretationBox[Cell[BoxData[
+                   TagBox[
+                    StyleBox["\<\"2:26\"\>",
+                    FontSize->14],
+                    StyleForm[#, FontSize -> 14]& ]], "Text", "TR"],
+                  Text[
+                   StyleForm["2:26", FontSize -> 14]]]},
+                {
+                 InterpretationBox[Cell[BoxData[
+                   TagBox[
+                    StyleBox["\<\"3:47\"\>",
+                    FontSize->14],
+                    StyleForm[#, FontSize -> 14]& ]], "Text", "TR"],
+                  Text[
+                   StyleForm["3:47", FontSize -> 14]]]}
+               },
+               AutoDelete->False,
+               
+               GridBoxItemSize->{
+                "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+              "Grid"], "\<\" \"\>", 
+             TagBox[GridBox[{
+                {
+                 InterpretationBox[Cell[BoxData[
+                   TagBox[
+                    StyleBox["\<\"2:12\"\>",
+                    FontSize->14],
+                    StyleForm[#, FontSize -> 14]& ]], "Text", "TR"],
+                  Text[
+                   StyleForm["2:12", FontSize -> 14]]]},
+                {
+                 InterpretationBox[Cell[BoxData[
+                   TagBox[
+                    StyleBox["\<\"3:3\"\>",
+                    FontSize->14],
+                    StyleForm[#, FontSize -> 14]& ]], "Text", "TR"],
+                  Text[
+                   StyleForm["3:3", FontSize -> 14]]]}
+               },
+               AutoDelete->False,
+               
+               GridBoxItemSize->{
+                "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+              "Grid"]},
+            {
+             TagBox[GridBox[{
+                {
+                 InterpretationBox[Cell[BoxData[
+                   TagBox[
+                    StyleBox["\<\"1:50\"\>",
+                    FontSize->14],
+                    StyleForm[#, FontSize -> 14]& ]], "Text", "TR"],
+                  Text[
+                   StyleForm["1:50", FontSize -> 14]]]},
+                {
+                 InterpretationBox[Cell[BoxData[
+                   TagBox[
+                    StyleBox["\<\"2:1\"\>",
+                    FontSize->14],
+                    StyleForm[#, FontSize -> 14]& ]], "Text", "TR"],
+                  Text[
+                   StyleForm["2:1", FontSize -> 14]]]}
+               },
+               AutoDelete->False,
+               
+               GridBoxItemSize->{
+                "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+              "Grid"], 
+             TagBox[GridBox[{
+                {
+                 InterpretationBox[Cell[BoxData[
+                   TagBox[
+                    StyleBox["\<\"2:9\"\>",
+                    FontSize->14],
+                    StyleForm[#, FontSize -> 14]& ]], "Text", "TR"],
+                  Text[
+                   StyleForm["2:9", FontSize -> 14]]]}
+               },
+               AutoDelete->False,
+               
+               GridBoxItemSize->{
+                "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+              "Grid"], 
+             TagBox[GridBox[{
+                {
+                 InterpretationBox[Cell[BoxData[
+                   TagBox[
+                    StyleBox["\<\"2:2\"\>",
+                    FontSize->14],
+                    StyleForm[#, FontSize -> 14]& ]], "Text", "TR"],
+                  Text[
+                   StyleForm["2:2", FontSize -> 14]]]}
+               },
+               AutoDelete->False,
+               
+               GridBoxItemSize->{
+                "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+              "Grid"]}
+           },
+           AutoDelete->False,
+           GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+           
+           GridBoxItemSize->{
+            "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+          "Grid"]}
+       },
+       AutoDelete->False,
+       GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+       GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+      "Grid"]},
+    {
+     TagBox[GridBox[{
+        {"\<\"Iteration: 5\"\>"},
+        {
+         TagBox[GridBox[{
+            {
+             TagBox[GridBox[{
+                {
+                 InterpretationBox[Cell[BoxData[
+                   TagBox[
+                    StyleBox["\<\"2:8\"\>",
+                    FontSize->14],
+                    StyleForm[#, FontSize -> 14]& ]], "Text", "TR"],
+                  Text[
+                   StyleForm["2:8", FontSize -> 14]]]}
+               },
+               AutoDelete->False,
+               
+               GridBoxItemSize->{
+                "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+              "Grid"], 
+             TagBox[GridBox[{
+                {
+                 InterpretationBox[Cell[BoxData[
+                   TagBox[
+                    StyleBox["\<\"2:2\"\>",
+                    FontSize->14],
+                    StyleForm[#, FontSize -> 14]& ]], "Text", "TR"],
+                  Text[
+                   StyleForm["2:2", FontSize -> 14]]]}
+               },
+               AutoDelete->False,
+               
+               GridBoxItemSize->{
+                "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+              "Grid"], 
+             TagBox[GridBox[{
+                {
+                 InterpretationBox[Cell[BoxData[
+                   TagBox[
+                    StyleBox["\<\"2:6\"\>",
+                    FontSize->14],
+                    StyleForm[#, FontSize -> 14]& ]], "Text", "TR"],
+                  Text[
+                   StyleForm["2:6", FontSize -> 14]]]},
+                {
+                 InterpretationBox[Cell[BoxData[
+                   TagBox[
+                    StyleBox["\<\"3:45\"\>",
+                    FontSize->14],
+                    StyleForm[#, FontSize -> 14]& ]], "Text", "TR"],
+                  Text[
+                   StyleForm["3:45", FontSize -> 14]]]}
+               },
+               AutoDelete->False,
+               
+               GridBoxItemSize->{
+                "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+              "Grid"]},
+            {
+             TagBox[GridBox[{
+                {
+                 InterpretationBox[Cell[BoxData[
+                   TagBox[
+                    StyleBox["\<\"1:50\"\>",
+                    FontSize->14],
+                    StyleForm[#, FontSize -> 14]& ]], "Text", "TR"],
+                  Text[
+                   StyleForm["1:50", FontSize -> 14]]]},
+                {
+                 InterpretationBox[Cell[BoxData[
+                   TagBox[
+                    StyleBox["\<\"2:30\"\>",
+                    FontSize->14],
+                    StyleForm[#, FontSize -> 14]& ]], "Text", "TR"],
+                  Text[
+                   StyleForm["2:30", FontSize -> 14]]]},
+                {
+                 InterpretationBox[Cell[BoxData[
+                   TagBox[
+                    StyleBox["\<\"3:1\"\>",
+                    FontSize->14],
+                    StyleForm[#, FontSize -> 14]& ]], "Text", "TR"],
+                  Text[
+                   StyleForm["3:1", FontSize -> 14]]]}
+               },
+               AutoDelete->False,
+               
+               GridBoxItemSize->{
+                "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+              "Grid"], 
+             TagBox[GridBox[{
+                {
+                 InterpretationBox[Cell[BoxData[
+                   TagBox[
+                    StyleBox["\<\"2:1\"\>",
+                    FontSize->14],
+                    StyleForm[#, FontSize -> 14]& ]], "Text", "TR"],
+                  Text[
+                   StyleForm["2:1", FontSize -> 14]]]}
+               },
+               AutoDelete->False,
+               
+               GridBoxItemSize->{
+                "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+              "Grid"], 
+             TagBox[GridBox[{
+                {
+                 InterpretationBox[Cell[BoxData[
+                   TagBox[
+                    StyleBox["\<\"2:3\"\>",
+                    FontSize->14],
+                    StyleForm[#, FontSize -> 14]& ]], "Text", "TR"],
+                  Text[
+                   StyleForm["2:3", FontSize -> 14]]]},
+                {
+                 InterpretationBox[Cell[BoxData[
+                   TagBox[
+                    StyleBox["\<\"3:4\"\>",
+                    FontSize->14],
+                    StyleForm[#, FontSize -> 14]& ]], "Text", "TR"],
+                  Text[
+                   StyleForm["3:4", FontSize -> 14]]]}
+               },
+               AutoDelete->False,
+               
+               GridBoxItemSize->{
+                "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+              "Grid"]}
+           },
+           AutoDelete->False,
+           GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+           
+           GridBoxItemSize->{
+            "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+          "Grid"]}
+       },
+       AutoDelete->False,
+       GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+       GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+      "Grid"]},
+    {
+     TagBox[GridBox[{
+        {"\<\"Iteration: 10\"\>"},
+        {
+         TagBox[GridBox[{
+            {"\<\" \"\>", 
+             TagBox[GridBox[{
+                {
+                 InterpretationBox[Cell[BoxData[
+                   TagBox[
+                    StyleBox["\<\"2:19\"\>",
+                    FontSize->14],
+                    StyleForm[#, FontSize -> 14]& ]], "Text", "TR"],
+                  Text[
+                   StyleForm["2:19", FontSize -> 14]]]},
+                {
+                 InterpretationBox[Cell[BoxData[
+                   TagBox[
+                    StyleBox["\<\"3:1\"\>",
+                    FontSize->14],
+                    StyleForm[#, FontSize -> 14]& ]], "Text", "TR"],
+                  Text[
+                   StyleForm["3:1", FontSize -> 14]]]}
+               },
+               AutoDelete->False,
+               
+               GridBoxItemSize->{
+                "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+              "Grid"], 
+             TagBox[GridBox[{
+                {
+                 InterpretationBox[Cell[BoxData[
+                   TagBox[
+                    StyleBox["\<\"2:25\"\>",
+                    FontSize->14],
+                    StyleForm[#, FontSize -> 14]& ]], "Text", "TR"],
+                  Text[
+                   StyleForm["2:25", FontSize -> 14]]]},
+                {
+                 InterpretationBox[Cell[BoxData[
+                   TagBox[
+                    StyleBox["\<\"3:49\"\>",
+                    FontSize->14],
+                    StyleForm[#, FontSize -> 14]& ]], "Text", "TR"],
+                  Text[
+                   StyleForm["3:49", FontSize -> 14]]]}
+               },
+               AutoDelete->False,
+               
+               GridBoxItemSize->{
+                "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+              "Grid"]},
+            {
+             TagBox[GridBox[{
+                {
+                 InterpretationBox[Cell[BoxData[
+                   TagBox[
+                    StyleBox["\<\"1:50\"\>",
+                    FontSize->14],
+                    StyleForm[#, FontSize -> 14]& ]], "Text", "TR"],
+                  Text[
+                   StyleForm["1:50", FontSize -> 14]]]}
+               },
+               AutoDelete->False,
+               
+               GridBoxItemSize->{
+                "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+              "Grid"], 
+             TagBox[GridBox[{
+                {
+                 InterpretationBox[Cell[BoxData[
+                   TagBox[
+                    StyleBox["\<\"2:4\"\>",
+                    FontSize->14],
+                    StyleForm[#, FontSize -> 14]& ]], "Text", "TR"],
+                  Text[
+                   StyleForm["2:4", FontSize -> 14]]]}
+               },
+               AutoDelete->False,
+               
+               GridBoxItemSize->{
+                "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+              "Grid"], 
+             TagBox[GridBox[{
+                {
+                 InterpretationBox[Cell[BoxData[
+                   TagBox[
+                    StyleBox["\<\"2:2\"\>",
+                    FontSize->14],
+                    StyleForm[#, FontSize -> 14]& ]], "Text", "TR"],
+                  Text[
+                   StyleForm["2:2", FontSize -> 14]]]}
+               },
+               AutoDelete->False,
+               
+               GridBoxItemSize->{
+                "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+              "Grid"]}
+           },
+           AutoDelete->False,
+           GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+           
+           GridBoxItemSize->{
+            "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+          "Grid"]}
+       },
+       AutoDelete->False,
+       GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+       GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+      "Grid"]},
+    {
+     TagBox[GridBox[{
+        {"\<\"Iteration: 15\"\>"},
+        {
+         TagBox[GridBox[{
+            {"\<\" \"\>", 
+             TagBox[GridBox[{
+                {
+                 InterpretationBox[Cell[BoxData[
+                   TagBox[
+                    StyleBox["\<\"2:26\"\>",
+                    FontSize->14],
+                    StyleForm[#, FontSize -> 14]& ]], "Text", "TR"],
+                  Text[
+                   StyleForm["2:26", FontSize -> 14]]]},
+                {
+                 InterpretationBox[Cell[BoxData[
+                   TagBox[
+                    StyleBox["\<\"3:1\"\>",
+                    FontSize->14],
+                    StyleForm[#, FontSize -> 14]& ]], "Text", "TR"],
+                  Text[
+                   StyleForm["3:1", FontSize -> 14]]]}
+               },
+               AutoDelete->False,
+               
+               GridBoxItemSize->{
+                "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+              "Grid"], 
+             TagBox[GridBox[{
+                {
+                 InterpretationBox[Cell[BoxData[
+                   TagBox[
+                    StyleBox["\<\"2:2\"\>",
+                    FontSize->14],
+                    StyleForm[#, FontSize -> 14]& ]], "Text", "TR"],
+                  Text[
+                   StyleForm["2:2", FontSize -> 14]]]},
+                {
+                 InterpretationBox[Cell[BoxData[
+                   TagBox[
+                    StyleBox["\<\"3:37\"\>",
+                    FontSize->14],
+                    StyleForm[#, FontSize -> 14]& ]], "Text", "TR"],
+                  Text[
+                   StyleForm["3:37", FontSize -> 14]]]}
+               },
+               AutoDelete->False,
+               
+               GridBoxItemSize->{
+                "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+              "Grid"]},
+            {
+             TagBox[GridBox[{
+                {
+                 InterpretationBox[Cell[BoxData[
+                   TagBox[
+                    StyleBox["\<\"1:50\"\>",
+                    FontSize->14],
+                    StyleForm[#, FontSize -> 14]& ]], "Text", "TR"],
+                  Text[
+                   StyleForm["1:50", FontSize -> 14]]]}
+               },
+               AutoDelete->False,
+               
+               GridBoxItemSize->{
+                "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+              "Grid"], 
+             TagBox[GridBox[{
+                {
+                 InterpretationBox[Cell[BoxData[
+                   TagBox[
+                    StyleBox["\<\"2:3\"\>",
+                    FontSize->14],
+                    StyleForm[#, FontSize -> 14]& ]], "Text", "TR"],
+                  Text[
+                   StyleForm["2:3", FontSize -> 14]]]}
+               },
+               AutoDelete->False,
+               
+               GridBoxItemSize->{
+                "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+              "Grid"], 
+             TagBox[GridBox[{
+                {
+                 InterpretationBox[Cell[BoxData[
+                   TagBox[
+                    StyleBox["\<\"2:19\"\>",
+                    FontSize->14],
+                    StyleForm[#, FontSize -> 14]& ]], "Text", "TR"],
+                  Text[
+                   StyleForm["2:19", FontSize -> 14]]]},
+                {
+                 InterpretationBox[Cell[BoxData[
+                   TagBox[
+                    StyleBox["\<\"3:12\"\>",
+                    FontSize->14],
+                    StyleForm[#, FontSize -> 14]& ]], "Text", "TR"],
+                  Text[
+                   StyleForm["3:12", FontSize -> 14]]]}
+               },
+               AutoDelete->False,
+               
+               GridBoxItemSize->{
+                "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+              "Grid"]}
+           },
+           AutoDelete->False,
+           GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+           GridBoxItemSize->{
+            "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+          "Grid"]}
+       },
+       AutoDelete->False,
+       GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+       GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+      "Grid"]},
+    {
+     TagBox[GridBox[{
+        {"\<\"Iteration: 20\"\>"},
+        {
+         TagBox[GridBox[{
+            {"\<\" \"\>", 
+             TagBox[GridBox[{
+                {
+                 InterpretationBox[Cell[BoxData[
+                   TagBox[
+                    StyleBox["\<\"2:29\"\>",
+                    FontSize->14],
+                    StyleForm[#, FontSize -> 14]& ]], "Text", "TR"],
+                  Text[
+                   StyleForm["2:29", FontSize -> 14]]]},
+                {
+                 InterpretationBox[Cell[BoxData[
+                   TagBox[
+                    StyleBox["\<\"3:1\"\>",
+                    FontSize->14],
+                    StyleForm[#, FontSize -> 14]& ]], "Text", "TR"],
+                  Text[
+                   StyleForm["3:1", FontSize -> 14]]]}
+               },
+               AutoDelete->False,
+               
+               GridBoxItemSize->{
+                "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+              "Grid"], 
+             TagBox[GridBox[{
+                {
+                 InterpretationBox[Cell[BoxData[
+                   TagBox[
+                    StyleBox["\<\"3:29\"\>",
+                    FontSize->14],
+                    StyleForm[#, FontSize -> 14]& ]], "Text", "TR"],
+                  Text[
+                   StyleForm["3:29", FontSize -> 14]]]}
+               },
+               AutoDelete->False,
+               
+               GridBoxItemSize->{
+                "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+              "Grid"]},
+            {
+             TagBox[GridBox[{
+                {
+                 InterpretationBox[Cell[BoxData[
+                   TagBox[
+                    StyleBox["\<\"1:50\"\>",
+                    FontSize->14],
+                    StyleForm[#, FontSize -> 14]& ]], "Text", "TR"],
+                  Text[
+                   StyleForm["1:50", FontSize -> 14]]]}
+               },
+               AutoDelete->False,
+               
+               GridBoxItemSize->{
+                "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+              "Grid"], 
+             TagBox[GridBox[{
+                {
+                 InterpretationBox[Cell[BoxData[
+                   TagBox[
+                    StyleBox["\<\"2:3\"\>",
+                    FontSize->14],
+                    StyleForm[#, FontSize -> 14]& ]], "Text", "TR"],
+                  Text[
+                   StyleForm["2:3", FontSize -> 14]]]}
+               },
+               AutoDelete->False,
+               
+               GridBoxItemSize->{
+                "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+              "Grid"], 
+             TagBox[GridBox[{
+                {
+                 InterpretationBox[Cell[BoxData[
+                   TagBox[
+                    StyleBox["\<\"2:18\"\>",
+                    FontSize->14],
+                    StyleForm[#, FontSize -> 14]& ]], "Text", "TR"],
+                  Text[
+                   StyleForm["2:18", FontSize -> 14]]]},
+                {
+                 InterpretationBox[Cell[BoxData[
+                   TagBox[
+                    StyleBox["\<\"3:20\"\>",
+                    FontSize->14],
+                    StyleForm[#, FontSize -> 14]& ]], "Text", "TR"],
+                  Text[
+                   StyleForm["3:20", FontSize -> 14]]]}
+               },
+               AutoDelete->False,
+               
+               GridBoxItemSize->{
+                "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+              "Grid"]}
+           },
+           AutoDelete->False,
+           GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+           GridBoxItemSize->{
+            "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+          "Grid"]}
+       },
+       AutoDelete->False,
+       GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+       GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+      "Grid"]},
+    {
+     TagBox[GridBox[{
+        {"\<\"Iteration: 25\"\>"},
+        {
+         TagBox[GridBox[{
+            {"\<\" \"\>", 
+             TagBox[GridBox[{
+                {
+                 InterpretationBox[Cell[BoxData[
+                   TagBox[
+                    StyleBox["\<\"2:24\"\>",
+                    FontSize->14],
+                    StyleForm[#, FontSize -> 14]& ]], "Text", "TR"],
+                  Text[
+                   StyleForm["2:24", FontSize -> 14]]]},
+                {
+                 InterpretationBox[Cell[BoxData[
+                   TagBox[
+                    StyleBox["\<\"3:1\"\>",
+                    FontSize->14],
+                    StyleForm[#, FontSize -> 14]& ]], "Text", "TR"],
+                  Text[
+                   StyleForm["3:1", FontSize -> 14]]]}
+               },
+               AutoDelete->False,
+               
+               GridBoxItemSize->{
+                "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+              "Grid"], 
+             TagBox[GridBox[{
+                {
+                 InterpretationBox[Cell[BoxData[
+                   TagBox[
+                    StyleBox["\<\"3:35\"\>",
+                    FontSize->14],
+                    StyleForm[#, FontSize -> 14]& ]], "Text", "TR"],
+                  Text[
+                   StyleForm["3:35", FontSize -> 14]]]}
+               },
+               AutoDelete->False,
+               
+               GridBoxItemSize->{
+                "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+              "Grid"]},
+            {
+             TagBox[GridBox[{
+                {
+                 InterpretationBox[Cell[BoxData[
+                   TagBox[
+                    StyleBox["\<\"1:50\"\>",
+                    FontSize->14],
+                    StyleForm[#, FontSize -> 14]& ]], "Text", "TR"],
+                  Text[
+                   StyleForm["1:50", FontSize -> 14]]]}
+               },
+               AutoDelete->False,
+               
+               GridBoxItemSize->{
+                "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+              "Grid"], 
+             TagBox[GridBox[{
+                {
+                 InterpretationBox[Cell[BoxData[
+                   TagBox[
+                    StyleBox["\<\"2:3\"\>",
+                    FontSize->14],
+                    StyleForm[#, FontSize -> 14]& ]], "Text", "TR"],
+                  Text[
+                   StyleForm["2:3", FontSize -> 14]]]}
+               },
+               AutoDelete->False,
+               
+               GridBoxItemSize->{
+                "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+              "Grid"], 
+             TagBox[GridBox[{
+                {
+                 InterpretationBox[Cell[BoxData[
+                   TagBox[
+                    StyleBox["\<\"2:23\"\>",
+                    FontSize->14],
+                    StyleForm[#, FontSize -> 14]& ]], "Text", "TR"],
+                  Text[
+                   StyleForm["2:23", FontSize -> 14]]]},
+                {
+                 InterpretationBox[Cell[BoxData[
+                   TagBox[
+                    StyleBox["\<\"3:14\"\>",
+                    FontSize->14],
+                    StyleForm[#, FontSize -> 14]& ]], "Text", "TR"],
+                  Text[
+                   StyleForm["3:14", FontSize -> 14]]]}
+               },
+               AutoDelete->False,
+               
+               GridBoxItemSize->{
+                "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+              "Grid"]}
+           },
+           AutoDelete->False,
+           GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+           GridBoxItemSize->{
+            "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+          "Grid"]}
+       },
+       AutoDelete->False,
+       GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+       GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+      "Grid"]},
+    {
+     TagBox[GridBox[{
+        {"\<\"Iteration: 30\"\>"},
+        {
+         TagBox[GridBox[{
+            {"\<\" \"\>", 
+             TagBox[GridBox[{
+                {
+                 InterpretationBox[Cell[BoxData[
+                   TagBox[
+                    StyleBox["\<\"2:24\"\>",
+                    FontSize->14],
+                    StyleForm[#, FontSize -> 14]& ]], "Text", "TR"],
+                  Text[
+                   StyleForm["2:24", FontSize -> 14]]]},
+                {
+                 InterpretationBox[Cell[BoxData[
+                   TagBox[
+                    StyleBox["\<\"3:1\"\>",
+                    FontSize->14],
+                    StyleForm[#, FontSize -> 14]& ]], "Text", "TR"],
+                  Text[
+                   StyleForm["3:1", FontSize -> 14]]]}
+               },
+               AutoDelete->False,
+               
+               GridBoxItemSize->{
+                "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+              "Grid"], 
+             TagBox[GridBox[{
+                {
+                 InterpretationBox[Cell[BoxData[
+                   TagBox[
+                    StyleBox["\<\"3:33\"\>",
+                    FontSize->14],
+                    StyleForm[#, FontSize -> 14]& ]], "Text", "TR"],
+                  Text[
+                   StyleForm["3:33", FontSize -> 14]]]}
+               },
+               AutoDelete->False,
+               
+               GridBoxItemSize->{
+                "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+              "Grid"]},
+            {
+             TagBox[GridBox[{
+                {
+                 InterpretationBox[Cell[BoxData[
+                   TagBox[
+                    StyleBox["\<\"1:50\"\>",
+                    FontSize->14],
+                    StyleForm[#, FontSize -> 14]& ]], "Text", "TR"],
+                  Text[
+                   StyleForm["1:50", FontSize -> 14]]]}
+               },
+               AutoDelete->False,
+               
+               GridBoxItemSize->{
+                "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+              "Grid"], 
+             TagBox[GridBox[{
+                {
+                 InterpretationBox[Cell[BoxData[
+                   TagBox[
+                    StyleBox["\<\"2:3\"\>",
+                    FontSize->14],
+                    StyleForm[#, FontSize -> 14]& ]], "Text", "TR"],
+                  Text[
+                   StyleForm["2:3", FontSize -> 14]]]}
+               },
+               AutoDelete->False,
+               
+               GridBoxItemSize->{
+                "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+              "Grid"], 
+             TagBox[GridBox[{
+                {
+                 InterpretationBox[Cell[BoxData[
+                   TagBox[
+                    StyleBox["\<\"2:23\"\>",
+                    FontSize->14],
+                    StyleForm[#, FontSize -> 14]& ]], "Text", "TR"],
+                  Text[
+                   StyleForm["2:23", FontSize -> 14]]]},
+                {
+                 InterpretationBox[Cell[BoxData[
+                   TagBox[
+                    StyleBox["\<\"3:16\"\>",
+                    FontSize->14],
+                    StyleForm[#, FontSize -> 14]& ]], "Text", "TR"],
+                  Text[
+                   StyleForm["3:16", FontSize -> 14]]]}
+               },
+               AutoDelete->False,
+               
+               GridBoxItemSize->{
+                "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+              "Grid"]}
+           },
+           AutoDelete->False,
+           GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+           GridBoxItemSize->{
+            "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+          "Grid"]}
+       },
+       AutoDelete->False,
+       GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+       GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+      "Grid"]}
+   },
+   AutoDelete->False,
+   GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+  "Grid"]], "Output",
+ CellChangeTimes->{3.422606657171875*^9, 3.422616251*^9, 3.4226163403125*^9, 
+  3.5110015912368946`*^9, 3.5110016628299856`*^9, 3.511001749693516*^9}]
 }, Open  ]],
 
 Cell["\<\
@@ -792,11 +1500,12 @@ Cell[BoxData[
  RowBox[{"{", 
   RowBox[{
    RowBox[{"{", 
-    RowBox[{"1", ",", "2"}], "}"}], ",", 
+    RowBox[{"2", ",", "2"}], "}"}], ",", 
    RowBox[{"{", 
     RowBox[{"1", ",", "2"}], "}"}]}], "}"}]], "Output",
  CellChangeTimes->{3.422606657203125*^9, 3.422616251046875*^9, 
-  3.422616340359375*^9}]
+  3.422616340359375*^9, 3.5110016156905003`*^9, 3.511001662908996*^9, 
+  3.511001749772526*^9}]
 }, Open  ]],
 
 Cell["\<\
@@ -822,9 +1531,11 @@ Cell[BoxData[
   "]"}]], "Input",
  CellChangeTimes->{{3.414166656015625*^9, 3.4141666750625*^9}}],
 
-Cell[BoxData["5.317515263740271`"], "Output",
- CellChangeTimes->{3.422606657234375*^9, 3.4226162510625*^9, 
-  3.422616340375*^9}]
+Cell[BoxData["5.326200137143304`"], "Output",
+ CellChangeTimes->{
+  3.422606657234375*^9, 3.4226162510625*^9, 3.422616340375*^9, {
+   3.511001634926943*^9, 3.5110016629780045`*^9}, 3.5110017498070307`*^9, 
+   3.511001798848258*^9}]
 }, Open  ]],
 
 Cell["\<\
@@ -832,9 +1543,14 @@ Tak\[EAcute] lze smazat ur\[CHacek]it\[EAcute] neurony z natr\[EAcute]novan\
 \[EAcute] s\[IAcute]t\[EHacek] pomoc\[IAcute] p\[RHacek]\[IAcute]kazu \
 NeuronDelete, kter\[EAcute]mu se zad\[AAcute]vaj\[IAcute] sou\[RHacek]adnice \
 dan\[YAcute]ch neuron\[URing]. Zde odstra\[NHacek]ujeme 1. \
-\[RHacek]\[AAcute]dek a 2. slupec.\
+\[RHacek]\[AAcute]dek a 2. slupec. Pokud chcete odstranit pouze \[RHacek]\
+\[AAcute]dek nebo pouze sloupec, ponechte na m\[IAcute]st\[EHacek] druh\
+\[EAcute]ho parametru {}, pokud chcete odstranit v\[IAcute]ce \[RHacek]\
+\[AAcute]dk\[URing] nebo sloupc\[URing], uve\[DHacek]te je jako seznam p\
+\[RHacek]. {2,3}.\
 \>", "Text",
- CellChangeTimes->{{3.414166840515625*^9, 3.41416795315625*^9}}],
+ CellChangeTimes->{{3.414166840515625*^9, 3.41416795315625*^9}, {
+  3.51101891757456*^9, 3.51101904089522*^9}}],
 
 Cell[CellGroupData[{
 
@@ -846,7 +1562,8 @@ Cell[BoxData[
      RowBox[{
       RowBox[{"{", "1", "}"}], ",", 
       RowBox[{"{", "2", "}"}]}], "}"}]}], "]"}]}]], "Input",
- CellChangeTimes->{{3.41416718509375*^9, 3.414167898078125*^9}}],
+ CellChangeTimes->{{3.41416718509375*^9, 3.414167898078125*^9}, {
+  3.5110017817880917`*^9, 3.5110018474679317`*^9}}],
 
 Cell[BoxData[
  TagBox[
@@ -862,8 +1579,8 @@ Cell[BoxData[
        RowBox[{"CreationDate", " ", "\[Rule]", " ", 
         RowBox[{"{", 
          RowBox[{
-         "2008", ",", " ", "6", ",", " ", "16", ",", " ", "16", ",", " ", 
-          "45", ",", " ", "40.40625`9.359023426619258"}], "}"}]}], ",", " ", 
+         "2011", ",", " ", "4", ",", " ", "5", ",", " ", "16", ",", " ", "17",
+           ",", " ", "28.4470562`9.206612243546779"}], "}"}]}], ",", " ", 
        RowBox[{"Connect", " ", "\[Rule]", " ", "False"}], ",", " ", 
        RowBox[{"SOM", " ", "\[Rule]", " ", 
         RowBox[{"{", 
@@ -873,8 +1590,10 @@ Cell[BoxData[
    Null,
    Editable->False],
   DisplayForm]], "Output",
- CellChangeTimes->{3.42260665725*^9, 3.42261625109375*^9, 3.42261634040625*^9}
-  ]
+ CellChangeTimes->{
+  3.42260665725*^9, 3.42261625109375*^9, 3.42261634040625*^9, {
+   3.5110016474475327`*^9, 3.511001663044513*^9}, 3.5110017499015427`*^9, {
+   3.5110017832597785`*^9, 3.5110018484610577`*^9}}]
 }, Open  ]],
 
 Cell["\<\
@@ -892,43 +1611,89 @@ Cell[BoxData[
  CellChangeTimes->{{3.414167413375*^9, 3.41416777471875*^9}}],
 
 Cell[BoxData[
- GraphicsBox[{InsetBox[
-    TagBox[
-     StyleBox["\<\"1:50\"\>",
-      FontSize->14],
-     StyleForm[#, FontSize -> 14]& ], {0, 0}, {-1, -1}], InsetBox[
-    TagBox[
-     StyleBox["\<\"2:45\"\>",
-      FontSize->14],
-     StyleForm[#, FontSize -> 14]& ], 
-    NCache[{0, Rational[1, 3]}, {0, 0.3333333333333333}], {-1, -1}], 
-   InsetBox[
-    TagBox[
-     StyleBox["\<\"3:8\"\>",
-      FontSize->14],
-     StyleForm[#, FontSize -> 14]& ], 
-    NCache[{0, Rational[2, 3]}, {0, 0.6666666666666666}], {-1, -1}], 
-   InsetBox[
-    TagBox[
-     StyleBox["\<\"2:5\"\>",
-      FontSize->14],
-     StyleForm[#, FontSize -> 14]& ], {1, 0}, {-1, -1}], InsetBox[
-    TagBox[
-     StyleBox["\<\"3:42\"\>",
-      FontSize->14],
-     StyleForm[#, FontSize -> 14]& ], 
-    NCache[{1, Rational[1, 2]}, {1, 0.5}], {-1, -1}]},
-  AspectRatio->0.5,
-  GridLines->{{0, 1, 2}, {0, 1}},
-  ImageSize->{221., Automatic},
-  PlotLabel->FormBox["\"SOM Clustering\"", TraditionalForm],
-  PlotRange->{{0, 2}, {0, 1}}]], "Output",
- CellChangeTimes->{3.422606657296875*^9, 3.422616251140625*^9, 
-  3.422616340453125*^9}]
+ TagBox[GridBox[{
+    {
+     InterpretationBox[Cell[BoxData[
+       TagBox[
+        StyleBox["\<\"SOM Clustering\"\>",
+         FontSize->14],
+        StyleForm[#, FontSize -> 14]& ]], "Text", "TR"],
+      Text[
+       StyleForm["SOM Clustering", FontSize -> 14]]]},
+    {
+     TagBox[GridBox[{
+        {
+         TagBox[GridBox[{
+            {
+             InterpretationBox[Cell[BoxData[
+               TagBox[
+                StyleBox["\<\"1:50\"\>",
+                 FontSize->14],
+                StyleForm[#, FontSize -> 14]& ]], "Text", "TR"],
+              Text[
+               StyleForm["1:50", FontSize -> 14]]]},
+            {
+             InterpretationBox[Cell[BoxData[
+               TagBox[
+                StyleBox["\<\"2:41\"\>",
+                 FontSize->14],
+                StyleForm[#, FontSize -> 14]& ]], "Text", "TR"],
+              Text[
+               StyleForm["2:41", FontSize -> 14]]]},
+            {
+             InterpretationBox[Cell[BoxData[
+               TagBox[
+                StyleBox["\<\"3:4\"\>",
+                 FontSize->14],
+                StyleForm[#, FontSize -> 14]& ]], "Text", "TR"],
+              Text[
+               StyleForm["3:4", FontSize -> 14]]]}
+           },
+           AutoDelete->False,
+           
+           GridBoxItemSize->{
+            "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+          "Grid"], 
+         TagBox[GridBox[{
+            {
+             InterpretationBox[Cell[BoxData[
+               TagBox[
+                StyleBox["\<\"2:9\"\>",
+                 FontSize->14],
+                StyleForm[#, FontSize -> 14]& ]], "Text", "TR"],
+              Text[
+               StyleForm["2:9", FontSize -> 14]]]},
+            {
+             InterpretationBox[Cell[BoxData[
+               TagBox[
+                StyleBox["\<\"3:46\"\>",
+                 FontSize->14],
+                StyleForm[#, FontSize -> 14]& ]], "Text", "TR"],
+              Text[
+               StyleForm["3:46", FontSize -> 14]]]}
+           },
+           AutoDelete->False,
+           
+           GridBoxItemSize->{
+            "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+          "Grid"]}
+       },
+       AutoDelete->False,
+       GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+       GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+      "Grid"]}
+   },
+   AutoDelete->False,
+   GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+  "Grid"]], "Output",
+ CellChangeTimes->{
+  3.422606657296875*^9, 3.422616251140625*^9, 3.422616340453125*^9, {
+   3.5110016521121244`*^9, 3.5110016631115217`*^9}, 3.5110017499635506`*^9, {
+   3.5110017858511076`*^9, 3.511001851123396*^9}}]
 }, Open  ]],
 
 Cell["\<\
-
 Pokud je pokryt\[IAcute] u\[ZHacek] velmi dobr\[EAcute], \
 m\[URing]\[ZHacek]eme nechat proj\[IAcute]t algoritmus u\[CHacek]en\[IAcute] \
 opakovan\[EHacek].  P\[RHacek]i volb\[EHacek] Recursive -> False je \
@@ -945,10 +1710,11 @@ Pot\[EAcute] je krok zv\[EHacek]t\[SHacek]en, pro urychlen\[IAcute] pokryt\
 \[IAcute]. Od t\[EAcute]to vysok\[EAcute] hodnoty se d\[EAcute]lka kroku op\
 \[EHacek]t pomalu sni\[ZHacek]uje. Pokryt\[IAcute] je zaru\[CHacek]eno, kdy\
 \[ZHacek] se d\[EAcute]lka kroku bl\[IAcute]\[ZHacek]\[IAcute] nule.
-  Nejd\[RHacek]\[IAcute]ve se pod\[IAcute]v\[AAcute]me jak dopadne nenau\
+Nejd\[RHacek]\[IAcute]ve se pod\[IAcute]v\[AAcute]me jak dopadne nenau\
 \[CHacek]en\[AAcute] s\[IAcute]\[THacek] s jednotliv\[YAcute]mi volbami.\
 \>", "Text",
- CellChangeTimes->{{3.417455144734375*^9, 3.417455399765625*^9}}],
+ CellChangeTimes->{{3.417455144734375*^9, 3.417455399765625*^9}, {
+  3.51101905270822*^9, 3.5110190562196655`*^9}}],
 
 Cell[CellGroupData[{
 
@@ -983,12 +1749,12 @@ Cell[CellGroupData[{
 Cell[BoxData[
  GraphicsBox[{{}, {}, 
    {Hue[0.67, 0.6, 0.6], LineBox[CompressedData["
-1:eJxTTMoPSmViYGCQB2IQDQMPWExeT730zx7C+2DfPamVi9H5KZTP4GD6dkVg
-ut8jKJ/DYX9ranJ600MoX8AhN3fnyTlmML6IQ9HSFIN2FhhfwiFVXWzm5wsP
-oHwZh+pAbubZK2B8BQfvQ/LpcdNgfCWHC7+95zyYAuOrOEj9//e2KgfGV3PQ
-nhUxI0QLxtdwWPx49vKd2+5D+VoORznkci4awfg6Dlq28s+duWB8PYfDM819
-jNlgfAM0viEa3wiNb4zGN0Hjm6LxzdD45mh8CzS+JRrfCo1vjca3QePbovHt
-4HwA1AB+Fg==
+1:eJxTTMoPSmViYGCQB2IQDQMpTfXHrlz5Zw/hfbDXmHM/RI7zGZTP4HD6fJbp
+rmUPoXwOh4PLBQO+McP4Ag6X3ov8jXr8AMoXcWAJ0d9qdRnGl3AoTnz9Rf4I
+jC/jECswLy1pE4yv4PDp7DnTnh0wvpLD8WUy39x3wfgqDsvsnt5rWgbjqzl0
+bFxm3j8HxtdwePLt2akTTTC+lsOfwJbDxfEwvo7DH5mVG387wvh6DhKpEw4W
+icH4Bg4v/zGkvPp3H8o3dLj9SVtg708Y3wiNb4zGN0Hjm6LxzdD45mh8CzS+
+JRrfCo1vjca3QePbovHt4HwAGi+gDw==
      "]]}},
   AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
   AxesOrigin->{0, 0.6000000000000001},
@@ -1010,19 +1776,20 @@ jNlgfAM0viEa3wiNb4zGN0Hjm6LxzdD45mh8CzS+JRrfCo1vjca3QePbovHt
  CellChangeTimes->{
   3.422606658296875*^9, 3.422616252140625*^9, 3.422616341421875*^9, {
    3.42261637634375*^9, 3.422616397171875*^9}, 3.422616448671875*^9, 
-   3.42261662815625*^9}],
+   3.42261662815625*^9, 3.511001664421688*^9, 3.511001751260215*^9, 
+   3.5110019133152933`*^9}],
 
 Cell[BoxData[
  GraphicsBox[{{}, {}, 
    {Hue[0.67, 0.6, 0.6], LineBox[CompressedData["
-1:eJxTTMoPSmViYGCQB2IQDQM+01M9TU//s4fwPtjbab1JVfr7C8pncPjZecjs
-eQmMz+HwUk/rcfQMGF/AYeHHuO29zDC+iIPiOT5D/08wvoTDjevKPV8PfIPy
-ZRy27v2tlnvvC5Sv4PCL2Vxhxct3UL6SQ7PvETslgQ9QvopD2+bU7rbkV1C+
-mkNhP6t1StFzKF/DQePwZ6ddx55C+VoOgX8OzfJnhfF1HJbemPswWx7G13M4
-/eaYiv2bJ1C+gcOmFWueqEo+hvINHeb3ea5NM30E5Rs5XHT7sXPeCRjf2OFS
-ebzaskcPoXwTh4yE7dadYTB5U4dNu9d6XU6G8c0ctHf+E7tlCOObO6ioHVNx
-vgfTb+Fws0r0wNnzML6lw76eX1xTWGDqrRyO3hVlOfEZJm/t4O8zZTfvKRjf
-xiGNx7BTaDuMb+ugydRvErERxrdzWBcfJbXw0EN7APsJkYI=
+1:eJxTTMoPSmViYGCQB2IQDQMT6paWnr30zx7C+2CfLr30TlvfbyifwUHKTtaP
+oeoXlM/hMKXirf/Sez+hfAGHpDD3wz+vwvgiDvO1C+KuucPUSzh0h7jd/W/z
+DcqXcaj0MWJc8u0TlK/goKqYdPfyw49QvpLDK7c7M+c3v4fyVRwEu7afPKrz
+CspXc2jSaJJgln8O5Ws4HD2id6A+7gWUr+VQltD+/Yf1Myhfx2Ghu2ViTS+M
+r+fQtinr+RIRmH4Dh/fWqvvWz38E5Rs6TO0+9GnPm8dQvpHDzs0+E21vwfjG
+DqyaFpNcu2DqTRyynN1+6CnB+KYOUz3OO7w6/xDKN3M4vGm+0Zc1ML65wx1Z
+o/n612B8C4e4lqiNat0wvqUDS/oe9ipeGN/K4bREZFWlEoxv7XDz/rOCH3ow
+vo1Dz9Ugs9PSML6tQ+QB6Zz93jC+nUPqwyYDBe2H9gCEdY8x
      "]]}},
   AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
   AxesOrigin->{0, 0.6000000000000001},
@@ -1044,7 +1811,8 @@ xiGNx7BTaDuMb+ugydRvErERxrdzWBcfJbXw0EN7APsJkYI=
  CellChangeTimes->{
   3.422606658296875*^9, 3.422616252140625*^9, 3.422616341421875*^9, {
    3.42261637634375*^9, 3.422616397171875*^9}, 3.422616448671875*^9, 
-   3.422616628953125*^9}]
+   3.42261662815625*^9, 3.511001664421688*^9, 3.511001751260215*^9, 
+   3.511001914524447*^9}]
 }, Open  ]]
 }, Open  ]],
 
@@ -1078,10 +1846,10 @@ Cell[CellGroupData[{
 Cell[BoxData[
  GraphicsBox[{{}, {}, 
    {Hue[0.67, 0.6, 0.6], 
-    LineBox[{{0., 0.5183491339426405}, {1., 0.5183491339426405}, {2., 
-     0.5183491339426405}, {3., 0.5183491339426405}, {4., 
-     0.5183491339426405}, {5., 0.5183491339426405}, {6., 
-     0.5183491339426405}}]}},
+    LineBox[{{0., 0.49961783007874566`}, {1., 0.49961783007874566`}, {2., 
+     0.49961783007874566`}, {3., 0.49961783007874566`}, {4., 
+     0.49961783007874566`}, {5., 0.49961783007874566`}, {6., 
+     0.49961783007874566`}}]}},
   AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
   AxesOrigin->{0, 0},
   Frame->True,
@@ -1100,17 +1868,17 @@ Cell[BoxData[
   PlotRangeClipping->True,
   PlotRangePadding->{Automatic, Automatic}]], "Print",
  CellChangeTimes->{{3.422616381578125*^9, 3.422616401046875*^9}, 
-   3.422616452484375*^9, 3.422616630625*^9}],
+   3.422616452484375*^9, 3.422616630625*^9, 3.511001666072898*^9, 
+   3.5110017528674192`*^9, 3.511001935275082*^9}],
 
 Cell[BoxData[
  GraphicsBox[{{}, {}, 
    {Hue[0.67, 0.6, 0.6], 
-    LineBox[{{0., 0.5183491339426405}, {1., 0.5551072479254175}, {2., 
-     0.5449641068070539}, {3., 0.5572787529939124}, {4., 
-     0.5420685890331928}, {5., 0.5295123577838154}, {6., 
-     0.5131228191014042}}]}},
+    LineBox[{{0., 0.49961783007874566`}, {1., 0.5185849224140361}, {2., 
+     0.5184478075581836}, {3., 0.513718746572062}, {4., 0.5128609715006245}, {
+     5., 0.5150599153986207}, {6., 0.5161342919720258}}]}},
   AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
-  AxesOrigin->{0, 0.52},
+  AxesOrigin->{0, 0.5},
   Frame->True,
   FrameLabel->{
     FormBox["\"Iterations\"", TraditionalForm], None},
@@ -1127,7 +1895,8 @@ Cell[BoxData[
   PlotRangeClipping->True,
   PlotRangePadding->{Automatic, Automatic}]], "Print",
  CellChangeTimes->{{3.422616381578125*^9, 3.422616401046875*^9}, 
-   3.422616452484375*^9, 3.422616630875*^9}]
+   3.422616452484375*^9, 3.422616630625*^9, 3.511001666072898*^9, 
+   3.5110017528674192`*^9, 3.5110019356651316`*^9}]
 }, Open  ]]
 }, Open  ]],
 
@@ -1166,12 +1935,12 @@ Cell[CellGroupData[{
 Cell[BoxData[
  GraphicsBox[{{}, {}, 
    {Hue[0.67, 0.6, 0.6], 
-    LineBox[{{0., 0.5550084604938001}, {1., 0.5344642108513883}, {2., 
-     0.5333618058548749}, {3., 0.5333618058548749}, {4., 
-     0.5333618058548749}, {5., 0.5333618058548749}, {6., 
-     0.5333618058548749}}]}},
+    LineBox[{{0., 0.5365143725858103}, {1., 0.5025508448822517}, {2., 
+     0.5010378723355798}, {3., 0.5010378723355798}, {4., 
+     0.5010378723355798}, {5., 0.5010378723355798}, {6., 
+     0.5010378723355798}}]}},
   AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
-  AxesOrigin->{0, 0.535},
+  AxesOrigin->{0, 0.505},
   Frame->True,
   FrameLabel->{
     FormBox["\"Iterations\"", TraditionalForm], None},
@@ -1189,16 +1958,18 @@ Cell[BoxData[
   PlotRangePadding->{Automatic, Automatic}]], "Print",
  CellChangeTimes->{
   3.42261640603125*^9, 3.4226165611875*^9, {3.42261678521875*^9, 
-   3.42261680571875*^9}}],
+   3.42261680571875*^9}, 3.511001666807991*^9, 3.5110017536735215`*^9, 
+   3.511001953467392*^9}],
 
 Cell[BoxData[
  GraphicsBox[{{}, {}, 
    {Hue[0.67, 0.6, 0.6], 
-    LineBox[{{0., 0.5550084604938001}, {1., 0.5584381813202645}, {2., 
-     0.5547135845842189}, {3., 0.5539211027743094}, {4., 0.559734266593058}, {
-     5., 0.5577816781557826}, {6., 0.5556297332981305}}]}},
+    LineBox[{{0., 0.5365143725858103}, {1., 0.5261559362821403}, {2., 
+     0.5230360138071931}, {3., 0.5215589448485878}, {4., 
+     0.5212033294146717}, {5., 0.5195696948594949}, {6., 
+     0.5180282216368686}}]}},
   AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
-  AxesOrigin->{0, 0.554},
+  AxesOrigin->{0, 0.52},
   Frame->True,
   FrameLabel->{
     FormBox["\"Iterations\"", TraditionalForm], None},
@@ -1216,7 +1987,8 @@ Cell[BoxData[
   PlotRangePadding->{Automatic, Automatic}]], "Print",
  CellChangeTimes->{
   3.42261640603125*^9, 3.4226165611875*^9, {3.42261678521875*^9, 
-   3.422616805984375*^9}}]
+   3.42261680571875*^9}, 3.511001666807991*^9, 3.5110017536735215`*^9, 
+   3.51100195384394*^9}]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]],
@@ -1239,8 +2011,8 @@ Chlumsk\[EAcute]ho.\
 }, Open  ]]
 }, Open  ]]
 },
-WindowSize->{724, 778},
-WindowMargins->{{36, Automatic}, {Automatic, -13}},
+WindowSize->{724, 762},
+WindowMargins->{{136, Automatic}, {Automatic, 4}},
 ShowSelection->True,
 Magnification->1.,
 FrontEndVersion->"8.0 for Microsoft Windows (32-bit) (November 13, 2010)",
@@ -1273,95 +2045,98 @@ Cell[2541, 73, 95, 1, 75, "Section"],
 Cell[CellGroupData[{
 Cell[2661, 78, 174, 2, 36, "Subsection"],
 Cell[2838, 82, 437, 8, 47, "Text"],
-Cell[3278, 92, 214, 4, 41, "Input"],
-Cell[3495, 98, 473, 8, 41, "Input"]
+Cell[CellGroupData[{
+Cell[3300, 94, 214, 4, 41, "Input"],
+Cell[3517, 100, 184, 2, 40, "Output"]
+}, Open  ]],
+Cell[3716, 105, 473, 8, 41, "Input"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[4005, 111, 198, 3, 36, "Subsection"],
-Cell[4206, 116, 448, 8, 47, "Text"],
-Cell[4657, 126, 305, 8, 62, "Input"]
+Cell[4226, 118, 198, 3, 36, "Subsection"],
+Cell[4427, 123, 448, 8, 47, "Text"],
+Cell[4878, 133, 305, 8, 62, "Input"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[5011, 140, 221, 3, 75, "Section"],
-Cell[5235, 145, 314, 6, 29, "Text"],
-Cell[5552, 153, 1486, 49, 142, "Input"]
+Cell[5232, 147, 221, 3, 75, "Section"],
+Cell[5456, 152, 314, 6, 29, "Text"],
+Cell[5773, 160, 1486, 49, 142, "Input"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[7075, 207, 245, 4, 75, "Section"],
-Cell[7323, 213, 450, 8, 47, "Text"],
+Cell[7296, 214, 245, 4, 75, "Section"],
+Cell[7544, 220, 517, 9, 47, "Text"],
 Cell[CellGroupData[{
-Cell[7798, 225, 1272, 22, 62, "Input"],
-Cell[9073, 249, 1627, 53, 248, "Output"]
+Cell[8086, 233, 1272, 22, 62, "Input"],
+Cell[9361, 257, 4142, 110, 253, "Output"]
 }, Open  ]],
-Cell[10715, 305, 506, 8, 47, "Text"],
+Cell[13518, 370, 1066, 15, 65, "Text"],
 Cell[CellGroupData[{
-Cell[11246, 317, 562, 13, 41, "Input"],
-Cell[11811, 332, 1397, 31, 269, "Print"]
+Cell[14609, 389, 704, 15, 41, "Input"],
+Cell[15316, 406, 1397, 30, 269, "Print"]
 }, Open  ]],
-Cell[13223, 366, 481, 8, 47, "Text"],
+Cell[16728, 439, 481, 8, 47, "Text"],
 Cell[CellGroupData[{
-Cell[13729, 378, 461, 9, 41, "Input"],
-Cell[14193, 389, 184, 5, 40, "Output"]
+Cell[17234, 451, 461, 9, 41, "Input"],
+Cell[17698, 462, 255, 6, 40, "Output"]
 }, Open  ]],
-Cell[14392, 397, 648, 10, 47, "Text"],
+Cell[17968, 471, 806, 12, 47, "Text"],
 Cell[CellGroupData[{
-Cell[15065, 411, 631, 10, 41, "Input"],
-Cell[15699, 423, 1275, 37, 280, "Output"]
+Cell[18799, 487, 631, 10, 41, "Input"],
+Cell[19433, 499, 3952, 118, 143, "Output"]
 }, Open  ]],
-Cell[16989, 463, 315, 6, 29, "Text"],
+Cell[23400, 620, 479, 8, 29, "Text"],
 Cell[CellGroupData[{
-Cell[17329, 473, 583, 9, 41, "Input"],
-Cell[17915, 484, 10996, 280, 903, "Output"]
+Cell[23904, 632, 583, 9, 41, "Input"],
+Cell[24490, 643, 30224, 829, 871, "Output"]
 }, Open  ]],
-Cell[28926, 767, 465, 8, 47, "Text"],
+Cell[54729, 1475, 465, 8, 47, "Text"],
 Cell[CellGroupData[{
-Cell[29416, 779, 314, 9, 41, "Input"],
-Cell[29733, 790, 260, 8, 40, "Output"]
+Cell[55219, 1487, 314, 9, 41, "Input"],
+Cell[55536, 1498, 331, 9, 40, "Output"]
 }, Open  ]],
-Cell[30008, 801, 441, 7, 47, "Text"],
+Cell[55882, 1510, 441, 7, 47, "Text"],
 Cell[CellGroupData[{
-Cell[30474, 812, 366, 10, 41, "Input"],
-Cell[30843, 824, 129, 2, 40, "Output"]
+Cell[56348, 1521, 366, 10, 41, "Input"],
+Cell[56717, 1533, 231, 4, 40, "Output"]
 }, Open  ]],
-Cell[30987, 829, 412, 7, 47, "Text"],
+Cell[56963, 1540, 737, 12, 83, "Text"],
 Cell[CellGroupData[{
-Cell[31424, 840, 293, 8, 41, "Input"],
-Cell[31720, 850, 912, 26, 79, "Output"]
+Cell[57725, 1556, 346, 9, 41, "Input"],
+Cell[58074, 1567, 1043, 28, 79, "Output"]
 }, Open  ]],
-Cell[32647, 879, 172, 4, 29, "Text"],
+Cell[59132, 1598, 172, 4, 29, "Text"],
 Cell[CellGroupData[{
-Cell[32844, 887, 225, 4, 41, "Input"],
-Cell[33072, 893, 1101, 33, 151, "Output"]
+Cell[59329, 1606, 225, 4, 41, "Input"],
+Cell[59557, 1612, 2778, 80, 123, "Output"]
 }, Open  ]],
-Cell[34188, 929, 1423, 21, 155, "Text"],
+Cell[62350, 1695, 1470, 21, 137, "Text"],
 Cell[CellGroupData[{
-Cell[35636, 954, 894, 24, 82, "Input"],
+Cell[63845, 1720, 894, 24, 82, "Input"],
 Cell[CellGroupData[{
-Cell[36555, 982, 1308, 30, 269, "Print"],
-Cell[37866, 1014, 1467, 32, 269, "Print"]
+Cell[64764, 1748, 1400, 31, 269, "Print"],
+Cell[66167, 1781, 1536, 33, 269, "Print"]
 }, Open  ]]
 }, Open  ]],
-Cell[39360, 1050, 280, 5, 47, "Text"],
+Cell[67730, 1818, 280, 5, 47, "Text"],
 Cell[CellGroupData[{
-Cell[39665, 1059, 647, 14, 62, "Input"],
+Cell[68035, 1827, 647, 14, 62, "Input"],
 Cell[CellGroupData[{
-Cell[40337, 1077, 1068, 25, 269, "Print"],
-Cell[41408, 1104, 1071, 25, 266, "Print"]
+Cell[68707, 1845, 1154, 26, 269, "Print"],
+Cell[69864, 1873, 1139, 25, 263, "Print"]
 }, Open  ]]
 }, Open  ]],
-Cell[42506, 1133, 265, 5, 47, "Text"],
+Cell[71030, 1902, 265, 5, 47, "Text"],
 Cell[CellGroupData[{
-Cell[42796, 1142, 805, 19, 62, "Input"],
+Cell[71320, 1911, 805, 19, 62, "Input"],
 Cell[CellGroupData[{
-Cell[43626, 1165, 1073, 26, 263, "Print"],
-Cell[44702, 1193, 1067, 25, 263, "Print"]
+Cell[72150, 1934, 1145, 27, 263, "Print"],
+Cell[73298, 1963, 1143, 27, 263, "Print"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[45830, 1225, 119, 1, 75, "Section"],
-Cell[45952, 1228, 491, 9, 47, "Text"]
+Cell[74502, 1997, 119, 1, 75, "Section"],
+Cell[74624, 2000, 491, 9, 47, "Text"]
 }, Open  ]]
 }, Open  ]]
 }
