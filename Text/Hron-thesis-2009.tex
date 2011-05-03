@@ -39,8 +39,7 @@
 % Styles required in your work follow %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{graphicx}
-%\usepackage{indentfirst} %1. odstavec jako v cestine.
-
+\usepackage{indentfirst} %1. odstavec jako v cestine.
 \usepackage{k336_thesis_macros} % specialni makra pro formatovani DP a BP
  % muzete si vytvorit i sva vlastni v souboru k336_thesis_macros.sty
  % najdete  radu jednoduchych definic, ktere zde ani nejsou pouzity
@@ -317,17 +316,37 @@ Cílem práce je provést úpravy a rozšíření stávající demonstrační ap
 
 Soubor vznikl úpravou souboru Petra Chlumského. Změnil jsem grafický vzhled notebooku, změnil a rozšířil jsem textový komentář k jednotlivým příkazům.
 \section{Učicí algoritmy}
-Notebook učicí algoritmy demonstruje použití různých učicích algoritmů. Pro každý učící algoritmus je graficky zobrazen jeho postup při učení. Jsou zde demonstrovány tyto algoritmy: \textit{Levenberg-Marquardt algoritmus}, \textit{Gauss-Newton algoritmus}, \textit{Algoritmus nejvyššího poklesu (Steepest Descent)} a \textit{Algoritmus zpětné propagace (Backpropagation)}. Učení je ukázáno na jednoduché dopředné síti s jedním neuronem, jedním vstupem a jedním výstupem. Nejprve je vytvořena potřebná síť, poté jsou pomocí této sítě vygenerovány data, na kterých budeme demonstrovat učení. Poté je pro každý algoritmus ukázáno jakým způsobem ho použít pro učení sítě a je graficky zobrazen průběh učení. U algoritmu zpětné propagace je potřeba nastavit délku kroku (stepLength) a momentum. Jak tyto parametry ovlivňují průběh učení je ilustrováno pomocí interaktivního grafu, kde je možné si pomocí posuvníků měnit hodnotu těchto parametrů, graf se automaticky překresluje podle aktuálně nastavených hodnot parametrů. Tato kapitola se nachází v souboru \textit{02-algoritmy-uceni.nb}.
+Notebook učicí algoritmy demonstruje použití různých učicích algoritmů. Pro každý učící algoritmus je graficky zobrazen jeho postup při učení. Jsou zde demonstrovány tyto algoritmy: \textit{Levenberg-Marquardt algoritmus}, \textit{Gauss-Newton algoritmus}, \textit{Algoritmus nejvyššího poklesu (Steepest Descent)} a \textit{Algoritmus zpětné propagace (Backpropagation)}.
+
+ Učení je ukázáno na jednoduché dopředné síti s jedním neuronem, jedním vstupem a jedním výstupem. Nejprve je vytvořena potřebná síť, poté jsou pomocí této sítě vygenerovány data, na kterých budeme demonstrovat učení. Poté je pro každý algoritmus ukázáno jakým způsobem ho použít pro učení sítě a je graficky zobrazen průběh učení. U algoritmu zpětné propagace je potřeba nastavit délku kroku (stepLength) a momentum. Jak tyto parametry ovlivňují průběh učení je ilustrováno pomocí interaktivního grafu, kde je možné si pomocí posuvníků měnit hodnotu těchto parametrů, graf se automaticky překresluje podle aktuálně nastavených hodnot parametrů. Tato kapitola se nachází v souboru \textit{02-algoritmy-uceni.nb}.
 \section{Křížová validace}
-V kapitole křížová validace se student seznámí s principem fungování křížové validace. Křížová validace je ukázána na Iris datech z databáze UCI\cite{UCI}. Nejprve jsou načteny data, poté je vytvořena neuronová síť, která je pomocí křížové validace otestována. Iris data jsou rozdělena na vstupní a výstupní vektory, výstupní vektory jsou zakódovány kóden 1 z N. Poté je detailně rozebráno předzpracování dat pro křížovou validaci. Následuje implementace samotné křížové validace, tato implementace vypíše pro každý fold úspěšnost RMSE jakou síť dosáhla. Po skončení všech kol křížové validace je zobrazen boxový graf s výsledky křížové validace. Po najetí myší na graf se k němu zobrazí legenda. Student má také možnost nehcat si vypsat výsledky křížové validace v textovém formátu. Textový formát vypíše nejlepší výsledek, nejhorší výsledek a aritmetický průměr všech výsledků. Na závěr je umožněno studentovi nechat si provést křížovou validaci vlastní sítě s vlastními daty. Vlastní křížové validaci nastaví parametry jednoduchým přiřazením do proměnných, je potřeba aby  zadaná síť odpovídala zadaným vstupním a výstupním datům a data byla předzpracována pomocí postupu uvedeného v této kapitole.
+V kapitole křížová validace se student seznámí s principem fungování křížové validace. Křížová validace je ukázána na Iris datech z databáze UCI\cite{UCI}.
+
+Nejprve jsou načteny data, poté je vytvořena neuronová síť, která je pomocí křížové validace otestována. Iris data jsou rozdělena na vstupní a výstupní vektory, výstupní vektory jsou zakódovány kóden 1 z N. Poté je detailně rozebráno předzpracování dat pro křížovou validaci. Následuje implementace samotné křížové validace, tato implementace vypíše pro každý fold úspěšnost RMSE jakou síť dosáhla. Po skončení všech kol křížové validace je zobrazen boxový graf s výsledky křížové validace. Po najetí myší na graf se k němu zobrazí legenda. Student má také možnost nehcat si vypsat výsledky křížové validace v textovém formátu. Textový formát vypíše nejlepší výsledek, nejhorší výsledek a aritmetický průměr všech výsledků. Na závěr je umožněno studentovi nechat si provést křížovou validaci vlastní sítě s vlastními daty. Vlastní křížové validaci nastaví parametry jednoduchým přiřazením do proměnných, je potřeba aby  zadaná síť odpovídala zadaným vstupním a výstupním datům a data byla předzpracována pomocí postupu uvedeného v této kapitole. Tato kapitola se nachází v souboru \textit{03-krossvalidace.nb}.
 \section{Dopředná síť}
-\subsection{Jednoduchá data}
+\subsection{Jednoduchá data sin(x)}
+V této kapitole je student poprvé seznámen s dopřednou neuronovou sítí. Pomocí dopředné neuronové sítě se budeme snažit aproximovat funkci sinus.
+
+Nejprve jsou připravena jednoduchá trénovací data navzorkováním funkce sinus na intervalu <0,2\begin{math}\pi \end{math}>. Navzorkovaná data jsou zobrazena v textové i v grafické podobě. Poté je ukázáno jakým způsobem vytvořit neuronovou síť požadované struktury, je ukázáno jak si zobrazit dodatečné informace o síti a jak síť naučit na trénovacích datech. Je také graficky zobrazen výstup sítě před naučením a po naučení. Na závěr je ukázáno jak převést síť do formy vzorce. Tato kapitola se nachází v souboru \textit{04-feedforward-sin.nb}.
+
+Soubor vznikl úpravou souboru Petra Chlumského. Změnil jsem vzhled notebooku a rozšířil komentář kódu.
 \subsection{Iris data}
+V této kapitole je ukázáno jakým způsobem pomocí dopředné sítě klasifikovat Iris data z UCI databáze.
+
+Nejprve jsou načtena data, studentovi je dáno na výběr zda chce načíst data z internetu nebo chce použít lokální soubor s daty. Poté je provedeno předzpracování dat. Data jsou rozdělena na vstupní a výstupní vektory, protože výstupní parametr je textový, je provedeno jeho překódování metodou 1 z N, kdy je každé třídě přiřazen jeden výstupní vektor. Toto předzpracování je prováděno krok po kroku s velmi podrobným komentářem. Po předzpracování dat je vytvořena dopředná neuronová síť, a data jsou touto neuronovou sítí zpracovány. Dále je zobrazeno jak se vyvýjela úspěšnost klasifikace v průběhu učení. Na závěr je zobrazen 3D graf, který ukazuje úspěšnost sítě na trénovacích datecha je ukázána možnost jak síť symbolicky vyhodnotit. Tato kapitola se nachází v souboru \textit{05-feedforward-iris.nb}.
+
+Soubor vznikl úpravou souboru Petra Chlumského. Změnil jsem vzhled notebooku. V doprovodném komentáři jsem nahradil sousloví \uv{skupina v datech} slovem \uv{třída}, které podle mého názoru lépe vystihuje popisovanou skutečnost. Dále jsem komentář rozšířil. V závěru notebooku jsem nezobrazoval vývoj úspěšnosti klasifikace během učení ve 3D grafu, který podle mě nebyl tak přehledný a jasný jako 2D graf, který je zobrazen.
 \subsection{Různé přístupy k učení sítě}
+V tomto notebooku je ukázáno několik různých přístupů k učení dopředné sítě. Tyto přístupy se liší hlavně v dělení dat na trénovací, testovací a validační množinu. Je zde také ukázáno použití kížové validace a rozebráno vyhodnocení úspěšnosti neuronové sítě.
+
+Nejprve jsou načteny Iris data a provedeno jejich předzpracování stejně jako v minulé kapitole. Takto předzpracovaná data jsou náhodně rozdělena na trénovací, validační a testovací množinu. Je ukázána možnost použití křížové validace k určení struktury sítě. Při křížové validaci jsou výsledky sítí porovnávány podle hornoty RMSE. Síť, která vyšla z křížové validace nejlépe je poté naučena na trénovací množině s použitím validační množiny. Validační množina je použita k zastavení učení sítě, pokud by se úspěšnost klasifikace na validační množině začala v průběhu učení zhoršovat. Poté je vyhodnocena úspěšnost klasifikace na testovací množině. Tato úspěšnost je pro snadnou čitelnost uvedena v procentech. Dále je síť se stejnou strukturou naučena bez použití validační množiny a taktéž je vyhodnocena její úspěšnost. Kapitola se nachází v souboru \textit{06-feedforward-iris-2}.
 \section{RBF síť}
 \subsection{Ukázka výstupu skrytého neuronu}
+Tato kapitola není určena přímo pro experimentování se sítí, ale spíše pro pochopení jakým způsobem RBF síť funguje. V notebooku si necháme zobrazit výstup skrytého RBF neuronu.
+
+Nejprve si vygenerujeme vstupní data. Data jsou tvořena dvěmi dobře oddělenými shluky, každý skluk představuje jednu třídu. Vytvoříme RBF neuronovou síť s jedním skrytým neuronem a naučíme jí na vygenerovaných datech. Poté si zobrazíme výstup RBF neuronu. Pro lepší představu o tom, jakým způsobem RBF neuron pokryl vstupní data zobrazíme pod jeho výstup ještě vstupní data. Kapitolu naleznete v souboru \textit{07-rbf-neuron.nb}.
 \subsection{Ukázka výstupu tří skrytých neuronů}
-\subsection{Jednoduchá data}
+\subsection{Jednoduchá data sin(x)}
 \subsection{Iris data}
 \subsection{Různé přístupy k učení sítě}
 \section{Hopfieldova síť}
