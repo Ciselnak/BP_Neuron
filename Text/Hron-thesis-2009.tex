@@ -329,7 +329,7 @@ V této kapitole je student poprvé seznámen s dopřednou neuronovou sítí. Po
 
 Nejprve jsou připravena jednoduchá trénovací data navzorkováním funkce sinus na intervalu <0, 2\begin{math}\pi \end{math}>. Navzorkovaná data jsou zobrazena v textové i v grafické podobě. Poté je ukázáno jakým způsobem vytvořit neuronovou síť požadované struktury, je ukázáno jak si zobrazit dodatečné informace o síti a jak síť naučit na trénovacích datech. Je také graficky zobrazen výstup sítě před naučením a po naučení. Na závěr je ukázáno jak převést síť do formy vzorce. Tato kapitola se nachází v souboru \textit{04-feedforward-sin.nb}.
 
-Soubor vznikl úpravou souboru Petra Chlumského. Změnil jsem vzhled notebooku a rozšířil komentář kódu.
+Soubor vznikl úpravou souboru Petra Chlumského. Změnil jsem vzhled notebooku a upravil doprovodný komentář.
 \subsection{Iris data}
 V této kapitole je ukázáno jakým způsobem pomocí dopředné sítě klasifikovat Iris data z UCI databáze.
 
@@ -339,7 +339,7 @@ Soubor vznikl úpravou souboru Petra Chlumského. Změnil jsem vzhled notebooku.
 \subsection{Různé přístupy k učení sítě}
 V tomto notebooku je ukázáno několik různých přístupů k učení dopředné sítě. Tyto přístupy se liší hlavně v dělení dat na trénovací, testovací a validační množinu. Je zde také ukázáno použití kížové validace a rozebráno vyhodnocení úspěšnosti neuronové sítě.
 
-Nejprve jsou načteny Iris data a provedeno jejich předzpracování stejně jako v minulé kapitole. Takto předzpracovaná data jsou náhodně rozdělena na trénovací, validační a testovací množinu. Je ukázána možnost použití křížové validace k určení struktury sítě. Při křížové validaci jsou výsledky sítí porovnávány podle hornoty RMSE. Síť, která vyšla z křížové validace nejlépe je poté naučena na trénovací množině s použitím validační množiny. Validační množina je použita k zastavení učení sítě, pokud by se úspěšnost klasifikace na validační množině začala v průběhu učení zhoršovat. Poté je vyhodnocena úspěšnost klasifikace na testovací množině. Tato úspěšnost je pro snadnou čitelnost uvedena v procentech. Dále je síť se stejnou strukturou naučena bez použití validační množiny a taktéž je vyhodnocena její úspěšnost. Kapitola se nachází v souboru \textit{06-feedforward-iris-2}.
+Nejprve jsou načteny Iris data a provedeno jejich předzpracování stejně jako v minulé kapitole. Takto předzpracovaná data jsou náhodně rozdělena na trénovací, validační a testovací množinu. Je ukázána možnost použití křížové validace k určení struktury sítě. Při křížové validaci jsou výsledky sítí porovnávány podle hornoty RMSE, výsledky křížové validace jsou zobrazeny v boxovém grafu. Síť, která vyšla z křížové validace nejlépe je poté naučena na trénovací množině s použitím validační množiny. Validační množina je použita k zastavení učení sítě, pokud by se úspěšnost klasifikace na validační množině začala v průběhu učení zhoršovat. Poté je vyhodnocena úspěšnost klasifikace na testovací množině. Tato úspěšnost je pro snadnou čitelnost uvedena v procentech. Dále je síť se stejnou strukturou naučena bez použití validační množiny a taktéž je vyhodnocena její úspěšnost. Kapitola se nachází v souboru \textit{06-feedforward-iris-2}.
 \section{RBF síť}
 \subsection{Ukázka výstupu skrytého neuronu}
 Tato kapitola není určena přímo pro experimentování se sítí, ale spíše pro pochopení jakým způsobem RBF síť funguje. Notebook zobrazuje výstup skrytého RBF neuronu.
@@ -354,14 +354,30 @@ Kapitola slouží k prvnímu seznámení studentů s RBF sítí. Je ukázáno ja
 
 Nejprve jsou vygenerována data navzorkováním funkce sinus na intervalu <0, 2\begin{math}\pi \end{math}>. Data jsou zobrazena v grafické i textové podobě, aby o nich měl student dobrou představu. Dále je ukázáno jak vytvořit RBF neuronovou síť, jak si o ní zobrazit podrobnější informace a jakým způsobem jí naučit na trénovacích datech. Je zobrazeno jak reagovala nenaučená síť na data a také jak reaguje naučená síť na data. Na závěr je ukázáno jak je možné nechat síť symbolicky vyhodnotit (zobrazit jí jako vzorec). Kapitola je v souboru \textit{09-rbf-sin.nb}.
 
-Soubor vznikl úpravou souboru Petra Chlumského. Změnil jsem vzhled a rozšířil popis kódu. Dále jsem odstranil nepřesné a nepravdivé popisky u vytváření RBF sítě a nahradil pravdivou verzí.
+Soubor vznikl úpravou souboru Petra Chlumského. Změnil jsem vzhled a rozšířil doprovodný komentář. Dále jsem odstranil nepřesné a nepravdivé popisky u vytváření RBF sítě a nahradil je správnou verzí.
 \subsection{Iris data}
+Tato kapitola ukazuje zpracování složitějších dat neuronovou sítí RBF. V notebooku je ukázáno klasifikování Iris dat z UCI databáze \cite{UCI}.
+
+Nejprve jsou načena Iris data (je na výběr načtení z internetu nebo ze souboru), poté je provedeno rozdělení dat na vstupní a výstupní vektory a výstupní data jsou zakódovány algoritmem 1 z N. Dále je vytvořena RBF síť, která je následně naučena na datech. Potom je zobrezen graf, který ukazuje jak se vyvíjela úspěšnost klasifikace v průběhu učení. Níže je ještě vykreslen graf porovnávající zadaná data s výstupem naší naučené RBF sítě. Na závěr je ukázána možnost symbolického vyhodnocení sítě. Kapitolu naleznete v souboru \textit{10-rbf-iris.nb}.
+
+Soubor vznikl úpravou souboru Petra Chclumského. Změnil jsem grafický vzhled notebooku. Dále jsem významně zkrátil sekci předzpracování dat. V původním notebooku bylo předzpracování stejně rozsáhlé jako v souboru \textit{05-feedforward-iris.nb}, já ponechal pouze kód, který skutečně zpracovává Iris data a uvedl odkaz na soubor ve kterém je předzpracování popsáno podrobněji. Dále jsem na závěr notebooku nezobrazoval 3D graf s vývojem úspěšnosti klasifikace, který podle mého názoru není tolik vypovýdající. Ponechal jsem 2D graf s vývojem klasifikace. Také jsem rozšířil komentář a opravil špatný popis u vytváření RBF sítě.
 \subsection{Různé přístupy k učení sítě}
+Kapitola demonstruje různé možnosti jak přistoupit k učení RBF sítě z hlediska rozdělení dat na trénovací, testovací a validační množinu. Také je ukázána možnost využití křížové validace k určení nejvhodnější struktury sítě. Na závěr je ukázáno jak vyhodnotit úspěšnost sítě.
+
+Nejprve jsou načtena Iris data (ze souboru nebo z internetu). Načtená data jsou rozdělena na vstupní a výstupní vektory, výstupní vektory jsou překódovány kódem 1 z N. Takto zpracovaná data jsou rozdělena na trénovací, testovací a validační množinu. Dále je demonstrována možnost použití křížové validace, k určení nejvhodnější struktury sítě(v tomto případě k určení počtu RBF neuronů). Výsledek křížové validace je zobrazen v boxovém grafu. Dále je ukázána možnost učení RBF sítě s validační množinou. Validační množina slouží ke kontrole úspěšnosti sítě, jakmile se výsledky na validační množině zhorší oproti předchozí iteraci, je učení sítě ukončeno. Na testovacích datech je poté provedeno určení skutečné úspěšnosti naučené sítě v procentech. Dále je ukázáno učení sítě bez použití validační množiny. U takto naučené sítě je také určena skutečná úspěšnost na testovacích datech v procentech. Kapitola se nachází v souboru \textit{11-rbf-iris-2.nb}.
 \section{Hopfieldova síť}
+Tato kapitola slouží k seznámení se s Hopfieldovou neuronovou sítí a s jejím použitím na jednoduchých datech.
+
+Jako vstupní data jsou použity obrázky číslic 1, 2 a 3 zobrazené v poli 8x8, kde černá znamená 1 a bílá -1. Tato data jsou přímo zadána v kódu. Po načtení těchto dat jsou data ještě zobrazena v grafické podobě. Poté je vytvořena Hopfieldova síť, která je na vstupních datech naučena. Pro otestování, jak síť reaguje na data je potřeba vytvořit testovací data, ta jsou vytvořena aplikací šumu na vstupní data. Tato zašuměná data jsou předložena naučené síti a je zobrazen její výstup. Na závěr je zobrazen graf ukazující jakým způsobem se minimalizovala energetická funkce pro jednotlivé předložené vzory. Kapitola se nalézá v souboru \textit{12-hopfield.nb}.
+
+Soubor vznikl úpravou souboru Petra Chlumského. Mimo úpravy celkového vzhledu notebooku a drobných úprav doprovodného komentáře spočívá hlavní úprava v nahrazení funkce GraphicsArray funkcí GraphicsGrid. Funkce GraphicsArray je v Mathematice 8 zastaralá a nedoporučuje se používat. Také jsem upravil funkci pro aplikaci šumu, která nyní zašumí předložený vzor o trochu více než tomu bylo dříve.
 \section{Samoorganizující mapy}
 \subsection{Iris data}
+
 \subsection{Shlukování Iris dat}
+
 \section{LVQ}
+
 %*****************************************************************************
 \chapter{Závěr}
 
