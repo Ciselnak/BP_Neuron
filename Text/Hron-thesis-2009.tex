@@ -219,7 +219,7 @@ Děkuji Ing. Zdeňku Bukovi za užitečné rady a připomínky k tvorbě této b
  
 \abstractpage
 
-Demonstrational application created in this bachelor thesis is supposed to complete electronic attachment of lecture notes for the \uv{Neural networks and neurocomputers} course. Application is created in Mathematica program with use of NeuralNetworks library. Every file allows to experiment with specific neural network or its parameteres. All experiments have enclosed explaining commentary. Final application was created by extension and completion of current demonstrational application.
+Demonstrational application created in this bachelor thesis is supposed to complete electronic attachment of lecture notes for the "Neural networks and neurocomputers" course. Application is created in Mathematica program with use of NeuralNetworks library. Every file allows to experiment with specific neural network or its parameteres. All experiments have enclosed explaining commentary. Final application was created by extension and completion of current demonstrational application.
 % Prace v cestine musi krome abstraktu v anglictine obsahovat i
 % abstrakt v cestine.
 \vglue60mm
@@ -312,8 +312,14 @@ Cílem práce je provést úpravy a rozšíření stávající demonstrační ap
 \section{Knihovna NeuralNetworks}
 %*****************************************************************************
 \chapter{Experimenty s neuronovými sítěmi}
+\section{Úvod}
+Úvodní kapitola seznamuje studenty s používáním programu \textit{Mathematica} od naprostých základů. Nejprve je probrána základní syntaxe, dále jsou studenti seznámeni s používáním proměnných, funkcí a s možnostmi vizualizace dat. V další části notebooku jsou probrány základy programování v systému \textit{Mathematica}. Prostudování tohoto úvodu umožní rychleji se orientovat v experimentech s neuronovými sítěmi a také dá studentovi znalosti potřebné k úpravám jednotlivých jednotlivých experimentů. Tato kapitola se nachází v souboru \textit{"01-uvod.nb"}.
+
+Soubor vznikl úpravou souboru Petra Chlumského. Změnil jsem grafický vzhled notebooku, změnil a rozšířil jsem textový komentář k jednotlivým příkazům.
 \section{Učicí algoritmy}
+Notebook učicí algoritmy demonstruje použití různých učicích algoritmů. Pro každý učící algoritmus je graficky zobrazen jeho postup při učení. Jsou zde demonstrovány tyto algoritmy: \textit{Levenberg-Marquardt algoritmus}, \textit{Gauss-Newton algoritmus}, \textit{Algoritmus nejvyššího poklesu (Steepest Descent)} a \textit{Algoritmus zpětné propagace (Backpropagation)}. Učení je ukázáno na jednoduché dopředné síti s jedním neuronem, jedním vstupem a jedním výstupem. Nejprve je vytvořena potřebná síť, poté jsou pomocí této sítě vygenerovány data, na kterých budeme demonstrovat učení. Poté je pro každý algoritmus ukázáno jakým způsobem ho použít pro učení sítě a je graficky zobrazen průběh učení. U algoritmu zpětné propagace je potřeba nastavit délku kroku (stepLength) a momentum. Jak tyto parametry ovlivňují průběh učení je ilustrováno pomocí interaktivního grafu, kde je možné si pomocí posuvníků měnit hodnotu těchto parametrů, graf se automaticky překresluje podle aktuálně nastavených hodnot parametrů. Tato kapitola se nachází v souboru \textit{02-algoritmy-uceni.nb}.
 \section{Křížová validace}
+V kapitole křížová validace se student seznámí s principem fungování křížové validace. Křížová validace je ukázána na Iris datech z databáze UCI\cite{UCI}. Nejprve jsou načteny data, poté je vytvořena neuronová síť, která je pomocí křížové validace otestována. Iris data jsou rozdělena na vstupní a výstupní vektory, výstupní vektory jsou zakódovány kóden 1 z N. Poté je detailně rozebráno předzpracování dat pro křížovou validaci. Následuje implementace samotné křížové validace, tato implementace vypíše pro každý fold úspěšnost RMSE jakou síť dosáhla. Po skončení všech kol křížové validace je zobrazen boxový graf s výsledky křížové validace. Po najetí myší na graf se k němu zobrazí legenda. Student má také možnost nehcat si vypsat výsledky křížové validace v textovém formátu. Textový formát vypíše nejlepší výsledek, nejhorší výsledek a aritmetický průměr všech výsledků. Na závěr je umožněno studentovi nechat si provést křížovou validaci vlastní sítě s vlastními daty. Vlastní křížové validaci nastaví parametry jednoduchým přiřazením do proměnných, je potřeba aby  zadaná síť odpovídala zadaným vstupním a výstupním datům a data byla předzpracována pomocí postupu uvedeného v této kapitole.
 \section{Dopředná síť}
 \subsection{Jednoduchá data}
 \subsection{Iris data}
