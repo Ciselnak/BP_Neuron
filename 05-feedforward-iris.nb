@@ -1,0 +1,2968 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 6.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[    125680,       2959]
+NotebookOptionsPosition[    119749,       2764]
+NotebookOutlinePosition[    120217,       2782]
+CellTagsIndexPosition[    120174,       2779]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[StyleBox["Kapitola 5 - Dop\[RHacek]edn\[AAcute] s\[IAcute]\
+\[THacek] a Iris data", "Title"]], "Subtitle",
+ CellChangeTimes->{{3.403530443303066*^9, 3.403530492291925*^9}, {
+  3.403531440607864*^9, 3.403531442893248*^9}, {3.403533485330625*^9, 
+  3.403533485478355*^9}, {3.407604397859375*^9, 3.407604411984375*^9}, {
+  3.4076075201875*^9, 3.407607525609375*^9}, {3.513418485295765*^9, 
+  3.5134184857463217`*^9}}],
+
+Cell[TextData[StyleBox["Demonstrace pou\[ZHacek]it\[IAcute] dop\[RHacek]edn\
+\[EAcute] neuronov\[EAcute] s\[IAcute]t\[EHacek] na datech z datab\[AAcute]ze \
+UCI.", "Subtitle"]], "Subsubtitle",
+ CellChangeTimes->{
+  3.407604400640625*^9, {3.417794670859375*^9, 3.417794700671875*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Inicializace knihovny NeuralNetworks", "Section",
+ CellChangeTimes->{{3.4017018798191338`*^9, 3.401701891453323*^9}, {
+  3.401702244721938*^9, 3.401702247490888*^9}, {3.402213786262855*^9, 
+  3.402213791290463*^9}, {3.403530541666153*^9, 3.403530548125923*^9}}],
+
+Cell["\<\
+Nejprve na\[CHacek]teme knihovnu pro neuronov\[EAcute] s\[IAcute]t\[EHacek].\
+\>", "Text",
+ CellChangeTimes->{{3.403530519862419*^9, 3.403530534534667*^9}, {
+  3.40760443459375*^9, 3.407604441953125*^9}}],
+
+Cell[BoxData[
+ RowBox[{"<<", "NeuralNetworks`"}]], "Input",
+ CellChangeTimes->{{3.402213973734511*^9, 3.402213981537317*^9}, {
+  3.5103910070546513`*^9, 3.510391015792761*^9}}],
+
+Cell["\<\
+Pokud pracujete v Mathematice 8.0, vypn\[EHacek]te je\[SHacek]t\[EHacek] \
+zobrazov\[AAcute]n\[IAcute] chybov\[EAcute] hl\[AAcute]\[SHacek]ky \
+Remove::rmnsm. Tuto hl\[AAcute]\[SHacek]ku vyhazuj\[IAcute] funkce knihovny \
+NeuralNetworks. Na funkci knihovny toto nem\[AAcute] \[ZHacek]\[AAcute]dn\
+\[YAcute] vliv.\
+\>", "Text",
+ CellChangeTimes->{3.510990257509194*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Off", "[", 
+   StyleBox[
+    RowBox[{"Remove", "::", "rmnsm"}], "MessageName"], "]"}], ";"}]], "Input"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Import dat", "Section",
+ CellChangeTimes->{{3.403530554350391*^9, 3.403530568518535*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Na\[CHacek]ten\[IAcute] dat ze souboru", "Subsection",
+ CellChangeTimes->{{3.403530581435203*^9, 3.403530584582477*^9}, {
+  3.407604447765625*^9, 3.40760444978125*^9}}],
+
+Cell["\<\
+Nastav\[IAcute]me si pracovn\[IAcute] adres\[AAcute]\[RHacek] na ten, kde m\
+\[AAcute]me ulo\[ZHacek]en aktu\[AAcute]ln\[IAcute] notebook, na\[CHacek]\
+\[IAcute]tan\[AAcute] data musej\[IAcute] b\[YAcute]t ve stejn\[EAcute]m \
+adres\[AAcute]\[RHacek]i.\
+\>", "Text",
+ CellChangeTimes->{{3.403530608493107*^9, 3.403530624394515*^9}, 
+   3.403530800561324*^9, {3.40760445378125*^9, 3.4076045060625*^9}, 
+   3.5109902109172773`*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"SetDirectory", "[", 
+  RowBox[{"NotebookDirectory", "[", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.401698774119277*^9, 3.401698786252544*^9}}],
+
+Cell[BoxData["\<\"D:\\\\Dokumenty\\\\\[CapitalSHacek]KOLA\\\\\[CapitalCHacek]\
+VUT\\\\BP\\\\BP_Neuron\"\>"], "Output",
+ CellChangeTimes->{3.510391913018694*^9, 3.5134199787639112`*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"data", "=", 
+   RowBox[{"Import", "[", "\"\<iris.data\>\"", "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.401700611580208*^9, 3.4017006194218073`*^9}, {
+  3.40221381285082*^9, 3.402213813631134*^9}, {3.402213906735935*^9, 
+  3.402213911633355*^9}, {3.403530790715049*^9, 3.403530795973354*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Na\[CHacek]ten\[IAcute] dat z internetu", "Subsection",
+ CellChangeTimes->{{3.403530595844022*^9, 3.403530601609948*^9}, {
+  3.407604520828125*^9, 3.4076045266875*^9}, {3.510390702321455*^9, 
+  3.510390703368088*^9}}],
+
+Cell["\<\
+Jin\[AAcute] mo\[ZHacek]nost je importovat data p\[RHacek]\[IAcute]mo z \
+internetu - p\[RHacek]\[IAcute]klad pro UCI datab\[AAcute]zi (stejn\[AAcute] \
+data jako p\[RHacek]i na\[CHacek]\[IAcute]t\[AAcute]n\[IAcute] ze souboru, \
+jen na\[CHacek]tena p\[RHacek]\[IAcute]mo z internetu.\
+\>", "Text",
+ CellChangeTimes->{{3.403530818713566*^9, 3.403530850599133*^9}, {
+  3.407604609453125*^9, 3.407604611515625*^9}, {3.40760479359375*^9, 
+  3.407604823890625*^9}, {3.510390676387662*^9, 3.5103906946589823`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"data", "=", 
+   RowBox[{
+   "Import", "[", 
+    "\"\<http://ftp.ics.uci.edu/pub/machine-learning-databases/iris/iris.data\
+\>\"", "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.403530817081151*^9, 3.403530817742919*^9}, {
+  3.403530862514604*^9, 3.403530883705629*^9}}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["P\[RHacek]edzpracov\[AAcute]n\[IAcute] dat", "Section",
+ CellChangeTimes->{{3.403530904357418*^9, 3.403530907695911*^9}, {
+  3.407604834765625*^9, 3.407604838625*^9}, {3.407607892328125*^9, 
+  3.40760789240625*^9}}],
+
+Cell["\<\
+V prom\[EHacek]nn\[EAcute] data m\[AAcute]me ulo\[ZHacek]en cel\[YAcute] \
+datov\[YAcute] soubor. M\[URing]\[ZHacek]eme se pod\[IAcute]vat kolik \
+obsahuje vektor\[URing].\
+\>", "Text",
+ CellChangeTimes->{{3.403531014363668*^9, 3.40353104766807*^9}, {
+  3.407604842671875*^9, 3.4076048691875*^9}, {3.5103911111728725`*^9, 
+  3.5103911207640905`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Dimensions", "[", "data", "]"}]], "Input",
+ CellChangeTimes->{{3.403531048763936*^9, 3.403531052421242*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", "151", "}"}]], "Output",
+ CellChangeTimes->{3.422604527859375*^9, 3.510391913798293*^9, 
+  3.513419980763665*^9}]
+}, Open  ]],
+
+Cell["\<\
+Je zde 151 vektor\[URing]. Proto\[ZHacek]e ale datov\[YAcute] soubor obsahuje \
+pr\[AAcute]zdn\[EAcute] \[RHacek]\[AAcute]dky na konci, nen\[IAcute] to \
+matice, ale \"heterogenn\[IAcute]\" seznam. M\[URing]\[ZHacek]eme se pod\
+\[IAcute]vat ... n\[AAcute]sleduj\[IAcute]c\[IAcute] p\[RHacek]\[IAcute]kaz \
+zobraz\[IAcute] 5 posledn\[IAcute]ch z\[AAcute]znam\[URing]:\
+\>", "Text",
+ CellChangeTimes->{{3.403531056594976*^9, 3.403531138098371*^9}, {
+  3.407604877015625*^9, 3.407604929921875*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Take", "[", 
+  RowBox[{"data", ",", 
+   RowBox[{"-", "5"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.403531116045648*^9, 3.403531121423048*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+    "6.3`", ",", "2.5`", ",", "5.`", ",", "1.9`", 
+     ",", "\<\"Iris-virginica\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "6.5`", ",", "3.`", ",", "5.2`", ",", "2.`", 
+     ",", "\<\"Iris-virginica\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "6.2`", ",", "3.4`", ",", "5.4`", ",", "2.3`", 
+     ",", "\<\"Iris-virginica\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "5.9`", ",", "3.`", ",", "5.1`", ",", "1.8`", 
+     ",", "\<\"Iris-virginica\"\>"}], "}"}], ",", 
+   RowBox[{"{", "\<\"\"\>", "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.422604527875*^9, 3.5103919138317976`*^9, 
+  3.513419980788668*^9}]
+}, Open  ]],
+
+Cell["\<\
+Vid\[IAcute]me, \[ZHacek]e na konci je pr\[AAcute]zdn\[YAcute] \
+z\[AAcute]znam. Odstran\[IAcute]me ho a nov\[AAcute] data si ulo\[ZHacek]\
+\[IAcute]me do prom\[EHacek]nn\[EAcute] \"data2\" - m\[URing]\[ZHacek]eme si \
+p\[RHacek]epsat i p\[URing]vodn\[IAcute] prom\[EHacek]nnou \"data\" - na tom \
+v\[IAcute]cem\[EAcute]n\[EHacek] nez\[AAcute]le\[ZHacek]\[IAcute]. \
+P\[RHacek]i\[RHacek]azen\[IAcute]m do nov\[EAcute] prom\[EHacek]nn\[EAcute] \
+se vyhneme p\[RHacek]\[IAcute]padn\[YAcute]m probl\[EAcute]m\[URing]m, \
+kdybychom v\[IAcute]ckr\[AAcute]t po sob\[EHacek] p\[RHacek]\[IAcute]kaz \
+vyhodnotili (poka\[ZHacek]d\[EAcute] by n\[AAcute]m to \"ukrojilo\" posledn\
+\[IAcute] z\[AAcute]znam).\
+\>", "Text",
+ CellChangeTimes->{{3.403531208506721*^9, 3.403531298739387*^9}, {
+  3.4076049439375*^9, 3.40760505153125*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"data2", "=", 
+   RowBox[{"Drop", "[", 
+    RowBox[{"data", ",", 
+     RowBox[{"-", "1"}]}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.403531300187786*^9, 3.403531305616864*^9}}],
+
+Cell["\<\
+Zobraz\[IAcute]me si v\[YAcute]sledek (posledn\[IAcute]ch 10 zaznam\[URing]).\
+\
+\>", "Text",
+ CellChangeTimes->{{3.403531313800532*^9, 3.403531321871764*^9}, {
+  3.40760505728125*^9, 3.40760506746875*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Take", "[", 
+  RowBox[{"data2", ",", 
+   RowBox[{"-", "10"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.403531307807243*^9, 3.403531332529852*^9}, 
+   3.403531395503632*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+    "6.7`", ",", "3.1`", ",", "5.6`", ",", "2.4`", 
+     ",", "\<\"Iris-virginica\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "6.9`", ",", "3.1`", ",", "5.1`", ",", "2.3`", 
+     ",", "\<\"Iris-virginica\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "5.8`", ",", "2.7`", ",", "5.1`", ",", "1.9`", 
+     ",", "\<\"Iris-virginica\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "6.8`", ",", "3.2`", ",", "5.9`", ",", "2.3`", 
+     ",", "\<\"Iris-virginica\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "6.7`", ",", "3.3`", ",", "5.7`", ",", "2.5`", 
+     ",", "\<\"Iris-virginica\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "6.7`", ",", "3.`", ",", "5.2`", ",", "2.3`", 
+     ",", "\<\"Iris-virginica\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "6.3`", ",", "2.5`", ",", "5.`", ",", "1.9`", 
+     ",", "\<\"Iris-virginica\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "6.5`", ",", "3.`", ",", "5.2`", ",", "2.`", 
+     ",", "\<\"Iris-virginica\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "6.2`", ",", "3.4`", ",", "5.4`", ",", "2.3`", 
+     ",", "\<\"Iris-virginica\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "5.9`", ",", "3.`", ",", "5.1`", ",", "1.8`", 
+     ",", "\<\"Iris-virginica\"\>"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.42260452790625*^9, 3.5103919138798037`*^9, 
+  3.5134199808266735`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Rozd\[EHacek]len\[IAcute] dat na vstupn\[IAcute] a v\[YAcute]stupn\[IAcute] \
+vektory\
+\>", "Subsection",
+ CellChangeTimes->{{3.403531412983358*^9, 3.403531419191103*^9}, {
+  3.403531488735353*^9, 3.403531498502634*^9}, {3.40760508175*^9, 
+  3.407605092046875*^9}}],
+
+Cell["\<\
+Cel\[YAcute] datov\[YAcute] soubor si rozd\[EHacek]l\[IAcute]me na mno\
+\[ZHacek]inu vstupn\[IAcute]ch dat a mno\[ZHacek]inu \
+v\[YAcute]stupn\[IAcute]ch dat.\
+\>", "Text",
+ CellChangeTimes->{{3.403531501296863*^9, 3.40353152028182*^9}, {
+  3.407605094875*^9, 3.407605113515625*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"data2", "[", 
+  RowBox[{"[", "1", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.403531542435897*^9, 3.403531544031888*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "5.1`", ",", "3.5`", ",", "1.4`", ",", "0.2`", ",", "\<\"Iris-setosa\"\>"}],
+   "}"}]], "Output",
+ CellChangeTimes->{3.422604527921875*^9, 3.5103919139158077`*^9, 
+  3.5134199808611774`*^9}]
+}, Open  ]],
+
+Cell["\<\
+Prvn\[IAcute] 4 polo\[ZHacek]ky jsou vstupn\[IAcute] hodnoty. \
+Posledn\[IAcute] (5.) je v\[YAcute]stupn\[IAcute] hodnota. Pro pochopen\
+\[IAcute] n\[AAcute]sleduj\[IAcute]c\[IAcute]ho p\[RHacek]\[IAcute]kazu je \
+pot\[RHacek]eba \"myslet maticov\[EHacek]\" - te\[DHacek] jsou data \
+reprezentov\[AAcute]na seznamem, kde ka\[ZHacek]d\[YAcute] prvek je jeden \
+vektor vstupu a v\[YAcute]stupu (jeden \[RHacek]\[AAcute]dek datov\[EAcute]ho \
+souboru) - pokud tento seznam transponujeme, dostaneme seznam, kde \
+ka\[ZHacek]d\[YAcute] prvek bude reprezentovat hodnoty jednotliv\[YAcute]ch \
+atribut\[URing] - zam\[EHacek]n\[IAcute]me sloupce a \[RHacek]\[AAcute]dky. V \
+transponovan\[EAcute]m seznamu vybereme p\[RHacek]\[IAcute]slu\[SHacek]n\
+\[EAcute] sloupce a po transponov\[AAcute]n\[IAcute] zp\[EHacek]t dost\
+\[AAcute]v\[AAcute]me zase vektory dat.\
+\>", "Text",
+ CellChangeTimes->{{3.403531547967438*^9, 3.403531691199987*^9}, {
+  3.407605118640625*^9, 3.407605239421875*^9}}],
+
+Cell["Prvn\[IAcute] 4 hodnoty jsou vstupn\[IAcute].", "Text",
+ CellChangeTimes->{{3.403531720674994*^9, 3.403531730890452*^9}, {
+  3.4076052450625*^9, 3.407605248953125*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"inData", "=", 
+   RowBox[{"Transpose", "[", 
+    RowBox[{"Take", "[", 
+     RowBox[{
+      RowBox[{"Transpose", "[", "data2", "]"}], ",", "4"}], "]"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{"4", " ", "ud\[AAcute]v\[AAcute]"}], ",", " ", 
+    RowBox[{
+    "\[ZHacek]e", " ", "separujeme", " ", "prvn\[IAcute]", " ", "4", " ", 
+     "hodnoty"}]}], " ", "*)"}]}]}], "Input",
+ CellChangeTimes->{{3.403531568526507*^9, 3.403531569693683*^9}, {
+  3.40353170476349*^9, 3.403531742127725*^9}, {3.403531774480669*^9, 
+  3.403531795097856*^9}, {3.407605257828125*^9, 3.4076052625625*^9}}],
+
+Cell["\<\
+ Proto\[ZHacek]e jako v\[YAcute]stupn\[IAcute] hodnoty \
+vyb\[IAcute]r\[AAcute]me data na zadan\[EAcute]m indexu, je pot\[RHacek]eba \
+ho napsat do slo\[ZHacek]en\[YAcute]ch z\[AAcute]vorek {5} - syntaktick\
+\[AAcute] z\[AAcute]le\[ZHacek]itost. Dalo by se tak\[EAcute] pou\[ZHacek]\
+\[IAcute]t \"Take[..., -1]\" - jeden (obecn\[EHacek] n) prvek od konce.\
+\>", "Text",
+ CellChangeTimes->{{3.403531838779281*^9, 3.403531888431038*^9}, {
+  3.4076052668125*^9, 3.407605310890625*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"outDataTmp", "=", 
+   RowBox[{"Transpose", "[", 
+    RowBox[{"Take", "[", 
+     RowBox[{
+      RowBox[{"Transpose", "[", "data2", "]"}], ",", 
+      RowBox[{"{", "5", "}"}]}], "]"}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.40353174419611*^9, 3.403531834424998*^9}, {
+  3.403531901931621*^9, 3.403531910158072*^9}, {3.403532004847404*^9, 
+  3.403532005245109*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Vlastn\[IAcute] p\[RHacek]edzpracov\[AAcute]n\[IAcute] - \
+p\[RHacek]ek\[OAcute]dov\[AAcute]n\[IAcute] dat\
+\>", "Subsection",
+ CellChangeTimes->{{3.403531412983358*^9, 3.403531419191103*^9}, {
+  3.407605427546875*^9, 3.40760543984375*^9}, {3.4076055199375*^9, 
+  3.40760552615625*^9}}],
+
+Cell["\<\
+V datech jsou textov\[EAcute] atributy, kter\[EAcute] je pro pot\[RHacek]eby \
+klasifikace dop\[RHacek]ednou s\[IAcute]t\[IAcute] nutn\[EAcute] p\[RHacek]ek\
+\[OAcute]dovat. Pou\[ZHacek]ijeme k\[OAcute]d \"1 z N\".\
+\>", "Text",
+ CellChangeTimes->{{3.403531431969375*^9, 3.403531467210429*^9}, {
+  3.407605445546875*^9, 3.407605492171875*^9}, {3.40760553609375*^9, 
+  3.40760553615625*^9}, {3.5103913584927783`*^9, 3.5103913633678975`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Take", "[", 
+  RowBox[{"outDataTmp", ",", "5"}], "]"}]], "Input",
+ CellChangeTimes->{{3.4016988731914682`*^9, 3.4016988752823563`*^9}, {
+  3.401698934002181*^9, 3.401698934388752*^9}, {3.40353204180998*^9, 
+  3.403532052145839*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", "\<\"Iris-setosa\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-setosa\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-setosa\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-setosa\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-setosa\"\>", "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.422604527953125*^9, 3.5103919140308228`*^9, 
+  3.513419980907183*^9}]
+}, Open  ]],
+
+Cell["\<\
+Proto\[ZHacek]e se n\[AAcute]m nechce zad\[AAcute]vat ru\[CHacek]n\[EHacek] k\
+\[OAcute]dovac\[IAcute] tabulku a nav\[IAcute]c chceme m\[IAcute]t univerz\
+\[AAcute]ln\[IAcute] \[RHacek]e\[SHacek]en\[IAcute], \
+vytvo\[RHacek]\[IAcute]me k\[OAcute]dovac\[IAcute] tabulku automaticky.\
+\>", "Text",
+ CellChangeTimes->{{3.403532063387025*^9, 3.403532107530415*^9}, {
+  3.407605549859375*^9, 3.4076055853125*^9}}],
+
+Cell["\<\
+Prvn\[IAcute]m krokem je zjistit jak\[YAcute] je obor hodnot \
+textov\[EAcute]ho (v\[YAcute]stupn\[IAcute]ho) atributu. Funkc\[IAcute] \
+\"Flatten\" - zru\[SHacek]\[IAcute]me hierarchii v seznamu - te\[DHacek] jsou \
+v\[YAcute]stupn\[IAcute] data ulo\[ZHacek]ena jako seznam, kde ka\[ZHacek]d\
+\[YAcute] prvek je seznam o jedn\[EAcute] hodnot\[EHacek]. Ud\[EHacek]l\
+\[AAcute]me z n\[EHacek]j tedy jedno\[UAcute]rov\[NHacek]ov\[YAcute] seznam.\
+\>", "Text",
+ CellChangeTimes->{{3.403532110853843*^9, 3.403532190851658*^9}, 
+   3.403587003948616*^9, {3.40760558915625*^9, 3.407605679265625*^9}}],
+
+Cell["P\[RHacek]\[IAcute]klad pro pochopen\[IAcute] :", "Text",
+ CellChangeTimes->{{3.403532220024793*^9, 3.403532223377815*^9}, {
+  3.407605685640625*^9, 3.4076056913125*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{"Uk\[AAcute]zka", " ", "p\[URing]vodn\[IAcute]ch", " ", "dat"}], 
+   " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"Take", "[", 
+    RowBox[{"outDataTmp", ",", "5"}], "]"}], " ", "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{"Uk\[AAcute]zka", " ", "\"\<srovnan\[YAcute]ch\>\"", " ", "dat"}],
+     " ", "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"Take", "[", 
+    RowBox[{
+     RowBox[{"Flatten", "[", "outDataTmp", "]"}], ",", "5"}], 
+    "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.403532194028046*^9, 3.403532294077587*^9}, {
+  3.40760569475*^9, 3.407605711265625*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", "\<\"Iris-setosa\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-setosa\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-setosa\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-setosa\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-setosa\"\>", "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.42260452796875*^9, 3.5103919140643272`*^9, 
+  3.513419980936687*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"Iris-setosa\"\>", ",", "\<\"Iris-setosa\"\>", 
+   ",", "\<\"Iris-setosa\"\>", ",", "\<\"Iris-setosa\"\>", 
+   ",", "\<\"Iris-setosa\"\>"}], "}"}]], "Output",
+ CellChangeTimes->{3.42260452796875*^9, 3.5103919140643272`*^9, 
+  3.513419980941188*^9}]
+}, Open  ]],
+
+Cell["\<\
+Data tedy srovn\[AAcute]me funkc\[IAcute] \"Flatten\" a potom se\[RHacek]ad\
+\[IAcute]me funkc\[IAcute] \"Sort\". Na tento seznam pou\[ZHacek]ijeme funkci \
+\"Split\", kter\[AAcute] nam zadan\[YAcute] seznam (v na\[SHacek]em \
+p\[RHacek]\[IAcute]pad\[EHacek] se\[RHacek]azen\[YAcute] seznam \
+v\[YAcute]stupn\[IAcute]ch hodnot) rozd\[EHacek]l\[IAcute] na seznamy podle \
+funk\[CHacek]n\[IAcute] hodnoty - pokud jsou tedy v datech celkem 3 \
+r\[URing]zn\[EAcute] hodnoty, jsou ve v\[YAcute]sledku vytvo\[RHacek]eny 3 \
+seznamy - ka\[ZHacek]d\[YAcute] obsahuje prvky s jednou hodnotou.\
+\>", "Text",
+ CellChangeTimes->{{3.403532301534794*^9, 3.403532467234773*^9}, {
+  3.4076057234375*^9, 3.407605799078125*^9}}],
+
+Cell["\<\
+Pro lep\[SHacek]\[IAcute] pochopen\[IAcute] si zkuste vyhodnotit \
+n\[AAcute]sleduj\[IAcute]c\[IAcute] p\[RHacek]\[IAcute]kazy (cel\[YAcute] \
+postup rozf\[AAcute]zovan\[YAcute] do jednotliv\[YAcute]ch krok\[URing]). \
+POZOR - v\[YAcute]stupy mohou b\[YAcute]t dost velik\[EAcute] (zobrazuje se \
+cel\[YAcute] soubor dat).\
+\>", "Text",
+ CellChangeTimes->{{3.403532506519397*^9, 3.403532555185098*^9}, {
+  3.407605803765625*^9, 3.407605846421875*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["outDataTmp"], "Input",
+ CellChangeTimes->{{3.403532489723749*^9, 3.403532493289222*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", "\<\"Iris-setosa\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-setosa\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-setosa\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-setosa\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-setosa\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-setosa\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-setosa\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-setosa\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-setosa\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-setosa\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-setosa\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-setosa\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-setosa\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-setosa\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-setosa\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-setosa\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-setosa\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-setosa\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-setosa\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-setosa\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-setosa\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-setosa\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-setosa\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-setosa\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-setosa\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-setosa\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-setosa\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-setosa\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-setosa\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-setosa\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-setosa\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-setosa\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-setosa\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-setosa\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-setosa\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-setosa\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-setosa\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-setosa\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-setosa\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-setosa\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-setosa\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-setosa\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-setosa\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-setosa\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-setosa\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-setosa\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-setosa\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-setosa\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-setosa\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-setosa\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-versicolor\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-versicolor\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-versicolor\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-versicolor\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-versicolor\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-versicolor\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-versicolor\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-versicolor\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-versicolor\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-versicolor\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-versicolor\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-versicolor\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-versicolor\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-versicolor\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-versicolor\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-versicolor\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-versicolor\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-versicolor\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-versicolor\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-versicolor\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-versicolor\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-versicolor\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-versicolor\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-versicolor\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-versicolor\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-versicolor\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-versicolor\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-versicolor\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-versicolor\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-versicolor\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-versicolor\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-versicolor\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-versicolor\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-versicolor\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-versicolor\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-versicolor\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-versicolor\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-versicolor\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-versicolor\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-versicolor\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-versicolor\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-versicolor\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-versicolor\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-versicolor\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-versicolor\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-versicolor\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-versicolor\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-versicolor\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-versicolor\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-versicolor\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-virginica\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-virginica\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-virginica\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-virginica\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-virginica\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-virginica\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-virginica\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-virginica\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-virginica\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-virginica\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-virginica\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-virginica\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-virginica\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-virginica\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-virginica\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-virginica\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-virginica\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-virginica\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-virginica\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-virginica\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-virginica\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-virginica\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-virginica\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-virginica\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-virginica\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-virginica\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-virginica\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-virginica\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-virginica\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-virginica\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-virginica\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-virginica\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-virginica\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-virginica\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-virginica\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-virginica\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-virginica\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-virginica\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-virginica\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-virginica\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-virginica\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-virginica\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-virginica\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-virginica\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-virginica\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-virginica\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-virginica\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-virginica\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-virginica\"\>", "}"}], ",", 
+   RowBox[{"{", "\<\"Iris-virginica\"\>", "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.422604528015625*^9, 3.5103919141083326`*^9, 
+  3.5134199810842056`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Flatten", "[", "outDataTmp", "]"}]], "Input",
+ CellChangeTimes->{{3.403532561607992*^9, 3.403532569531393*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"Iris-setosa\"\>", ",", "\<\"Iris-setosa\"\>", 
+   ",", "\<\"Iris-setosa\"\>", ",", "\<\"Iris-setosa\"\>", 
+   ",", "\<\"Iris-setosa\"\>", ",", "\<\"Iris-setosa\"\>", 
+   ",", "\<\"Iris-setosa\"\>", ",", "\<\"Iris-setosa\"\>", 
+   ",", "\<\"Iris-setosa\"\>", ",", "\<\"Iris-setosa\"\>", 
+   ",", "\<\"Iris-setosa\"\>", ",", "\<\"Iris-setosa\"\>", 
+   ",", "\<\"Iris-setosa\"\>", ",", "\<\"Iris-setosa\"\>", 
+   ",", "\<\"Iris-setosa\"\>", ",", "\<\"Iris-setosa\"\>", 
+   ",", "\<\"Iris-setosa\"\>", ",", "\<\"Iris-setosa\"\>", 
+   ",", "\<\"Iris-setosa\"\>", ",", "\<\"Iris-setosa\"\>", 
+   ",", "\<\"Iris-setosa\"\>", ",", "\<\"Iris-setosa\"\>", 
+   ",", "\<\"Iris-setosa\"\>", ",", "\<\"Iris-setosa\"\>", 
+   ",", "\<\"Iris-setosa\"\>", ",", "\<\"Iris-setosa\"\>", 
+   ",", "\<\"Iris-setosa\"\>", ",", "\<\"Iris-setosa\"\>", 
+   ",", "\<\"Iris-setosa\"\>", ",", "\<\"Iris-setosa\"\>", 
+   ",", "\<\"Iris-setosa\"\>", ",", "\<\"Iris-setosa\"\>", 
+   ",", "\<\"Iris-setosa\"\>", ",", "\<\"Iris-setosa\"\>", 
+   ",", "\<\"Iris-setosa\"\>", ",", "\<\"Iris-setosa\"\>", 
+   ",", "\<\"Iris-setosa\"\>", ",", "\<\"Iris-setosa\"\>", 
+   ",", "\<\"Iris-setosa\"\>", ",", "\<\"Iris-setosa\"\>", 
+   ",", "\<\"Iris-setosa\"\>", ",", "\<\"Iris-setosa\"\>", 
+   ",", "\<\"Iris-setosa\"\>", ",", "\<\"Iris-setosa\"\>", 
+   ",", "\<\"Iris-setosa\"\>", ",", "\<\"Iris-setosa\"\>", 
+   ",", "\<\"Iris-setosa\"\>", ",", "\<\"Iris-setosa\"\>", 
+   ",", "\<\"Iris-setosa\"\>", ",", "\<\"Iris-setosa\"\>", 
+   ",", "\<\"Iris-versicolor\"\>", ",", "\<\"Iris-versicolor\"\>", 
+   ",", "\<\"Iris-versicolor\"\>", ",", "\<\"Iris-versicolor\"\>", 
+   ",", "\<\"Iris-versicolor\"\>", ",", "\<\"Iris-versicolor\"\>", 
+   ",", "\<\"Iris-versicolor\"\>", ",", "\<\"Iris-versicolor\"\>", 
+   ",", "\<\"Iris-versicolor\"\>", ",", "\<\"Iris-versicolor\"\>", 
+   ",", "\<\"Iris-versicolor\"\>", ",", "\<\"Iris-versicolor\"\>", 
+   ",", "\<\"Iris-versicolor\"\>", ",", "\<\"Iris-versicolor\"\>", 
+   ",", "\<\"Iris-versicolor\"\>", ",", "\<\"Iris-versicolor\"\>", 
+   ",", "\<\"Iris-versicolor\"\>", ",", "\<\"Iris-versicolor\"\>", 
+   ",", "\<\"Iris-versicolor\"\>", ",", "\<\"Iris-versicolor\"\>", 
+   ",", "\<\"Iris-versicolor\"\>", ",", "\<\"Iris-versicolor\"\>", 
+   ",", "\<\"Iris-versicolor\"\>", ",", "\<\"Iris-versicolor\"\>", 
+   ",", "\<\"Iris-versicolor\"\>", ",", "\<\"Iris-versicolor\"\>", 
+   ",", "\<\"Iris-versicolor\"\>", ",", "\<\"Iris-versicolor\"\>", 
+   ",", "\<\"Iris-versicolor\"\>", ",", "\<\"Iris-versicolor\"\>", 
+   ",", "\<\"Iris-versicolor\"\>", ",", "\<\"Iris-versicolor\"\>", 
+   ",", "\<\"Iris-versicolor\"\>", ",", "\<\"Iris-versicolor\"\>", 
+   ",", "\<\"Iris-versicolor\"\>", ",", "\<\"Iris-versicolor\"\>", 
+   ",", "\<\"Iris-versicolor\"\>", ",", "\<\"Iris-versicolor\"\>", 
+   ",", "\<\"Iris-versicolor\"\>", ",", "\<\"Iris-versicolor\"\>", 
+   ",", "\<\"Iris-versicolor\"\>", ",", "\<\"Iris-versicolor\"\>", 
+   ",", "\<\"Iris-versicolor\"\>", ",", "\<\"Iris-versicolor\"\>", 
+   ",", "\<\"Iris-versicolor\"\>", ",", "\<\"Iris-versicolor\"\>", 
+   ",", "\<\"Iris-versicolor\"\>", ",", "\<\"Iris-versicolor\"\>", 
+   ",", "\<\"Iris-versicolor\"\>", ",", "\<\"Iris-versicolor\"\>", 
+   ",", "\<\"Iris-virginica\"\>", ",", "\<\"Iris-virginica\"\>", 
+   ",", "\<\"Iris-virginica\"\>", ",", "\<\"Iris-virginica\"\>", 
+   ",", "\<\"Iris-virginica\"\>", ",", "\<\"Iris-virginica\"\>", 
+   ",", "\<\"Iris-virginica\"\>", ",", "\<\"Iris-virginica\"\>", 
+   ",", "\<\"Iris-virginica\"\>", ",", "\<\"Iris-virginica\"\>", 
+   ",", "\<\"Iris-virginica\"\>", ",", "\<\"Iris-virginica\"\>", 
+   ",", "\<\"Iris-virginica\"\>", ",", "\<\"Iris-virginica\"\>", 
+   ",", "\<\"Iris-virginica\"\>", ",", "\<\"Iris-virginica\"\>", 
+   ",", "\<\"Iris-virginica\"\>", ",", "\<\"Iris-virginica\"\>", 
+   ",", "\<\"Iris-virginica\"\>", ",", "\<\"Iris-virginica\"\>", 
+   ",", "\<\"Iris-virginica\"\>", ",", "\<\"Iris-virginica\"\>", 
+   ",", "\<\"Iris-virginica\"\>", ",", "\<\"Iris-virginica\"\>", 
+   ",", "\<\"Iris-virginica\"\>", ",", "\<\"Iris-virginica\"\>", 
+   ",", "\<\"Iris-virginica\"\>", ",", "\<\"Iris-virginica\"\>", 
+   ",", "\<\"Iris-virginica\"\>", ",", "\<\"Iris-virginica\"\>", 
+   ",", "\<\"Iris-virginica\"\>", ",", "\<\"Iris-virginica\"\>", 
+   ",", "\<\"Iris-virginica\"\>", ",", "\<\"Iris-virginica\"\>", 
+   ",", "\<\"Iris-virginica\"\>", ",", "\<\"Iris-virginica\"\>", 
+   ",", "\<\"Iris-virginica\"\>", ",", "\<\"Iris-virginica\"\>", 
+   ",", "\<\"Iris-virginica\"\>", ",", "\<\"Iris-virginica\"\>", 
+   ",", "\<\"Iris-virginica\"\>", ",", "\<\"Iris-virginica\"\>", 
+   ",", "\<\"Iris-virginica\"\>", ",", "\<\"Iris-virginica\"\>", 
+   ",", "\<\"Iris-virginica\"\>", ",", "\<\"Iris-virginica\"\>", 
+   ",", "\<\"Iris-virginica\"\>", ",", "\<\"Iris-virginica\"\>", 
+   ",", "\<\"Iris-virginica\"\>", ",", "\<\"Iris-virginica\"\>"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.42260452803125*^9, 3.51039191416934*^9, 
+  3.51341998112121*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Sort", "[", 
+  RowBox[{"Flatten", "[", "outDataTmp", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.403532577569216*^9, 3.403532590249464*^9}, {
+  3.407605854203125*^9, 3.407605855546875*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"Iris-setosa\"\>", ",", "\<\"Iris-setosa\"\>", 
+   ",", "\<\"Iris-setosa\"\>", ",", "\<\"Iris-setosa\"\>", 
+   ",", "\<\"Iris-setosa\"\>", ",", "\<\"Iris-setosa\"\>", 
+   ",", "\<\"Iris-setosa\"\>", ",", "\<\"Iris-setosa\"\>", 
+   ",", "\<\"Iris-setosa\"\>", ",", "\<\"Iris-setosa\"\>", 
+   ",", "\<\"Iris-setosa\"\>", ",", "\<\"Iris-setosa\"\>", 
+   ",", "\<\"Iris-setosa\"\>", ",", "\<\"Iris-setosa\"\>", 
+   ",", "\<\"Iris-setosa\"\>", ",", "\<\"Iris-setosa\"\>", 
+   ",", "\<\"Iris-setosa\"\>", ",", "\<\"Iris-setosa\"\>", 
+   ",", "\<\"Iris-setosa\"\>", ",", "\<\"Iris-setosa\"\>", 
+   ",", "\<\"Iris-setosa\"\>", ",", "\<\"Iris-setosa\"\>", 
+   ",", "\<\"Iris-setosa\"\>", ",", "\<\"Iris-setosa\"\>", 
+   ",", "\<\"Iris-setosa\"\>", ",", "\<\"Iris-setosa\"\>", 
+   ",", "\<\"Iris-setosa\"\>", ",", "\<\"Iris-setosa\"\>", 
+   ",", "\<\"Iris-setosa\"\>", ",", "\<\"Iris-setosa\"\>", 
+   ",", "\<\"Iris-setosa\"\>", ",", "\<\"Iris-setosa\"\>", 
+   ",", "\<\"Iris-setosa\"\>", ",", "\<\"Iris-setosa\"\>", 
+   ",", "\<\"Iris-setosa\"\>", ",", "\<\"Iris-setosa\"\>", 
+   ",", "\<\"Iris-setosa\"\>", ",", "\<\"Iris-setosa\"\>", 
+   ",", "\<\"Iris-setosa\"\>", ",", "\<\"Iris-setosa\"\>", 
+   ",", "\<\"Iris-setosa\"\>", ",", "\<\"Iris-setosa\"\>", 
+   ",", "\<\"Iris-setosa\"\>", ",", "\<\"Iris-setosa\"\>", 
+   ",", "\<\"Iris-setosa\"\>", ",", "\<\"Iris-setosa\"\>", 
+   ",", "\<\"Iris-setosa\"\>", ",", "\<\"Iris-setosa\"\>", 
+   ",", "\<\"Iris-setosa\"\>", ",", "\<\"Iris-setosa\"\>", 
+   ",", "\<\"Iris-versicolor\"\>", ",", "\<\"Iris-versicolor\"\>", 
+   ",", "\<\"Iris-versicolor\"\>", ",", "\<\"Iris-versicolor\"\>", 
+   ",", "\<\"Iris-versicolor\"\>", ",", "\<\"Iris-versicolor\"\>", 
+   ",", "\<\"Iris-versicolor\"\>", ",", "\<\"Iris-versicolor\"\>", 
+   ",", "\<\"Iris-versicolor\"\>", ",", "\<\"Iris-versicolor\"\>", 
+   ",", "\<\"Iris-versicolor\"\>", ",", "\<\"Iris-versicolor\"\>", 
+   ",", "\<\"Iris-versicolor\"\>", ",", "\<\"Iris-versicolor\"\>", 
+   ",", "\<\"Iris-versicolor\"\>", ",", "\<\"Iris-versicolor\"\>", 
+   ",", "\<\"Iris-versicolor\"\>", ",", "\<\"Iris-versicolor\"\>", 
+   ",", "\<\"Iris-versicolor\"\>", ",", "\<\"Iris-versicolor\"\>", 
+   ",", "\<\"Iris-versicolor\"\>", ",", "\<\"Iris-versicolor\"\>", 
+   ",", "\<\"Iris-versicolor\"\>", ",", "\<\"Iris-versicolor\"\>", 
+   ",", "\<\"Iris-versicolor\"\>", ",", "\<\"Iris-versicolor\"\>", 
+   ",", "\<\"Iris-versicolor\"\>", ",", "\<\"Iris-versicolor\"\>", 
+   ",", "\<\"Iris-versicolor\"\>", ",", "\<\"Iris-versicolor\"\>", 
+   ",", "\<\"Iris-versicolor\"\>", ",", "\<\"Iris-versicolor\"\>", 
+   ",", "\<\"Iris-versicolor\"\>", ",", "\<\"Iris-versicolor\"\>", 
+   ",", "\<\"Iris-versicolor\"\>", ",", "\<\"Iris-versicolor\"\>", 
+   ",", "\<\"Iris-versicolor\"\>", ",", "\<\"Iris-versicolor\"\>", 
+   ",", "\<\"Iris-versicolor\"\>", ",", "\<\"Iris-versicolor\"\>", 
+   ",", "\<\"Iris-versicolor\"\>", ",", "\<\"Iris-versicolor\"\>", 
+   ",", "\<\"Iris-versicolor\"\>", ",", "\<\"Iris-versicolor\"\>", 
+   ",", "\<\"Iris-versicolor\"\>", ",", "\<\"Iris-versicolor\"\>", 
+   ",", "\<\"Iris-versicolor\"\>", ",", "\<\"Iris-versicolor\"\>", 
+   ",", "\<\"Iris-versicolor\"\>", ",", "\<\"Iris-versicolor\"\>", 
+   ",", "\<\"Iris-virginica\"\>", ",", "\<\"Iris-virginica\"\>", 
+   ",", "\<\"Iris-virginica\"\>", ",", "\<\"Iris-virginica\"\>", 
+   ",", "\<\"Iris-virginica\"\>", ",", "\<\"Iris-virginica\"\>", 
+   ",", "\<\"Iris-virginica\"\>", ",", "\<\"Iris-virginica\"\>", 
+   ",", "\<\"Iris-virginica\"\>", ",", "\<\"Iris-virginica\"\>", 
+   ",", "\<\"Iris-virginica\"\>", ",", "\<\"Iris-virginica\"\>", 
+   ",", "\<\"Iris-virginica\"\>", ",", "\<\"Iris-virginica\"\>", 
+   ",", "\<\"Iris-virginica\"\>", ",", "\<\"Iris-virginica\"\>", 
+   ",", "\<\"Iris-virginica\"\>", ",", "\<\"Iris-virginica\"\>", 
+   ",", "\<\"Iris-virginica\"\>", ",", "\<\"Iris-virginica\"\>", 
+   ",", "\<\"Iris-virginica\"\>", ",", "\<\"Iris-virginica\"\>", 
+   ",", "\<\"Iris-virginica\"\>", ",", "\<\"Iris-virginica\"\>", 
+   ",", "\<\"Iris-virginica\"\>", ",", "\<\"Iris-virginica\"\>", 
+   ",", "\<\"Iris-virginica\"\>", ",", "\<\"Iris-virginica\"\>", 
+   ",", "\<\"Iris-virginica\"\>", ",", "\<\"Iris-virginica\"\>", 
+   ",", "\<\"Iris-virginica\"\>", ",", "\<\"Iris-virginica\"\>", 
+   ",", "\<\"Iris-virginica\"\>", ",", "\<\"Iris-virginica\"\>", 
+   ",", "\<\"Iris-virginica\"\>", ",", "\<\"Iris-virginica\"\>", 
+   ",", "\<\"Iris-virginica\"\>", ",", "\<\"Iris-virginica\"\>", 
+   ",", "\<\"Iris-virginica\"\>", ",", "\<\"Iris-virginica\"\>", 
+   ",", "\<\"Iris-virginica\"\>", ",", "\<\"Iris-virginica\"\>", 
+   ",", "\<\"Iris-virginica\"\>", ",", "\<\"Iris-virginica\"\>", 
+   ",", "\<\"Iris-virginica\"\>", ",", "\<\"Iris-virginica\"\>", 
+   ",", "\<\"Iris-virginica\"\>", ",", "\<\"Iris-virginica\"\>", 
+   ",", "\<\"Iris-virginica\"\>", ",", "\<\"Iris-virginica\"\>"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.422604528046875*^9, 3.5103919142323484`*^9, 
+  3.513419981157715*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Split", "[", 
+  RowBox[{"Sort", "[", 
+   RowBox[{"Flatten", "[", "outDataTmp", "]"}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.40353247523473*^9, 3.403532477440411*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"\<\"Iris-setosa\"\>", ",", "\<\"Iris-setosa\"\>", 
+     ",", "\<\"Iris-setosa\"\>", ",", "\<\"Iris-setosa\"\>", 
+     ",", "\<\"Iris-setosa\"\>", ",", "\<\"Iris-setosa\"\>", 
+     ",", "\<\"Iris-setosa\"\>", ",", "\<\"Iris-setosa\"\>", 
+     ",", "\<\"Iris-setosa\"\>", ",", "\<\"Iris-setosa\"\>", 
+     ",", "\<\"Iris-setosa\"\>", ",", "\<\"Iris-setosa\"\>", 
+     ",", "\<\"Iris-setosa\"\>", ",", "\<\"Iris-setosa\"\>", 
+     ",", "\<\"Iris-setosa\"\>", ",", "\<\"Iris-setosa\"\>", 
+     ",", "\<\"Iris-setosa\"\>", ",", "\<\"Iris-setosa\"\>", 
+     ",", "\<\"Iris-setosa\"\>", ",", "\<\"Iris-setosa\"\>", 
+     ",", "\<\"Iris-setosa\"\>", ",", "\<\"Iris-setosa\"\>", 
+     ",", "\<\"Iris-setosa\"\>", ",", "\<\"Iris-setosa\"\>", 
+     ",", "\<\"Iris-setosa\"\>", ",", "\<\"Iris-setosa\"\>", 
+     ",", "\<\"Iris-setosa\"\>", ",", "\<\"Iris-setosa\"\>", 
+     ",", "\<\"Iris-setosa\"\>", ",", "\<\"Iris-setosa\"\>", 
+     ",", "\<\"Iris-setosa\"\>", ",", "\<\"Iris-setosa\"\>", 
+     ",", "\<\"Iris-setosa\"\>", ",", "\<\"Iris-setosa\"\>", 
+     ",", "\<\"Iris-setosa\"\>", ",", "\<\"Iris-setosa\"\>", 
+     ",", "\<\"Iris-setosa\"\>", ",", "\<\"Iris-setosa\"\>", 
+     ",", "\<\"Iris-setosa\"\>", ",", "\<\"Iris-setosa\"\>", 
+     ",", "\<\"Iris-setosa\"\>", ",", "\<\"Iris-setosa\"\>", 
+     ",", "\<\"Iris-setosa\"\>", ",", "\<\"Iris-setosa\"\>", 
+     ",", "\<\"Iris-setosa\"\>", ",", "\<\"Iris-setosa\"\>", 
+     ",", "\<\"Iris-setosa\"\>", ",", "\<\"Iris-setosa\"\>", 
+     ",", "\<\"Iris-setosa\"\>", ",", "\<\"Iris-setosa\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Iris-versicolor\"\>", ",", "\<\"Iris-versicolor\"\>", 
+     ",", "\<\"Iris-versicolor\"\>", ",", "\<\"Iris-versicolor\"\>", 
+     ",", "\<\"Iris-versicolor\"\>", ",", "\<\"Iris-versicolor\"\>", 
+     ",", "\<\"Iris-versicolor\"\>", ",", "\<\"Iris-versicolor\"\>", 
+     ",", "\<\"Iris-versicolor\"\>", ",", "\<\"Iris-versicolor\"\>", 
+     ",", "\<\"Iris-versicolor\"\>", ",", "\<\"Iris-versicolor\"\>", 
+     ",", "\<\"Iris-versicolor\"\>", ",", "\<\"Iris-versicolor\"\>", 
+     ",", "\<\"Iris-versicolor\"\>", ",", "\<\"Iris-versicolor\"\>", 
+     ",", "\<\"Iris-versicolor\"\>", ",", "\<\"Iris-versicolor\"\>", 
+     ",", "\<\"Iris-versicolor\"\>", ",", "\<\"Iris-versicolor\"\>", 
+     ",", "\<\"Iris-versicolor\"\>", ",", "\<\"Iris-versicolor\"\>", 
+     ",", "\<\"Iris-versicolor\"\>", ",", "\<\"Iris-versicolor\"\>", 
+     ",", "\<\"Iris-versicolor\"\>", ",", "\<\"Iris-versicolor\"\>", 
+     ",", "\<\"Iris-versicolor\"\>", ",", "\<\"Iris-versicolor\"\>", 
+     ",", "\<\"Iris-versicolor\"\>", ",", "\<\"Iris-versicolor\"\>", 
+     ",", "\<\"Iris-versicolor\"\>", ",", "\<\"Iris-versicolor\"\>", 
+     ",", "\<\"Iris-versicolor\"\>", ",", "\<\"Iris-versicolor\"\>", 
+     ",", "\<\"Iris-versicolor\"\>", ",", "\<\"Iris-versicolor\"\>", 
+     ",", "\<\"Iris-versicolor\"\>", ",", "\<\"Iris-versicolor\"\>", 
+     ",", "\<\"Iris-versicolor\"\>", ",", "\<\"Iris-versicolor\"\>", 
+     ",", "\<\"Iris-versicolor\"\>", ",", "\<\"Iris-versicolor\"\>", 
+     ",", "\<\"Iris-versicolor\"\>", ",", "\<\"Iris-versicolor\"\>", 
+     ",", "\<\"Iris-versicolor\"\>", ",", "\<\"Iris-versicolor\"\>", 
+     ",", "\<\"Iris-versicolor\"\>", ",", "\<\"Iris-versicolor\"\>", 
+     ",", "\<\"Iris-versicolor\"\>", ",", "\<\"Iris-versicolor\"\>"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Iris-virginica\"\>", ",", "\<\"Iris-virginica\"\>", 
+     ",", "\<\"Iris-virginica\"\>", ",", "\<\"Iris-virginica\"\>", 
+     ",", "\<\"Iris-virginica\"\>", ",", "\<\"Iris-virginica\"\>", 
+     ",", "\<\"Iris-virginica\"\>", ",", "\<\"Iris-virginica\"\>", 
+     ",", "\<\"Iris-virginica\"\>", ",", "\<\"Iris-virginica\"\>", 
+     ",", "\<\"Iris-virginica\"\>", ",", "\<\"Iris-virginica\"\>", 
+     ",", "\<\"Iris-virginica\"\>", ",", "\<\"Iris-virginica\"\>", 
+     ",", "\<\"Iris-virginica\"\>", ",", "\<\"Iris-virginica\"\>", 
+     ",", "\<\"Iris-virginica\"\>", ",", "\<\"Iris-virginica\"\>", 
+     ",", "\<\"Iris-virginica\"\>", ",", "\<\"Iris-virginica\"\>", 
+     ",", "\<\"Iris-virginica\"\>", ",", "\<\"Iris-virginica\"\>", 
+     ",", "\<\"Iris-virginica\"\>", ",", "\<\"Iris-virginica\"\>", 
+     ",", "\<\"Iris-virginica\"\>", ",", "\<\"Iris-virginica\"\>", 
+     ",", "\<\"Iris-virginica\"\>", ",", "\<\"Iris-virginica\"\>", 
+     ",", "\<\"Iris-virginica\"\>", ",", "\<\"Iris-virginica\"\>", 
+     ",", "\<\"Iris-virginica\"\>", ",", "\<\"Iris-virginica\"\>", 
+     ",", "\<\"Iris-virginica\"\>", ",", "\<\"Iris-virginica\"\>", 
+     ",", "\<\"Iris-virginica\"\>", ",", "\<\"Iris-virginica\"\>", 
+     ",", "\<\"Iris-virginica\"\>", ",", "\<\"Iris-virginica\"\>", 
+     ",", "\<\"Iris-virginica\"\>", ",", "\<\"Iris-virginica\"\>", 
+     ",", "\<\"Iris-virginica\"\>", ",", "\<\"Iris-virginica\"\>", 
+     ",", "\<\"Iris-virginica\"\>", ",", "\<\"Iris-virginica\"\>", 
+     ",", "\<\"Iris-virginica\"\>", ",", "\<\"Iris-virginica\"\>", 
+     ",", "\<\"Iris-virginica\"\>", ",", "\<\"Iris-virginica\"\>", 
+     ",", "\<\"Iris-virginica\"\>", ",", "\<\"Iris-virginica\"\>"}], "}"}]}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.4226045280625*^9, 3.5103919142953568`*^9, 
+  3.51341998119372*^9}]
+}, Open  ]],
+
+Cell["\<\
+Te\[DHacek] m\[AAcute]me tolik seznam\[URing], kolik je \
+r\[URing]zn\[YAcute]ch hodnot v\[YAcute]stup\[URing] - z \
+ka\[ZHacek]d\[EAcute]ho tohoto seznamu tedy vezmeme prvn\[IAcute] prvek jako \
+reprezentanta. Ud\[EHacek]l\[AAcute]me to namapovan\[IAcute]m funkce \
+\"First\" (vrac\[IAcute] prvn\[IAcute] prvek zadan\[EAcute]ho seznamu).\
+\>", "Text",
+ CellChangeTimes->{{3.403532606973828*^9, 3.403532659166231*^9}, {
+  3.407605861703125*^9, 3.407605936375*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"outVal", "=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"First", "[", "#", "]"}], "&"}], "/@", 
+   RowBox[{"Split", "[", 
+    RowBox[{"Sort", "[", 
+     RowBox[{"Flatten", "[", "outDataTmp", "]"}], "]"}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.40169980885839*^9, 3.401699852124919*^9}, {
+  3.401699933089142*^9, 3.40169994158294*^9}, {3.40221404972688*^9, 
+  3.402214050174138*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"Iris-setosa\"\>", ",", "\<\"Iris-versicolor\"\>", 
+   ",", "\<\"Iris-virginica\"\>"}], "}"}]], "Output",
+ CellChangeTimes->{3.422604528078125*^9, 3.510391914355864*^9, 
+  3.513419981231224*^9}]
+}, Open  ]],
+
+Cell["\<\
+V prom\[EHacek]nn\[EAcute] \"outVal\" te\[DHacek] m\[AAcute]me obor hodnot v\
+\[YAcute]stupu.\
+\>", "Text",
+ CellChangeTimes->{{3.403532670107412*^9, 3.403532700990191*^9}, {
+  3.407605942453125*^9, 3.40760595275*^9}}],
+
+Cell["\<\
+Vytvo\[RHacek]\[IAcute]me p\[RHacek]evodn\[IAcute] tabulku. MapIndexed \
+funguje stejn\[EHacek] jako Map, ale v druh\[EAcute]m parametru (#2) p\
+\[RHacek]ed\[AAcute]v\[AAcute] index prvku, na kter\[YAcute] je funkce aktu\
+\[AAcute]ln\[EHacek] mapov\[AAcute]na. SparseArray slou\[ZHacek]\[IAcute] k \
+vytv\[AAcute]\[RHacek]en\[IAcute] tzv. \[RHacek]\[IAcute]dk\[YAcute]ch matic \
+- zde ji pou\[ZHacek]ijeme jako n\[AAcute]stroj pro jednoduch\[EAcute] vytvo\
+\[RHacek]en\[IAcute] v\[YAcute]sledn\[EAcute]ho vektoru. Chceme toti\[ZHacek] \
+nulov\[YAcute] vektor s jedni\[CHacek]kou pouze na jedn\[EAcute] pozici.\
+\>", "Text",
+ CellChangeTimes->{{3.40353277226545*^9, 3.403532776371093*^9}, {
+  3.40353281274642*^9, 3.403532902728781*^9}, {3.403533035721779*^9, 
+  3.403533041758365*^9}, {3.407605955625*^9, 3.40760603840625*^9}}],
+
+Cell["P\[RHacek]\[IAcute]klad :", "Text",
+ CellChangeTimes->{{3.403533043153162*^9, 3.403533046552773*^9}, {
+  3.40760604084375*^9, 3.407606041828125*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"SparseArray", "[", 
+   RowBox[{"3", "\[Rule]", "1"}], "]"}], " ", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "Na", " ", "pozici", " ", "3", " ", "bude", " ", "hodnota", " ", "1"}], 
+   " ", "*)"}]}]], "Input",
+ CellChangeTimes->{{3.403533053454391*^9, 3.403533104729372*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"SparseArray", "[", 
+   RowBox[{
+    InterpretationBox[
+     RowBox[{"\<\"<\"\>", "\[InvisibleSpace]", "1", 
+      "\[InvisibleSpace]", "\<\">\"\>"}],
+     SequenceForm["<", 1, ">"],
+     Editable->False], ",", 
+    RowBox[{"{", "3", "}"}]}], "]"}],
+  False,
+  Editable->False]], "Output",
+ CellChangeTimes->{3.42260452815625*^9, 3.510391914440375*^9, 
+  3.513419981322236*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Normal", "[", "%", "]"}], " ", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "\[CapitalRHacek]\[IAcute]dkou", " ", "matici", " ", "p\[RHacek]evedeme", 
+    " ", "na", " ", "norm\[AAcute]ln\[IAcute]"}], " ", "*)"}]}]], "Input",
+ CellChangeTimes->{{3.40353308363058*^9, 3.403533099906907*^9}, {
+  3.407606053*^9, 3.40760606509375*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"0", ",", "0", ",", "1"}], "}"}]], "Output",
+ CellChangeTimes->{3.422604528171875*^9, 3.5103919144903812`*^9, 
+  3.513419981527762*^9}]
+}, Open  ]],
+
+Cell["\<\
+Vid\[IAcute]me, \[ZHacek]e to je p\[RHacek]esn\[EHacek] to, co chceme, tak\
+\[ZHacek]e te\[DHacek] aplikujeme tento p\[RHacek]\[IAcute]kaz na \
+cel\[YAcute] seznam v\[YAcute]stupn\[IAcute]ch hodnot, \
+ulo\[ZHacek]en\[YAcute]ch v prom\[EHacek]nn\[EAcute] \"outVal\".\
+\>", "Text",
+ CellChangeTimes->{{3.403533112210256*^9, 3.40353315066218*^9}, {
+  3.40760606940625*^9, 3.40760613128125*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"encode", "=", 
+  RowBox[{"MapIndexed", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"#1", "->", 
+      RowBox[{"Normal", "[", 
+       RowBox[{"SparseArray", "[", 
+        RowBox[{
+         RowBox[{"#2", "\[Rule]", "1"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"Length", "[", "outVal", "]"}], "}"}]}], "]"}], "]"}]}], 
+     "&"}], ",", "outVal"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.40353280761723*^9, 3.403532808235233*^9}, {
+  3.403533177270252*^9, 3.403533179619677*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"\<\"Iris-setosa\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"1", ",", "0", ",", "0"}], "}"}]}], ",", 
+   RowBox[{"\<\"Iris-versicolor\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"0", ",", "1", ",", "0"}], "}"}]}], ",", 
+   RowBox[{"\<\"Iris-virginica\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"0", ",", "0", ",", "1"}], "}"}]}]}], "}"}]], "Output",
+ CellChangeTimes->{3.4226045281875*^9, 3.510391914521885*^9, 
+  3.5134199815672674`*^9}]
+}, Open  ]],
+
+Cell["\<\
+Prom\[EHacek]nn\[AAcute] \"encode\" te\[DHacek] obsahuje seznam tzv. p\
+\[RHacek]episovac\[IAcute]ch pravidel - vid\[IAcute]me, \[ZHacek]e \
+ka\[ZHacek]d\[EAcute] textov\[EAcute] hodnot\[EHacek] je \
+p\[RHacek]i\[RHacek]azen jeden vektor.\
+\>", "Text",
+ CellChangeTimes->{{3.40353318247172*^9, 3.403533222142029*^9}, {
+  3.407606190984375*^9, 3.4076062463125*^9}}],
+
+Cell["\<\
+Pomoc\[IAcute] konstrukce \"/.\" m\[URing]\[ZHacek]eme tato \
+p\[RHacek]episovac\[IAcute] pravidla aplikovat na p\[URing]vodn\[IAcute] data \
+a z\[IAcute]sk\[AAcute]me tak zak\[OAcute]dovan\[AAcute] data.\
+\>", "Text",
+ CellChangeTimes->{{3.403533225623216*^9, 3.40353325432146*^9}, {
+  3.40760625146875*^9, 3.40760627571875*^9}}],
+
+Cell["\<\
+P\[RHacek]\[IAcute]klad pro pochopen\[IAcute] (znak \[SHacek]ipky se zad\
+\[AAcute]v\[AAcute] jako \"poml\[CHacek]ka\" a \
+\"v\[EHacek]t\[SHacek]\[IAcute]tko\" tj. \"-\" a \">\"):\
+\>", "Text",
+ CellChangeTimes->{{3.403533257621498*^9, 3.403533261115134*^9}, {
+  3.403533340539734*^9, 3.403533372624344*^9}, {3.407606281578125*^9, 
+  3.407606306359375*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"{", 
+   RowBox[{"a", ",", "b", ",", "c"}], "}"}], "/.", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"a", "\[Rule]", "1"}], ",", 
+    RowBox[{"b", "\[Rule]", "2"}], ",", 
+    RowBox[{"c", "\[Rule]", "3"}]}], "}"}], " ", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{
+    "\"\<a\>\"", " ", "k\[OAcute]dujeme", " ", "jako", " ", "\"\<1\>\""}], 
+    ",", " ", 
+    RowBox[{"\"\<b\>\"", " ", "jako", " ", "\"\<2\>\""}], ",", " ", 
+    RowBox[{"atd", "."}]}], "*)"}]}]], "Input",
+ CellChangeTimes->{{3.40353326524438*^9, 3.403533299332565*^9}, {
+  3.407606322171875*^9, 3.407606322953125*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"1", ",", "2", ",", "3"}], "}"}]], "Output",
+ CellChangeTimes->{3.422604528203125*^9, 3.5103919145568895`*^9, 
+  3.513419981598771*^9}]
+}, Open  ]],
+
+Cell["Dal\[SHacek]\[IAcute] p\[RHacek]\[IAcute]klad :", "Text",
+ CellChangeTimes->{{3.4035333072319*^9, 3.403533310950635*^9}, {
+  3.407606329453125*^9, 3.4076063345625*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"{", 
+   RowBox[{"a", ",", "b", ",", "c"}], "}"}], "/.", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"a", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "0", ",", "0"}], "}"}]}], ",", 
+    RowBox[{"b", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "1", ",", "0"}], "}"}]}], ",", 
+    RowBox[{"c", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "0", ",", "1"}], "}"}]}]}], "}"}]}]], "Input",
+ CellChangeTimes->{{3.403533314375056*^9, 3.403533335936633*^9}, 
+   3.403533384302521*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "1", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "1"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.42260452821875*^9, 3.5103919145893936`*^9, 
+  3.513419981631275*^9}]
+}, Open  ]],
+
+Cell["\<\
+Te\[DHacek] u\[ZHacek] m\[URing]\[ZHacek]eme kone\[CHacek]n\[EHacek] zak\
+\[OAcute]dovat na\[SHacek]e data.\
+\>", "Text",
+ CellChangeTimes->{{3.403533394693719*^9, 3.403533413970131*^9}, {
+  3.407606339875*^9, 3.40760635565625*^9}}],
+
+Cell["\<\
+Zji\[SHacek]t\[EHacek]n\[IAcute], zda jsou n\[EHacek]kter\[EAcute] \
+v\[YAcute]stupn\[IAcute] hodnoty textov\[EAcute] - pokud ano, provede se p\
+\[RHacek]ek\[OAcute]dov\[AAcute]ni do \"1 z N\".\
+\>", "Text",
+ CellChangeTimes->{{3.4016999459595633`*^9, 3.40169998389252*^9}, {
+  3.40760635878125*^9, 3.407606389203125*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"outData", "=", 
+   RowBox[{
+    RowBox[{"Flatten", "[", "outDataTmp", "]"}], "/.", "encode"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.4016999900235987`*^9, 3.4017000573844967`*^9}, {
+  3.401700093574688*^9, 3.401700101020647*^9}, {3.4017002227917557`*^9, 
+  3.40170026504237*^9}, {3.4017003000333023`*^9, 3.401700311705518*^9}, {
+  3.401700342161188*^9, 3.401700359449245*^9}, {3.40221405476853*^9, 
+  3.402214069048754*^9}, {3.403533421183471*^9, 3.403533446418298*^9}}],
+
+Cell["Jak to vypad\[AAcute]? Koukneme se :", "Text",
+ CellChangeTimes->{{3.403533448547858*^9, 3.403533454035724*^9}, {
+  3.407606397984375*^9, 3.407606398046875*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Take", "[", 
+  RowBox[{"outData", ",", "5"}], "]"}]], "Input",
+ CellChangeTimes->{{3.403533457155103*^9, 3.403533477736038*^9}, {
+  3.407608254859375*^9, 3.40760825609375*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "0", ",", "0"}], "}"}]}], "}"}]], "Output",
+ GeneratedCell->False,
+ CellAutoOverwrite->False,
+ CellChangeTimes->{
+  3.40355433503881*^9, 3.40760640040625*^9, 3.4076067744375*^9, 
+   3.407607008578125*^9, 3.40760763996875*^9, {3.4076082225625*^9, 
+   3.407608222984375*^9}, 3.407608262765625*^9, 3.409334370640625*^9, 
+   3.40946026153125*^9, 3.40946034715625*^9, 3.422604528234375*^9, 
+   3.5103919146308985`*^9, 3.51341998166928*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "0", ",", "0"}], "}"}]}], "}"}]], "Output",
+ GeneratedCell->False,
+ CellAutoOverwrite->False,
+ CellChangeTimes->{
+  3.40355433503881*^9, 3.40760640040625*^9, 3.4076067744375*^9, 
+   3.407607008578125*^9, 3.40760763996875*^9, {3.4076082225625*^9, 
+   3.407608222984375*^9}, 3.407608262765625*^9, 3.409334370640625*^9, 
+   3.40946026153125*^9, 3.40946034715625*^9, 3.422604528234375*^9, 
+   3.5103919146308985`*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "0", ",", "0"}], "}"}]}], "}"}]], "Output",
+ GeneratedCell->False,
+ CellAutoOverwrite->False,
+ CellChangeTimes->{
+  3.40355433503881*^9, 3.40760640040625*^9, 3.4076067744375*^9, 
+   3.407607008578125*^9, 3.40760763996875*^9, {3.4076082225625*^9, 
+   3.407608222984375*^9}, 3.407608262765625*^9, 3.409334370640625*^9, 
+   3.40946026153125*^9, 3.40946034715625*^9, 3.422604528234375*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "0", ",", "0"}], "}"}]}], "}"}]], "Output",
+ GeneratedCell->False,
+ CellAutoOverwrite->False,
+ CellChangeTimes->{
+  3.40355433503881*^9, 3.40760640040625*^9, 3.4076067744375*^9, 
+   3.407607008578125*^9, 3.40760763996875*^9, {3.4076082225625*^9, 
+   3.407608222984375*^9}, 3.407608262765625*^9, 3.409334370640625*^9, 
+   3.40946026153125*^9, 3.40946034715625*^9}]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Jednoduch\[EAcute] zpracov\[AAcute]n\[IAcute] dat neuronovou s\[IAcute]t\
+\[IAcute]\
+\>", "Section",
+ CellChangeTimes->{{3.402213953917428*^9, 3.402213962213214*^9}, {
+  3.403533516392156*^9, 3.4035335187936*^9}, {3.407606405515625*^9, 
+  3.407606412203125*^9}, {3.5103920373364806`*^9, 3.5103920482128615`*^9}}],
+
+Cell["\<\
+Inicializace s\[IAcute]t\[EHacek] - zad\[AAcute]me tr\[EAcute]novac\[IAcute] \
+mno\[ZHacek]inu, po\[CHacek]et neuron\[URing], p\[RHacek]\[IAcute]padn\
+\[EHacek] m\[URing]\[ZHacek]eme zadat i aktiva\[CHacek]n\[IAcute] funkci \
+neuronu. Po\[CHacek]et neuron\[URing] se zad\[AAcute]v\[AAcute] jako seznam, \
+ka\[ZHacek]d\[YAcute] prvek (\[CHacek]\[IAcute]slo) seznamu odpov\[IAcute]d\
+\[AAcute] po\[CHacek]tu neuron\[URing] v jedn\[EAcute] vrstv\[EHacek]. {5} \
+znamen\[AAcute] jedna skryt\[AAcute] vrstva s p\[EHacek]ti neurony. {4,3} \
+znamen\[AAcute] dv\[EHacek] skryt\[EAcute] vrstvy, jedna se \[CHacek]ty\
+\[RHacek]mi neurony a druh\[AAcute] se t\[RHacek]emi neurony.\
+\>", "Text",
+ CellChangeTimes->{{3.403533524905281*^9, 3.403533627638674*^9}, {
+  3.407606429609375*^9, 3.4076065073125*^9}, {3.407606550203125*^9, 
+  3.407606557234375*^9}, {3.40760659715625*^9, 3.4076066289375*^9}}],
+
+Cell["\<\
+Vytvo\[RHacek]enou s\[IAcute]\[THacek] si ulo\[ZHacek]\[IAcute]me do prom\
+\[EHacek]nn\[EAcute] \"net\".\
+\>", "Text",
+ CellChangeTimes->{{3.403533726823339*^9, 3.403533733646525*^9}, {
+  3.407606632234375*^9, 3.4076066513125*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"net", "=", 
+  RowBox[{"InitializeFeedForwardNet", "[", 
+   RowBox[{"inData", ",", "outData", ",", 
+    RowBox[{"{", 
+     RowBox[{"3", ",", "2"}], "}"}], ",", 
+    RowBox[{"Neuron", "\[Rule]", "Sigmoid"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.402213984499589*^9, 3.40221000596526*^9}, {
+   3.402210338099065*^9, 3.402210338684073*^9}, {3.402210370555099*^9, 
+   3.40221037091771*^9}, {3.402211650926027*^9, 3.402211651822245*^9}, {
+   3.40760674146875*^9, 3.4076067433125*^9}, {3.40760696728125*^9, 
+   3.407606991453125*^9}, 3.407607942796875*^9}],
+
+Cell[BoxData[
+ TagBox[
+  TagBox[
+   RowBox[{"FeedForwardNet", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"{", 
+       RowBox[{"w1", ",", "w2", ",", "w3"}], "}"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Neuron", " ", "\[Rule]", " ", "Sigmoid"}], ",", " ", 
+       RowBox[{"FixedParameters", " ", "\[Rule]", " ", "None"}], ",", " ", 
+       RowBox[{"AccumulatedIterations", " ", "\[Rule]", " ", "0"}], ",", " ", 
+       
+       RowBox[{"CreationDate", " ", "\[Rule]", " ", 
+        RowBox[{"{", 
+         RowBox[{
+         "2011", ",", " ", "5", ",", " ", "3", ",", " ", "15", ",", " ", "59",
+           ",", " ", "44.842683`9.404266458290946"}], "}"}]}], ",", " ", 
+       RowBox[{"OutputNonlinearity", " ", "\[Rule]", " ", "None"}], ",", " ", 
+       
+       RowBox[{"NumberOfInputs", " ", "\[Rule]", " ", "4"}]}], "}"}]}], "]"}],
+   
+   Null,
+   Editable->False],
+  DisplayForm]], "Output",
+ CellChangeTimes->{3.432346164859442*^9, 3.510391914670404*^9, 
+  3.5134199848471837`*^9}]
+}, Open  ]],
+
+Cell["\<\
+M\[URing]\[ZHacek]eme si nechat zobrazit podrobn\[EHacek]j\[SHacek]\[IAcute] \
+informace o vytvo\[RHacek]en\[EAcute] s\[IAcute]ti.\
+\>", "Text",
+ CellChangeTimes->{{3.40353370945933*^9, 3.403533723564199*^9}, {
+  3.407607079734375*^9, 3.407607097453125*^9}, {3.510391827956393*^9, 
+  3.5103918352078133`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"NetInformation", "[", "net", "]"}]], "Input",
+ CellChangeTimes->{{3.402214088623496*^9, 3.402214091901377*^9}}],
+
+Cell[BoxData["\<\"FeedForward network created 2011-5-3 at 15:59. The network \
+has 4 inputs and 3 outputs. It consists of 2 hidden layers with number of \
+neurons per layer given by {3, 2}. The neuron activation function is of \
+Sigmoid type. \"\>"], "Output",
+ CellChangeTimes->{3.43234616511051*^9, 3.510391914705408*^9, 
+  3.5134199849907017`*^9}]
+}, Open  ]],
+
+Cell["\<\
+Te\[DHacek] s\[IAcute]\[THacek] natr\[EAcute]nujeme pomoc\[IAcute] funkce \
+\"NeuralFit\", kter\[EAcute] zad\[AAcute]me na\[SHacek]\[IAcute] s\[IAcute]\
+\[THacek] (prom\[EHacek]nn\[AAcute] \"net\"), tr\[EAcute]novac\[IAcute] mno\
+\[ZHacek]inu (\"inData\" a \"outData\") a po\[CHacek]et u\[CHacek]\[IAcute]c\
+\[IAcute]ch krok\[URing].\
+\>", "Text",
+ CellChangeTimes->{{3.403533782324979*^9, 3.40353383899699*^9}, {
+  3.407607109453125*^9, 3.407607164359375*^9}}],
+
+Cell["\<\
+Funkce NeuralFit vyprodukuje nau\[CHacek]enou s\[IAcute]\[THacek] a \
+z\[AAcute]znam o pr\[URing]b\[EHacek]hu u\[CHacek]en\[IAcute] (m\[URing]\
+\[ZHacek]e se hodit) - ob\[EHacek] tyto n\[AAcute]vratov\[EAcute] hodnoty si \
+ukl\[AAcute]d\[AAcute]me (do prom\[EHacek]nn\[EAcute] \"net2\" a \"record\").\
+\
+\>", "Text",
+ CellChangeTimes->{{3.403533844567185*^9, 3.403533904635737*^9}, {
+  3.407607168421875*^9, 3.40760720815625*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"net2", ",", "record"}], "}"}], "=", 
+   RowBox[{"NeuralFit", "[", 
+    RowBox[{"net", ",", "inData", ",", "outData", ",", "20"}], "]"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.402214100997976*^9, 3.402214109762068*^9}, {
+  3.402214234036181*^9, 3.402214235441436*^9}, {3.402214368377231*^9, 
+  3.402214374682622*^9}, {3.402214419526277*^9, 3.402214425215911*^9}, {
+  3.402214664776315*^9, 3.402210056905657*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[
+  {Hue[0.67, 0.6, 0.6], LineBox[CompressedData["
+1:eJxTTMoPSmViYGAQBWIQDQPLTSpaxbzu2kN4H+ynxWmz9i+9A+UzOJSJMEmv
+fnMTyudw2DXFw9zm3jUoX8AhzoDreQfrVShfxOHR05jDekvOQvkSDmf4dP7t
+1YbxZRx2vJB+YbniDJSv4GDd6C/+9fFpKF/JQaWIv1Wk5xSUr+Kwqvr6tKNB
+J6B8NQcRA53dyuuPQvkaDv9uMBeWWhyG8rUcTrwqc2RiOwjl6zjc/Jjpz8B1
+AMrXc+ANbviZqL8fyjdw8L2Y7q6ltw/KN3RYMblffvXNPVC+kcOa5qZPdh92
+Q/nGDgmW7iUfLHdB+SYOLAHxBydY7bQHAC2PWKw=
+    "]]},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Frame->True,
+  FrameLabel->{
+    FormBox["\"Iterations\"", TraditionalForm], None},
+  FrameTicks->{{{0, 
+      FormBox["0", TraditionalForm]}, {2, 
+      FormBox["2", TraditionalForm]}, {4, 
+      FormBox["4", TraditionalForm]}, {6, 
+      FormBox["6", TraditionalForm]}, {8, 
+      FormBox["8", TraditionalForm]}, {10, 
+      FormBox["10", TraditionalForm]}, {12, 
+      FormBox["12", TraditionalForm]}, {14, 
+      FormBox["14", TraditionalForm]}, {16, 
+      FormBox["16", TraditionalForm]}, {18, 
+      FormBox["18", TraditionalForm]}, {20, 
+      FormBox["20", TraditionalForm]}}, Automatic, None, None},
+  PlotLabel->FormBox["\"RMSE\"", TraditionalForm],
+  PlotRangeClipping->True]], "Print",
+ CellChangeTimes->{3.510391915963568*^9, 3.5134199868274355`*^9}]
+}, Open  ]],
+
+Cell["\<\
+M\[AAcute]me s\[IAcute]\[THacek] nau\[CHacek]enou a m\[URing]\[ZHacek]eme se \
+pod\[IAcute]vat nap\[RHacek]\[IAcute]klad na to, jak odpov\[IAcute]dala b\
+\[EHacek]hem u\[CHacek]en\[IAcute]. S\[IAcute]\[THacek] m\[AAcute] 3 v\
+\[YAcute]stupy, proto n\[AAcute]sleduj\[IAcute]c\[IAcute] \
+p\[RHacek]\[IAcute]kaz vyprodukuje 3 grafy. Grafy zobrazuj\[IAcute] \
+v\[YAcute]voj dob\[RHacek]e a \[SHacek]patn\[EHacek] klasifikovan\[YAcute]ch \
+instanc\[IAcute] jednotliv\[YAcute]ch t\[RHacek]\[IAcute]d, pro \
+ka\[ZHacek]dou t\[RHacek]\[IAcute]du je jeden graf.\
+\>", "Text",
+ CellChangeTimes->{{3.403533923617103*^9, 3.403533964673863*^9}, {
+  3.407607219125*^9, 3.407607265984375*^9}, {3.5103932496084194`*^9, 
+  3.5103933026541557`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"NetPlot", "[", 
+  RowBox[{"record", ",", "inData", ",", "outData", ",", 
+   RowBox[{"DataFormat", "\[Rule]", "ClassPerformance"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.402214735113152*^9, 3.40221477044753*^9}, {
+  3.402214829648048*^9, 3.402214830783815*^9}, {3.402216214555439*^9, 
+  3.402216241372116*^9}, {3.402216286439487*^9, 3.402216288904808*^9}, {
+  3.402216625430353*^9, 3.402216639179849*^9}, {3.402216713522885*^9, 
+  3.40221671586094*^9}, {3.402216751784475*^9, 3.402216790410457*^9}, {
+  3.402216821422803*^9, 3.40221684239383*^9}, {3.403534003298577*^9, 
+  3.403534006926612*^9}, {3.417456541734375*^9, 3.417456571421875*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {InsetBox[
+     GraphicsBox[{{}, {}, 
+       {Hue[0.67, 0.6, 0.6], LineBox[CompressedData["
+1:eJxTTMoPSmViYGAQBWIQDQNHLx56Yelu7ADhfbB/1vGDq+SMKZTP4LCmhWP/
+yWp7KJ/DYV7qngkSYs5QvoDDtAhvLzZbFyhfxCFYKj4+OdANypdwkJvs+Pqv
+I4wv42Bm5lvi7AXjKziklc7VLmyE8ZUc9h7V3tx3A8ZXcfhttuTo8zB3KF/N
+QXeqTmHsRRhfw2GV+6SgPyoeUL6WQ0xTYei9BBhfx+Gm3kVN1QoYX89hqyWb
+zOE6GN/AoXvH1NqPzTC+oQN38/Q38lNgfCOH5A3q6Q9XwvjGDot8fFpDL8L4
+Jg7CKZyLzjzzcAAAxWdRvg==
+         "]]}, 
+       {Hue[0.9060679774997897, 0.6, 0.6], LineBox[CompressedData["
+1:eJxTTMoPSmViYGAQBWIQDQMOerbix3bYOUB4H+z5ytm/dhvbOMCk/aq/O5i1
+GEH5HA71mXx75y5Xh/IFHKbOvXTtGbcylC/icEeXnfVpiSiUL+HAkP55qcAH
+GF/G4ZrftNgna2F8BQeXEJHFZV+EoXwlB9NLC9O6rAWhfBWHuv49S5snckH5
+ag4ua83earxigvI1HIo4t68tTfhtD+FrOVzdcj7Q9MlnKF/HoUf91tGo3x+g
+fD0Ht5MW9XPUYXwDB8HbE2ctYH4P5Rs6LLWTv8Xy4xWUb+Rw9qmw2bL2p1C+
+scPB9TcjbUOvQ/kmDqtfzP4Wa3zSHgB0kFiY
+         "]]}},
+      AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+      Axes->True,
+      AxesLabel->{
+        FormBox["\"Iterations\"", TraditionalForm], 
+        FormBox["\"Samples\"", TraditionalForm]},
+      AxesOrigin->{-2., 0},
+      PlotLabel->FormBox["\"Class: 1\"", TraditionalForm],
+      PlotRange->{{-2., 20}, All},
+      PlotRangeClipping->True,
+      PlotRangePadding->{Automatic, Automatic},
+      Ticks->{{{0, 
+          FormBox["0", TraditionalForm]}, {2, 
+          FormBox["2", TraditionalForm]}, {4, 
+          FormBox["4", TraditionalForm]}, {6, 
+          FormBox["6", TraditionalForm]}, {8, 
+          FormBox["8", TraditionalForm]}, {10, 
+          FormBox["10", TraditionalForm]}, {12, 
+          FormBox["12", TraditionalForm]}, {14, 
+          FormBox["14", TraditionalForm]}, {16, 
+          FormBox["16", TraditionalForm]}, {18, 
+          FormBox["18", TraditionalForm]}, {20, 
+          FormBox["20", TraditionalForm]}}, Automatic}], {189., -119.58957682310464`},
+      ImageScaled[{0.5, 0.5}], {360., 222.4922359499621}], InsetBox[
+     GraphicsBox[{{}, {}, 
+       {Hue[0.67, 0.6, 0.6], LineBox[CompressedData["
+1:eJxTTMoPSmViYGAQBWIQDQPbeI8WfDM3dIDwPtjL9TZ4boiA8RkcXq7KzX3z
+AMbncFiUuuMLX50RlC/gMJ93YmDmZRMoX8TBR9jSfguXE5Qv4bBn6+YvgUEw
+vozD0mc2tq/mw/gKDpOu6YUK/oPxlRwEE79IT5vnDOWrOExa8vJN/jQXKF/N
+IX2TIJvEHFcoX8NBINJtilu2G5Sv5bDp+PI8EwZ3KF/HYc7RmIU+FjC+nkPW
+tH8FmwNgfAMHo0XbV1XmwPiGDk+ZODcmTIDxjRyie3775a+E8Y0dUjvnHf19
+EcY3cShveX396At3BwAtuFW1
+         "]]}, 
+       {Hue[0.9060679774997897, 0.6, 0.6], LineBox[CompressedData["
+1:eJxTTMoPSmViYGAQBWIQDQMqlXOPs6Q4OEB4H+xzd9rfXh4M4zM4dGl5nuzk
+h/E5HAJmuXN/bLSH8gUcYj/lrZumYwvlizhM3STNrH9VG8qXcPihYai7Y5sW
+lC/jwJbKwx3eoAnlKzjwLHNZvYtdA8pXcjhTrTdheasqlK/i8DI30sdhmSKU
+r+ZwJqfovL28NJSv4bDM/Gzs6aUiUL6WQ0tLs+jOP/xQvo4D/1LjV6bVPFC+
+noP4TLEPJ75wQfkGDg/utIakWnBC+YYOIRfz33/5yQblGzmwWrsLcGeyQvnG
+DpxZ4sucHzBB+SYOW3e4Ny4qZnQAAK94TPU=
+         "]]}},
+      AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+      Axes->True,
+      AxesLabel->{
+        FormBox["\"Iterations\"", TraditionalForm], 
+        FormBox["\"Samples\"", TraditionalForm]},
+      AxesOrigin->{-2., 10.},
+      PlotLabel->FormBox["\"Class: 2\"", TraditionalForm],
+      PlotRange->{{-2., 20}, All},
+      PlotRangeClipping->True,
+      PlotRangePadding->{Automatic, Automatic},
+      Ticks->{{{0, 
+          FormBox["0", TraditionalForm]}, {2, 
+          FormBox["2", TraditionalForm]}, {4, 
+          FormBox["4", TraditionalForm]}, {6, 
+          FormBox["6", TraditionalForm]}, {8, 
+          FormBox["8", TraditionalForm]}, {10, 
+          FormBox["10", TraditionalForm]}, {12, 
+          FormBox["12", TraditionalForm]}, {14, 
+          FormBox["14", TraditionalForm]}, {16, 
+          FormBox["16", TraditionalForm]}, {18, 
+          FormBox["18", TraditionalForm]}, {20, 
+          FormBox["20", TraditionalForm]}}, Automatic}], {189., -358.76873046931394`},
+      ImageScaled[{0.5, 0.5}], {360., 222.4922359499621}], InsetBox[
+     GraphicsBox[{{}, {}, 
+       {Hue[0.67, 0.6, 0.6], LineBox[CompressedData["
+1:eJxTTMoPSmViYGAQBWIQDQPrmKbOtHE0doDwPthf27i4sHWTCZTP4JC9RNpZ
+8KwVlM/h0GE8582jD45QvoCD20mJlHdCLlC+iINmmFQwz2Q3KF/CYWb/jB6p
+PTC+jIOL7FbFdedgfAWHdCnHaYcvwvhKDp8u5waY3obxVRz2vZCo2PUJxldz
+CH3LcL1G1h3K13AI8Qg9+S0GxtdyeJcdVi+1BMbXcVil47ZJ/TiMr+dQ9PPB
+gVM3YXwDh3mhDJzs72F8Q4e6xG2Rn//D+EYOra2dV5f+g/GNHRr/y+mqM3hA
++SYOPqLqQsyMHg4A7JhSbw==
+         "]]}, 
+       {Hue[0.9060679774997897, 0.6, 0.6], LineBox[CompressedData["
+1:eJxTTMoPSmViYGAQBWIQDQNBf7PSDu+zc4DwPtgr+8X0VfnaQvkMDtOin+x5
+Z2QO5XM4XDLs9y2x0YHyBRy+3ZqT77ZFGcoXceDx102fmy4M5Us4uDRbz9aW
+F4LyZRz4xcI/9XUJQvkKDjN0vvs+LoTxlRwmJEysCVWD8VUcFHdZ2OtkCUD5
+ag5hWh/7jTT4oHwNB/bq1VmTDbigfC0HP8eZXBH7WKF8HYdK07m3W3qZoXw9
+B7XMDx+Dk5mgfAOHv0t/5ffzM0L5hg7fn89MOQX0N4Rv5LBgefryRaIwvrFD
+Er9CjNTv//YQvonDtzDZ3XPv/7cHAJzoTlQ=
+         "]]}},
+      AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+      Axes->True,
+      AxesLabel->{
+        FormBox["\"Iterations\"", TraditionalForm], 
+        FormBox["\"Samples\"", TraditionalForm]},
+      AxesOrigin->{-2., 10.},
+      PlotLabel->FormBox["\"Class: 3\"", TraditionalForm],
+      PlotRange->{{-2., 20}, All},
+      PlotRangeClipping->True,
+      PlotRangePadding->{Automatic, Automatic},
+      Ticks->{{{0, 
+          FormBox["0", TraditionalForm]}, {2, 
+          FormBox["2", TraditionalForm]}, {4, 
+          FormBox["4", TraditionalForm]}, {6, 
+          FormBox["6", TraditionalForm]}, {8, 
+          FormBox["8", TraditionalForm]}, {10, 
+          FormBox["10", TraditionalForm]}, {12, 
+          FormBox["12", TraditionalForm]}, {14, 
+          FormBox["14", TraditionalForm]}, {16, 
+          FormBox["16", TraditionalForm]}, {18, 
+          FormBox["18", TraditionalForm]}, {20, 
+          FormBox["20", TraditionalForm]}}, Automatic}], {189., -597.9478841155233},
+      ImageScaled[{0.5, 0.5}], {360., 222.4922359499622}]}, 
+   StyleBox[{{}, {LineBox[{{0, 0}, {0, -239.17915364620927`}}], 
+      LineBox[{{0, -239.17915364620927`}, {0, -478.35830729241854`}}], 
+      LineBox[{{0, -478.35830729241854`}, {0, -717.5374609386279}}], 
+      LineBox[{{378., 0}, {378., -239.17915364620927`}}], 
+      LineBox[{{378., -239.17915364620927`}, {378., -478.35830729241854`}}], 
+      LineBox[{{378., -478.35830729241854`}, {378., -717.5374609386279}}], 
+      LineBox[{{0, 0}, {378., 0}}], 
+      LineBox[{{0, -239.17915364620927`}, {378., -239.17915364620927`}}], 
+      LineBox[{{0, -478.35830729241854`}, {378., -478.35830729241854`}}], 
+      LineBox[{{0, -717.5374609386279}, {378., -717.5374609386279}}]}},
+    Antialiasing->False]},
+  ContentSelectable->True,
+  PlotLabel->FormBox[
+   "\"Correctly/incorrectly classified data\"", TraditionalForm],
+  PlotRangePadding->{6, 5}]], "Output",
+ CellChangeTimes->{3.5103919166166515`*^9, 3.5134199874700165`*^9}]
+}, Open  ]],
+
+Cell["\<\
+M\[URing]\[ZHacek]eme se pod\[IAcute]vat na klasifikaci pomoc\[IAcute] \
+\"data/model\" diagramu. Graf je interaktivn\[IAcute] - pomoc\[IAcute] my\
+\[SHacek]i ho m\[URing]zeme ot\[AAcute]\[CHacek]et, posouvat (Shift + my\
+\[SHacek]) a zoomovat (Ctrl + my\[SHacek]). \[CapitalCHacek]\[IAcute]m v\
+\[IAcute]ce prvk\[URing] je na diagon\[AAcute]le, t\[IAcute]m l\[EAcute]pe.\
+\>", "Text",
+ CellChangeTimes->{{3.403534011770277*^9, 3.403534054914394*^9}, {
+  3.407607285296875*^9, 3.40760732721875*^9}, {3.5103933368840017`*^9, 
+  3.5103933677689238`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"NetPlot", "[", 
+  RowBox[{"net2", ",", "inData", ",", "outData", ",", 
+   RowBox[{"DataFormat", "\[Rule]", "BarChart"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.402214735113152*^9, 3.40221477044753*^9}, {
+  3.402214829648048*^9, 3.402214830783815*^9}, {3.402216214555439*^9, 
+  3.402216241372116*^9}, {3.402216286439487*^9, 3.402216288904808*^9}, {
+  3.402216625430353*^9, 3.402216639179849*^9}, {3.402216713522885*^9, 
+  3.40221671586094*^9}, {3.402216751784475*^9, 3.402216790410457*^9}, {
+  3.402216821422803*^9, 3.40221007419759*^9}, {3.402210114511951*^9, 
+  3.40221011632865*^9}}],
+
+Cell[BoxData[
+ Graphics3DBox[{
+   StyleBox[{
+     {EdgeForm[GrayLevel[0.85]], 
+      Polygon3DBox[{
+       Scaled[{0.015, 0.02, 0.02}], Scaled[{0.985, 0.02, 0.02}], 
+        Scaled[{0.985, 0.98, 0.02}], Scaled[{0.015, 0.98, 0.02}]},
+       VertexColors->{
+         Directive[
+          Opacity[0.2], 
+          RGBColor[0.33333333333333337`, 0.4, 0.6000000000000001]], 
+         Directive[
+          Opacity[0.2], 
+          RGBColor[0.5, 0.6, 0.9]], 
+         Directive[
+          Opacity[0.2], 
+          RGBColor[
+          0.6666666666666666, 0.7333333333333333, 0.9333333333333333]], 
+         Directive[
+          Opacity[0.2], 
+          GrayLevel[1]]}], 
+      Polygon3DBox[{
+       Scaled[{0.015, 0.02, 0.02}], Scaled[{0.985, 0.02, 0.02}], 
+        Scaled[{1, 0, 0}], Scaled[{0, 0, 0}]},
+       VertexColors->{
+         Directive[
+          Opacity[0.2], 
+          RGBColor[0.33333333333333337`, 0.4, 0.6000000000000001]], 
+         Directive[
+          Opacity[0.2], 
+          RGBColor[0.5, 0.6, 0.9]], 
+         Directive[
+          Opacity[0.2], 
+          RGBColor[
+          0.6666666666666666, 0.7333333333333333, 0.9333333333333333]], 
+         Directive[
+          Opacity[0.2], 
+          GrayLevel[1]]}], 
+      Polygon3DBox[{
+       Scaled[{0.985, 0.02, 0.02}], Scaled[{1, 0, 0}], Scaled[{1, 1, 0}], 
+        Scaled[{0.985, 0.98, 0.02}]},
+       VertexColors->{
+         Directive[
+          Opacity[0.2], 
+          RGBColor[0.33333333333333337`, 0.4, 0.6000000000000001]], 
+         Directive[
+          Opacity[0.2], 
+          RGBColor[0.5, 0.6, 0.9]], 
+         Directive[
+          Opacity[0.2], 
+          RGBColor[
+          0.6666666666666666, 0.7333333333333333, 0.9333333333333333]], 
+         Directive[
+          Opacity[0.2], 
+          GrayLevel[1]]}], 
+      Polygon3DBox[{
+       Scaled[{0.015, 0.98, 0.02}], Scaled[{0.985, 0.98, 0.02}], 
+        Scaled[{1, 1, 0}], Scaled[{0, 0.99999, 0}]},
+       VertexColors->{
+         Directive[
+          Opacity[0.2], 
+          RGBColor[0.33333333333333337`, 0.4, 0.6000000000000001]], 
+         Directive[
+          Opacity[0.2], 
+          RGBColor[0.5, 0.6, 0.9]], 
+         Directive[
+          Opacity[0.2], 
+          RGBColor[
+          0.6666666666666666, 0.7333333333333333, 0.9333333333333333]], 
+         Directive[
+          Opacity[0.2], 
+          GrayLevel[1]]}], 
+      Polygon3DBox[{
+       Scaled[{0.015, 0.02, 0.02}], Scaled[{0, 0, 0}], 
+        Scaled[{0, 0.99999, 0}], Scaled[{0.015, 0.98, 0.02}]},
+       VertexColors->{
+         Directive[
+          Opacity[0.2], 
+          RGBColor[0.33333333333333337`, 0.4, 0.6000000000000001]], 
+         Directive[
+          Opacity[0.2], 
+          RGBColor[0.5, 0.6, 0.9]], 
+         Directive[
+          Opacity[0.2], 
+          RGBColor[
+          0.6666666666666666, 0.7333333333333333, 0.9333333333333333]], 
+         Directive[
+          Opacity[0.2], 
+          GrayLevel[1]]}], 
+      Polygon3DBox[{
+       Scaled[{0, 0, 0}], Scaled[{1, 0, 0}], Scaled[{1, 1, 0}], 
+        Scaled[{0, 0.99999, 0}]},
+       VertexColors->{
+         Directive[
+          Opacity[0.2], 
+          RGBColor[0.33333333333333337`, 0.4, 0.6000000000000001]], 
+         Directive[
+          Opacity[0.2], 
+          RGBColor[0.5, 0.6, 0.9]], 
+         Directive[
+          Opacity[0.2], 
+          RGBColor[
+          0.6666666666666666, 0.7333333333333333, 0.9333333333333333]], 
+         Directive[
+          Opacity[0.2], 
+          GrayLevel[1]]}]}, 
+     {Opacity[0], EdgeForm[None], 
+      CuboidBox[{{-0.16000000000000003`, -0.5, 0}, {3.3600000000000003`, 
+        3.9000000000000004`, 0.024}}]}, 
+     {EdgeForm[None], 
+      Polygon3DBox[{
+       Scaled[{0.015, 0.98, 0.02}], Scaled[{0.985, 0.98, 0.02}], 
+        Scaled[{0.985, 0.98, 0.98}], Scaled[{0.015, 0.98, 0.98}]},
+       VertexColors->{
+         Directive[
+          Opacity[0.2], 
+          RGBColor[0.33333333333333337`, 0.4, 0.6000000000000001]], 
+         Directive[
+          Opacity[0.2], 
+          RGBColor[0.5, 0.6, 0.9]], 
+         Directive[
+          Opacity[0.2], 
+          RGBColor[
+          0.6666666666666666, 0.7333333333333333, 0.9333333333333333]], 
+         Directive[
+          Opacity[0.2], 
+          GrayLevel[1]]}], 
+      Polygon3DBox[{
+       Scaled[{0.015, 0.98, 0.02}], Scaled[{0.985, 0.98, 0.02}], 
+        Scaled[{1, 1, 0}], Scaled[{0, 0.99999, 0}]},
+       VertexColors->{
+         Directive[
+          Opacity[0.2], 
+          RGBColor[0.33333333333333337`, 0.4, 0.6000000000000001]], 
+         Directive[
+          Opacity[0.2], 
+          RGBColor[0.5, 0.6, 0.9]], 
+         Directive[
+          Opacity[0.2], 
+          RGBColor[
+          0.6666666666666666, 0.7333333333333333, 0.9333333333333333]], 
+         Directive[
+          Opacity[0.2], 
+          GrayLevel[1]]}], 
+      Polygon3DBox[{
+       Scaled[{1, 1, 0}], Scaled[{1, 1, 1}], Scaled[{0.985, 0.98, 0.98}], 
+        Scaled[{0.985, 0.98, 0.02}]},
+       VertexColors->{
+         Directive[
+          Opacity[0.2], 
+          RGBColor[0.33333333333333337`, 0.4, 0.6000000000000001]], 
+         Directive[
+          Opacity[0.2], 
+          RGBColor[0.5, 0.6, 0.9]], 
+         Directive[
+          Opacity[0.2], 
+          RGBColor[
+          0.6666666666666666, 0.7333333333333333, 0.9333333333333333]], 
+         Directive[
+          Opacity[0.2], 
+          GrayLevel[1]]}], 
+      Polygon3DBox[{
+       Scaled[{0.015, 0.98, 0.98}], Scaled[{0.985, 0.98, 0.98}], 
+        Scaled[{1, 1, 1}], Scaled[{0, 1, 1}]},
+       VertexColors->{
+         Directive[
+          Opacity[0.2], 
+          RGBColor[0.33333333333333337`, 0.4, 0.6000000000000001]], 
+         Directive[
+          Opacity[0.2], 
+          RGBColor[0.5, 0.6, 0.9]], 
+         Directive[
+          Opacity[0.2], 
+          RGBColor[
+          0.6666666666666666, 0.7333333333333333, 0.9333333333333333]], 
+         Directive[
+          Opacity[0.2], 
+          GrayLevel[1]]}], 
+      Polygon3DBox[{
+       Scaled[{0.015, 0.98, 0.02}], Scaled[{0, 0.99999, 0}], 
+        Scaled[{0, 1, 1}], Scaled[{0.015, 0.98, 0.98}]},
+       VertexColors->{
+         Directive[
+          Opacity[0.2], 
+          RGBColor[0.33333333333333337`, 0.4, 0.6000000000000001]], 
+         Directive[
+          Opacity[0.2], 
+          RGBColor[0.5, 0.6, 0.9]], 
+         Directive[
+          Opacity[0.2], 
+          RGBColor[
+          0.6666666666666666, 0.7333333333333333, 0.9333333333333333]], 
+         Directive[
+          Opacity[0.2], 
+          GrayLevel[1]]}], 
+      Polygon3DBox[{
+       Scaled[{0, 0.99999, 0}], Scaled[{1, 1, 0}], Scaled[{1, 1, 1}], 
+        Scaled[{0, 1, 1}]},
+       VertexColors->{
+         Directive[
+          Opacity[0.2], 
+          RGBColor[0.33333333333333337`, 0.4, 0.6000000000000001]], 
+         Directive[
+          Opacity[0.2], 
+          RGBColor[0.5, 0.6, 0.9]], 
+         Directive[
+          Opacity[0.2], 
+          RGBColor[
+          0.6666666666666666, 0.7333333333333333, 0.9333333333333333]], 
+         Directive[
+          Opacity[0.2], 
+          GrayLevel[1]]}]}},
+    StripOnInput->False,
+    Lighting->{{"Ambient", 
+       GrayLevel[1]}}], 
+   {RGBColor[0.5, 0.5, 1.], EdgeForm[GrayLevel[0.5]], {{{}, {
+       {RGBColor[0.5, 0.5, 1.], EdgeForm[GrayLevel[0.5]], 
+        TagBox[
+         TooltipBox[
+          TagBox[
+           DynamicBox[{
+             FEPrivate`If[
+              CurrentValue["MouseOver"], 
+              Directive[
+               EdgeForm[{
+                 RGBColor[
+                 0.6666666666666666, 0.6666666666666666, 0.6666666666666666], 
+                 
+                 AbsoluteThickness[1.5]}]], {}, {}], 
+             StyleBox[{
+               
+               GraphicsComplex3DBox[{{0., 0., 0.}, {0., 1., 0.}, {0., 1., 
+                49.80311990221539}, {0., 0., 49.80311990221539}, {1., 0., 
+                0.}, {1., 1., 0.}, {1., 1., 49.80311990221539}, {1., 0., 
+                49.80311990221539}}, {
+                 Polygon3DBox[{1, 2, 3, 4}, VertexColors -> {
+                    RGBColor[0.25, 0.25, 0.5], 
+                    RGBColor[0.25, 0.25, 0.5], 
+                    RGBColor[0.5, 0.5, 1.], 
+                    RGBColor[0.5, 0.5, 1.]}], 
+                 Polygon3DBox[{5, 6, 7, 8}, VertexColors -> {
+                    RGBColor[0.25, 0.25, 0.5], 
+                    RGBColor[0.25, 0.25, 0.5], 
+                    RGBColor[0.5, 0.5, 1.], 
+                    RGBColor[0.5, 0.5, 1.]}], 
+                 Polygon3DBox[{2, 3, 7, 6}, VertexColors -> {
+                    RGBColor[0.9, 0.9, 1.], 
+                    RGBColor[0.5, 0.5, 1.], 
+                    RGBColor[0.5, 0.5, 1.], 
+                    RGBColor[0.9, 0.9, 1.]}], 
+                 Polygon3DBox[{1, 4, 8, 5}, VertexColors -> {
+                    RGBColor[0.5, 0.5, 1.], 
+                    RGBColor[0.9, 0.9, 1.], 
+                    RGBColor[0.9, 0.9, 1.], 
+                    RGBColor[0.5, 0.5, 1.]}], 
+                 Polygon3DBox[{4, 8, 7, 3}, VertexColors -> {
+                    RGBColor[0.5, 0.5, 1.], 
+                    RGBColor[0.5, 0.5, 1.], 
+                    RGBColor[0.9, 0.9, 1.], 
+                    RGBColor[0.9, 0.9, 1.]}], 
+                 Polygon3DBox[{1, 5, 6, 2}, VertexColors -> {
+                    RGBColor[0.9, 0.9, 1.], 
+                    RGBColor[0.9, 0.9, 1.], 
+                    RGBColor[0.5, 0.5, 1.], 
+                    RGBColor[0.5, 0.5, 1.]}]}]}, Lighting -> {{"Ambient", 
+                 GrayLevel[1]}}, StripOnInput -> False]},
+            
+            ImageSizeCache->{{139.6469155106018, 
+             241.09023175314644`}, {-0.05040296507598896, 
+             150.61077324844678`}}],
+           StatusArea[#, 49.80311990221539]& ,
+           TagBoxNote->"49.80311990221539"],
+          StyleBox["49.80311990221539`", {
+            GrayLevel[0]}, StripOnInput -> False]],
+         Annotation[#, 
+          Style[49.80311990221539, {
+            GrayLevel[0]}], "Tooltip"]& ]}, 
+       {RGBColor[0.5, 1., 0.5], EdgeForm[GrayLevel[0.5]], 
+        TagBox[
+         TooltipBox[
+          TagBox[
+           DynamicBox[{
+             FEPrivate`If[
+              CurrentValue["MouseOver"], 
+              Directive[
+               EdgeForm[{
+                 RGBColor[
+                 0.6666666666666666, 0.6666666666666666, 0.6666666666666666], 
+                 
+                 AbsoluteThickness[1.5]}]], {}, {}], 
+             StyleBox[{
+               
+               GraphicsComplex3DBox[{{1.1, 0., 0.}, {1.1, 1., 0.}, {1.1, 1., 
+                0.19312430596324917`}, {1.1, 0., 0.19312430596324917`}, {2.1, 
+                0., 0.}, {2.1, 1., 0.}, {2.1, 1., 0.19312430596324917`}, {2.1,
+                 0., 0.19312430596324917`}}, {
+                 Polygon3DBox[{1, 2, 3, 4}, VertexColors -> {
+                    RGBColor[0.25, 0.5, 0.25], 
+                    RGBColor[0.25, 0.5, 0.25], 
+                    RGBColor[0.5, 1., 0.5], 
+                    RGBColor[0.5, 1., 0.5]}], 
+                 Polygon3DBox[{5, 6, 7, 8}, VertexColors -> {
+                    RGBColor[0.25, 0.5, 0.25], 
+                    RGBColor[0.25, 0.5, 0.25], 
+                    RGBColor[0.5, 1., 0.5], 
+                    RGBColor[0.5, 1., 0.5]}], 
+                 Polygon3DBox[{2, 3, 7, 6}, VertexColors -> {
+                    RGBColor[0.9, 1., 0.9], 
+                    RGBColor[0.5, 1., 0.5], 
+                    RGBColor[0.5, 1., 0.5], 
+                    RGBColor[0.9, 1., 0.9]}], 
+                 Polygon3DBox[{1, 4, 8, 5}, VertexColors -> {
+                    RGBColor[0.5, 1., 0.5], 
+                    RGBColor[0.9, 1., 0.9], 
+                    RGBColor[0.9, 1., 0.9], 
+                    RGBColor[0.5, 1., 0.5]}], 
+                 Polygon3DBox[{4, 8, 7, 3}, VertexColors -> {
+                    RGBColor[0.5, 1., 0.5], 
+                    RGBColor[0.5, 1., 0.5], 
+                    RGBColor[0.9, 1., 0.9], 
+                    RGBColor[0.9, 1., 0.9]}], 
+                 Polygon3DBox[{1, 5, 6, 2}, VertexColors -> {
+                    RGBColor[0.9, 1., 0.9], 
+                    RGBColor[0.9, 1., 0.9], 
+                    RGBColor[0.5, 1., 0.5], 
+                    RGBColor[0.5, 1., 0.5]}]}]}, Lighting -> {{"Ambient", 
+                 GrayLevel[1]}}, StripOnInput -> False]},
+            
+            ImageSizeCache->{{195.41254307631016`, 275.5684806947371}, {
+             29.188394034991035`, 103.34168592155547`}}],
+           StatusArea[#, 0.19312430596324917`]& ,
+           TagBoxNote->"0.19312430596324917"],
+          StyleBox["0.19312430596324917`", {
+            GrayLevel[0]}, StripOnInput -> False]],
+         Annotation[#, 
+          Style[0.19312430596324917`, {
+            GrayLevel[0]}], "Tooltip"]& ]}, 
+       {RGBColor[1., 0.75, 0.5], EdgeForm[GrayLevel[0.5]], 
+        TagBox[
+         TooltipBox[
+          TagBox[
+           DynamicBox[{
+             FEPrivate`If[
+              CurrentValue["MouseOver"], 
+              Directive[
+               EdgeForm[{
+                 RGBColor[
+                 0.6666666666666666, 0.6666666666666666, 0.6666666666666666], 
+                 
+                 AbsoluteThickness[1.5]}]], {}, {}], 
+             StyleBox[{
+               
+               GraphicsComplex3DBox[{{2.2, 0., 0.}, {2.2, 1., 0.}, {2.2, 1., 
+                0.003755791821365048}, {2.2, 0., 0.003755791821365048}, {3.2, 
+                0., 0.}, {3.2, 1., 0.}, {3.2, 1., 0.003755791821365048}, {3.2,
+                 0., 0.003755791821365048}}, {
+                 Polygon3DBox[{1, 2, 3, 4}, VertexColors -> {
+                    RGBColor[0.5, 0.375, 0.25], 
+                    RGBColor[0.5, 0.375, 0.25], 
+                    RGBColor[1., 0.75, 0.5], 
+                    RGBColor[1., 0.75, 0.5]}], 
+                 Polygon3DBox[{5, 6, 7, 8}, VertexColors -> {
+                    RGBColor[0.5, 0.375, 0.25], 
+                    RGBColor[0.5, 0.375, 0.25], 
+                    RGBColor[1., 0.75, 0.5], 
+                    RGBColor[1., 0.75, 0.5]}], 
+                 Polygon3DBox[{2, 3, 7, 6}, VertexColors -> {
+                    RGBColor[1., 0.95, 0.9], 
+                    RGBColor[1., 0.75, 0.5], 
+                    RGBColor[1., 0.75, 0.5], 
+                    RGBColor[1., 0.95, 0.9]}], 
+                 Polygon3DBox[{1, 4, 8, 5}, VertexColors -> {
+                    RGBColor[1., 0.75, 0.5], 
+                    RGBColor[1., 0.95, 0.9], 
+                    RGBColor[1., 0.95, 0.9], 
+                    RGBColor[1., 0.75, 0.5]}], 
+                 Polygon3DBox[{4, 8, 7, 3}, VertexColors -> {
+                    RGBColor[1., 0.75, 0.5], 
+                    RGBColor[1., 0.75, 0.5], 
+                    RGBColor[1., 0.95, 0.9], 
+                    RGBColor[1., 0.95, 0.9]}], 
+                 Polygon3DBox[{1, 5, 6, 2}, VertexColors -> {
+                    RGBColor[1., 0.95, 0.9], 
+                    RGBColor[1., 0.95, 0.9], 
+                    RGBColor[1., 0.75, 0.5], 
+                    RGBColor[1., 0.75, 0.5]}]}]}, Lighting -> {{"Ambient", 
+                 GrayLevel[1]}}, StripOnInput -> False]},
+            
+            ImageSizeCache->{{238.34559248135162`, 
+             315.58994661256963`}, {-9.722301808857246, 59.37972232848541}}],
+           StatusArea[#, 0.003755791821365048]& ,
+           TagBoxNote->"0.003755791821365048"],
+          StyleBox["0.003755791821365048`", {
+            GrayLevel[0]}, StripOnInput -> False]],
+         Annotation[#, 
+          Style[0.003755791821365048, {
+            GrayLevel[0]}], "Tooltip"]& ]}}, {}, {}}, {{}, {
+       {RGBColor[0.5, 0.5, 1.], EdgeForm[GrayLevel[0.5]], 
+        TagBox[
+         TooltipBox[
+          TagBox[
+           DynamicBox[{
+             FEPrivate`If[
+              CurrentValue["MouseOver"], 
+              Directive[
+               EdgeForm[{
+                 RGBColor[
+                 0.6666666666666666, 0.6666666666666666, 0.6666666666666666], 
+                 
+                 AbsoluteThickness[1.5]}]], {}, {}], 
+             StyleBox[{
+               
+               GraphicsComplex3DBox[{{0., 1.2, 0.}, {0., 2.2, 0.}, {0., 2.2, 
+                0.19312430596322097`}, {0., 1.2, 0.19312430596322097`}, {1., 
+                1.2, 0.}, {1., 2.2, 0.}, {1., 2.2, 0.19312430596322097`}, {1.,
+                 1.2, 0.19312430596322097`}}, {
+                 Polygon3DBox[{1, 2, 3, 4}, VertexColors -> {
+                    RGBColor[0.25, 0.25, 0.5], 
+                    RGBColor[0.25, 0.25, 0.5], 
+                    RGBColor[0.5, 0.5, 1.], 
+                    RGBColor[0.5, 0.5, 1.]}], 
+                 Polygon3DBox[{5, 6, 7, 8}, VertexColors -> {
+                    RGBColor[0.25, 0.25, 0.5], 
+                    RGBColor[0.25, 0.25, 0.5], 
+                    RGBColor[0.5, 0.5, 1.], 
+                    RGBColor[0.5, 0.5, 1.]}], 
+                 Polygon3DBox[{2, 3, 7, 6}, VertexColors -> {
+                    RGBColor[0.9, 0.9, 1.], 
+                    RGBColor[0.5, 0.5, 1.], 
+                    RGBColor[0.5, 0.5, 1.], 
+                    RGBColor[0.9, 0.9, 1.]}], 
+                 Polygon3DBox[{1, 4, 8, 5}, VertexColors -> {
+                    RGBColor[0.5, 0.5, 1.], 
+                    RGBColor[0.9, 0.9, 1.], 
+                    RGBColor[0.9, 0.9, 1.], 
+                    RGBColor[0.5, 0.5, 1.]}], 
+                 Polygon3DBox[{4, 8, 7, 3}, VertexColors -> {
+                    RGBColor[0.5, 0.5, 1.], 
+                    RGBColor[0.5, 0.5, 1.], 
+                    RGBColor[0.9, 0.9, 1.], 
+                    RGBColor[0.9, 0.9, 1.]}], 
+                 Polygon3DBox[{1, 5, 6, 2}, VertexColors -> {
+                    RGBColor[0.9, 0.9, 1.], 
+                    RGBColor[0.9, 0.9, 1.], 
+                    RGBColor[0.5, 0.5, 1.], 
+                    RGBColor[0.5, 0.5, 1.]}]}]}, Lighting -> {{"Ambient", 
+                 GrayLevel[1]}}, StripOnInput -> False]},
+            ImageSizeCache->{{104.93553487183502`, 185.7793240569895}, {
+             32.514111809365005`, 107.08224335485974`}}],
+           StatusArea[#, 0.19312430596322097`]& ,
+           TagBoxNote->"0.19312430596322097"],
+          StyleBox["0.19312430596322097`", {
+            GrayLevel[0]}, StripOnInput -> False]],
+         Annotation[#, 
+          Style[0.19312430596322097`, {
+            GrayLevel[0]}], "Tooltip"]& ]}, 
+       {RGBColor[0.5, 1., 0.5], EdgeForm[GrayLevel[0.5]], 
+        TagBox[
+         TooltipBox[
+          TagBox[
+           DynamicBox[{
+             FEPrivate`If[
+              CurrentValue["MouseOver"], 
+              Directive[
+               EdgeForm[{
+                 RGBColor[
+                 0.6666666666666666, 0.6666666666666666, 0.6666666666666666], 
+                 
+                 AbsoluteThickness[1.5]}]], {}, {}], 
+             StyleBox[{
+               
+               GraphicsComplex3DBox[{{1.1, 1.2, 0.}, {1.1, 2.2, 0.}, {1.1, 
+                2.2, 47.81853770255923}, {1.1, 1.2, 47.81853770255923}, {2.1, 
+                1.2, 0.}, {2.1, 2.2, 0.}, {2.1, 2.2, 47.81853770255923}, {2.1,
+                 1.2, 47.81853770255923}}, {
+                 Polygon3DBox[{1, 2, 3, 4}, VertexColors -> {
+                    RGBColor[0.25, 0.5, 0.25], 
+                    RGBColor[0.25, 0.5, 0.25], 
+                    RGBColor[0.5, 1., 0.5], 
+                    RGBColor[0.5, 1., 0.5]}], 
+                 Polygon3DBox[{5, 6, 7, 8}, VertexColors -> {
+                    RGBColor[0.25, 0.5, 0.25], 
+                    RGBColor[0.25, 0.5, 0.25], 
+                    RGBColor[0.5, 1., 0.5], 
+                    RGBColor[0.5, 1., 0.5]}], 
+                 Polygon3DBox[{2, 3, 7, 6}, VertexColors -> {
+                    RGBColor[0.9, 1., 0.9], 
+                    RGBColor[0.5, 1., 0.5], 
+                    RGBColor[0.5, 1., 0.5], 
+                    RGBColor[0.9, 1., 0.9]}], 
+                 Polygon3DBox[{1, 4, 8, 5}, VertexColors -> {
+                    RGBColor[0.5, 1., 0.5], 
+                    RGBColor[0.9, 1., 0.9], 
+                    RGBColor[0.9, 1., 0.9], 
+                    RGBColor[0.5, 1., 0.5]}], 
+                 Polygon3DBox[{4, 8, 7, 3}, VertexColors -> {
+                    RGBColor[0.5, 1., 0.5], 
+                    RGBColor[0.5, 1., 0.5], 
+                    RGBColor[0.9, 1., 0.9], 
+                    RGBColor[0.9, 1., 0.9]}], 
+                 Polygon3DBox[{1, 5, 6, 2}, VertexColors -> {
+                    RGBColor[0.9, 1., 0.9], 
+                    RGBColor[0.9, 1., 0.9], 
+                    RGBColor[0.5, 1., 0.5], 
+                    RGBColor[0.5, 1., 0.5]}]}]}, Lighting -> {{"Ambient", 
+                 GrayLevel[1]}}, StripOnInput -> False]},
+            
+            ImageSizeCache->{{142.99391951880025`, 
+             235.84535760648572`}, {-84.31566249917319, 62.86279102222397}}],
+           StatusArea[#, 47.81853770255923]& ,
+           TagBoxNote->"47.81853770255923"],
+          StyleBox["47.81853770255923`", {
+            GrayLevel[0]}, StripOnInput -> False]],
+         Annotation[#, 
+          Style[47.81853770255923, {
+            GrayLevel[0]}], "Tooltip"]& ]}, 
+       {RGBColor[1., 0.75, 0.5], EdgeForm[GrayLevel[0.5]], 
+        TagBox[
+         TooltipBox[
+          TagBox[
+           DynamicBox[{
+             FEPrivate`If[
+              CurrentValue["MouseOver"], 
+              Directive[
+               EdgeForm[{
+                 RGBColor[
+                 0.6666666666666666, 0.6666666666666666, 0.6666666666666666], 
+                 
+                 AbsoluteThickness[1.5]}]], {}, {}], 
+             StyleBox[{
+               
+               GraphicsComplex3DBox[{{2.2, 1.2, 0.}, {2.2, 2.2, 0.}, {2.2, 
+                2.2, 1.9883379914775452`}, {2.2, 1.2, 1.9883379914775452`}, {
+                3.2, 1.2, 0.}, {3.2, 2.2, 0.}, {3.2, 2.2, 
+                1.9883379914775452`}, {3.2, 1.2, 1.9883379914775452`}}, {
+                 Polygon3DBox[{1, 2, 3, 4}, VertexColors -> {
+                    RGBColor[0.5, 0.375, 0.25], 
+                    RGBColor[0.5, 0.375, 0.25], 
+                    RGBColor[1., 0.75, 0.5], 
+                    RGBColor[1., 0.75, 0.5]}], 
+                 Polygon3DBox[{5, 6, 7, 8}, VertexColors -> {
+                    RGBColor[0.5, 0.375, 0.25], 
+                    RGBColor[0.5, 0.375, 0.25], 
+                    RGBColor[1., 0.75, 0.5], 
+                    RGBColor[1., 0.75, 0.5]}], 
+                 Polygon3DBox[{2, 3, 7, 6}, VertexColors -> {
+                    RGBColor[1., 0.95, 0.9], 
+                    RGBColor[1., 0.75, 0.5], 
+                    RGBColor[1., 0.75, 0.5], 
+                    RGBColor[1., 0.95, 0.9]}], 
+                 Polygon3DBox[{1, 4, 8, 5}, VertexColors -> {
+                    RGBColor[1., 0.75, 0.5], 
+                    RGBColor[1., 0.95, 0.9], 
+                    RGBColor[1., 0.95, 0.9], 
+                    RGBColor[1., 0.75, 0.5]}], 
+                 Polygon3DBox[{4, 8, 7, 3}, VertexColors -> {
+                    RGBColor[1., 0.75, 0.5], 
+                    RGBColor[1., 0.75, 0.5], 
+                    RGBColor[1., 0.95, 0.9], 
+                    RGBColor[1., 0.95, 0.9]}], 
+                 Polygon3DBox[{1, 5, 6, 2}, VertexColors -> {
+                    RGBColor[1., 0.95, 0.9], 
+                    RGBColor[1., 0.95, 0.9], 
+                    RGBColor[1., 0.75, 0.5], 
+                    RGBColor[1., 0.75, 0.5]}]}]}, Lighting -> {{"Ambient", 
+                 GrayLevel[1]}}, StripOnInput -> False]},
+            
+            ImageSizeCache->{{194.23159978416282`, 
+             269.9115181420262}, {-46.33633156428086, 21.640825013368065`}}],
+           StatusArea[#, 1.9883379914775452`]& ,
+           TagBoxNote->"1.9883379914775452"],
+          StyleBox["1.9883379914775452`", {
+            GrayLevel[0]}, StripOnInput -> False]],
+         Annotation[#, 
+          Style[1.9883379914775452`, {
+            GrayLevel[0]}], "Tooltip"]& ]}}, {}, {}}, {{}, {
+       {RGBColor[0.5, 0.5, 1.], EdgeForm[GrayLevel[0.5]], 
+        TagBox[
+         TooltipBox[
+          TagBox[
+           DynamicBox[{
+             FEPrivate`If[
+              CurrentValue["MouseOver"], 
+              Directive[
+               EdgeForm[{
+                 RGBColor[
+                 0.6666666666666666, 0.6666666666666666, 0.6666666666666666], 
+                 
+                 AbsoluteThickness[1.5]}]], {}, {}], 
+             StyleBox[{
+               
+               GraphicsComplex3DBox[{{0., 2.4000000000000004`, 0.}, {0., 
+                3.4000000000000004`, 0.}, {0., 3.4000000000000004`, 
+                0.0037557918213554932`}, {0., 2.4000000000000004`, 
+                0.0037557918213554932`}, {1., 2.4000000000000004`, 0.}, {1., 
+                3.4000000000000004`, 0.}, {1., 3.4000000000000004`, 
+                0.0037557918213554932`}, {1., 2.4000000000000004`, 
+                0.0037557918213554932`}}, {
+                 Polygon3DBox[{1, 2, 3, 4}, VertexColors -> {
+                    RGBColor[0.25, 0.25, 0.5], 
+                    RGBColor[0.25, 0.25, 0.5], 
+                    RGBColor[0.5, 0.5, 1.], 
+                    RGBColor[0.5, 0.5, 1.]}], 
+                 Polygon3DBox[{5, 6, 7, 8}, VertexColors -> {
+                    RGBColor[0.25, 0.25, 0.5], 
+                    RGBColor[0.25, 0.25, 0.5], 
+                    RGBColor[0.5, 0.5, 1.], 
+                    RGBColor[0.5, 0.5, 1.]}], 
+                 Polygon3DBox[{2, 3, 7, 6}, VertexColors -> {
+                    RGBColor[0.9, 0.9, 1.], 
+                    RGBColor[0.5, 0.5, 1.], 
+                    RGBColor[0.5, 0.5, 1.], 
+                    RGBColor[0.9, 0.9, 1.]}], 
+                 Polygon3DBox[{1, 4, 8, 5}, VertexColors -> {
+                    RGBColor[0.5, 0.5, 1.], 
+                    RGBColor[0.9, 0.9, 1.], 
+                    RGBColor[0.9, 0.9, 1.], 
+                    RGBColor[0.5, 0.5, 1.]}], 
+                 Polygon3DBox[{4, 8, 7, 3}, VertexColors -> {
+                    RGBColor[0.5, 0.5, 1.], 
+                    RGBColor[0.5, 0.5, 1.], 
+                    RGBColor[0.9, 0.9, 1.], 
+                    RGBColor[0.9, 0.9, 1.]}], 
+                 Polygon3DBox[{1, 5, 6, 2}, VertexColors -> {
+                    RGBColor[0.9, 0.9, 1.], 
+                    RGBColor[0.9, 0.9, 1.], 
+                    RGBColor[0.5, 0.5, 1.], 
+                    RGBColor[0.5, 0.5, 1.]}]}]}, Lighting -> {{"Ambient", 
+                 GrayLevel[1]}}, StripOnInput -> False]},
+            
+            ImageSizeCache->{{63.439768540448526`, 
+             141.96279954236928`}, {-3.4896943977582, 66.36592447144102}}],
+           StatusArea[#, 0.0037557918213554932`]& ,
+           TagBoxNote->"0.0037557918213554932"],
+          StyleBox["0.0037557918213554932`", {
+            GrayLevel[0]}, StripOnInput -> False]],
+         Annotation[#, 
+          Style[0.0037557918213554932`, {
+            GrayLevel[0]}], "Tooltip"]& ]}, 
+       {RGBColor[0.5, 1., 0.5], EdgeForm[GrayLevel[0.5]], 
+        TagBox[
+         TooltipBox[
+          TagBox[
+           DynamicBox[{
+             FEPrivate`If[
+              CurrentValue["MouseOver"], 
+              Directive[
+               EdgeForm[{
+                 RGBColor[
+                 0.6666666666666666, 0.6666666666666666, 0.6666666666666666], 
+                 
+                 AbsoluteThickness[1.5]}]], {}, {}], 
+             StyleBox[{
+               
+               GraphicsComplex3DBox[{{1.1, 2.4000000000000004`, 0.}, {1.1, 
+                3.4000000000000004`, 0.}, {1.1, 3.4000000000000004`, 
+                1.988337991477534}, {1.1, 2.4000000000000004`, 
+                1.988337991477534}, {2.1, 2.4000000000000004`, 0.}, {2.1, 
+                3.4000000000000004`, 0.}, {2.1, 3.4000000000000004`, 
+                1.988337991477534}, {2.1, 2.4000000000000004`, 
+                1.988337991477534}}, {
+                 Polygon3DBox[{1, 2, 3, 4}, VertexColors -> {
+                    RGBColor[0.25, 0.5, 0.25], 
+                    RGBColor[0.25, 0.5, 0.25], 
+                    RGBColor[0.5, 1., 0.5], 
+                    RGBColor[0.5, 1., 0.5]}], 
+                 Polygon3DBox[{5, 6, 7, 8}, VertexColors -> {
+                    RGBColor[0.25, 0.5, 0.25], 
+                    RGBColor[0.25, 0.5, 0.25], 
+                    RGBColor[0.5, 1., 0.5], 
+                    RGBColor[0.5, 1., 0.5]}], 
+                 Polygon3DBox[{2, 3, 7, 6}, VertexColors -> {
+                    RGBColor[0.9, 1., 0.9], 
+                    RGBColor[0.5, 1., 0.5], 
+                    RGBColor[0.5, 1., 0.5], 
+                    RGBColor[0.9, 1., 0.9]}], 
+                 Polygon3DBox[{1, 4, 8, 5}, VertexColors -> {
+                    RGBColor[0.5, 1., 0.5], 
+                    RGBColor[0.9, 1., 0.9], 
+                    RGBColor[0.9, 1., 0.9], 
+                    RGBColor[0.5, 1., 0.5]}], 
+                 Polygon3DBox[{4, 8, 7, 3}, VertexColors -> {
+                    RGBColor[0.5, 1., 0.5], 
+                    RGBColor[0.5, 1., 0.5], 
+                    RGBColor[0.9, 1., 0.9], 
+                    RGBColor[0.9, 1., 0.9]}], 
+                 Polygon3DBox[{1, 5, 6, 2}, VertexColors -> {
+                    RGBColor[0.9, 1., 0.9], 
+                    RGBColor[0.9, 1., 0.9], 
+                    RGBColor[0.5, 1., 0.5], 
+                    RGBColor[0.5, 1., 0.5]}]}]}, Lighting -> {{"Ambient", 
+                 GrayLevel[1]}}, StripOnInput -> False]},
+            
+            ImageSizeCache->{{109.00215016316625`, 
+             185.33647035317924`}, {-43.3976738918177, 24.910198033210392`}}],
+           
+           StatusArea[#, 1.988337991477534]& ,
+           TagBoxNote->"1.988337991477534"],
+          StyleBox["1.988337991477534`", {
+            GrayLevel[0]}, StripOnInput -> False]],
+         Annotation[#, 
+          Style[1.988337991477534, {
+            GrayLevel[0]}], "Tooltip"]& ]}, 
+       {RGBColor[1., 0.75, 0.5], EdgeForm[GrayLevel[0.5]], 
+        TagBox[
+         TooltipBox[
+          TagBox[
+           DynamicBox[{
+             FEPrivate`If[
+              CurrentValue["MouseOver"], 
+              Directive[
+               EdgeForm[{
+                 RGBColor[
+                 0.6666666666666666, 0.6666666666666666, 0.6666666666666666], 
+                 
+                 AbsoluteThickness[1.5]}]], {}, {}], 
+             StyleBox[{
+               
+               GraphicsComplex3DBox[{{2.2, 2.4000000000000004`, 0.}, {2.2, 
+                3.4000000000000004`, 0.}, {2.2, 3.4000000000000004`, 
+                48.007906216701116`}, {2.2, 2.4000000000000004`, 
+                48.007906216701116`}, {3.2, 2.4000000000000004`, 0.}, {3.2, 
+                3.4000000000000004`, 0.}, {3.2, 3.4000000000000004`, 
+                48.007906216701116`}, {3.2, 2.4000000000000004`, 
+                48.007906216701116`}}, {
+                 Polygon3DBox[{1, 2, 3, 4}, VertexColors -> {
+                    RGBColor[0.5, 0.375, 0.25], 
+                    RGBColor[0.5, 0.375, 0.25], 
+                    RGBColor[1., 0.75, 0.5], 
+                    RGBColor[1., 0.75, 0.5]}], 
+                 Polygon3DBox[{5, 6, 7, 8}, VertexColors -> {
+                    RGBColor[0.5, 0.375, 0.25], 
+                    RGBColor[0.5, 0.375, 0.25], 
+                    RGBColor[1., 0.75, 0.5], 
+                    RGBColor[1., 0.75, 0.5]}], 
+                 Polygon3DBox[{2, 3, 7, 6}, VertexColors -> {
+                    RGBColor[1., 0.95, 0.9], 
+                    RGBColor[1., 0.75, 0.5], 
+                    RGBColor[1., 0.75, 0.5], 
+                    RGBColor[1., 0.95, 0.9]}], 
+                 Polygon3DBox[{1, 4, 8, 5}, VertexColors -> {
+                    RGBColor[1., 0.75, 0.5], 
+                    RGBColor[1., 0.95, 0.9], 
+                    RGBColor[1., 0.95, 0.9], 
+                    RGBColor[1., 0.75, 0.5]}], 
+                 Polygon3DBox[{4, 8, 7, 3}, VertexColors -> {
+                    RGBColor[1., 0.75, 0.5], 
+                    RGBColor[1., 0.75, 0.5], 
+                    RGBColor[1., 0.95, 0.9], 
+                    RGBColor[1., 0.95, 0.9]}], 
+                 Polygon3DBox[{1, 5, 6, 2}, VertexColors -> {
+                    RGBColor[1., 0.95, 0.9], 
+                    RGBColor[1., 0.95, 0.9], 
+                    RGBColor[1., 0.75, 0.5], 
+                    RGBColor[1., 0.75, 0.5]}]}]}, Lighting -> {{"Ambient", 
+                 GrayLevel[1]}}, StripOnInput -> False]},
+            
+            ImageSizeCache->{{145.41874527179493`, 
+             231.7411782106928}, {-160.0670147132354, -13.820194216042239`}}],
+           
+           StatusArea[#, 48.007906216701116`]& ,
+           TagBoxNote->"48.007906216701116"],
+          StyleBox["48.007906216701116`", {
+            GrayLevel[0]}, StripOnInput -> False]],
+         Annotation[#, 
+          Style[48.007906216701116`, {
+            GrayLevel[0]}], "Tooltip"]& ]}}, {}, {}}}, GraphicsGroup3DBox[
+     {GrayLevel[0], 
+      StyleBox[{
+        Text3DBox["1", Offset[{0, 0, 0}, {3.5200000000000005`, 0.5, 0.}], {0, 
+         0}], Text3DBox["1", Offset[{0, 0, 0}, {0.5, -0.3, 0.}], {0, -0.3}], 
+        Text3DBox["2", Offset[{0, 0, 0}, {1.6, -0.3, 0.}], {0, -0.3}], 
+        Text3DBox["3", Offset[{0, 0, 0}, {2.7, -0.3, 0.}], {0, -0.3}], 
+        Text3DBox["2", 
+         Offset[{0, 0, 0}, {3.5200000000000005`, 1.7000000000000002`, 0.}], {
+         0, 0}], Text3DBox["3", 
+         Offset[{0, 0, 0}, {3.5200000000000005`, 2.9000000000000004`, 0.}], {
+         0, 0}]},
+       Antialiasing->False]}]}},
+  AutomaticImageSize->True,
+  Axes->{True, True, True},
+  AxesEdge->{{-1, -1}, {1, -1}, {1, 1}},
+  AxesLabel->{
+    FormBox["\"Data\"", TraditionalForm], 
+    FormBox["\"Model\"", TraditionalForm], 
+    FormBox["\"Samples\"", TraditionalForm]},
+  BoxRatios->
+   NCache[{0.9411764705882352, 1, GoldenRatio^(-1)}, {
+    0.9411764705882352, 1, 0.6180339887498948}],
+  Boxed->False,
+  FaceGrids->{{{0, 1, 0}, {None, Automatic}}, {{0, 0, -1}, {
+     None, None}}, {{-1, 0, 0}, {None, None}}},
+  ImageSize->{387.7775262703316, 382.96428200071847`},
+  Lighting->"Neutral",
+  Method->{"RotationControl" -> "Globe"},
+  PlotRangePadding->Scaled[0.02],
+  Ticks->{{{0, 
+      FormBox["\"\"", TraditionalForm], {0.005, 0}}, {3.2, 
+      FormBox["\"\"", TraditionalForm], {0.005, 0}}, {1.05, 
+      FormBox["\"\"", TraditionalForm], {0.005, 0}}, {2.1500000000000004`, 
+      FormBox["\"\"", TraditionalForm], {0.005, 0}}, {1.05, 
+      FormBox["\"\"", TraditionalForm], {0.005, 0}}, {2.1500000000000004`, 
+      FormBox["\"\"", TraditionalForm], {0.005, 0}}, {1.05, 
+      FormBox["\"\"", TraditionalForm], {0.005, 0}}, {2.1500000000000004`, 
+      FormBox["\"\"", TraditionalForm], {0.005, 0}}}, {{0, 
+      FormBox["\"\"", TraditionalForm], {0.005, 0}}, {3.4000000000000004`, 
+      FormBox["\"\"", TraditionalForm], {0.005, 0}}, {0, 
+      FormBox["\"\"", TraditionalForm], {0.01, 0}}, {1., 
+      FormBox["\"\"", TraditionalForm], {0.01, 0}}, {1.2, 
+      FormBox["\"\"", TraditionalForm], {0.01, 0}}, {2.2, 
+      FormBox["\"\"", TraditionalForm], {0.01, 0}}, {2.4000000000000004`, 
+      FormBox["\"\"", TraditionalForm], {0.01, 0}}, {3.4000000000000004`, 
+      FormBox["\"\"", TraditionalForm], {0.01, 0}}}, Automatic},
+  ViewPoint->{-1.0159470497049117`, -0.9621980381790564, 2.3285245387412763`},
+  
+  ViewVertical->{0., 0., 1.}]], "Output",
+ CellChangeTimes->{3.5103919170512066`*^9, 3.5134199915825386`*^9}]
+}, Open  ]],
+
+Cell["\<\
+S\[IAcute]\[THacek] je mo\[ZHacek]n\[EAcute] si nechat symbolicky vyhodnotit \
+- pro v\[EHacek]t\[SHacek]\[IAcute] s\[IAcute]t\[EHacek] je to ale u\[ZHacek] \
+zcela nep\[RHacek]ehledn\[EAcute], nicm\[EAcute]n\[EHacek] aktiva\[CHacek]n\
+\[IAcute] funkce tam zcela jist\[EHacek] pozn\[AAcute]te.\
+\>", "Text",
+ CellChangeTimes->{{3.403534178975857*^9, 3.403534221341129*^9}, {
+  3.407607394703125*^9, 3.4076074453125*^9}}],
+
+Cell["\<\
+S\[IAcute]\[THacek] funguje v Mathematice jako klasick\[AAcute] funkce, tak\
+\[ZHacek]e ji m\[URing]\[ZHacek]eme d\[AAcute]vat parametry - v\[CHacek]etn\
+\[EHacek] symbol\[URing]:\
+\>", "Text",
+ CellChangeTimes->{{3.403534236078882*^9, 3.403534280346475*^9}, {
+  3.407607448390625*^9, 3.40760747171875*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"net2", "[", 
+  RowBox[{"{", 
+   RowBox[{"x1", ",", "x2", ",", "x3", ",", "x4"}], "}"}], "]"}]], "Input",
+ CellChangeTimes->{{3.402210185036864*^9, 3.402210201676763*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"-", "0.011306676282453876`"}], "+", 
+    RowBox[{"1.933268831332348`", "/", 
+     RowBox[{"(", 
+      RowBox[{"1", "+", 
+       SuperscriptBox["\[ExponentialE]", 
+        RowBox[{"1.9806323535340242`", "\[VeryThinSpace]", "-", 
+         FractionBox["0.7903165586968931`", 
+          RowBox[{"1", "+", 
+           SuperscriptBox["\[ExponentialE]", 
+            RowBox[{
+             RowBox[{"-", "31.84073078672567`"}], "+", 
+             RowBox[{"7.705578958308794`", " ", "x1"}], "-", 
+             RowBox[{"0.48297293808115704`", " ", "x2"}], "+", 
+             RowBox[{"3.766938826484974`", " ", "x3"}], "-", 
+             RowBox[{"4.062783262265795`", " ", "x4"}]}]]}]], "+", 
+         FractionBox["5.482830269175721`", 
+          RowBox[{"1", "+", 
+           SuperscriptBox["\[ExponentialE]", 
+            RowBox[{
+             RowBox[{"-", "35.464283240368204`"}], "+", 
+             RowBox[{"5.214250591810718`", " ", "x1"}], "+", 
+             RowBox[{"9.676680477386801`", " ", "x2"}], "-", 
+             RowBox[{"6.034184262984015`", " ", "x3"}], "-", 
+             RowBox[{"2.227279254015421`", " ", "x4"}]}]]}]], "-", 
+         FractionBox["2.07974703120903`", 
+          RowBox[{"1", "+", 
+           SuperscriptBox["\[ExponentialE]", 
+            RowBox[{
+             RowBox[{"-", "11.26450654847079`"}], "-", 
+             RowBox[{"1.4864585611739796`", " ", "x1"}], "-", 
+             RowBox[{"2.039737473534224`", " ", "x2"}], "+", 
+             RowBox[{"3.737399077517039`", " ", "x3"}], "+", 
+             RowBox[{"5.155839444953124`", " ", "x4"}]}]]}]]}]]}], ")"}]}], 
+    "+", 
+    RowBox[{"0.011776553730175967`", "/", 
+     RowBox[{"(", 
+      RowBox[{"1", "+", 
+       SuperscriptBox["\[ExponentialE]", 
+        RowBox[{
+         RowBox[{"-", "1.0944750370985046`"}], "+", 
+         FractionBox["7.354642606939543`", 
+          RowBox[{"1", "+", 
+           SuperscriptBox["\[ExponentialE]", 
+            RowBox[{
+             RowBox[{"-", "31.84073078672567`"}], "+", 
+             RowBox[{"7.705578958308794`", " ", "x1"}], "-", 
+             RowBox[{"0.48297293808115704`", " ", "x2"}], "+", 
+             RowBox[{"3.766938826484974`", " ", "x3"}], "-", 
+             RowBox[{"4.062783262265795`", " ", "x4"}]}]]}]], "-", 
+         FractionBox["1.0938462228054167`", 
+          RowBox[{"1", "+", 
+           SuperscriptBox["\[ExponentialE]", 
+            RowBox[{
+             RowBox[{"-", "35.464283240368204`"}], "+", 
+             RowBox[{"5.214250591810718`", " ", "x1"}], "+", 
+             RowBox[{"9.676680477386801`", " ", "x2"}], "-", 
+             RowBox[{"6.034184262984015`", " ", "x3"}], "-", 
+             RowBox[{"2.227279254015421`", " ", "x4"}]}]]}]], "+", 
+         FractionBox["6.605998938439047`", 
+          RowBox[{"1", "+", 
+           SuperscriptBox["\[ExponentialE]", 
+            RowBox[{
+             RowBox[{"-", "11.26450654847079`"}], "-", 
+             RowBox[{"1.4864585611739796`", " ", "x1"}], "-", 
+             RowBox[{"2.039737473534224`", " ", "x2"}], "+", 
+             RowBox[{"3.737399077517039`", " ", "x3"}], "+", 
+             RowBox[{"5.155839444953124`", " ", "x4"}]}]]}]]}]]}], ")"}]}]}], 
+   ",", 
+   RowBox[{"1.0399943375013012`", "\[VeryThinSpace]", "-", 
+    RowBox[{"1.9795060033784664`", "/", 
+     RowBox[{"(", 
+      RowBox[{"1", "+", 
+       SuperscriptBox["\[ExponentialE]", 
+        RowBox[{"1.9806323535340242`", "\[VeryThinSpace]", "-", 
+         FractionBox["0.7903165586968931`", 
+          RowBox[{"1", "+", 
+           SuperscriptBox["\[ExponentialE]", 
+            RowBox[{
+             RowBox[{"-", "31.84073078672567`"}], "+", 
+             RowBox[{"7.705578958308794`", " ", "x1"}], "-", 
+             RowBox[{"0.48297293808115704`", " ", "x2"}], "+", 
+             RowBox[{"3.766938826484974`", " ", "x3"}], "-", 
+             RowBox[{"4.062783262265795`", " ", "x4"}]}]]}]], "+", 
+         FractionBox["5.482830269175721`", 
+          RowBox[{"1", "+", 
+           SuperscriptBox["\[ExponentialE]", 
+            RowBox[{
+             RowBox[{"-", "35.464283240368204`"}], "+", 
+             RowBox[{"5.214250591810718`", " ", "x1"}], "+", 
+             RowBox[{"9.676680477386801`", " ", "x2"}], "-", 
+             RowBox[{"6.034184262984015`", " ", "x3"}], "-", 
+             RowBox[{"2.227279254015421`", " ", "x4"}]}]]}]], "-", 
+         FractionBox["2.07974703120903`", 
+          RowBox[{"1", "+", 
+           SuperscriptBox["\[ExponentialE]", 
+            RowBox[{
+             RowBox[{"-", "11.26450654847079`"}], "-", 
+             RowBox[{"1.4864585611739796`", " ", "x1"}], "-", 
+             RowBox[{"2.039737473534224`", " ", "x2"}], "+", 
+             RowBox[{"3.737399077517039`", " ", "x3"}], "+", 
+             RowBox[{"5.155839444953124`", " ", "x4"}]}]]}]]}]]}], ")"}]}], 
+    "-", 
+    RowBox[{"1.1805258878137554`", "/", 
+     RowBox[{"(", 
+      RowBox[{"1", "+", 
+       SuperscriptBox["\[ExponentialE]", 
+        RowBox[{
+         RowBox[{"-", "1.0944750370985046`"}], "+", 
+         FractionBox["7.354642606939543`", 
+          RowBox[{"1", "+", 
+           SuperscriptBox["\[ExponentialE]", 
+            RowBox[{
+             RowBox[{"-", "31.84073078672567`"}], "+", 
+             RowBox[{"7.705578958308794`", " ", "x1"}], "-", 
+             RowBox[{"0.48297293808115704`", " ", "x2"}], "+", 
+             RowBox[{"3.766938826484974`", " ", "x3"}], "-", 
+             RowBox[{"4.062783262265795`", " ", "x4"}]}]]}]], "-", 
+         FractionBox["1.0938462228054167`", 
+          RowBox[{"1", "+", 
+           SuperscriptBox["\[ExponentialE]", 
+            RowBox[{
+             RowBox[{"-", "35.464283240368204`"}], "+", 
+             RowBox[{"5.214250591810718`", " ", "x1"}], "+", 
+             RowBox[{"9.676680477386801`", " ", "x2"}], "-", 
+             RowBox[{"6.034184262984015`", " ", "x3"}], "-", 
+             RowBox[{"2.227279254015421`", " ", "x4"}]}]]}]], "+", 
+         FractionBox["6.605998938439047`", 
+          RowBox[{"1", "+", 
+           SuperscriptBox["\[ExponentialE]", 
+            RowBox[{
+             RowBox[{"-", "11.26450654847079`"}], "-", 
+             RowBox[{"1.4864585611739796`", " ", "x1"}], "-", 
+             RowBox[{"2.039737473534224`", " ", "x2"}], "+", 
+             RowBox[{"3.737399077517039`", " ", "x3"}], "+", 
+             RowBox[{"5.155839444953124`", " ", "x4"}]}]]}]]}]]}], ")"}]}]}], 
+   ",", 
+   RowBox[{
+    RowBox[{"-", "0.028687661218847044`"}], "+", 
+    RowBox[{"0.04623717204611852`", "/", 
+     RowBox[{"(", 
+      RowBox[{"1", "+", 
+       SuperscriptBox["\[ExponentialE]", 
+        RowBox[{"1.9806323535340242`", "\[VeryThinSpace]", "-", 
+         FractionBox["0.7903165586968931`", 
+          RowBox[{"1", "+", 
+           SuperscriptBox["\[ExponentialE]", 
+            RowBox[{
+             RowBox[{"-", "31.84073078672567`"}], "+", 
+             RowBox[{"7.705578958308794`", " ", "x1"}], "-", 
+             RowBox[{"0.48297293808115704`", " ", "x2"}], "+", 
+             RowBox[{"3.766938826484974`", " ", "x3"}], "-", 
+             RowBox[{"4.062783262265795`", " ", "x4"}]}]]}]], "+", 
+         FractionBox["5.482830269175721`", 
+          RowBox[{"1", "+", 
+           SuperscriptBox["\[ExponentialE]", 
+            RowBox[{
+             RowBox[{"-", "35.464283240368204`"}], "+", 
+             RowBox[{"5.214250591810718`", " ", "x1"}], "+", 
+             RowBox[{"9.676680477386801`", " ", "x2"}], "-", 
+             RowBox[{"6.034184262984015`", " ", "x3"}], "-", 
+             RowBox[{"2.227279254015421`", " ", "x4"}]}]]}]], "-", 
+         FractionBox["2.07974703120903`", 
+          RowBox[{"1", "+", 
+           SuperscriptBox["\[ExponentialE]", 
+            RowBox[{
+             RowBox[{"-", "11.26450654847079`"}], "-", 
+             RowBox[{"1.4864585611739796`", " ", "x1"}], "-", 
+             RowBox[{"2.039737473534224`", " ", "x2"}], "+", 
+             RowBox[{"3.737399077517039`", " ", "x3"}], "+", 
+             RowBox[{"5.155839444953124`", " ", "x4"}]}]]}]]}]]}], ")"}]}], 
+    "+", 
+    RowBox[{"1.168749334083579`", "/", 
+     RowBox[{"(", 
+      RowBox[{"1", "+", 
+       SuperscriptBox["\[ExponentialE]", 
+        RowBox[{
+         RowBox[{"-", "1.0944750370985046`"}], "+", 
+         FractionBox["7.354642606939543`", 
+          RowBox[{"1", "+", 
+           SuperscriptBox["\[ExponentialE]", 
+            RowBox[{
+             RowBox[{"-", "31.84073078672567`"}], "+", 
+             RowBox[{"7.705578958308794`", " ", "x1"}], "-", 
+             RowBox[{"0.48297293808115704`", " ", "x2"}], "+", 
+             RowBox[{"3.766938826484974`", " ", "x3"}], "-", 
+             RowBox[{"4.062783262265795`", " ", "x4"}]}]]}]], "-", 
+         FractionBox["1.0938462228054167`", 
+          RowBox[{"1", "+", 
+           SuperscriptBox["\[ExponentialE]", 
+            RowBox[{
+             RowBox[{"-", "35.464283240368204`"}], "+", 
+             RowBox[{"5.214250591810718`", " ", "x1"}], "+", 
+             RowBox[{"9.676680477386801`", " ", "x2"}], "-", 
+             RowBox[{"6.034184262984015`", " ", "x3"}], "-", 
+             RowBox[{"2.227279254015421`", " ", "x4"}]}]]}]], "+", 
+         FractionBox["6.605998938439047`", 
+          RowBox[{"1", "+", 
+           SuperscriptBox["\[ExponentialE]", 
+            RowBox[{
+             RowBox[{"-", "11.26450654847079`"}], "-", 
+             RowBox[{"1.4864585611739796`", " ", "x1"}], "-", 
+             RowBox[{"2.039737473534224`", " ", "x2"}], "+", 
+             RowBox[{"3.737399077517039`", " ", "x3"}], "+", 
+             RowBox[{"5.155839444953124`", " ", "x4"}]}]]}]]}]]}], 
+      ")"}]}]}]}], "}"}]], "Output",
+ CellChangeTimes->{3.510391918767424*^9, 3.513419993612797*^9}]
+}, Open  ]],
+
+Cell["\<\
+V n\[AAcute]sleduj\[IAcute]c\[IAcute]m notebooku si uk\[AAcute]\[ZHacek]eme \
+podrobn\[EHacek]j\[SHacek]\[IAcute] vyhodnocen\[IAcute] v\[YAcute]stupu \
+neuronov\[EAcute] s\[IAcute]t\[EHacek] a tak\[EAcute] jin\[YAcute] p\[RHacek]\
+\[IAcute]stup k u\[CHacek]en\[IAcute] s\[IAcute]t\[EHacek].\
+\>", "Text",
+ CellChangeTimes->{{3.51039440408952*^9, 3.510394448656679*^9}, {
+  3.5104170100006065`*^9, 3.5104170357128716`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Prohl\[AAcute]\[SHacek]en\[IAcute]", "Section",
+ CellChangeTimes->{{3.510390951572606*^9, 3.5103909539369063`*^9}}],
+
+Cell["\<\
+Tento text je sou\[CHacek]\[AAcute]st\[IAcute] bakal\[AAcute]\[RHacek]sk\
+\[EAcute] pr\[AAcute]ce Adama \[CapitalCHacek]in\[CHacek]ury \"Demonstra\
+\[CHacek]n\[IAcute] aplikace pro podporu kurzu neuronov\[YAcute]ch \
+s\[IAcute]t\[IAcute]\" na FEL \[CapitalCHacek]VUT 2011. Vznikl \
+\[UAcute]pravou textu Petra Chlumsk\[EAcute]ho.\
+\>", "Text",
+ CellChangeTimes->{{3.418480638421875*^9, 3.41848078665625*^9}, {
+  3.5103934124095926`*^9, 3.510393428586647*^9}, {3.5103934917956734`*^9, 
+  3.510393512815343*^9}}]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{737, 687},
+WindowMargins->{{Automatic, 16}, {Automatic, 15}},
+ShowSelection->True,
+Magnification->1.,
+FrontEndVersion->"8.0 for Microsoft Windows (32-bit) (November 13, 2010)",
+StyleDefinitions->FrontEnd`FileName[{"Creative"}, "NaturalColor.nb", 
+  CharacterEncoding -> "WindowsEastEurope"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[567, 22, 428, 6, 42, "Subtitle"],
+Cell[998, 30, 283, 4, 25, "Subsubtitle"],
+Cell[CellGroupData[{
+Cell[1306, 38, 267, 3, 75, "Section"],
+Cell[1576, 43, 214, 4, 29, "Text"],
+Cell[1793, 49, 176, 3, 41, "Input"],
+Cell[1972, 54, 378, 7, 47, "Text"],
+Cell[2353, 63, 138, 4, 41, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2528, 72, 95, 1, 75, "Section"],
+Cell[CellGroupData[{
+Cell[2648, 77, 174, 2, 36, "Subsection"],
+Cell[2825, 81, 439, 8, 47, "Text"],
+Cell[CellGroupData[{
+Cell[3289, 93, 170, 3, 41, "Input"],
+Cell[3462, 98, 184, 2, 40, "Output"]
+}, Open  ]],
+Cell[3661, 103, 331, 6, 41, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4029, 114, 223, 3, 36, "Subsection"],
+Cell[4255, 119, 519, 8, 47, "Text"],
+Cell[4777, 129, 305, 8, 62, "Input"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5131, 143, 221, 3, 75, "Section"],
+Cell[5355, 148, 360, 7, 29, "Text"],
+Cell[CellGroupData[{
+Cell[5740, 159, 132, 2, 41, "Input"],
+Cell[5875, 163, 141, 3, 40, "Output"]
+}, Open  ]],
+Cell[6031, 169, 505, 8, 47, "Text"],
+Cell[CellGroupData[{
+Cell[6561, 181, 168, 4, 41, "Input"],
+Cell[6732, 187, 710, 21, 60, "Output"]
+}, Open  ]],
+Cell[7457, 211, 832, 13, 83, "Text"],
+Cell[8292, 226, 218, 6, 41, "Input"],
+Cell[8513, 234, 216, 5, 29, "Text"],
+Cell[CellGroupData[{
+Cell[8754, 243, 196, 5, 41, "Input"],
+Cell[8953, 250, 1470, 44, 117, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10460, 299, 275, 6, 36, "Subsection"],
+Cell[10738, 307, 293, 6, 29, "Text"],
+Cell[CellGroupData[{
+Cell[11056, 317, 147, 3, 41, "Input"],
+Cell[11206, 322, 232, 6, 40, "Output"]
+}, Open  ]],
+Cell[11453, 331, 991, 15, 101, "Text"],
+Cell[12447, 348, 174, 2, 29, "Text"],
+Cell[12624, 352, 675, 17, 62, "Input"],
+Cell[13302, 371, 492, 8, 47, "Text"],
+Cell[13797, 381, 406, 10, 41, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14240, 396, 296, 6, 36, "Subsection"],
+Cell[14539, 404, 450, 7, 47, "Text"],
+Cell[CellGroupData[{
+Cell[15014, 415, 256, 5, 41, "Input"],
+Cell[15273, 422, 404, 9, 40, "Output"]
+}, Open  ]],
+Cell[15692, 434, 418, 7, 47, "Text"],
+Cell[16113, 443, 604, 9, 65, "Text"],
+Cell[16720, 454, 176, 2, 29, "Text"],
+Cell[CellGroupData[{
+Cell[16921, 460, 653, 16, 102, "Input"],
+Cell[17577, 478, 403, 9, 40, "Output"],
+Cell[17983, 489, 291, 6, 40, "Output"]
+}, Open  ]],
+Cell[18289, 498, 720, 11, 83, "Text"],
+Cell[19012, 511, 461, 8, 47, "Text"],
+Cell[CellGroupData[{
+Cell[19498, 523, 102, 1, 41, "Input"],
+Cell[19603, 526, 8296, 154, 687, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[27936, 685, 135, 2, 41, "Input"],
+Cell[28074, 689, 4988, 79, 611, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[33099, 773, 215, 4, 41, "Input"],
+Cell[33317, 779, 4993, 79, 611, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[38347, 863, 198, 4, 41, "Input"],
+Cell[38548, 869, 5247, 84, 630, "Output"]
+}, Open  ]],
+Cell[43810, 956, 474, 8, 47, "Text"],
+Cell[CellGroupData[{
+Cell[44309, 968, 404, 10, 41, "Input"],
+Cell[44716, 980, 237, 5, 40, "Output"]
+}, Open  ]],
+Cell[44968, 988, 228, 5, 29, "Text"],
+Cell[45199, 995, 837, 12, 83, "Text"],
+Cell[46039, 1009, 155, 2, 29, "Text"],
+Cell[CellGroupData[{
+Cell[46219, 1015, 305, 8, 41, "Input"],
+Cell[46527, 1025, 410, 13, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[46974, 1043, 360, 8, 41, "Input"],
+Cell[47337, 1053, 174, 4, 40, "Output"]
+}, Open  ]],
+Cell[47526, 1060, 401, 7, 47, "Text"],
+Cell[CellGroupData[{
+Cell[47952, 1071, 510, 14, 41, "Input"],
+Cell[48465, 1087, 506, 13, 40, "Output"]
+}, Open  ]],
+Cell[48986, 1103, 374, 7, 47, "Text"],
+Cell[49363, 1112, 340, 6, 47, "Text"],
+Cell[49706, 1120, 367, 7, 29, "Text"],
+Cell[CellGroupData[{
+Cell[50098, 1131, 620, 17, 62, "Input"],
+Cell[50721, 1150, 174, 4, 40, "Output"]
+}, Open  ]],
+Cell[50910, 1157, 174, 2, 29, "Text"],
+Cell[CellGroupData[{
+Cell[51109, 1163, 538, 16, 41, "Input"],
+Cell[51650, 1181, 350, 10, 40, "Output"]
+}, Open  ]],
+Cell[52015, 1194, 242, 5, 29, "Text"],
+Cell[52260, 1201, 332, 6, 29, "Text"],
+Cell[52595, 1209, 511, 10, 41, "Input"],
+Cell[53109, 1221, 167, 2, 29, "Text"],
+Cell[CellGroupData[{
+Cell[53301, 1227, 200, 4, 41, "Input"],
+Cell[53504, 1233, 789, 20, 40, "Output"],
+Cell[54296, 1255, 768, 20, 40, "Output"],
+Cell[55067, 1277, 740, 19, 40, "Output"],
+Cell[55810, 1298, 718, 19, 40, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[56589, 1324, 322, 6, 75, "Section"],
+Cell[56914, 1332, 898, 13, 83, "Text"],
+Cell[57815, 1347, 241, 5, 29, "Text"],
+Cell[CellGroupData[{
+Cell[58081, 1356, 578, 11, 41, "Input"],
+Cell[58662, 1369, 1015, 27, 79, "Output"]
+}, Open  ]],
+Cell[59692, 1399, 319, 6, 29, "Text"],
+Cell[CellGroupData[{
+Cell[60036, 1409, 135, 2, 41, "Input"],
+Cell[60174, 1413, 350, 5, 79, "Output"]
+}, Open  ]],
+Cell[60539, 1421, 471, 8, 47, "Text"],
+Cell[61013, 1431, 440, 8, 47, "Text"],
+Cell[CellGroupData[{
+Cell[61478, 1443, 482, 11, 41, "Input"],
+Cell[61963, 1456, 1262, 28, 266, "Print"]
+}, Open  ]],
+Cell[63240, 1487, 741, 12, 65, "Text"],
+Cell[CellGroupData[{
+Cell[64006, 1503, 668, 10, 41, "Input"],
+Cell[64677, 1515, 6725, 137, 457, "Output"]
+}, Open  ]],
+Cell[71417, 1655, 562, 9, 47, "Text"],
+Cell[CellGroupData[{
+Cell[72004, 1668, 611, 10, 41, "Input"],
+Cell[72618, 1680, 35272, 816, 408, "Output"]
+}, Open  ]],
+Cell[107905, 2499, 430, 7, 47, "Text"],
+Cell[108338, 2508, 317, 6, 29, "Text"],
+Cell[CellGroupData[{
+Cell[108680, 2518, 194, 4, 41, "Input"],
+Cell[108877, 2524, 9716, 209, 570, "Output"]
+}, Open  ]],
+Cell[118608, 2736, 432, 7, 47, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[119077, 2748, 121, 1, 75, "Section"],
+Cell[119201, 2751, 520, 9, 47, "Text"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

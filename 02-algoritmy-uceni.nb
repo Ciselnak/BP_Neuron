@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[    974785,      16298]
-NotebookOptionsPosition[    971319,      16186]
-NotebookOutlinePosition[    971783,      16203]
-CellTagsIndexPosition[    971740,      16200]
+NotebookDataLength[    974872,      16299]
+NotebookOptionsPosition[    971407,      16187]
+NotebookOutlinePosition[    971870,      16204]
+CellTagsIndexPosition[    971827,      16201]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -21,7 +21,7 @@ Notebook[{
 
 Cell[CellGroupData[{
 Cell[TextData[{
- "Algoritmy u\[CHacek]en\[IAcute]\n",
+ "Kapitola 2 - Algoritmy u\[CHacek]en\[IAcute]\n",
  StyleBox["Demonstrace u\[CHacek]en\[IAcute] neuronu pomoc\[IAcute] \
 r\[URing]zn\[YAcute]ch tr\[EAcute]novac\[IAcute]ch algoritm\[URing].", 
   "Subtitle"]
@@ -30,7 +30,8 @@ r\[URing]zn\[YAcute]ch tr\[EAcute]novac\[IAcute]ch algoritm\[URing].",
    3.5073590076481843`*^9, 3.507359032449834*^9}, 3.5073599568952236`*^9, {
    3.5073600002592297`*^9, 3.507360001479885*^9}, {3.507360051770771*^9, 
    3.5073600524743605`*^9}, {3.507360282704596*^9, 3.507360287426696*^9}, {
-   3.5073607144794245`*^9, 3.5073607224504366`*^9}}],
+   3.5073607144794245`*^9, 3.5073607224504366`*^9}, {3.5134065777126937`*^9, 
+   3.513406584598568*^9}}],
 
 Cell[CellGroupData[{
 
@@ -16156,7 +16157,7 @@ Cell[BoxData[{
    RowBox[{"{", 
     RowBox[{
      RowBox[{"{", 
-      RowBox[{"a", ",", " ", "0.1", ",", " ", "\"\<StephLength\>\""}], "}"}], 
+      RowBox[{"a", ",", " ", "0.1", ",", " ", "\"\<StepLength\>\""}], "}"}], 
      ",", " ", "0.01", ",", " ", "0.999"}], "}"}], ",", " ", "\n", "  ", 
    RowBox[{"{", 
     RowBox[{
@@ -16165,7 +16166,7 @@ Cell[BoxData[{
      ",", " ", "0.01", ",", " ", "0.999"}], "}"}], ",", " ", 
    RowBox[{"ContinuousAction", " ", "->", " ", "False"}]}], "]"}]}], "Input",
  CellChangeTimes->{{3.512231426053033*^9, 3.512231461727563*^9}, 
-   3.5122315005909977`*^9}]
+   3.5122315005909977`*^9, 3.5134062645064216`*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -16185,7 +16186,7 @@ kurzu neuronov\[YAcute]ch s\[IAcute]t\[IAcute]\[CloseCurlyDoubleQuote] na FEL \
 }, Open  ]]
 },
 WindowSize->{752, 603},
-WindowMargins->{{Automatic, 233}, {Automatic, 36}},
+WindowMargins->{{Automatic, 32}, {18, Automatic}},
 Magnification->0.8999999761581421,
 FrontEndVersion->"8.0 for Microsoft Windows (32-bit) (November 13, 2010)",
 StyleDefinitions->FrontEnd`FileName[{"Creative"}, "NaturalColor.nb", 
@@ -16203,101 +16204,101 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[579, 22, 570, 10, 84, "Title"],
+Cell[579, 22, 635, 11, 84, "Title"],
 Cell[CellGroupData[{
-Cell[1174, 36, 144, 3, 67, "Section"],
-Cell[1321, 41, 440, 8, 26, "Text"],
-Cell[1764, 51, 181, 4, 36, "Input",
+Cell[1239, 37, 144, 3, 67, "Section"],
+Cell[1386, 42, 440, 8, 26, "Text"],
+Cell[1829, 52, 181, 4, 36, "Input",
  InitializationCell->True],
-Cell[1948, 57, 406, 7, 43, "Text"],
-Cell[2357, 66, 213, 5, 36, "Input",
+Cell[2013, 58, 406, 7, 43, "Text"],
+Cell[2422, 67, 213, 5, 36, "Input",
  InitializationCell->True]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[2607, 76, 141, 1, 67, "Section"],
-Cell[2751, 79, 707, 11, 43, "Text"],
-Cell[3461, 92, 142, 1, 26, "Text"],
-Cell[3606, 95, 516, 14, 55, "Input",
+Cell[2672, 77, 141, 1, 67, "Section"],
+Cell[2816, 80, 707, 11, 43, "Text"],
+Cell[3526, 93, 142, 1, 26, "Text"],
+Cell[3671, 96, 516, 14, 55, "Input",
  InitializationCell->True],
-Cell[4125, 111, 232, 5, 26, "Text"],
-Cell[4360, 118, 338, 12, 36, "Input",
+Cell[4190, 112, 232, 5, 26, "Text"],
+Cell[4425, 119, 338, 12, 36, "Input",
  InitializationCell->True],
-Cell[4701, 132, 565, 9, 43, "Text"],
-Cell[5269, 143, 522, 18, 73, "Input",
+Cell[4766, 133, 565, 9, 43, "Text"],
+Cell[5334, 144, 522, 18, 73, "Input",
  InitializationCell->True],
-Cell[5794, 163, 306, 6, 26, "Text"],
+Cell[5859, 164, 306, 6, 26, "Text"],
 Cell[CellGroupData[{
-Cell[6125, 173, 1788, 50, 73, "Input",
+Cell[6190, 174, 1788, 50, 73, "Input",
  InitializationCell->True],
-Cell[7916, 225, 181410, 2962, 276, 128637, 2095, "CachedBoxData", "BoxData", \
+Cell[7981, 226, 181410, 2962, 276, 128637, 2095, "CachedBoxData", "BoxData", \
 "Output"]
 }, Open  ]],
-Cell[189341, 3190, 518, 9, 43, "Text"]
+Cell[189406, 3191, 518, 9, 43, "Text"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[189896, 3204, 167, 5, 67, "Section"],
-Cell[190066, 3211, 620, 10, 43, "Text"],
+Cell[189961, 3205, 167, 5, 67, "Section"],
+Cell[190131, 3212, 620, 10, 43, "Text"],
 Cell[CellGroupData[{
-Cell[190711, 3225, 596, 20, 73, "Input"],
-Cell[191310, 3247, 1475, 31, 245, "Print"]
+Cell[190776, 3226, 596, 20, 73, "Input"],
+Cell[191375, 3248, 1475, 31, 245, "Print"]
 }, Open  ]],
-Cell[192800, 3281, 491, 8, 26, "Text"],
+Cell[192865, 3282, 491, 8, 26, "Text"],
 Cell[CellGroupData[{
-Cell[193316, 3293, 2878, 56, 127, "Input"],
-Cell[196197, 3351, 183406, 2992, 277, 130599, 2127, "CachedBoxData", \
+Cell[193381, 3294, 2878, 56, 127, "Input"],
+Cell[196262, 3352, 183406, 2992, 277, 130599, 2127, "CachedBoxData", \
 "BoxData", "Output"]
 }, Open  ]],
-Cell[379618, 6346, 314, 6, 26, "Text"]
+Cell[379683, 6347, 314, 6, 26, "Text"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[379969, 6357, 110, 1, 67, "Section"],
-Cell[380082, 6360, 512, 8, 43, "Text"],
+Cell[380034, 6358, 110, 1, 67, "Section"],
+Cell[380147, 6361, 512, 8, 43, "Text"],
 Cell[CellGroupData[{
-Cell[380619, 6372, 741, 23, 73, "Input"],
-Cell[381363, 6397, 1427, 33, 245, "Print"]
+Cell[380684, 6373, 741, 23, 73, "Input"],
+Cell[381428, 6398, 1427, 33, 245, "Print"]
 }, Open  ]],
-Cell[382805, 6433, 414, 7, 26, "Text"],
+Cell[382870, 6434, 414, 7, 26, "Text"],
 Cell[CellGroupData[{
-Cell[383244, 6444, 1458, 38, 127, "Input"],
-Cell[384705, 6484, 182103, 2976, 277, 130487, 2127, "CachedBoxData", \
+Cell[383309, 6445, 1458, 38, 127, "Input"],
+Cell[384770, 6485, 182103, 2976, 277, 130487, 2127, "CachedBoxData", \
 "BoxData", "Output"]
 }, Open  ]],
-Cell[566823, 9463, 243, 5, 26, "Text"]
+Cell[566888, 9464, 243, 5, 26, "Text"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[567103, 9473, 317, 5, 67, "Section"],
-Cell[567423, 9480, 567, 9, 43, "Text"],
+Cell[567168, 9474, 317, 5, 67, "Section"],
+Cell[567488, 9481, 567, 9, 43, "Text"],
 Cell[CellGroupData[{
-Cell[568015, 9493, 748, 24, 73, "Input"],
-Cell[568766, 9519, 1381, 32, 245, "Print"]
+Cell[568080, 9494, 748, 24, 73, "Input"],
+Cell[568831, 9520, 1381, 32, 245, "Print"]
 }, Open  ]],
-Cell[570162, 9554, 409, 7, 26, "Text"],
+Cell[570227, 9555, 409, 7, 26, "Text"],
 Cell[CellGroupData[{
-Cell[570596, 9565, 1455, 38, 127, "Input"],
-Cell[572054, 9605, 184950, 3014, 277, 133299, 2165, "CachedBoxData", \
+Cell[570661, 9566, 1455, 38, 127, "Input"],
+Cell[572119, 9606, 184950, 3014, 277, 133299, 2165, "CachedBoxData", \
 "BoxData", "Output"]
 }, Open  ]],
-Cell[757019, 12622, 211, 4, 26, "Text"]
+Cell[757084, 12623, 211, 4, 26, "Text"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[757267, 12631, 205, 4, 67, "Section"],
-Cell[757475, 12637, 1235, 18, 77, "Text"],
+Cell[757332, 12632, 205, 4, 67, "Section"],
+Cell[757540, 12638, 1235, 18, 77, "Text"],
 Cell[CellGroupData[{
-Cell[758735, 12659, 914, 26, 91, "Input"],
-Cell[759652, 12687, 3698, 70, 244, "Print"]
+Cell[758800, 12660, 914, 26, 91, "Input"],
+Cell[759717, 12688, 3698, 70, 244, "Print"]
 }, Open  ]],
-Cell[763365, 12760, 414, 7, 26, "Text"],
+Cell[763430, 12761, 414, 7, 26, "Text"],
 Cell[CellGroupData[{
-Cell[763804, 12771, 1584, 39, 127, "Input"],
-Cell[765391, 12812, 198184, 3175, 274, 157521, 2507, "CachedBoxData", \
+Cell[763869, 12772, 1584, 39, 127, "Input"],
+Cell[765456, 12813, 198184, 3175, 274, 157521, 2507, "CachedBoxData", \
 "BoxData", "Output"]
 }, Open  ]],
-Cell[963590, 15990, 979, 16, 77, "Text"],
-Cell[964572, 16008, 6135, 159, 379, "Input"]
+Cell[963655, 15991, 979, 16, 77, "Text"],
+Cell[964637, 16009, 6158, 159, 379, "Input"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[970744, 16172, 120, 1, 67, "Section"],
-Cell[970867, 16175, 424, 7, 43, "Text"]
+Cell[970832, 16173, 120, 1, 67, "Section"],
+Cell[970955, 16176, 424, 7, 43, "Text"]
 }, Open  ]]
 }, Open  ]]
 }
