@@ -327,7 +327,7 @@ Nejprve jsou načteny data, poté je vytvořena neuronová síť, která je pomo
 \subsection{Jednoduchá data sin(x)}
 V této kapitole je student poprvé seznámen s dopřednou neuronovou sítí. Pomocí dopředné neuronové sítě se budeme snažit aproximovat funkci sinus.
 
-Nejprve jsou připravena jednoduchá trénovací data navzorkováním funkce sinus na intervalu <0,2\begin{math}\pi \end{math}>. Navzorkovaná data jsou zobrazena v textové i v grafické podobě. Poté je ukázáno jakým způsobem vytvořit neuronovou síť požadované struktury, je ukázáno jak si zobrazit dodatečné informace o síti a jak síť naučit na trénovacích datech. Je také graficky zobrazen výstup sítě před naučením a po naučení. Na závěr je ukázáno jak převést síť do formy vzorce. Tato kapitola se nachází v souboru \textit{04-feedforward-sin.nb}.
+Nejprve jsou připravena jednoduchá trénovací data navzorkováním funkce sinus na intervalu <0, 2\begin{math}\pi \end{math}>. Navzorkovaná data jsou zobrazena v textové i v grafické podobě. Poté je ukázáno jakým způsobem vytvořit neuronovou síť požadované struktury, je ukázáno jak si zobrazit dodatečné informace o síti a jak síť naučit na trénovacích datech. Je také graficky zobrazen výstup sítě před naučením a po naučení. Na závěr je ukázáno jak převést síť do formy vzorce. Tato kapitola se nachází v souboru \textit{04-feedforward-sin.nb}.
 
 Soubor vznikl úpravou souboru Petra Chlumského. Změnil jsem vzhled notebooku a rozšířil komentář kódu.
 \subsection{Iris data}
@@ -342,11 +342,19 @@ V tomto notebooku je ukázáno několik různých přístupů k učení dopředn
 Nejprve jsou načteny Iris data a provedeno jejich předzpracování stejně jako v minulé kapitole. Takto předzpracovaná data jsou náhodně rozdělena na trénovací, validační a testovací množinu. Je ukázána možnost použití křížové validace k určení struktury sítě. Při křížové validaci jsou výsledky sítí porovnávány podle hornoty RMSE. Síť, která vyšla z křížové validace nejlépe je poté naučena na trénovací množině s použitím validační množiny. Validační množina je použita k zastavení učení sítě, pokud by se úspěšnost klasifikace na validační množině začala v průběhu učení zhoršovat. Poté je vyhodnocena úspěšnost klasifikace na testovací množině. Tato úspěšnost je pro snadnou čitelnost uvedena v procentech. Dále je síť se stejnou strukturou naučena bez použití validační množiny a taktéž je vyhodnocena její úspěšnost. Kapitola se nachází v souboru \textit{06-feedforward-iris-2}.
 \section{RBF síť}
 \subsection{Ukázka výstupu skrytého neuronu}
-Tato kapitola není určena přímo pro experimentování se sítí, ale spíše pro pochopení jakým způsobem RBF síť funguje. V notebooku si necháme zobrazit výstup skrytého RBF neuronu.
+Tato kapitola není určena přímo pro experimentování se sítí, ale spíše pro pochopení jakým způsobem RBF síť funguje. Notebook zobrazuje výstup skrytého RBF neuronu.
 
-Nejprve si vygenerujeme vstupní data. Data jsou tvořena dvěmi dobře oddělenými shluky, každý skluk představuje jednu třídu. Vytvoříme RBF neuronovou síť s jedním skrytým neuronem a naučíme jí na vygenerovaných datech. Poté si zobrazíme výstup RBF neuronu. Pro lepší představu o tom, jakým způsobem RBF neuron pokryl vstupní data zobrazíme pod jeho výstup ještě vstupní data. Kapitolu naleznete v souboru \textit{07-rbf-neuron.nb}.
+Nejprve jsou vygenerována vstupní data. Data jsou tvořena dvěmi dobře oddělenými shluky, každý skluk představuje jednu třídu. Poté je vytvořena jednoduchá RBF neuronová síť s jedním skrytým RBF neuronem, pomocí které budeme vstupní data klasifikovat. Síť je naučena na vygenerovaných datech, poté je zobrazen výstup RBF neuronu. Pro lepší představu o tom, jakým způsobem RBF neuron pokryl vstupní data, jsou tato data zobrazena do jednoho grafu s jeho výstupem. Kapitola se nachází v souboru \textit{07-rbf-neuron.nb}.
 \subsection{Ukázka výstupu tří skrytých neuronů}
+Tato kapitola, stejně jako předchozí, slouží primárně k pochopení fungování RBF sítě. Notebook zobrazuje výstup skryté vrstvy neuronů u RBF sítě se třemi RBF neurony, která je naučena na složitějších datech. 
+
+Nejprve jsou vygenerována data. Data se skládají ze šesti oddělených shluků, obsahují dvě třídy, každá třída se skládá ze třech shluků. Data jsou pro představu zobrazena v grafu. Dále je vytvořena RBF neuronová síť, kterou budou vygenerovaná data klasifikována. Síť je naučena na vygenerovaných datech. Poté je zobrazen výstup neuronové sítě ve 2D i 3D grafu, na kterém vidíme jak síť klasifikuje data. Poté je zobrazen výstup skryté vrstvy RBF neuronů. Do stejného grafu s výstupem jednotlivých RBF neuronů jsou zobrazeny i vstupní data, aby bylo vidět jak se RBF neurony přizpůsobily datům. Kapitola je v souboru \textit{08-rbf-neuron-2.nb}.
 \subsection{Jednoduchá data sin(x)}
+Kapitola slouží k prvnímu seznámení studentů s RBF sítí. Je ukázáno jak pomocí RBF sítě zpracovat jednoduchá data, v tomto případě se jedná o aproximaci funkce sinus.
+
+Nejprve jsou vygenerována data navzorkováním funkce sinus na intervalu <0, 2\begin{math}\pi \end{math}>. Data jsou zobrazena v grafické i textové podobě, aby o nich měl student dobrou představu. Dále je ukázáno jak vytvořit RBF neuronovou síť, jak si o ní zobrazit podrobnější informace a jakým způsobem jí naučit na trénovacích datech. Je zobrazeno jak reagovala nenaučená síť na data a také jak reaguje naučená síť na data. Na závěr je ukázáno jak je možné nechat síť symbolicky vyhodnotit (zobrazit jí jako vzorec). Kapitola je v souboru \textit{09-rbf-sin.nb}.
+
+Soubor vznikl úpravou souboru Petra Chlumského. Změnil jsem vzhled a rozšířil popis kódu. Dále jsem odstranil nepřesné a nepravdivé popisky u vytváření RBF sítě a nahradil pravdivou verzí.
 \subsection{Iris data}
 \subsection{Různé přístupy k učení sítě}
 \section{Hopfieldova síť}
