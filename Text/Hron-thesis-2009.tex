@@ -316,11 +316,11 @@ Cílem práce je provést úpravy a rozšíření stávající demonstrační ap
 
 Soubor vznikl úpravou souboru Petra Chlumského. Změnil jsem grafický vzhled notebooku, změnil a rozšířil jsem textový komentář k jednotlivým příkazům.
 \section{Učicí algoritmy}
-Notebook učicí algoritmy demonstruje použití různých učicích algoritmů. Pro každý učící algoritmus je graficky zobrazen jeho postup při učení. Jsou zde demonstrovány tyto algoritmy: \textit{Levenberg-Marquardt algoritmus}, \textit{Gauss-Newton algoritmus}, \textit{Algoritmus nejvyššího poklesu (Steepest Descent)} a \textit{Algoritmus zpětné propagace (Backpropagation)}.
+Notebook demonstruje použití různých učicích algoritmů. Pro každý učicí algoritmus je graficky zobrazen jeho postup při učení. Jsou zde demonstrovány tyto algoritmy: \textit{Levenberg-Marquardt algoritmus}, \textit{Gauss-Newton algoritmus}, \textit{Algoritmus nejvyššího poklesu (Steepest Descent)} a \textit{Algoritmus zpětné propagace (Backpropagation)}.
 
  Učení je ukázáno na jednoduché dopředné síti s jedním neuronem, jedním vstupem a jedním výstupem. Nejprve je vytvořena potřebná síť, poté jsou pomocí této sítě vygenerovány data, na kterých budeme demonstrovat učení. Poté je pro každý algoritmus ukázáno jakým způsobem ho použít pro učení sítě a je graficky zobrazen průběh učení. U algoritmu zpětné propagace je potřeba nastavit délku kroku (stepLength) a momentum. Jak tyto parametry ovlivňují průběh učení je ilustrováno pomocí interaktivního grafu, kde je možné si pomocí posuvníků měnit hodnotu těchto parametrů, graf se automaticky překresluje podle aktuálně nastavených hodnot parametrů. Tato kapitola se nachází v souboru \textit{02-algoritmy-uceni.nb}.
 \section{Křížová validace}
-V kapitole křížová validace se student seznámí s principem fungování křížové validace. Křížová validace je ukázána na Iris datech z databáze UCI\cite{UCI}.
+V kapitole křížová validace se student seznámí s principem fungování křížové validace. Křížová validace je ukázána na Iris datech a dopředné síti.
 
 Nejprve jsou načteny data, poté je vytvořena neuronová síť, která je pomocí křížové validace otestována. Iris data jsou rozdělena na vstupní a výstupní vektory, výstupní vektory jsou zakódovány kóden 1 z N. Poté je detailně rozebráno předzpracování dat pro křížovou validaci. Následuje implementace samotné křížové validace, tato implementace vypíše pro každý fold úspěšnost RMSE jakou síť dosáhla. Po skončení všech kol křížové validace je zobrazen boxový graf s výsledky křížové validace. Po najetí myší na graf se k němu zobrazí legenda. Student má také možnost nehcat si vypsat výsledky křížové validace v textovém formátu. Textový formát vypíše nejlepší výsledek, nejhorší výsledek a aritmetický průměr všech výsledků. Na závěr je umožněno studentovi nechat si provést křížovou validaci vlastní sítě s vlastními daty. Vlastní křížové validaci nastaví parametry jednoduchým přiřazením do proměnných, je potřeba aby  zadaná síť odpovídala zadaným vstupním a výstupním datům a data byla předzpracována pomocí postupu uvedeného v této kapitole. Tato kapitola se nachází v souboru \textit{03-krossvalidace.nb}.
 \section{Dopředná síť}
@@ -372,12 +372,23 @@ Jako vstupní data jsou použity obrázky číslic 1, 2 a 3 zobrazené v poli 8x
 
 Soubor vznikl úpravou souboru Petra Chlumského. Mimo úpravy celkového vzhledu notebooku a drobných úprav doprovodného komentáře spočívá hlavní úprava v nahrazení funkce GraphicsArray funkcí GraphicsGrid. Funkce GraphicsArray je v Mathematice 8 zastaralá a nedoporučuje se používat. Také jsem upravil funkci pro aplikaci šumu, která nyní zašumí předložený vzor o trochu více než tomu bylo dříve.
 \section{Samoorganizující mapy}
-\subsection{Iris data}
+\subsection{Shlukování dat}
+Tato kapitola slouží k seznámení se samoorganizující se mapou a k demonstraci jejího použití na jednoduchých datech. Ve vstupních datech se budeme pokoušet najít shluky pomocí samoorganizující se mapy.
 
-\subsection{Shlukování Iris dat}
+Na začátku jsou vygenerována vstupní data. Data obsahují šest dobře oddělených shluků. V těchto datech je pomocí samoorganizující se mapy hledáno šest shluků. Nejprve je vytvořena náhodně inicializovaná samoorganizující se mapa, která je naučena na vstupních datech. Pomocí grafu je zobrazen její výstup (tedy jak síť rozdělila data na shluky). Dále je ukázáno jak odstranit ze sítě nepotřebný (mrtvý) neuron a je zobrazen výstup sítě bez nepotřebného neuronu. Následně je ukázán postup umožňující dosažení lepších výsledků. Samoorganizující se mapa není inicializována náhodně, ale je inicializována metodou SOM. Poté je síť doučena na vstupních datech a graficky zobrazen její výstup. Na závěr je zobrazen průběh učení obou sítí. Nejprve ve formě statického grafu zobrazujícího trajektorii jednotlivých neuronů v průběhu učení. Podruhé jako interaktivní graf zobrazující výstup sítě pro danou iteraci. Pomocí posuvníku je možné vybírat, která iterace je zobrazena.
+\subsection{SOM a Iris data}
+Tato kopitola slouží demonstraci použití samoorganizující se mapy na složitějších datech. K ukázce použití jsou zvolena Iris data.
 
+Nejprve jsou načtena Iris data(z internetu nebo ze souboru). Data jsou rozdělena na vstupní a výstupní vektory, výstupní vektory jsou překódovány metodou 1 z N. Dále je vytvořena samoorganizující se mapa, která je naučena na vstupních datech. Následuje zobrazení kolik dat a jaké třídy jsou tato data náleží ke kterému vektoru v SOM síti. Stejným způsobem je zobrazen i průběh učení sítě. Následně je ukázáno jakým způsobem lze nechat libovolnému vektoru přiřadit jeho reprezentanta, jak spočítat Eukleidovskou vzdálentost od reprezentanta a je také připomenuto mazání nepotřebných neuronů. Na závěr je rozebráno doučování sítě. Kapitola se nalézá v souboru \textit{14-som-iris.nb}.
+
+Soubor vznikl úpravou souboru Petra Chlumského. Změnil jsem celkový vzhled notebooku, v komentáři jsem nahradil slovo \uv{skupina} slovem \uv{třída}, které podle mě lépe vystihuje popisovanou věc. Udělal jsem ještě nekolik menších úprav a rozšíření v komentáři. Dále jsem provedl úpravu předzpracování dat, které bylo zbytečně rozsáhlé a tím pádem zdlouhavé. Ponechal jsem pouze minimální potřebný kód a uvedl odkaz na notebook ve kterém je předzpracování dat detailně popsáno.
 \section{LVQ}
+Kapitola slouží k seznámení s použitím LVQ sítě. Použití LVQ sítě je ukázáno na klasifikaci Iris dat.
 
+Nejprve načteme Iris data (z internetu nebo souboru), data rozdělíme na vstupní a výstupní vektory a výstupní vektory překódujeme netodou 1 z N. Nejprve je nabídnuto několik pohledů na vstupní data, poté je vytvořena LVQ síť, která je naučena na vstupních datech. Poté je vizualizován výstup sítě v průběhu učení. Následuje ukázka jak smazat nepotřebné neurony. Dále je ukázáno jakým způsobem je možné nechat oklasifikovat libovolný vektor. Poté je zobrazena procentuální úspěšnost klasifikace. Následně jsou rozebrány možnosti doučování sítě. Na závěr je několika způsoby zobrazen výstup sítě.
+Tato kapitola se nachází v souboru \textit{15-lvq-iris.nb}.
+
+Soubor vznikl úpravou souboru Petra Chlumského. Změnil jsem grafickou podobu notebooku. V doprovodném komentáři jsem nahradil slovo \uv{skupina} slovem \uv{třída}, které lépe vystihuje popisovanou skutečnost, dále jsem ho ještě drobně rozšířil a upravil. Upravil jsem a výrazně zkrátil předzpracování dat. Ponechal jsem pouze kód, který skutečně manipuluje s daty a uvedl odkaz na notebook, ve kterém se nachází detailně popsaný proces předzpracování dat. 
 %*****************************************************************************
 \chapter{Závěr}
 
