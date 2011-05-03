@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       145,          7]
-NotebookDataLength[    243677,       5760]
-NotebookOptionsPosition[    238688,       5595]
-NotebookOutlinePosition[    239157,       5613]
-CellTagsIndexPosition[    239114,       5610]
+NotebookDataLength[    244787,       5781]
+NotebookOptionsPosition[    239797,       5616]
+NotebookOutlinePosition[    240267,       5634]
+CellTagsIndexPosition[    240224,       5631]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -1340,17 +1340,20 @@ Cell[BoxData[
                 GrayLevel[0]}], "Tooltip"]& ]}}, {}, {}}}, 
         GraphicsGroup3DBox[
          {GrayLevel[0], 
-          
-          StyleBox[{
-            Text3DBox["1", 
+          StyleBox[{Text3DBox[
+             FormBox["1", StandardForm], 
              Offset[{0, 0, 0}, {3.5200000000000005`, 0.5, 0.}], {0, 0}], 
-            Text3DBox["1", Offset[{0, 0, 0}, {0.5, -0.3, 0.}], {0, -0.3}], 
-            Text3DBox["2", Offset[{0, 0, 0}, {1.6, -0.3, 0.}], {0, -0.3}], 
-            Text3DBox["3", Offset[{0, 0, 0}, {2.7, -0.3, 0.}], {0, -0.3}], 
-            Text3DBox["2", 
+            Text3DBox[
+             FormBox["1", StandardForm], Offset[{0, 0, 0}, {0.5, -0.3, 0.}], {
+             0, -0.3}], Text3DBox[
+             FormBox["2", StandardForm], Offset[{0, 0, 0}, {1.6, -0.3, 0.}], {
+             0, -0.3}], Text3DBox[
+             FormBox["3", StandardForm], Offset[{0, 0, 0}, {2.7, -0.3, 0.}], {
+             0, -0.3}], Text3DBox[
+             FormBox["2", StandardForm], 
              Offset[{0, 0, 0}, {3.5200000000000005`, 1.7000000000000002`, 
-              0.}], {0, 0}], 
-            Text3DBox["3", 
+              0.}], {0, 0}], Text3DBox[
+             FormBox["3", StandardForm], 
              Offset[{0, 0, 0}, {3.5200000000000005`, 2.9000000000000004`, 
               0.}], {0, 0}]},
            Antialiasing->False]}]}},
@@ -2157,17 +2160,20 @@ Cell[BoxData[
                 GrayLevel[0]}], "Tooltip"]& ]}}, {}, {}}}, 
         GraphicsGroup3DBox[
          {GrayLevel[0], 
-          
-          StyleBox[{
-            Text3DBox["1", 
+          StyleBox[{Text3DBox[
+             FormBox["1", StandardForm], 
              Offset[{0, 0, 0}, {3.5200000000000005`, 0.5, 0.}], {0, 0}], 
-            Text3DBox["1", Offset[{0, 0, 0}, {0.5, -0.3, 0.}], {0, -0.3}], 
-            Text3DBox["2", Offset[{0, 0, 0}, {1.6, -0.3, 0.}], {0, -0.3}], 
-            Text3DBox["3", Offset[{0, 0, 0}, {2.7, -0.3, 0.}], {0, -0.3}], 
-            Text3DBox["2", 
+            Text3DBox[
+             FormBox["1", StandardForm], Offset[{0, 0, 0}, {0.5, -0.3, 0.}], {
+             0, -0.3}], Text3DBox[
+             FormBox["2", StandardForm], Offset[{0, 0, 0}, {1.6, -0.3, 0.}], {
+             0, -0.3}], Text3DBox[
+             FormBox["3", StandardForm], Offset[{0, 0, 0}, {2.7, -0.3, 0.}], {
+             0, -0.3}], Text3DBox[
+             FormBox["2", StandardForm], 
              Offset[{0, 0, 0}, {3.5200000000000005`, 1.7000000000000002`, 
-              0.}], {0, 0}], 
-            Text3DBox["3", 
+              0.}], {0, 0}], Text3DBox[
+             FormBox["3", StandardForm], 
              Offset[{0, 0, 0}, {3.5200000000000005`, 2.9000000000000004`, 
               0.}], {0, 0}]},
            Antialiasing->False]}]}},
@@ -2678,7 +2684,6 @@ Cell[BoxData[
                     0.6666666666666666], 
                     AbsoluteThickness[1.5]}]], {}, {}], 
                  StyleBox[{
-                   
                    GraphicsComplex3DBox[{{1.1, 1.2, 0.}, {1.1, 2.2, 0.}, {1.1,
                      2.2, 50.}, {1.1, 1.2, 50.}, {2.1, 1.2, 0.}, {2.1, 2.2, 
                     0.}, {2.1, 2.2, 50.}, {2.1, 1.2, 50.}}, {
@@ -2974,17 +2979,20 @@ Cell[BoxData[
                 GrayLevel[0]}], "Tooltip"]& ]}}, {}, {}}}, 
         GraphicsGroup3DBox[
          {GrayLevel[0], 
-          
-          StyleBox[{
-            Text3DBox["1", 
+          StyleBox[{Text3DBox[
+             FormBox["1", StandardForm], 
              Offset[{0, 0, 0}, {3.5200000000000005`, 0.5, 0.}], {0, 0}], 
-            Text3DBox["1", Offset[{0, 0, 0}, {0.5, -0.3, 0.}], {0, -0.3}], 
-            Text3DBox["2", Offset[{0, 0, 0}, {1.6, -0.3, 0.}], {0, -0.3}], 
-            Text3DBox["3", Offset[{0, 0, 0}, {2.7, -0.3, 0.}], {0, -0.3}], 
-            Text3DBox["2", 
+            Text3DBox[
+             FormBox["1", StandardForm], Offset[{0, 0, 0}, {0.5, -0.3, 0.}], {
+             0, -0.3}], Text3DBox[
+             FormBox["2", StandardForm], Offset[{0, 0, 0}, {1.6, -0.3, 0.}], {
+             0, -0.3}], Text3DBox[
+             FormBox["3", StandardForm], Offset[{0, 0, 0}, {2.7, -0.3, 0.}], {
+             0, -0.3}], Text3DBox[
+             FormBox["2", StandardForm], 
              Offset[{0, 0, 0}, {3.5200000000000005`, 1.7000000000000002`, 
-              0.}], {0, 0}], 
-            Text3DBox["3", 
+              0.}], {0, 0}], Text3DBox[
+             FormBox["3", StandardForm], 
              Offset[{0, 0, 0}, {3.5200000000000005`, 2.9000000000000004`, 
               0.}], {0, 0}]},
            Antialiasing->False]}]}},
@@ -3990,14 +3998,19 @@ Cell[BoxData[
           Style[38, {
             GrayLevel[0]}], "Tooltip"]& ]}}, {}, {}}}, GraphicsGroup3DBox[
      {GrayLevel[0], 
-      StyleBox[{
-        Text3DBox["1", Offset[{0, 0, 0}, {3.5200000000000005`, 0.5, 0.}], {0, 
-         0}], Text3DBox["1", Offset[{0, 0, 0}, {0.5, -0.3, 0.}], {0, -0.3}], 
-        Text3DBox["2", Offset[{0, 0, 0}, {1.6, -0.3, 0.}], {0, -0.3}], 
-        Text3DBox["3", Offset[{0, 0, 0}, {2.7, -0.3, 0.}], {0, -0.3}], 
-        Text3DBox["2", 
+      StyleBox[{Text3DBox[
+         FormBox["1", StandardForm], 
+         Offset[{0, 0, 0}, {3.5200000000000005`, 0.5, 0.}], {0, 0}], Text3DBox[
+         FormBox["1", StandardForm], Offset[{0, 0, 0}, {0.5, -0.3, 0.}], {
+         0, -0.3}], Text3DBox[
+         FormBox["2", StandardForm], Offset[{0, 0, 0}, {1.6, -0.3, 0.}], {
+         0, -0.3}], Text3DBox[
+         FormBox["3", StandardForm], Offset[{0, 0, 0}, {2.7, -0.3, 0.}], {
+         0, -0.3}], Text3DBox[
+         FormBox["2", StandardForm], 
          Offset[{0, 0, 0}, {3.5200000000000005`, 1.7000000000000002`, 0.}], {
-         0, 0}], Text3DBox["3", 
+         0, 0}], Text3DBox[
+         FormBox["3", StandardForm], 
          Offset[{0, 0, 0}, {3.5200000000000005`, 2.9000000000000004`, 0.}], {
          0, 0}]},
        Antialiasing->False]}]}},
@@ -5298,14 +5311,19 @@ Cell[BoxData[
           Style[38, {
             GrayLevel[0]}], "Tooltip"]& ]}}, {}, {}}}, GraphicsGroup3DBox[
      {GrayLevel[0], 
-      StyleBox[{
-        Text3DBox["1", Offset[{0, 0, 0}, {3.5200000000000005`, 0.5, 0.}], {0, 
-         0}], Text3DBox["1", Offset[{0, 0, 0}, {0.5, -0.3, 0.}], {0, -0.3}], 
-        Text3DBox["2", Offset[{0, 0, 0}, {1.6, -0.3, 0.}], {0, -0.3}], 
-        Text3DBox["3", Offset[{0, 0, 0}, {2.7, -0.3, 0.}], {0, -0.3}], 
-        Text3DBox["2", 
+      StyleBox[{Text3DBox[
+         FormBox["1", StandardForm], 
+         Offset[{0, 0, 0}, {3.5200000000000005`, 0.5, 0.}], {0, 0}], Text3DBox[
+         FormBox["1", StandardForm], Offset[{0, 0, 0}, {0.5, -0.3, 0.}], {
+         0, -0.3}], Text3DBox[
+         FormBox["2", StandardForm], Offset[{0, 0, 0}, {1.6, -0.3, 0.}], {
+         0, -0.3}], Text3DBox[
+         FormBox["3", StandardForm], Offset[{0, 0, 0}, {2.7, -0.3, 0.}], {
+         0, -0.3}], Text3DBox[
+         FormBox["2", StandardForm], 
          Offset[{0, 0, 0}, {3.5200000000000005`, 1.7000000000000002`, 0.}], {
-         0, 0}], Text3DBox["3", 
+         0, 0}], Text3DBox[
+         FormBox["3", StandardForm], 
          Offset[{0, 0, 0}, {3.5200000000000005`, 2.9000000000000004`, 0.}], {
          0, 0}]},
        Antialiasing->False]}]}},
@@ -5485,13 +5503,16 @@ Zobrazen\[IAcute] pomoc\[IAcute] tabulky tak\[EAcute] \
 vypov\[IAcute]d\[AAcute] o rozlo\[ZHacek]en\[IAcute] vektor\[URing] do \
 jednotliv\[YAcute]ch t\[RHacek]\[IAcute]d. Vid\[IAcute]m\[EHacek] \
 d\[IAcute]ky n\[IAcute] tak\[EAcute] jak\[EAcute] data s\[IAcute]\[THacek] do \
-kter\[EAcute] t\[RHacek]\[IAcute]dy klasifikuje. 2:50 znamen\[AAcute] \
-\[ZHacek]e je do t\[EAcute]to t\[RHacek]\[IAcute]dy klasifikov\[AAcute]no 50 \
-vektor\[URing] ze t\[RHacek]\[IAcute]dy 2.\
+kter\[EAcute] t\[RHacek]\[IAcute]dy klasifikuje. 2:50 a 3:12 znamen\[AAcute] \
+\[ZHacek]e je do t\[RHacek]\[IAcute]dy 2 klasifikov\[AAcute]no 50 vektor\
+\[URing] t\[RHacek]\[IAcute]dy 2 (spr\[AAcute]vn\[EHacek] \
+oklasifikov\[AAcute]no) a 12 vektor\[URing] t\[RHacek]\[IAcute]dy 3 (chybn\
+\[EHacek] oklasifikov\[AAcute]ny).\
 \>", "Text",
  CellChangeTimes->{{3.4152548244832363`*^9, 3.415254847540036*^9}, {
   3.511021348882297*^9, 3.5110213726933203`*^9}, {3.5110215130356417`*^9, 
-  3.511021513400688*^9}, {3.5110216098069305`*^9, 3.511021652810891*^9}}],
+  3.511021513400688*^9}, {3.5110216098069305`*^9, 3.511021652810891*^9}, {
+  3.513453476831626*^9, 3.5134535671560955`*^9}}],
 
 Cell[CellGroupData[{
 
@@ -5593,8 +5614,8 @@ Chlumsk\[EAcute]ho.\
 }, Open  ]]
 }, Open  ]]
 },
-WindowSize->{774, 778},
-WindowMargins->{{12, Automatic}, {Automatic, -12}},
+WindowSize->{774, 762},
+WindowMargins->{{Automatic, 113}, {Automatic, -42}},
 ShowSelection->True,
 Magnification->1.,
 FrontEndVersion->"8.0 for Microsoft Windows (32-bit) (November 13, 2010)",
@@ -5665,101 +5686,101 @@ Cell[21440, 532, 359, 8, 56, "Message"]
 Cell[21814, 543, 1031, 16, 65, "Text"],
 Cell[CellGroupData[{
 Cell[22870, 563, 790, 12, 41, "Input"],
-Cell[23663, 577, 109260, 2470, 594, "Output"]
+Cell[23663, 577, 109804, 2478, 594, "Output"]
 }, Open  ]],
-Cell[132938, 3050, 693, 11, 47, "Text"],
+Cell[133482, 3058, 693, 11, 47, "Text"],
 Cell[CellGroupData[{
-Cell[133656, 3065, 134, 2, 41, "Input"],
-Cell[133793, 3069, 555, 8, 60, "Output"]
+Cell[134200, 3073, 134, 2, 41, "Input"],
+Cell[134337, 3077, 555, 8, 60, "Output"]
 }, Open  ]],
-Cell[134363, 3080, 206, 4, 29, "Text"],
+Cell[134907, 3088, 206, 4, 29, "Text"],
 Cell[CellGroupData[{
-Cell[134594, 3088, 728, 11, 41, "Input"],
-Cell[135325, 3101, 505, 11, 40, "Output"]
+Cell[135138, 3096, 728, 11, 41, "Input"],
+Cell[135869, 3109, 505, 11, 40, "Output"]
 }, Open  ]],
-Cell[135845, 3115, 93, 1, 29, "Text"],
+Cell[136389, 3123, 93, 1, 29, "Text"],
 Cell[CellGroupData[{
-Cell[135963, 3120, 691, 18, 142, "Input"],
-Cell[136657, 3140, 160, 4, 40, "Output"]
+Cell[136507, 3128, 691, 18, 142, "Input"],
+Cell[137201, 3148, 160, 4, 40, "Output"]
 }, Open  ]],
-Cell[136832, 3147, 100, 1, 29, "Text"],
+Cell[137376, 3155, 100, 1, 29, "Text"],
 Cell[CellGroupData[{
-Cell[136957, 3152, 287, 6, 41, "Input"],
-Cell[137247, 3160, 1018, 27, 60, "Output"]
+Cell[137501, 3160, 287, 6, 41, "Input"],
+Cell[137791, 3168, 1018, 27, 60, "Output"]
 }, Open  ]],
-Cell[138280, 3190, 221, 4, 29, "Text"],
+Cell[138824, 3198, 221, 4, 29, "Text"],
 Cell[CellGroupData[{
-Cell[138526, 3198, 181, 3, 41, "Input"],
-Cell[138710, 3203, 544, 8, 60, "Output"]
+Cell[139070, 3206, 181, 3, 41, "Input"],
+Cell[139254, 3211, 544, 8, 60, "Output"]
 }, Open  ]],
-Cell[139269, 3214, 391, 7, 29, "Text"],
+Cell[139813, 3222, 391, 7, 29, "Text"],
 Cell[CellGroupData[{
-Cell[139685, 3225, 376, 8, 41, "Input"],
-Cell[140064, 3235, 33953, 805, 376, "Output"]
+Cell[140229, 3233, 376, 8, 41, "Input"],
+Cell[140608, 3243, 34145, 810, 376, "Output"]
 }, Open  ]],
-Cell[174032, 4043, 895, 14, 65, "Text"],
+Cell[174768, 4056, 895, 14, 65, "Text"],
 Cell[CellGroupData[{
-Cell[174952, 4061, 470, 11, 41, "Input"],
-Cell[175425, 4074, 547, 12, 40, "Output"]
+Cell[175688, 4074, 470, 11, 41, "Input"],
+Cell[176161, 4087, 547, 12, 40, "Output"]
 }, Open  ]],
-Cell[175987, 4089, 471, 8, 29, "Text"],
+Cell[176723, 4102, 471, 8, 29, "Text"],
 Cell[CellGroupData[{
-Cell[176483, 4101, 310, 7, 41, "Input"],
-Cell[176796, 4110, 411, 6, 40, "Output"]
+Cell[177219, 4114, 310, 7, 41, "Input"],
+Cell[177532, 4123, 411, 6, 40, "Output"]
 }, Open  ]],
-Cell[177222, 4119, 471, 8, 47, "Text"],
+Cell[177958, 4132, 471, 8, 47, "Text"],
 Cell[CellGroupData[{
-Cell[177718, 4131, 298, 5, 41, "Input"],
-Cell[178019, 4138, 403, 5, 40, "Output"]
+Cell[178454, 4144, 298, 5, 41, "Input"],
+Cell[178755, 4151, 403, 5, 40, "Output"]
 }, Open  ]],
-Cell[178437, 4146, 1511, 21, 137, "Text"],
+Cell[179173, 4159, 1511, 21, 137, "Text"],
 Cell[CellGroupData[{
-Cell[179973, 4171, 825, 20, 62, "Input"],
+Cell[180709, 4184, 825, 20, 62, "Input"],
 Cell[CellGroupData[{
-Cell[180823, 4195, 1529, 32, 269, "Print"],
-Cell[182355, 4229, 1513, 32, 271, "Print"]
+Cell[181559, 4208, 1529, 32, 269, "Print"],
+Cell[183091, 4242, 1513, 32, 271, "Print"]
 }, Open  ]],
-Cell[183883, 4264, 748, 14, 56, "Message"]
+Cell[184619, 4277, 748, 14, 56, "Message"]
 }, Open  ]],
-Cell[184646, 4281, 325, 6, 47, "Text"],
+Cell[185382, 4294, 325, 6, 47, "Text"],
 Cell[CellGroupData[{
-Cell[184996, 4291, 747, 17, 62, "Input"],
+Cell[185732, 4304, 747, 17, 62, "Input"],
 Cell[CellGroupData[{
-Cell[185768, 4312, 1288, 29, 266, "Print"],
-Cell[187059, 4343, 1216, 27, 266, "Print"]
+Cell[186504, 4325, 1288, 29, 266, "Print"],
+Cell[187795, 4356, 1216, 27, 266, "Print"]
 }, Open  ]],
-Cell[188290, 4373, 932, 17, 56, "Message"]
+Cell[189026, 4386, 932, 17, 56, "Message"]
 }, Open  ]],
-Cell[189237, 4393, 264, 5, 29, "Text"],
+Cell[189973, 4406, 264, 5, 29, "Text"],
 Cell[CellGroupData[{
-Cell[189526, 4402, 558, 14, 62, "Input"],
-Cell[190087, 4418, 1233, 28, 263, "Print"],
-Cell[191323, 4448, 703, 13, 56, "Message"],
-Cell[192029, 4463, 1253, 28, 266, "Print"],
-Cell[193285, 4493, 703, 13, 56, "Message"]
+Cell[190262, 4415, 558, 14, 62, "Input"],
+Cell[190823, 4431, 1233, 28, 263, "Print"],
+Cell[192059, 4461, 703, 13, 56, "Message"],
+Cell[192765, 4476, 1253, 28, 266, "Print"],
+Cell[194021, 4506, 703, 13, 56, "Message"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[194037, 4512, 133, 1, 75, "Section"],
-Cell[194173, 4515, 877, 13, 47, "Text"],
+Cell[194773, 4525, 133, 1, 75, "Section"],
+Cell[194909, 4528, 877, 13, 47, "Text"],
 Cell[CellGroupData[{
-Cell[195075, 4532, 583, 9, 41, "Input"],
-Cell[195661, 4543, 33939, 805, 376, "Output"]
+Cell[195811, 4545, 583, 9, 41, "Input"],
+Cell[196397, 4556, 34131, 810, 376, "Output"]
 }, Open  ]],
-Cell[229615, 5351, 390, 6, 29, "Text"],
+Cell[230543, 5369, 390, 6, 29, "Text"],
 Cell[CellGroupData[{
-Cell[230030, 5361, 240, 5, 41, "Input"],
-Cell[230273, 5368, 4294, 111, 253, "Output"]
+Cell[230958, 5379, 240, 5, 41, "Input"],
+Cell[231201, 5386, 4294, 111, 253, "Output"]
 }, Open  ]],
-Cell[234582, 5482, 712, 11, 47, "Text"],
+Cell[235510, 5500, 893, 14, 65, "Text"],
 Cell[CellGroupData[{
-Cell[235319, 5497, 322, 6, 41, "Input"],
-Cell[235644, 5505, 2354, 68, 93, "Output"]
+Cell[236428, 5518, 322, 6, 41, "Input"],
+Cell[236753, 5526, 2354, 68, 93, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[238047, 5579, 119, 1, 75, "Section"],
-Cell[238169, 5582, 491, 9, 47, "Text"]
+Cell[239156, 5600, 119, 1, 75, "Section"],
+Cell[239278, 5603, 491, 9, 47, "Text"]
 }, Open  ]]
 }, Open  ]]
 }
