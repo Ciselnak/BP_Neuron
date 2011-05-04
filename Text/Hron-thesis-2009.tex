@@ -308,7 +308,11 @@ Cílem práce je provést úpravy a rozšíření stávající demonstrační ap
 %*****************************************************************************
 \chapter{Implementační prostředí}
 \section{Wolfram Mathematica}
-\section{Knihovna NeuralNetworks}
+Systém Mathematica od firmy Wolfram Research je sofistikovaný matematický nástroj, který umožňuje provádět numerické i symbolické výpočty. Systém obsahuje velké množství vestavěných funkcí a umožňuje i přidání dalších uživatelsky definovaných funkcí. Dále nabízí široké možnosti vizualizace dat ve 2D i 3D grafech. Neméně podstatnou funkcí je možnost exportu vyhodnoceného notebooku do formátu pdf. Díky tomu může demonstrační aplikaci vytvořenou v systému Mathematica, byť v omezené míře, využít i student, který nemá na svém počítači systém Mathematica nainstalovaný. Systém je možné rozšířit celou řadou knihoven, jednou z nich je i knihovna Neural Networks, kterou jsem využil ve své demonstrační aplikaci. Demonstrační aplikaci jsem programoval ve verzi Mathematica 8.0.
+
+
+\section{Knihovna Neural Networks}
+Knihovna Neural Networks rozšiřuje systém \textit{Mathematica} o možnost pracovat s neuronovými sítěmi bez nutnosti vytvářet si její vlastní implementaci. Konkrétně knihovna nabízí príci s těmito konkrétními sítěmi: jednoduchý perceptron, dopředná neuronová síť, RBF neuronová síť, Hopfieldova neuronová síť, dinamická neuronová síť, Kohonenova mapa, LVQ a VQ. Knihovna také poskytuje implementaci různých algoritmů učení sítě, konkrétně jsou to tyto algoritmy: Levenberg-Marquardt, Gauss-Newton, gradientní algoritmus a algoritmus zpětné propagace. Knihovna umožňuje široké možnosti natavení parametrů u jednotlivých sítí a pro méně zkušené uživatele nabízí vytvoření sítě s výchozími parametry. Výchozí parametry jsou voleny tak, aby síť s výchozími parametry podávala dobré výkony a její učení a vybavování netrvalo přehnaně dlouho. Knihovna ještě nabízí široké možnosti vizualizace dat, grafické zobrazení průběhu učení sítě a také grafické zobrazení výstupu naučené neuronové sítě. Ke knihovně patří návod k použití a rozsáhlá dokumentace.
 %*****************************************************************************
 \chapter{Experimenty s neuronovými sítěmi}
 \section{Úvod}
@@ -331,7 +335,7 @@ Nejprve jsou připravena jednoduchá trénovací data navzorkováním funkce sin
 
 Soubor vznikl úpravou souboru Petra Chlumského. Změnil jsem vzhled notebooku a upravil doprovodný komentář.
 \subsection{Iris data}
-V této kapitole je ukázáno jakým způsobem pomocí dopředné sítě klasifikovat Iris data z UCI databáze.
+V této kapitole je ukázáno jakým způsobem pomocí dopředné sítě klasifikovat Iris data.
 
 Nejprve jsou načtena data, studentovi je dáno na výběr zda chce načíst data z internetu nebo chce použít lokální soubor s daty. Poté je provedeno předzpracování dat. Data jsou rozdělena na vstupní a výstupní vektory, protože výstupní parametr je textový, je provedeno jeho překódování metodou 1 z N, kdy je každé třídě přiřazen jeden výstupní vektor. Toto předzpracování je prováděno krok po kroku s velmi podrobným komentářem. Po předzpracování dat je vytvořena dopředná neuronová síť, a data jsou touto neuronovou sítí zpracovány. Dále je zobrazeno jak se vyvýjela úspěšnost klasifikace v průběhu učení. Na závěr je zobrazen 3D graf, který ukazuje úspěšnost sítě na trénovacích datecha je ukázána možnost jak síť symbolicky vyhodnotit. Tato kapitola se nachází v souboru \textit{05-feedforward-iris.nb}.
 
