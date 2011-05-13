@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[    353449,       6297]
-NotebookOptionsPosition[    350703,       6205]
-NotebookOutlinePosition[    351155,       6222]
-CellTagsIndexPosition[    351112,       6219]
+NotebookDataLength[    352778,       6280]
+NotebookOptionsPosition[    350105,       6190]
+NotebookOutlinePosition[    350557,       6207]
+CellTagsIndexPosition[    350514,       6204]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -53,22 +53,7 @@ Nejd\[RHacek]\[IAcute]ve na\[CHacek]teme knihovnu neuronov\[YAcute]ch s\
 Cell[BoxData[
  StyleBox[
   RowBox[{"<<", " ", "NeuralNetworks`"}], "Input"]], "Input",
- CellChangeTimes->{{3.507360750489497*^9, 3.5073607641152277`*^9}}],
-
-Cell["\<\
-Pokud pracujete v Mathematice 8.0, vypn\[EHacek]te je\[SHacek]t\[EHacek] \
-zobrazov\[AAcute]n\[IAcute] chybov\[EAcute] hl\[AAcute]\[SHacek]ky \
-Remove::rmnsm. Tuto hl\[AAcute]\[SHacek]ku vyhazuj\[IAcute] funkce knihovny \
-NeuralNetworks. Na funkci knihovny toto nem\[AAcute] \[ZHacek]\[AAcute]dn\
-\[YAcute] vliv.\
-\>", "Text",
- CellChangeTimes->{{3.5073722663308234`*^9, 3.5073724902892623`*^9}}],
-
-Cell[BoxData[
- RowBox[{"Off", "[", 
-  StyleBox[
-   RowBox[{"Remove", "::", "rmnsm"}], "MessageName"], "]"}]], "Input",
- CellChangeTimes->{{3.507372496128004*^9, 3.5073725146658583`*^9}}]
+ CellChangeTimes->{{3.507360750489497*^9, 3.5073607641152277`*^9}}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -6204,9 +6189,9 @@ kurzu neuronov\[YAcute]ch s\[IAcute]t\[IAcute]\[CloseCurlyDoubleQuote] na FEL \
 }, Open  ]]
 },
 WindowSize->{1024, 673},
-WindowMargins->{{Automatic, -223}, {Automatic, -6}},
+WindowMargins->{{Automatic, -32}, {Automatic, -14}},
 ShowSelection->True,
-FrontEndVersion->"8.0 for Microsoft Windows (32-bit) (November 13, 2010)",
+FrontEndVersion->"8.0 for Microsoft Windows (64-bit) (February 23, 2011)",
 StyleDefinitions->FrontEnd`FileName[{"Creative"}, "NaturalColor.nb", 
   CharacterEncoding -> "WindowsEastEurope"]
 ]
@@ -6226,77 +6211,75 @@ Cell[579, 22, 731, 11, 92, "Title"],
 Cell[CellGroupData[{
 Cell[1335, 37, 144, 3, 75, "Section"],
 Cell[1482, 42, 440, 8, 29, "Text"],
-Cell[1925, 52, 154, 3, 41, "Input"],
-Cell[2082, 57, 406, 7, 47, "Text"],
-Cell[2491, 66, 186, 4, 41, "Input"]
+Cell[1925, 52, 154, 3, 41, "Input"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[2714, 75, 141, 1, 75, "Section"],
-Cell[2858, 78, 741, 12, 65, "Text"],
-Cell[3602, 92, 3742, 76, 162, "Input"],
-Cell[7347, 170, 357, 6, 29, "Text"],
+Cell[2116, 60, 141, 1, 75, "Section"],
+Cell[2260, 63, 741, 12, 65, "Text"],
+Cell[3004, 77, 3742, 76, 162, "Input"],
+Cell[6749, 155, 357, 6, 29, "Text"],
 Cell[CellGroupData[{
-Cell[7729, 180, 102, 1, 41, "Input"],
-Cell[7834, 183, 10921, 280, 383, "Output"]
+Cell[7131, 165, 102, 1, 41, "Input"],
+Cell[7236, 168, 10921, 280, 383, "Output"]
 }, Open  ]],
-Cell[18770, 466, 147, 3, 29, "Text"],
+Cell[18172, 451, 147, 3, 29, "Text"],
 Cell[CellGroupData[{
-Cell[18942, 473, 101, 1, 41, "Input"],
-Cell[19046, 476, 5995, 203, 155, "Output"]
+Cell[18344, 458, 101, 1, 41, "Input"],
+Cell[18448, 461, 5995, 203, 155, "Output"]
 }, Open  ]],
-Cell[25056, 682, 403, 7, 29, "Text"],
+Cell[24458, 667, 403, 7, 29, "Text"],
 Cell[CellGroupData[{
-Cell[25484, 693, 659, 13, 41, "Input"],
-Cell[26146, 708, 2594, 48, 248, "Output"]
+Cell[24886, 678, 659, 13, 41, "Input"],
+Cell[25548, 693, 2594, 48, 248, "Output"]
 }, Open  ]],
-Cell[28755, 759, 206, 4, 29, "Text"]
+Cell[28157, 744, 206, 4, 29, "Text"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[28998, 768, 223, 3, 75, "Section"],
-Cell[29224, 773, 797, 13, 47, "Text"],
+Cell[28400, 753, 223, 3, 75, "Section"],
+Cell[28626, 758, 797, 13, 47, "Text"],
 Cell[CellGroupData[{
-Cell[30046, 790, 1097, 17, 41, "Input"],
-Cell[31146, 809, 1006, 27, 60, "Output"]
+Cell[29448, 775, 1097, 17, 41, "Input"],
+Cell[30548, 794, 1006, 27, 60, "Output"]
 }, Open  ]],
-Cell[32167, 839, 266, 5, 29, "Text"],
+Cell[31569, 824, 266, 5, 29, "Text"],
 Cell[CellGroupData[{
-Cell[32458, 848, 137, 2, 41, "Input"],
-Cell[32598, 852, 304, 4, 60, "Output"]
+Cell[31860, 833, 137, 2, 41, "Input"],
+Cell[32000, 837, 304, 4, 60, "Output"]
 }, Open  ]],
-Cell[32917, 859, 208, 5, 29, "Text"],
+Cell[32319, 844, 208, 5, 29, "Text"],
 Cell[CellGroupData[{
-Cell[33150, 868, 535, 12, 41, "Input"],
-Cell[33688, 882, 1222, 28, 266, "Print"]
+Cell[32552, 853, 535, 12, 41, "Input"],
+Cell[33090, 867, 1222, 28, 266, "Print"]
 }, Open  ]],
-Cell[34925, 913, 291, 5, 29, "Text"],
+Cell[34327, 898, 291, 5, 29, "Text"],
 Cell[CellGroupData[{
-Cell[35241, 922, 240, 4, 41, "Input"],
-Cell[35484, 928, 10791, 201, 385, "Output"]
+Cell[34643, 907, 240, 4, 41, "Input"],
+Cell[34886, 913, 10791, 201, 385, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[46324, 1135, 166, 2, 75, "Section"],
-Cell[46493, 1139, 1134, 18, 65, "Text"],
-Cell[47630, 1159, 5036, 87, 279, "Input"],
-Cell[52669, 1248, 333, 6, 29, "Text"],
-Cell[53005, 1256, 2946, 53, 229, "Input"],
-Cell[55954, 1311, 1162, 31, 82, "Input"],
-Cell[57119, 1344, 192, 4, 29, "Text"],
+Cell[45726, 1120, 166, 2, 75, "Section"],
+Cell[45895, 1124, 1134, 18, 65, "Text"],
+Cell[47032, 1144, 5036, 87, 279, "Input"],
+Cell[52071, 1233, 333, 6, 29, "Text"],
+Cell[52407, 1241, 2946, 53, 229, "Input"],
+Cell[55356, 1296, 1162, 31, 82, "Input"],
+Cell[56521, 1329, 192, 4, 29, "Text"],
 Cell[CellGroupData[{
-Cell[57336, 1352, 647, 18, 41, "Input"],
-Cell[57986, 1372, 151369, 2475, 311, 80505, 1312, "CachedBoxData", "BoxData", \
+Cell[56738, 1337, 647, 18, 41, "Input"],
+Cell[57388, 1357, 151369, 2475, 311, 80505, 1312, "CachedBoxData", "BoxData", \
 "Output"]
 }, Open  ]],
-Cell[209370, 3850, 386, 6, 29, "Text"],
+Cell[208772, 3835, 386, 6, 29, "Text"],
 Cell[CellGroupData[{
-Cell[209781, 3860, 2891, 75, 142, "Input"],
-Cell[212675, 3937, 137404, 2248, 311, 83229, 1358, "CachedBoxData", \
+Cell[209183, 3845, 2891, 75, 142, "Input"],
+Cell[212077, 3922, 137404, 2248, 311, 83229, 1358, "CachedBoxData", \
 "BoxData", "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[350128, 6191, 120, 1, 75, "Section"],
-Cell[350251, 6194, 424, 7, 29, "Text"]
+Cell[349530, 6176, 120, 1, 75, "Section"],
+Cell[349653, 6179, 424, 7, 29, "Text"]
 }, Open  ]]
 }, Open  ]]
 }
