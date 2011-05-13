@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       145,          7]
-NotebookDataLength[     76521,       1908]
-NotebookOptionsPosition[     73950,       1819]
-NotebookOutlinePosition[     74420,       1837]
-CellTagsIndexPosition[     74377,       1834]
+NotebookDataLength[     45236,       1189]
+NotebookOptionsPosition[     42636,       1099]
+NotebookOutlinePosition[     43104,       1117]
+CellTagsIndexPosition[     43061,       1114]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -96,12 +96,14 @@ Cell[BoxData[
   RowBox[{"NotebookDirectory", "[", "]"}], "]"}]], "Input",
  CellChangeTimes->{{3.401698774119277*^9, 3.401698786252544*^9}}],
 
-Cell[BoxData["\<\"D:\\\\Dokumenty\\\\\[CapitalSHacek]KOLA\\\\\[CapitalCHacek]\
-VUT\\\\BP\\\\BP_Neuron\"\>"], "Output",
+Cell[BoxData["\<\"D:\\\\Dokumenty\\\\BP\"\>"], "Output",
  CellChangeTimes->{
   3.5109903732208877`*^9, {3.5109912473763914`*^9, 3.51099127351071*^9}, 
-   3.510991307730055*^9, 3.5134328581958914`*^9}]
+   3.510991307730055*^9, 3.5134328581958914`*^9, 3.5142588955032835`*^9}]
 }, Open  ]],
+
+Cell["A na\[CHacek]teme data.", "Text",
+ CellChangeTimes->{{3.5142589240045333`*^9, 3.5142589289653416`*^9}}],
 
 Cell[BoxData[
  RowBox[{
@@ -189,8 +191,7 @@ Cell[BoxData[{
    RowBox[{
     RowBox[{"Tally", "[", "outDataTmp", "]"}], "[", 
     RowBox[{"[", 
-     RowBox[{"All", ",", "1"}], "]"}], "]"}]}], 
-  ";"}], "\[IndentingNewLine]", 
+     RowBox[{"All", ",", "1"}], "]"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{"encode", "=", 
    RowBox[{"MapIndexed", "[", 
@@ -275,22 +276,20 @@ Cell[BoxData[
        RowBox[{"Neuron", " ", "\[Rule]", " ", "Sigmoid"}], ",", " ", 
        RowBox[{"FixedParameters", " ", "\[Rule]", " ", "None"}], ",", " ", 
        RowBox[{"AccumulatedIterations", " ", "\[Rule]", " ", "0"}], ",", " ", 
-       
        RowBox[{"CreationDate", " ", "\[Rule]", " ", 
         RowBox[{"{", 
          RowBox[{
-         "2011", ",", " ", "5", ",", " ", "3", ",", " ", "19", ",", " ", "34",
-           ",", " ", "21.0187497`9.075181810341869"}], "}"}]}], ",", " ", 
+         "2011", ",", " ", "5", ",", " ", "13", ",", " ", "9", ",", " ", "1", 
+          ",", " ", "36.5484849`9.315444269165415"}], "}"}]}], ",", " ", 
        RowBox[{"OutputNonlinearity", " ", "\[Rule]", " ", "None"}], ",", " ", 
-       
        RowBox[{"NumberOfInputs", " ", "\[Rule]", " ", "4"}]}], "}"}]}], "]"}],
-   
    Null,
    Editable->False],
   DisplayForm]], "Output",
  CellChangeTimes->{
   3.422604528265625*^9, 3.510990375404165*^9, {3.51099124815699*^9, 
-   3.5109912742958097`*^9}, 3.5109913085206556`*^9, 3.5134328610302515`*^9}]
+   3.5109912742958097`*^9}, 3.5109913085206556`*^9, 3.5134328610302515`*^9, 
+   3.514258896548485*^9}]
 }, Open  ]],
 
 Cell["\<\
@@ -306,12 +305,13 @@ Cell[BoxData[
  RowBox[{"NetInformation", "[", "net", "]"}]], "Input",
  CellChangeTimes->{{3.402214088623496*^9, 3.402214091901377*^9}}],
 
-Cell[BoxData["\<\"Radial Basis Function network. Created 2011-5-3 at 19:34. \
+Cell[BoxData["\<\"Radial Basis Function network. Created 2011-5-13 at 9:01. \
 The network has 4 inputs and 3 outputs.  It consists of 4 basis functions of \
 Sigmoid type. The network has a linear submodel. \"\>"], "Output",
  CellChangeTimes->{
   3.422604528296875*^9, 3.510990375437169*^9, {3.5109912481919947`*^9, 
-   3.5109912743278136`*^9}, 3.510991308550659*^9, 3.5134328610652556`*^9}]
+   3.5109912743278136`*^9}, 3.510991308550659*^9, 3.5134328610652556`*^9, 
+   3.514258896564085*^9}]
 }, Open  ]],
 
 Cell["\<\
@@ -351,16 +351,17 @@ Cell[BoxData[
   3.402214664776315*^9, 3.402210056905657*^9}}],
 
 Cell[BoxData[
- GraphicsBox[
-  {Hue[0.67, 0.6, 0.6], LineBox[CompressedData["
-1:eJxTTMoPSmViYGAQBWIQDQf/ef72Nx+xh3A+2LOGSdicFIXxGRw23GQLW7X8
-MJTP4dBh3vTphBmML+Dw6Zi8sPGjQ1C+iMPWHb/lzk2H8SUczM491JfxgfFl
-HB7mHpz38NtBKF/BoTnugsmNGTC+kgPzR5nd2pEwvoqDrbPpv3JNGF/NIc/5
-z5JN7w5A+RoOSyXv1RZtgvG1HMTXvSziaYPxdRz+Kx59eiABxtdzmNj9Z6aW
-J4xv4LD6Q3vFSWsY39Ch2Dw7dJ8pjG/kcCFuU2qIEYxv7DCRa93xdgMY38Th
-Yu2kBA39A/YAtuhfSA==
-    "]]},
+ GraphicsBox[{{}, {}, 
+   {Hue[0.67, 0.6, 0.6], LineBox[CompressedData["
+1:eJxTTMoPSmViYGAQBWIQDQNC5ezrJ/Qft4fwPtgfmvRrv6PQMSifwcG5dNrs
+f3+PQvkcDj2r7397uxDGF3DYUJZYvNoCxhdxuPjyQpbTuSNQvoSDi0GreaoZ
+jC/jUNbCuc6h8jCUr+Agvrbr6vYrh6B8JYcJnjcremxhfBUH2ZDXu+VVYHw1
+B8ezq8Q7JWB8DYctyyMi5BhgfC0H+xWHxGdeOwjl6zgcmlfMnbYcxtdzSF8k
+pGPQD+MbOGwwF9c3bobxDR2akyac2VoA4xs5HIt2UGQJh/GNHS442smcsobx
+TRy4i74mOOgctAcATw1aQg==
+     "]]}},
   AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  AxesOrigin->{0, 0.134},
   Frame->True,
   FrameLabel->{
     FormBox["\"Iterations\"", TraditionalForm], None},
@@ -377,10 +378,10 @@ Yu2kBA39A/YAtuhfSA==
       FormBox["18", TraditionalForm]}, {20, 
       FormBox["20", TraditionalForm]}}, Automatic, None, None},
   PlotLabel->FormBox["\"RMSE\"", TraditionalForm],
-  PlotRangeClipping->True]], "Print",
- CellChangeTimes->{
-  3.422604529734375*^9, 3.5109903767768393`*^9, {3.5109912495391655`*^9, 
-   3.510991275739993*^9}, 3.5109913098763275`*^9, 3.513432863053008*^9}]
+  PlotRange->{All, All},
+  PlotRangeClipping->True,
+  PlotRangePadding->{Automatic, Automatic}]], "Print",
+ CellChangeTimes->{3.5142588972816863`*^9}]
 }, Open  ]],
 
 Cell["\<\
@@ -414,20 +415,20 @@ Cell[BoxData[
  GraphicsBox[{{}, {InsetBox[
      GraphicsBox[{{}, {}, 
        {Hue[0.67, 0.6, 0.6], LineBox[CompressedData["
-1:eJxTTMoPSmViYGAQBWIQDQOb5Fyn/17u4QDhfbDf/t/V9Pc6GJ/B4eP59Lel
-m2F8Dofu7bkHY7fB+AIOC2/oGMbugvFFHN7dOvrz/D4YX8LhpHHF+x9HYHwZ
-h2vC7yeanoHxFRx2fvm8yeMyjK/ksH+BQoPrdRhfxSHwZpLI96swvprD1xPm
-ebPgfA2HBZbCUyzgfC0Hnkm7W00uwfg6DvUTvdcvuADj6zl4HRQpeAO338Dh
-7VYeA3M439ChcUJ0V/1pGN/IISzl3t4YON/YQVKbrTwSzjdxKBCKnQbiAwAw
-CVzt
+1:eJxTTMoPSmViYGAQBWIQDQPr7fwOJ8z2cIDwPtjXe20J6d4I4zM4LD5lc1x2
+M4zP4RB85LDF550wvoBD8J7zN+33w/giDulNCXfZD8D4Eg7enu1q3XC+jMPN
+358eSx+C8RUcuA7rf0w+CuMrOYhFvP+x6QyMr+JgaCvKWHgWxldziEgt7XoF
+52s4ONfNU4k+B+NrOYgs6n8mdh7G13FI+tR76foFGF/Pof7amo03LsP4Bg5e
+spFGPNdgfEMHpbgPJUU3YHwjh/hFKVvm34LxjR1erfl08uFdGN/EQSiu+076
+Aw8HACheW3U=
          "]]}, 
        {Hue[0.9060679774997897, 0.6, 0.6], LineBox[CompressedData["
-1:eJxTTMoPSmViYGAQBWIQDQPGdTv0pBif2UN4H+xnXKlfZ+T4BMpncEj5yL2s
-RekxlM/hICY+aUl/xiMoX8BB4fnJLZszHkL5Ig5vTTr7GH0eQPkSDgYBz5w7
-mu9C+TIOt1vKOMyf3oTyFRzqPrG2LYu+BuUrOZxZtf69fewVKF/F4VDJ5HOl
-LFehfDUHixbpJyeMYHwNBwar5G9bk2F8LYclauZKe5/CzNNx8Akxj1qx/jqU
-r+dwxmn+1+OdMPsNHF4FLf2Z/gTGN3RYZGdxycrhFpRv5CAw5azAwkAY39gh
-58HLGpdgGN/EIUSz/KIJkA8A4NZd5Q==
+1:eJxTTMoPSmViYGAQBWIQDQMfZAp0zqu/tIfy7FU8317SmvsYymdwOKZ31qDP
+AsbncDh0jO+8YfNDKF/A4f1KgR5OgwdQvohD4um9/oJ/7kP5Eg4K5mF7cnbB
++DIOJqyNbHyf7kH5Cg4J9zUz2P3uQvlKDhlGoR3Ny25C+SoODFOTS+vdYXw1
+BwFjr6O7uGB8DYcFpXs35F66AeVrOVzwNdjRUwLj6zgcCGHfKTblOpSv56DA
+Mk1zufA1KN/A4dmaosvPfl6B8g0dbky80H702GUo38jhzJ31Z1U3XILyjR0M
+Pq1kk+a/COWbOMzwXlyiPOO8PQBv/VxU
          "]]}},
       AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
       Axes->True,
@@ -454,27 +455,27 @@ r+dwxmn+1+OdMPsNHF4FLf2Z/gTGN3RYZGdxycrhFpRv5CAw5azAwkAY39gh
       ImageScaled[{0.5, 0.5}], {360., 222.4922359499621}], InsetBox[
      GraphicsBox[{{}, {}, 
        {Hue[0.67, 0.6, 0.6], LineBox[CompressedData["
-1:eJxTTMoPSmViYGAQBWIQDQMeFeLLMr+5OkB4H+y7/tRe4Jd1g/IZHIK1NH/v
-cIDxORzCj5afcU2B8QUc8t1aTQ40wPgiDlVfnM0aZ8H4Eg7t3jWp07bA+DIO
-R5j8X/8/D+MrOASoFqsavoLxlRxeeU9sjP8L46s4XN4dHdnA5Q7lqzl8u3xX
-l0UWxtdwkGU2jO/WhfG1HPK78o8csYDxdRym9BsXrHeC8fUcPvnomv50g/EN
-HNizV8o/8YLxDR1a2pZ94vKB8Y0c+M3a3cV9YXxjB8762ddXwPkmDhlLPZ6I
-+rk7AACf8E9W
+1:eJxTTMoPSmViYGAQBWIQDQPdVc0CD667OEB4H+yzrUqXmZW7QvkMDqEODJql
+9TA+h4NJ3b0dwUtgfAGH6w6XTX+dgfFFHMIfZJwu+QzjSzhYxsy8NkXdDcqX
+cbhX/iPgeyqMr+CQ4BYvGzcbxldyOMi9lrXxLIyv4nDnxaUFIVdhfDWHrPuO
+m67dgPE1HOR0zttOuw/jazmU/fwxReoVjK/j8OD2stMpX2B8PYeMiEdTsn7C
++AYOG7R2hsz6A+MbOhiIS2xsZHSH8o0c5tfq2rBzwPjGDnw5Txe/5IXxTRzE
+nmz7vVzQ3QEAnslXbw==
          "]]}, 
        {Hue[0.9060679774997897, 0.6, 0.6], LineBox[CompressedData["
-1:eJxTTMoPSmViYGAQBWIQDQPP1F3Ob/KRcIDwPthnGArUNIqLQ/kMDhWbtqlZ
-/BKF8jkcZtxwnHPxrgiUL+DAcvJq9L+fwlC+iINc4gPfb9owvoTD49myV3yi
-haB8GQezG+1LGRoEoXwFhz0n066UrROA8pUcXi4o/cwsCuOrOKRZumT9CueH
-8tUcdh1WUtqrzwflazh0nXrP46XOC+VrOdQ5sO/cXMwD5es4LPtw7A/HVW4o
-X89hj7v22pwJML6BA5NNJuu+QBjf0MEkd/rVAHsY38jhwYae9m49GN/Y4Vmo
-R1uRKoxv4tBRX7p7oRy3AwBysU9X
+1:eJxTTMoPSmViYGAQBWIQDQOLZD/trV+g4ADhfbCfZxJ2xstNBspncPAT/bc9
+jAXG53CIE+WxTLorBeULOGgJpQXqzZCE8kUc7oXtXBKZIgHlSzhMrDHzjjws
+BuXLOKwTtqlwvSAC5Ss4tJ9nFuVXFYbylRwyu6Zf+j5ZEMpXcdhokvEzKhTG
+V3O4v/tjrpcljK/hkBHSLujHDONrOewRtIjQXi8A5es4RAieXHQzBsbXczig
+eT9itQmMb+DwYI9plK40jG/ooHCm/d2T5/xQvpHDhVYN2556GN/Y4dODFQdT
+FWF8EweHSRNcGp7yOQAAsBlL5A==
          "]]}},
       AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
       Axes->True,
       AxesLabel->{
         FormBox["\"Iterations\"", TraditionalForm], 
         FormBox["\"Samples\"", TraditionalForm]},
-      AxesOrigin->{-2., 10.},
+      AxesOrigin->{-2., 0},
       PlotLabel->FormBox["\"Class: 2\"", TraditionalForm],
       PlotRange->{{-2., 20}, All},
       PlotRangeClipping->True,
@@ -494,27 +495,27 @@ R1uRKoxv4tBRX7p7oRy3AwBysU9X
       ImageScaled[{0.5, 0.5}], {360., 222.4922359499621}], InsetBox[
      GraphicsBox[{{}, {}, 
        {Hue[0.67, 0.6, 0.6], LineBox[CompressedData["
-1:eJxTTMoPSmViYGAQBWIQDQMtnXniGrPcHCC8D/b7Sr+f2rYSxmdwuKNR83f1
-XhifwyFIk9O34jKML+Bw4tCbCfb3YXwRB5Fb9+pDn8P4Eg73BevyCt7C+DIO
-5x2Tiq2/wvgKDiw9/IseM7pD+UoOx39clnDnhPFVHE6rrlMVEIHx1RyWPb2T
-mysL42s4/NR8lSetCeNrOTg8+Vihbgrj6zhIvXjVs8oWxtdzWPz71NyV7jC+
-gUPdadcJuV4wvqGD02HeLet9YHwjh86TE6S8fWF8Y4eZOfLrOuF8Ewd1qQ17
-dgD5AEs1VNM=
+1:eJxTTMoPSmViYGAQBWIQDQOHord91Hvr6gDhfbC3eR0RtlDNDcpncJhx/7eF
+sCaMz+Ewr28Ob7sJjC/gMOWtv1GbC4wv4qB5yvje2igYX8JBO5yFfVo1jC/j
+0JF6wWvHIhhfweHzxqKMaQdgfCWHDVE3LKSuwPgqDi/PCTbZ3IDx1RzWPVex
+YL0F42s4hMX8mPP+Hoyv5dA7peCV3AsYX8chd3KCgehnGF/PoSOedfPhbzC+
+gUPJ+ufT1L7D+IYOOsruTDt/wPhGDvNWqLzz/gPjGzssv8h3RITBHco3cUhk
+MLqizujuAAAbglQq
          "]]}, 
        {Hue[0.9060679774997897, 0.6, 0.6], LineBox[CompressedData["
-1:eJxTTMoPSmViYGAQBWIQDQNJR7pd9usJO0B4H+yLXFxWeG4SgvIZHOK2yoks
-EILxORwSN2+bbpsiCOULOJx6NbOCmQ3GF3GQ1+FkDDkqAOVLOPiW8ffUTIHx
-ZRy4/7xNUQmD8RUcpvix3z/6kB/KV3I4VnSgqC8bxldxiFshu/TvPj4oX82h
-baGhkqYmjK/hoJIcK+iZxwvlazmYnHtY0LGWB8rXceCZEGgYrgrj6zlMMglQ
-TmvlhvINHHyCF/9Wi4TxDR16nijvZzGF8Y0czqV+DvPThvGNHQIYOOVS1WF8
-EweN5n8mJSrcDgAyKUVo
+1:eJxTTMoPSmViYGAQBWIQDQNFKr5FHdMkHCC8D/bLllj4fj0lBuUzOHx6rWCR
+th3G53DYUCY9+Xg0jC/gUNTZkHvutiiUL+LwJT2Rb6IWjC/hIMF657i/sgiU
+L+PAZFaz0vaVEJSv4JBwLXuPz29BKF/J4Z+praVePIyv4sDwqfC9tB2Mr+aw
+wPKG3TV9GF/DYd4OG4lmDhhfy0EpvnoNx34BKF/HYcLEPzVh6TC+noNDzov0
+R54wvoFDwpWjHqfdYHxDhwWah9+aW8H4Rg43Pt3sWyAL4xs7LHYX2b/5Hz+U
+b+Lw4vnDPU1v+R0AuvNRIg==
          "]]}},
       AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
       Axes->True,
       AxesLabel->{
         FormBox["\"Iterations\"", TraditionalForm], 
         FormBox["\"Samples\"", TraditionalForm]},
-      AxesOrigin->{-2., 10.},
+      AxesOrigin->{-2., 0},
       PlotLabel->FormBox["\"Class: 3\"", TraditionalForm],
       PlotRange->{{-2., 20}, All},
       PlotRangeClipping->True,
@@ -549,7 +550,8 @@ EweN5n8mJSrcDgAyKUVo
   PlotRangePadding->{6, 5}]], "Output",
  CellChangeTimes->{
   3.42260453015625*^9, 3.5109903774899297`*^9, {3.510991250033229*^9, 
-   3.510991276273061*^9}, 3.5109913103878927`*^9, 3.51343286362008*^9}]
+   3.510991276273061*^9}, 3.5109913103878927`*^9, 3.51343286362008*^9, 
+   3.5142588975156865`*^9}]
 }, Open  ]],
 
 Cell["\<\
@@ -581,826 +583,103 @@ Cell[BoxData[
 
 Cell[BoxData[
  Graphics3DBox[{
-   StyleBox[{
-     {EdgeForm[GrayLevel[0.85]], 
-      Polygon3DBox[{
-       Scaled[{0.015, 0.02, 0.02}], Scaled[{0.985, 0.02, 0.02}], 
-        Scaled[{0.985, 0.98, 0.02}], Scaled[{0.015, 0.98, 0.02}]},
-       VertexColors->{
-         Directive[
-          Opacity[0.2], 
-          RGBColor[0.33333333333333337`, 0.4, 0.6000000000000001]], 
-         Directive[
-          Opacity[0.2], 
-          RGBColor[0.5, 0.6, 0.9]], 
-         Directive[
-          Opacity[0.2], 
-          RGBColor[
-          0.6666666666666666, 0.7333333333333333, 0.9333333333333333]], 
-         Directive[
-          Opacity[0.2], 
-          GrayLevel[1]]}], 
-      Polygon3DBox[{
-       Scaled[{0.015, 0.02, 0.02}], Scaled[{0.985, 0.02, 0.02}], 
-        Scaled[{1, 0, 0}], Scaled[{0, 0, 0}]},
-       VertexColors->{
-         Directive[
-          Opacity[0.2], 
-          RGBColor[0.33333333333333337`, 0.4, 0.6000000000000001]], 
-         Directive[
-          Opacity[0.2], 
-          RGBColor[0.5, 0.6, 0.9]], 
-         Directive[
-          Opacity[0.2], 
-          RGBColor[
-          0.6666666666666666, 0.7333333333333333, 0.9333333333333333]], 
-         Directive[
-          Opacity[0.2], 
-          GrayLevel[1]]}], 
-      Polygon3DBox[{
-       Scaled[{0.985, 0.02, 0.02}], Scaled[{1, 0, 0}], Scaled[{1, 1, 0}], 
-        Scaled[{0.985, 0.98, 0.02}]},
-       VertexColors->{
-         Directive[
-          Opacity[0.2], 
-          RGBColor[0.33333333333333337`, 0.4, 0.6000000000000001]], 
-         Directive[
-          Opacity[0.2], 
-          RGBColor[0.5, 0.6, 0.9]], 
-         Directive[
-          Opacity[0.2], 
-          RGBColor[
-          0.6666666666666666, 0.7333333333333333, 0.9333333333333333]], 
-         Directive[
-          Opacity[0.2], 
-          GrayLevel[1]]}], 
-      Polygon3DBox[{
-       Scaled[{0.015, 0.98, 0.02}], Scaled[{0.985, 0.98, 0.02}], 
-        Scaled[{1, 1, 0}], Scaled[{0, 0.99999, 0}]},
-       VertexColors->{
-         Directive[
-          Opacity[0.2], 
-          RGBColor[0.33333333333333337`, 0.4, 0.6000000000000001]], 
-         Directive[
-          Opacity[0.2], 
-          RGBColor[0.5, 0.6, 0.9]], 
-         Directive[
-          Opacity[0.2], 
-          RGBColor[
-          0.6666666666666666, 0.7333333333333333, 0.9333333333333333]], 
-         Directive[
-          Opacity[0.2], 
-          GrayLevel[1]]}], 
-      Polygon3DBox[{
-       Scaled[{0.015, 0.02, 0.02}], Scaled[{0, 0, 0}], 
-        Scaled[{0, 0.99999, 0}], Scaled[{0.015, 0.98, 0.02}]},
-       VertexColors->{
-         Directive[
-          Opacity[0.2], 
-          RGBColor[0.33333333333333337`, 0.4, 0.6000000000000001]], 
-         Directive[
-          Opacity[0.2], 
-          RGBColor[0.5, 0.6, 0.9]], 
-         Directive[
-          Opacity[0.2], 
-          RGBColor[
-          0.6666666666666666, 0.7333333333333333, 0.9333333333333333]], 
-         Directive[
-          Opacity[0.2], 
-          GrayLevel[1]]}], 
-      Polygon3DBox[{
-       Scaled[{0, 0, 0}], Scaled[{1, 0, 0}], Scaled[{1, 1, 0}], 
-        Scaled[{0, 0.99999, 0}]},
-       VertexColors->{
-         Directive[
-          Opacity[0.2], 
-          RGBColor[0.33333333333333337`, 0.4, 0.6000000000000001]], 
-         Directive[
-          Opacity[0.2], 
-          RGBColor[0.5, 0.6, 0.9]], 
-         Directive[
-          Opacity[0.2], 
-          RGBColor[
-          0.6666666666666666, 0.7333333333333333, 0.9333333333333333]], 
-         Directive[
-          Opacity[0.2], 
-          GrayLevel[1]]}]}, 
-     {Opacity[0], EdgeForm[None], 
-      CuboidBox[{{-0.16000000000000003`, -0.5, 0}, {3.3600000000000003`, 
-        3.9000000000000004`, 0.024}}]}, 
-     {EdgeForm[None], 
-      Polygon3DBox[{
-       Scaled[{0.015, 0.98, 0.02}], Scaled[{0.985, 0.98, 0.02}], 
-        Scaled[{0.985, 0.98, 0.98}], Scaled[{0.015, 0.98, 0.98}]},
-       VertexColors->{
-         Directive[
-          Opacity[0.2], 
-          RGBColor[0.33333333333333337`, 0.4, 0.6000000000000001]], 
-         Directive[
-          Opacity[0.2], 
-          RGBColor[0.5, 0.6, 0.9]], 
-         Directive[
-          Opacity[0.2], 
-          RGBColor[
-          0.6666666666666666, 0.7333333333333333, 0.9333333333333333]], 
-         Directive[
-          Opacity[0.2], 
-          GrayLevel[1]]}], 
-      Polygon3DBox[{
-       Scaled[{0.015, 0.98, 0.02}], Scaled[{0.985, 0.98, 0.02}], 
-        Scaled[{1, 1, 0}], Scaled[{0, 0.99999, 0}]},
-       VertexColors->{
-         Directive[
-          Opacity[0.2], 
-          RGBColor[0.33333333333333337`, 0.4, 0.6000000000000001]], 
-         Directive[
-          Opacity[0.2], 
-          RGBColor[0.5, 0.6, 0.9]], 
-         Directive[
-          Opacity[0.2], 
-          RGBColor[
-          0.6666666666666666, 0.7333333333333333, 0.9333333333333333]], 
-         Directive[
-          Opacity[0.2], 
-          GrayLevel[1]]}], 
-      Polygon3DBox[{
-       Scaled[{1, 1, 0}], Scaled[{1, 1, 1}], Scaled[{0.985, 0.98, 0.98}], 
-        Scaled[{0.985, 0.98, 0.02}]},
-       VertexColors->{
-         Directive[
-          Opacity[0.2], 
-          RGBColor[0.33333333333333337`, 0.4, 0.6000000000000001]], 
-         Directive[
-          Opacity[0.2], 
-          RGBColor[0.5, 0.6, 0.9]], 
-         Directive[
-          Opacity[0.2], 
-          RGBColor[
-          0.6666666666666666, 0.7333333333333333, 0.9333333333333333]], 
-         Directive[
-          Opacity[0.2], 
-          GrayLevel[1]]}], 
-      Polygon3DBox[{
-       Scaled[{0.015, 0.98, 0.98}], Scaled[{0.985, 0.98, 0.98}], 
-        Scaled[{1, 1, 1}], Scaled[{0, 1, 1}]},
-       VertexColors->{
-         Directive[
-          Opacity[0.2], 
-          RGBColor[0.33333333333333337`, 0.4, 0.6000000000000001]], 
-         Directive[
-          Opacity[0.2], 
-          RGBColor[0.5, 0.6, 0.9]], 
-         Directive[
-          Opacity[0.2], 
-          RGBColor[
-          0.6666666666666666, 0.7333333333333333, 0.9333333333333333]], 
-         Directive[
-          Opacity[0.2], 
-          GrayLevel[1]]}], 
-      Polygon3DBox[{
-       Scaled[{0.015, 0.98, 0.02}], Scaled[{0, 0.99999, 0}], 
-        Scaled[{0, 1, 1}], Scaled[{0.015, 0.98, 0.98}]},
-       VertexColors->{
-         Directive[
-          Opacity[0.2], 
-          RGBColor[0.33333333333333337`, 0.4, 0.6000000000000001]], 
-         Directive[
-          Opacity[0.2], 
-          RGBColor[0.5, 0.6, 0.9]], 
-         Directive[
-          Opacity[0.2], 
-          RGBColor[
-          0.6666666666666666, 0.7333333333333333, 0.9333333333333333]], 
-         Directive[
-          Opacity[0.2], 
-          GrayLevel[1]]}], 
-      Polygon3DBox[{
-       Scaled[{0, 0.99999, 0}], Scaled[{1, 1, 0}], Scaled[{1, 1, 1}], 
-        Scaled[{0, 1, 1}]},
-       VertexColors->{
-         Directive[
-          Opacity[0.2], 
-          RGBColor[0.33333333333333337`, 0.4, 0.6000000000000001]], 
-         Directive[
-          Opacity[0.2], 
-          RGBColor[0.5, 0.6, 0.9]], 
-         Directive[
-          Opacity[0.2], 
-          RGBColor[
-          0.6666666666666666, 0.7333333333333333, 0.9333333333333333]], 
-         Directive[
-          Opacity[0.2], 
-          GrayLevel[1]]}]}},
-    StripOnInput->False,
-    Lighting->{{"Ambient", 
-       GrayLevel[1]}}], 
-   {RGBColor[0.5, 0.5, 1.], EdgeForm[GrayLevel[0.5]], {{{}, {
-       {RGBColor[0.5, 0.5, 1.], EdgeForm[GrayLevel[0.5]], 
-        TagBox[
-         TooltipBox[
-          TagBox[
-           DynamicBox[{
-             FEPrivate`If[
-              CurrentValue["MouseOver"], 
-              Directive[
-               EdgeForm[{
-                 RGBColor[
-                 0.6666666666666666, 0.6666666666666666, 0.6666666666666666], 
-                 
-                 AbsoluteThickness[1.5]}]], {}, {}], 
-             StyleBox[{
-               
-               GraphicsComplex3DBox[{{0., 0., 0.}, {0., 1., 0.}, {0., 1., 
-                49.588671489186595`}, {0., 0., 49.588671489186595`}, {1., 0., 
-                0.}, {1., 1., 0.}, {1., 1., 49.588671489186595`}, {1., 0., 
-                49.588671489186595`}}, {
-                 Polygon3DBox[{1, 2, 3, 4}, VertexColors -> {
-                    RGBColor[0.25, 0.25, 0.5], 
-                    RGBColor[0.25, 0.25, 0.5], 
-                    RGBColor[0.5, 0.5, 1.], 
-                    RGBColor[0.5, 0.5, 1.]}], 
-                 Polygon3DBox[{5, 6, 7, 8}, VertexColors -> {
-                    RGBColor[0.25, 0.25, 0.5], 
-                    RGBColor[0.25, 0.25, 0.5], 
-                    RGBColor[0.5, 0.5, 1.], 
-                    RGBColor[0.5, 0.5, 1.]}], 
-                 Polygon3DBox[{2, 3, 7, 6}, VertexColors -> {
-                    RGBColor[0.9, 0.9, 1.], 
-                    RGBColor[0.5, 0.5, 1.], 
-                    RGBColor[0.5, 0.5, 1.], 
-                    RGBColor[0.9, 0.9, 1.]}], 
-                 Polygon3DBox[{1, 4, 8, 5}, VertexColors -> {
-                    RGBColor[0.5, 0.5, 1.], 
-                    RGBColor[0.9, 0.9, 1.], 
-                    RGBColor[0.9, 0.9, 1.], 
-                    RGBColor[0.5, 0.5, 1.]}], 
-                 Polygon3DBox[{4, 8, 7, 3}, VertexColors -> {
-                    RGBColor[0.5, 0.5, 1.], 
-                    RGBColor[0.5, 0.5, 1.], 
-                    RGBColor[0.9, 0.9, 1.], 
-                    RGBColor[0.9, 0.9, 1.]}], 
-                 Polygon3DBox[{1, 5, 6, 2}, VertexColors -> {
-                    RGBColor[0.9, 0.9, 1.], 
-                    RGBColor[0.9, 0.9, 1.], 
-                    RGBColor[0.5, 0.5, 1.], 
-                    RGBColor[0.5, 0.5, 1.]}]}]}, Lighting -> {{"Ambient", 
-                 GrayLevel[1]}}, StripOnInput -> False]},
-            
-            ImageSizeCache->{{123.81187673565101`, 
-             221.3818802196267}, {-31.074180414673435`, 135.2082109573601}}],
-           StatusArea[#, 49.588671489186595`]& ,
-           TagBoxNote->"49.588671489186595"],
-          StyleBox["49.588671489186595`", {
-            GrayLevel[0]}, StripOnInput -> False]],
-         Annotation[#, 
-          Style[49.588671489186595`, {
-            GrayLevel[0]}], "Tooltip"]& ]}, 
-       {RGBColor[0.5, 1., 0.5], EdgeForm[GrayLevel[0.5]], 
-        TagBox[
-         TooltipBox[
-          TagBox[
-           DynamicBox[{
-             FEPrivate`If[
-              CurrentValue["MouseOver"], 
-              Directive[
-               EdgeForm[{
-                 RGBColor[
-                 0.6666666666666666, 0.6666666666666666, 0.6666666666666666], 
-                 
-                 AbsoluteThickness[1.5]}]], {}, {}], 
-             StyleBox[{
-               
-               GraphicsComplex3DBox[{{1.1, 0., 0.}, {1.1, 1., 0.}, {1.1, 1., 
-                0.20424282792076198`}, {1.1, 0., 0.20424282792076198`}, {2.1, 
-                0., 0.}, {2.1, 1., 0.}, {2.1, 1., 0.20424282792076198`}, {2.1,
-                 0., 0.20424282792076198`}}, {
-                 Polygon3DBox[{1, 2, 3, 4}, VertexColors -> {
-                    RGBColor[0.25, 0.5, 0.25], 
-                    RGBColor[0.25, 0.5, 0.25], 
-                    RGBColor[0.5, 1., 0.5], 
-                    RGBColor[0.5, 1., 0.5]}], 
-                 Polygon3DBox[{5, 6, 7, 8}, VertexColors -> {
-                    RGBColor[0.25, 0.5, 0.25], 
-                    RGBColor[0.25, 0.5, 0.25], 
-                    RGBColor[0.5, 1., 0.5], 
-                    RGBColor[0.5, 1., 0.5]}], 
-                 Polygon3DBox[{2, 3, 7, 6}, VertexColors -> {
-                    RGBColor[0.9, 1., 0.9], 
-                    RGBColor[0.5, 1., 0.5], 
-                    RGBColor[0.5, 1., 0.5], 
-                    RGBColor[0.9, 1., 0.9]}], 
-                 Polygon3DBox[{1, 4, 8, 5}, VertexColors -> {
-                    RGBColor[0.5, 1., 0.5], 
-                    RGBColor[0.9, 1., 0.9], 
-                    RGBColor[0.9, 1., 0.9], 
-                    RGBColor[0.5, 1., 0.5]}], 
-                 Polygon3DBox[{4, 8, 7, 3}, VertexColors -> {
-                    RGBColor[0.5, 1., 0.5], 
-                    RGBColor[0.5, 1., 0.5], 
-                    RGBColor[0.9, 1., 0.9], 
-                    RGBColor[0.9, 1., 0.9]}], 
-                 Polygon3DBox[{1, 5, 6, 2}, VertexColors -> {
-                    RGBColor[0.9, 1., 0.9], 
-                    RGBColor[0.9, 1., 0.9], 
-                    RGBColor[0.5, 1., 0.5], 
-                    RGBColor[0.5, 1., 0.5]}]}]}, Lighting -> {{"Ambient", 
-                 GrayLevel[1]}}, StripOnInput -> False]},
-            
-            ImageSizeCache->{{179.18593149190593`, 257.2746453504639}, {
-             28.787147578338107`, 93.73872654075865}}],
-           StatusArea[#, 0.20424282792076198`]& ,
-           TagBoxNote->"0.20424282792076198"],
-          StyleBox["0.20424282792076198`", {
-            GrayLevel[0]}, StripOnInput -> False]],
-         Annotation[#, 
-          Style[0.20424282792076198`, {
-            GrayLevel[0]}], "Tooltip"]& ]}, 
-       {RGBColor[1., 0.75, 0.5], EdgeForm[GrayLevel[0.5]], 
-        TagBox[
-         TooltipBox[
-          TagBox[
-           DynamicBox[{
-             FEPrivate`If[
-              CurrentValue["MouseOver"], 
-              Directive[
-               EdgeForm[{
-                 RGBColor[
-                 0.6666666666666666, 0.6666666666666666, 0.6666666666666666], 
-                 
-                 AbsoluteThickness[1.5]}]], {}, {}], 
-             StyleBox[{
-               
-               GraphicsComplex3DBox[{{2.2, 0., 0.}, {2.2, 1., 0.}, {2.2, 1., 
-                0.20708568289295126`}, {2.2, 0., 0.20708568289295126`}, {3.2, 
-                0., 0.}, {3.2, 1., 0.}, {3.2, 1., 0.20708568289295126`}, {3.2,
-                 0., 0.20708568289295126`}}, {
-                 Polygon3DBox[{1, 2, 3, 4}, VertexColors -> {
-                    RGBColor[0.5, 0.375, 0.25], 
-                    RGBColor[0.5, 0.375, 0.25], 
-                    RGBColor[1., 0.75, 0.5], 
-                    RGBColor[1., 0.75, 0.5]}], 
-                 Polygon3DBox[{5, 6, 7, 8}, VertexColors -> {
-                    RGBColor[0.5, 0.375, 0.25], 
-                    RGBColor[0.5, 0.375, 0.25], 
-                    RGBColor[1., 0.75, 0.5], 
-                    RGBColor[1., 0.75, 0.5]}], 
-                 Polygon3DBox[{2, 3, 7, 6}, VertexColors -> {
-                    RGBColor[1., 0.95, 0.9], 
-                    RGBColor[1., 0.75, 0.5], 
-                    RGBColor[1., 0.75, 0.5], 
-                    RGBColor[1., 0.95, 0.9]}], 
-                 Polygon3DBox[{1, 4, 8, 5}, VertexColors -> {
-                    RGBColor[1., 0.75, 0.5], 
-                    RGBColor[1., 0.95, 0.9], 
-                    RGBColor[1., 0.95, 0.9], 
-                    RGBColor[1., 0.75, 0.5]}], 
-                 Polygon3DBox[{4, 8, 7, 3}, VertexColors -> {
-                    RGBColor[1., 0.75, 0.5], 
-                    RGBColor[1., 0.75, 0.5], 
-                    RGBColor[1., 0.95, 0.9], 
-                    RGBColor[1., 0.95, 0.9]}], 
-                 Polygon3DBox[{1, 5, 6, 2}, VertexColors -> {
-                    RGBColor[1., 0.95, 0.9], 
-                    RGBColor[1., 0.95, 0.9], 
-                    RGBColor[1., 0.75, 0.5], 
-                    RGBColor[1., 0.75, 0.5]}]}]}, Lighting -> {{"Ambient", 
-                 GrayLevel[1]}}, StripOnInput -> False]},
-            
-            ImageSizeCache->{{221.6426102675015, 
-             296.217710678631}, {-3.4784366434762575`, 56.07222639163871}}],
-           StatusArea[#, 0.20708568289295126`]& ,
-           TagBoxNote->"0.20708568289295126"],
-          StyleBox["0.20708568289295126`", {
-            GrayLevel[0]}, StripOnInput -> False]],
-         Annotation[#, 
-          Style[0.20708568289295126`, {
-            GrayLevel[0]}], "Tooltip"]& ]}}, {}, {}}, {{}, {
-       {RGBColor[0.5, 0.5, 1.], EdgeForm[GrayLevel[0.5]], 
-        TagBox[
-         TooltipBox[
-          TagBox[
-           DynamicBox[{
-             FEPrivate`If[
-              CurrentValue["MouseOver"], 
-              Directive[
-               EdgeForm[{
-                 RGBColor[
-                 0.6666666666666666, 0.6666666666666666, 0.6666666666666666], 
-                 
-                 AbsoluteThickness[1.5]}]], {}, {}], 
-             StyleBox[{
-               
-               GraphicsComplex3DBox[{{0., 1.2, 0.}, {0., 2.2, 0.}, {0., 2.2, 
-                0.2042428279273506}, {0., 1.2, 0.2042428279273506}, {1., 1.2, 
-                0.}, {1., 2.2, 0.}, {1., 2.2, 0.2042428279273506}, {1., 1.2, 
-                0.2042428279273506}}, {
-                 Polygon3DBox[{1, 2, 3, 4}, VertexColors -> {
-                    RGBColor[0.25, 0.25, 0.5], 
-                    RGBColor[0.25, 0.25, 0.5], 
-                    RGBColor[0.5, 0.5, 1.], 
-                    RGBColor[0.5, 0.5, 1.]}], 
-                 Polygon3DBox[{5, 6, 7, 8}, VertexColors -> {
-                    RGBColor[0.25, 0.25, 0.5], 
-                    RGBColor[0.25, 0.25, 0.5], 
-                    RGBColor[0.5, 0.5, 1.], 
-                    RGBColor[0.5, 0.5, 1.]}], 
-                 Polygon3DBox[{2, 3, 7, 6}, VertexColors -> {
-                    RGBColor[0.9, 0.9, 1.], 
-                    RGBColor[0.5, 0.5, 1.], 
-                    RGBColor[0.5, 0.5, 1.], 
-                    RGBColor[0.9, 0.9, 1.]}], 
-                 Polygon3DBox[{1, 4, 8, 5}, VertexColors -> {
-                    RGBColor[0.5, 0.5, 1.], 
-                    RGBColor[0.9, 0.9, 1.], 
-                    RGBColor[0.9, 0.9, 1.], 
-                    RGBColor[0.5, 0.5, 1.]}], 
-                 Polygon3DBox[{4, 8, 7, 3}, VertexColors -> {
-                    RGBColor[0.5, 0.5, 1.], 
-                    RGBColor[0.5, 0.5, 1.], 
-                    RGBColor[0.9, 0.9, 1.], 
-                    RGBColor[0.9, 0.9, 1.]}], 
-                 Polygon3DBox[{1, 5, 6, 2}, VertexColors -> {
-                    RGBColor[0.9, 0.9, 1.], 
-                    RGBColor[0.9, 0.9, 1.], 
-                    RGBColor[0.5, 0.5, 1.], 
-                    RGBColor[0.5, 0.5, 1.]}]}]}, Lighting -> {{"Ambient", 
-                 GrayLevel[1]}}, StripOnInput -> False]},
-            ImageSizeCache->{{91.37053709760794, 169.98181013978746`}, {
-             29.818856926730376`, 94.94763914404152}}],
-           StatusArea[#, 0.2042428279273506]& ,
-           TagBoxNote->"0.2042428279273506"],
-          StyleBox["0.2042428279273506`", {
-            GrayLevel[0]}, StripOnInput -> False]],
-         Annotation[#, 
-          Style[0.2042428279273506, {
-            GrayLevel[0]}], "Tooltip"]& ]}, 
-       {RGBColor[0.5, 1., 0.5], EdgeForm[GrayLevel[0.5]], 
-        TagBox[
-         TooltipBox[
-          TagBox[
-           DynamicBox[{
-             FEPrivate`If[
-              CurrentValue["MouseOver"], 
-              Directive[
-               EdgeForm[{
-                 RGBColor[
-                 0.6666666666666666, 0.6666666666666666, 0.6666666666666666], 
-                 
-                 AbsoluteThickness[1.5]}]], {}, {}], 
-             StyleBox[{
-               
-               GraphicsComplex3DBox[{{1.1, 1.2, 0.}, {1.1, 2.2, 0.}, {1.1, 
-                2.2, 46.61004308268713}, {1.1, 1.2, 46.61004308268713}, {2.1, 
-                1.2, 0.}, {2.1, 2.2, 0.}, {2.1, 2.2, 46.61004308268713}, {2.1,
-                 1.2, 46.61004308268713}}, {
-                 Polygon3DBox[{1, 2, 3, 4}, VertexColors -> {
-                    RGBColor[0.25, 0.5, 0.25], 
-                    RGBColor[0.25, 0.5, 0.25], 
-                    RGBColor[0.5, 1., 0.5], 
-                    RGBColor[0.5, 1., 0.5]}], 
-                 Polygon3DBox[{5, 6, 7, 8}, VertexColors -> {
-                    RGBColor[0.25, 0.5, 0.25], 
-                    RGBColor[0.25, 0.5, 0.25], 
-                    RGBColor[0.5, 1., 0.5], 
-                    RGBColor[0.5, 1., 0.5]}], 
-                 Polygon3DBox[{2, 3, 7, 6}, VertexColors -> {
-                    RGBColor[0.9, 1., 0.9], 
-                    RGBColor[0.5, 1., 0.5], 
-                    RGBColor[0.5, 1., 0.5], 
-                    RGBColor[0.9, 1., 0.9]}], 
-                 Polygon3DBox[{1, 4, 8, 5}, VertexColors -> {
-                    RGBColor[0.5, 1., 0.5], 
-                    RGBColor[0.9, 1., 0.9], 
-                    RGBColor[0.9, 1., 0.9], 
-                    RGBColor[0.5, 1., 0.5]}], 
-                 Polygon3DBox[{4, 8, 7, 3}, VertexColors -> {
-                    RGBColor[0.5, 1., 0.5], 
-                    RGBColor[0.5, 1., 0.5], 
-                    RGBColor[0.9, 1., 0.9], 
-                    RGBColor[0.9, 1., 0.9]}], 
-                 Polygon3DBox[{1, 5, 6, 2}, VertexColors -> {
-                    RGBColor[0.9, 1., 0.9], 
-                    RGBColor[0.9, 1., 0.9], 
-                    RGBColor[0.5, 1., 0.5], 
-                    RGBColor[0.5, 1., 0.5]}]}]}, Lighting -> {{"Ambient", 
-                 GrayLevel[1]}}, StripOnInput -> False]},
-            
-            ImageSizeCache->{{131.33479163567455`, 
-             218.2244571962955}, {-92.71843040231502, 57.17274238195131}}],
-           StatusArea[#, 46.61004308268713]& ,
-           TagBoxNote->"46.61004308268713"],
-          StyleBox["46.61004308268713`", {
-            GrayLevel[0]}, StripOnInput -> False]],
-         Annotation[#, 
-          Style[46.61004308268713, {
-            GrayLevel[0]}], "Tooltip"]& ]}, 
-       {RGBColor[1., 0.75, 0.5], EdgeForm[GrayLevel[0.5]], 
-        TagBox[
-         TooltipBox[
-          TagBox[
-           DynamicBox[{
-             FEPrivate`If[
-              CurrentValue["MouseOver"], 
-              Directive[
-               EdgeForm[{
-                 RGBColor[
-                 0.6666666666666666, 0.6666666666666666, 0.6666666666666666], 
-                 
-                 AbsoluteThickness[1.5]}]], {}, {}], 
-             StyleBox[{
-               
-               GraphicsComplex3DBox[{{2.2, 1.2, 0.}, {2.2, 2.2, 0.}, {2.2, 
-                2.2, 3.1857140893859297`}, {2.2, 1.2, 3.1857140893859297`}, {
-                3.2, 1.2, 0.}, {3.2, 2.2, 0.}, {3.2, 2.2, 
-                3.1857140893859297`}, {3.2, 1.2, 3.1857140893859297`}}, {
-                 Polygon3DBox[{1, 2, 3, 4}, VertexColors -> {
-                    RGBColor[0.5, 0.375, 0.25], 
-                    RGBColor[0.5, 0.375, 0.25], 
-                    RGBColor[1., 0.75, 0.5], 
-                    RGBColor[1., 0.75, 0.5]}], 
-                 Polygon3DBox[{5, 6, 7, 8}, VertexColors -> {
-                    RGBColor[0.5, 0.375, 0.25], 
-                    RGBColor[0.5, 0.375, 0.25], 
-                    RGBColor[1., 0.75, 0.5], 
-                    RGBColor[1., 0.75, 0.5]}], 
-                 Polygon3DBox[{2, 3, 7, 6}, VertexColors -> {
-                    RGBColor[1., 0.95, 0.9], 
-                    RGBColor[1., 0.75, 0.5], 
-                    RGBColor[1., 0.75, 0.5], 
-                    RGBColor[1., 0.95, 0.9]}], 
-                 Polygon3DBox[{1, 4, 8, 5}, VertexColors -> {
-                    RGBColor[1., 0.75, 0.5], 
-                    RGBColor[1., 0.95, 0.9], 
-                    RGBColor[1., 0.95, 0.9], 
-                    RGBColor[1., 0.75, 0.5]}], 
-                 Polygon3DBox[{4, 8, 7, 3}, VertexColors -> {
-                    RGBColor[1., 0.75, 0.5], 
-                    RGBColor[1., 0.75, 0.5], 
-                    RGBColor[1., 0.95, 0.9], 
-                    RGBColor[1., 0.95, 0.9]}], 
-                 Polygon3DBox[{1, 5, 6, 2}, VertexColors -> {
-                    RGBColor[1., 0.95, 0.9], 
-                    RGBColor[1., 0.95, 0.9], 
-                    RGBColor[1., 0.75, 0.5], 
-                    RGBColor[1., 0.75, 0.5]}]}]}, Lighting -> {{"Ambient", 
-                 GrayLevel[1]}}, StripOnInput -> False]},
-            
-            ImageSizeCache->{{180.2910145821088, 
-             252.67398422308835`}, {-37.33019448408963, 22.71458415412772}}],
-           StatusArea[#, 3.1857140893859297`]& ,
-           TagBoxNote->"3.1857140893859297"],
-          StyleBox["3.1857140893859297`", {
-            GrayLevel[0]}, StripOnInput -> False]],
-         Annotation[#, 
-          Style[3.1857140893859297`, {
-            GrayLevel[0]}], "Tooltip"]& ]}}, {}, {}}, {{}, {
-       {RGBColor[0.5, 0.5, 1.], EdgeForm[GrayLevel[0.5]], 
-        TagBox[
-         TooltipBox[
-          TagBox[
-           DynamicBox[{
-             FEPrivate`If[
-              CurrentValue["MouseOver"], 
-              Directive[
-               EdgeForm[{
-                 RGBColor[
-                 0.6666666666666666, 0.6666666666666666, 0.6666666666666666], 
-                 
-                 AbsoluteThickness[1.5]}]], {}, {}], 
-             StyleBox[{
-               
-               GraphicsComplex3DBox[{{0., 2.4000000000000004`, 0.}, {0., 
-                3.4000000000000004`, 0.}, {0., 3.4000000000000004`, 
-                0.20708568288743756`}, {0., 2.4000000000000004`, 
-                0.20708568288743756`}, {1., 2.4000000000000004`, 0.}, {1., 
-                3.4000000000000004`, 0.}, {1., 3.4000000000000004`, 
-                0.20708568288743756`}, {1., 2.4000000000000004`, 
-                0.20708568288743756`}}, {
-                 Polygon3DBox[{1, 2, 3, 4}, VertexColors -> {
-                    RGBColor[0.25, 0.25, 0.5], 
-                    RGBColor[0.25, 0.25, 0.5], 
-                    RGBColor[0.5, 0.5, 1.], 
-                    RGBColor[0.5, 0.5, 1.]}], 
-                 Polygon3DBox[{5, 6, 7, 8}, VertexColors -> {
-                    RGBColor[0.25, 0.25, 0.5], 
-                    RGBColor[0.25, 0.25, 0.5], 
-                    RGBColor[0.5, 0.5, 1.], 
-                    RGBColor[0.5, 0.5, 1.]}], 
-                 Polygon3DBox[{2, 3, 7, 6}, VertexColors -> {
-                    RGBColor[0.9, 0.9, 1.], 
-                    RGBColor[0.5, 0.5, 1.], 
-                    RGBColor[0.5, 0.5, 1.], 
-                    RGBColor[0.9, 0.9, 1.]}], 
-                 Polygon3DBox[{1, 4, 8, 5}, VertexColors -> {
-                    RGBColor[0.5, 0.5, 1.], 
-                    RGBColor[0.9, 0.9, 1.], 
-                    RGBColor[0.9, 0.9, 1.], 
-                    RGBColor[0.5, 0.5, 1.]}], 
-                 Polygon3DBox[{4, 8, 7, 3}, VertexColors -> {
-                    RGBColor[0.5, 0.5, 1.], 
-                    RGBColor[0.5, 0.5, 1.], 
-                    RGBColor[0.9, 0.9, 1.], 
-                    RGBColor[0.9, 0.9, 1.]}], 
-                 Polygon3DBox[{1, 5, 6, 2}, VertexColors -> {
-                    RGBColor[0.9, 0.9, 1.], 
-                    RGBColor[0.9, 0.9, 1.], 
-                    RGBColor[0.5, 0.5, 1.], 
-                    RGBColor[0.5, 0.5, 1.]}]}]}, Lighting -> {{"Ambient", 
-                 GrayLevel[1]}}, StripOnInput -> False]},
-            
-            ImageSizeCache->{{53.70424045507909, 
-             129.2300457624823}, {-1.5844460954429138`, 58.276353140796374`}}],
-           StatusArea[#, 0.20708568288743756`]& ,
-           TagBoxNote->"0.20708568288743756"],
-          StyleBox["0.20708568288743756`", {
-            GrayLevel[0]}, StripOnInput -> False]],
-         Annotation[#, 
-          Style[0.20708568288743756`, {
-            GrayLevel[0]}], "Tooltip"]& ]}, 
-       {RGBColor[0.5, 1., 0.5], EdgeForm[GrayLevel[0.5]], 
-        TagBox[
-         TooltipBox[
-          TagBox[
-           DynamicBox[{
-             FEPrivate`If[
-              CurrentValue["MouseOver"], 
-              Directive[
-               EdgeForm[{
-                 RGBColor[
-                 0.6666666666666666, 0.6666666666666666, 0.6666666666666666], 
-                 
-                 AbsoluteThickness[1.5]}]], {}, {}], 
-             StyleBox[{
-               
-               GraphicsComplex3DBox[{{1.1, 2.4000000000000004`, 0.}, {1.1, 
-                3.4000000000000004`, 0.}, {1.1, 3.4000000000000004`, 
-                3.1857140893873392`}, {1.1, 2.4000000000000004`, 
-                3.1857140893873392`}, {2.1, 2.4000000000000004`, 0.}, {2.1, 
-                3.4000000000000004`, 0.}, {2.1, 3.4000000000000004`, 
-                3.1857140893873392`}, {2.1, 2.4000000000000004`, 
-                3.1857140893873392`}}, {
-                 Polygon3DBox[{1, 2, 3, 4}, VertexColors -> {
-                    RGBColor[0.25, 0.5, 0.25], 
-                    RGBColor[0.25, 0.5, 0.25], 
-                    RGBColor[0.5, 1., 0.5], 
-                    RGBColor[0.5, 1., 0.5]}], 
-                 Polygon3DBox[{5, 6, 7, 8}, VertexColors -> {
-                    RGBColor[0.25, 0.5, 0.25], 
-                    RGBColor[0.25, 0.5, 0.25], 
-                    RGBColor[0.5, 1., 0.5], 
-                    RGBColor[0.5, 1., 0.5]}], 
-                 Polygon3DBox[{2, 3, 7, 6}, VertexColors -> {
-                    RGBColor[0.9, 1., 0.9], 
-                    RGBColor[0.5, 1., 0.5], 
-                    RGBColor[0.5, 1., 0.5], 
-                    RGBColor[0.9, 1., 0.9]}], 
-                 Polygon3DBox[{1, 4, 8, 5}, VertexColors -> {
-                    RGBColor[0.5, 1., 0.5], 
-                    RGBColor[0.9, 1., 0.9], 
-                    RGBColor[0.9, 1., 0.9], 
-                    RGBColor[0.5, 1., 0.5]}], 
-                 Polygon3DBox[{4, 8, 7, 3}, VertexColors -> {
-                    RGBColor[0.5, 1., 0.5], 
-                    RGBColor[0.5, 1., 0.5], 
-                    RGBColor[0.9, 1., 0.9], 
-                    RGBColor[0.9, 1., 0.9]}], 
-                 Polygon3DBox[{1, 5, 6, 2}, VertexColors -> {
-                    RGBColor[0.9, 1., 0.9], 
-                    RGBColor[0.9, 1., 0.9], 
-                    RGBColor[0.5, 1., 0.5], 
-                    RGBColor[0.5, 1., 0.5]}]}]}, Lighting -> {{"Ambient", 
-                 GrayLevel[1]}}, StripOnInput -> False]},
-            
-            ImageSizeCache->{{99.14788156698617, 
-             172.01633015520994`}, {-36.457016163920564`, 
-             23.723359642819368`}}],
-           StatusArea[#, 3.1857140893873392`]& ,
-           TagBoxNote->"3.1857140893873392"],
-          StyleBox["3.1857140893873392`", {
-            GrayLevel[0]}, StripOnInput -> False]],
-         Annotation[#, 
-          Style[3.1857140893873392`, {
-            GrayLevel[0]}], "Tooltip"]& ]}, 
-       {RGBColor[1., 0.75, 0.5], EdgeForm[GrayLevel[0.5]], 
-        TagBox[
-         TooltipBox[
-          TagBox[
-           DynamicBox[{
-             FEPrivate`If[
-              CurrentValue["MouseOver"], 
-              Directive[
-               EdgeForm[{
-                 RGBColor[
-                 0.6666666666666666, 0.6666666666666666, 0.6666666666666666], 
-                 
-                 AbsoluteThickness[1.5]}]], {}, {}], 
-             StyleBox[{
-               
-               GraphicsComplex3DBox[{{2.2, 2.4000000000000004`, 0.}, {2.2, 
-                3.4000000000000004`, 0.}, {2.2, 3.4000000000000004`, 
-                46.60720022772539}, {2.2, 2.4000000000000004`, 
-                46.60720022772539}, {3.2, 2.4000000000000004`, 0.}, {3.2, 
-                3.4000000000000004`, 0.}, {3.2, 3.4000000000000004`, 
-                46.60720022772539}, {3.2, 2.4000000000000004`, 
-                46.60720022772539}}, {
-                 Polygon3DBox[{1, 2, 3, 4}, VertexColors -> {
-                    RGBColor[0.5, 0.375, 0.25], 
-                    RGBColor[0.5, 0.375, 0.25], 
-                    RGBColor[1., 0.75, 0.5], 
-                    RGBColor[1., 0.75, 0.5]}], 
-                 Polygon3DBox[{5, 6, 7, 8}, VertexColors -> {
-                    RGBColor[0.5, 0.375, 0.25], 
-                    RGBColor[0.5, 0.375, 0.25], 
-                    RGBColor[1., 0.75, 0.5], 
-                    RGBColor[1., 0.75, 0.5]}], 
-                 Polygon3DBox[{2, 3, 7, 6}, VertexColors -> {
-                    RGBColor[1., 0.95, 0.9], 
-                    RGBColor[1., 0.75, 0.5], 
-                    RGBColor[1., 0.75, 0.5], 
-                    RGBColor[1., 0.95, 0.9]}], 
-                 Polygon3DBox[{1, 4, 8, 5}, VertexColors -> {
-                    RGBColor[1., 0.75, 0.5], 
-                    RGBColor[1., 0.95, 0.9], 
-                    RGBColor[1., 0.95, 0.9], 
-                    RGBColor[1., 0.75, 0.5]}], 
-                 Polygon3DBox[{4, 8, 7, 3}, VertexColors -> {
-                    RGBColor[1., 0.75, 0.5], 
-                    RGBColor[1., 0.75, 0.5], 
-                    RGBColor[1., 0.95, 0.9], 
-                    RGBColor[1., 0.95, 0.9]}], 
-                 Polygon3DBox[{1, 5, 6, 2}, VertexColors -> {
-                    RGBColor[1., 0.95, 0.9], 
-                    RGBColor[1., 0.95, 0.9], 
-                    RGBColor[1., 0.75, 0.5], 
-                    RGBColor[1., 0.75, 0.5]}]}]}, Lighting -> {{"Ambient", 
-                 GrayLevel[1]}}, StripOnInput -> False]},
-            
-            ImageSizeCache->{{136.96238289777742`, 
-             216.0416553113002}, {-148.99978873821547`, -7.919633643955592}}],
-           
-           StatusArea[#, 46.60720022772539]& ,
-           TagBoxNote->"46.60720022772539"],
-          StyleBox["46.60720022772539`", {
-            GrayLevel[0]}, StripOnInput -> False]],
-         Annotation[#, 
-          Style[46.60720022772539, {
-            GrayLevel[0]}], "Tooltip"]& ]}}, {}, {}}}, GraphicsGroup3DBox[
-     {GrayLevel[0], 
-      StyleBox[{
-        Text3DBox["1", Offset[{0, 0, 0}, {3.5200000000000005`, 0.5, 0.}], {0, 
-         0}], Text3DBox["1", Offset[{0, 0, 0}, {0.5, -0.3, 0.}], {0, -0.3}], 
-        Text3DBox["2", Offset[{0, 0, 0}, {1.6, -0.3, 0.}], {0, -0.3}], 
-        Text3DBox["3", Offset[{0, 0, 0}, {2.7, -0.3, 0.}], {0, -0.3}], 
-        Text3DBox["2", 
-         Offset[{0, 0, 0}, {3.5200000000000005`, 1.7000000000000002`, 0.}], {
-         0, 0}], Text3DBox["3", 
-         Offset[{0, 0, 0}, {3.5200000000000005`, 2.9000000000000004`, 0.}], {
-         0, 0}]},
-       Antialiasing->False]}]}},
-  Axes->{True, True, True},
-  AxesEdge->{{-1, -1}, {1, -1}, {1, 1}},
+   {GrayLevel[1], EdgeForm[GrayLevel[0]], 
+    CuboidBox[NCache[{Rational[1, 2], Rational[1, 2], 0}, {0.5, 0.5, 0}], 
+     NCache[{Rational[3, 2], Rational[3, 2], 49.75316960148861}, {1.5, 1.5, 
+      49.75316960148861}]]}, 
+   {GrayLevel[1], EdgeForm[GrayLevel[0]], 
+    CuboidBox[NCache[{Rational[1, 2], Rational[3, 2], 0}, {0.5, 1.5, 0}], 
+     NCache[{Rational[3, 2], Rational[5, 2], 0.058959718715009046`}, {1.5, 
+      2.5, 0.058959718715009046`}]]}, 
+   {GrayLevel[1], EdgeForm[GrayLevel[0]], 
+    CuboidBox[NCache[{Rational[1, 2], Rational[5, 2], 0}, {0.5, 2.5, 0}], 
+     NCache[{Rational[3, 2], Rational[7, 2], 0.18787067980501249`}, {1.5, 3.5,
+       0.18787067980501249`}]]}, 
+   {GrayLevel[1], EdgeForm[GrayLevel[0]], 
+    CuboidBox[NCache[{Rational[3, 2], Rational[1, 2], 0}, {1.5, 0.5, 0}], 
+     NCache[{Rational[5, 2], Rational[3, 2], 0.058959718712678244`}, {2.5, 
+      1.5, 0.058959718712678244`}]]}, 
+   {GrayLevel[1], EdgeForm[GrayLevel[0]], 
+    CuboidBox[NCache[{Rational[3, 2], Rational[3, 2], 0}, {1.5, 1.5, 0}], 
+     NCache[{Rational[5, 2], Rational[5, 2], 46.13793894224379}, {2.5, 2.5, 
+      46.13793894224379}]]}, 
+   {GrayLevel[1], EdgeForm[GrayLevel[0]], 
+    CuboidBox[NCache[{Rational[3, 2], Rational[5, 2], 0}, {1.5, 2.5, 0}], 
+     NCache[{Rational[5, 2], Rational[7, 2], 3.803101339051132}, {2.5, 3.5, 
+      3.803101339051132}]]}, 
+   {GrayLevel[1], EdgeForm[GrayLevel[0]], 
+    CuboidBox[NCache[{Rational[5, 2], Rational[1, 2], 0}, {2.5, 0.5, 0}], 
+     NCache[{Rational[7, 2], Rational[3, 2], 0.18787067980119776`}, {3.5, 1.5,
+       0.18787067980119776`}]]}, 
+   {GrayLevel[1], EdgeForm[GrayLevel[0]], 
+    CuboidBox[NCache[{Rational[5, 2], Rational[3, 2], 0}, {2.5, 1.5, 0}], 
+     NCache[{Rational[7, 2], Rational[5, 2], 3.80310133900705}, {3.5, 2.5, 
+      3.80310133900705}]]}, 
+   {GrayLevel[1], EdgeForm[GrayLevel[0]], 
+    CuboidBox[NCache[{Rational[5, 2], Rational[5, 2], 0}, {2.5, 2.5, 0}], 
+     NCache[{Rational[7, 2], Rational[7, 2], 46.00902798120001}, {3.5, 3.5, 
+      46.00902798120001}]]}},
+  AlignmentPoint->Center,
+  AspectRatio->Automatic,
+  AutomaticImageSize->False,
+  Axes->Automatic,
+  AxesEdge->Automatic,
   AxesLabel->{
     FormBox["\"Data\"", TraditionalForm], 
     FormBox["\"Model\"", TraditionalForm], 
     FormBox["\"Samples\"", TraditionalForm]},
-  BoxRatios->
-   NCache[{0.9411764705882352, 1, GoldenRatio^(-1)}, {
-    0.9411764705882352, 1, 0.6180339887498948}],
-  Boxed->False,
-  FaceGrids->{{{0, 1, 0}, {None, Automatic}}, {{0, 0, -1}, {
-     None, None}}, {{-1, 0, 0}, {None, None}}},
+  AxesOrigin->Automatic,
+  AxesStyle->{},
+  Background->None,
+  BaseStyle->{},
+  BaselinePosition->Automatic,
+  BoxRatios->{1, 1, 1},
+  BoxStyle->{},
+  Boxed->True,
+  ColorOutput->Automatic,
+  ContentSelectable->Automatic,
+  ControllerLinking->Automatic,
+  ControllerMethod->Automatic,
+  ControllerPath->Automatic,
+  CoordinatesToolOptions:>Automatic,
+  DisplayFunction:>$DisplayFunction,
+  Epilog->{},
+  FaceGrids->None,
+  FaceGridsStyle->{},
+  FormatType:>TraditionalForm,
   ImageMargins->0.,
+  ImagePadding->All,
   ImageSize->Automatic,
-  Lighting->"Neutral",
-  Method->{"RotationControl" -> "Globe"},
-  PlotRangePadding->Scaled[0.02],
-  Ticks->{{{0, 
-      FormBox["\"\"", TraditionalForm], {0.005, 0}}, {3.2, 
-      FormBox["\"\"", TraditionalForm], {0.005, 0}}, {1.05, 
-      FormBox["\"\"", TraditionalForm], {0.005, 0}}, {2.1500000000000004`, 
-      FormBox["\"\"", TraditionalForm], {0.005, 0}}, {1.05, 
-      FormBox["\"\"", TraditionalForm], {0.005, 0}}, {2.1500000000000004`, 
-      FormBox["\"\"", TraditionalForm], {0.005, 0}}, {1.05, 
-      FormBox["\"\"", TraditionalForm], {0.005, 0}}, {2.1500000000000004`, 
-      FormBox["\"\"", TraditionalForm], {0.005, 0}}}, {{0, 
-      FormBox["\"\"", TraditionalForm], {0.005, 0}}, {3.4000000000000004`, 
-      FormBox["\"\"", TraditionalForm], {0.005, 0}}, {0, 
-      FormBox["\"\"", TraditionalForm], {0.01, 0}}, {1., 
-      FormBox["\"\"", TraditionalForm], {0.01, 0}}, {1.2, 
-      FormBox["\"\"", TraditionalForm], {0.01, 0}}, {2.2, 
-      FormBox["\"\"", TraditionalForm], {0.01, 0}}, {2.4000000000000004`, 
-      FormBox["\"\"", TraditionalForm], {0.01, 0}}, {3.4000000000000004`, 
-      FormBox["\"\"", TraditionalForm], {0.01, 0}}}, Automatic},
+  LabelStyle->{},
+  Lighting->Automatic,
+  Method->Automatic,
+  PlotLabel->None,
+  PlotRange->All,
+  PlotRangePadding->Automatic,
+  PlotRegion->Automatic,
+  PreserveImageOptions->Automatic,
+  Prolog->{},
+  RotationAction->"Fit",
+  SphericalRegion->False,
+  Ticks->{{{1, 
+      FormBox["1", TraditionalForm]}, {2, 
+      FormBox["2", TraditionalForm]}, {3, 
+      FormBox["3", TraditionalForm]}}, {{1, 
+      FormBox["1", TraditionalForm]}, {2, 
+      FormBox["2", TraditionalForm]}, {3, 
+      FormBox["3", TraditionalForm]}}, Automatic},
+  TicksStyle->{},
   ViewAngle->Automatic,
-  ViewCenter->NCache[{
-     Rational[1, 2], 
-     Rational[1, 2], 
-     Rational[1, 2]}, {0.5, 0.5, 0.5}],
+  ViewCenter->Automatic,
+  ViewMatrix->Automatic,
   ViewPoint->{-1.3, -1.3, 2.},
+  ViewRange->All,
+  ViewVector->Automatic,
   ViewVertical->{0, 0, 1}]], "Output",
  CellChangeTimes->{
   3.422604530515625*^9, 3.5109903804668074`*^9, {3.5109912504737844`*^9, 
-   3.5109912767096157`*^9}, 3.5109913108214474`*^9, 3.513432864139646*^9}]
+   3.5109912767096157`*^9}, 3.5109913108214474`*^9, 3.513432864139646*^9, 
+   3.5142588976248865`*^9}]
 }, Open  ]],
 
 Cell["\<\
@@ -1435,361 +714,362 @@ Cell[BoxData[
  RowBox[{"{", 
   RowBox[{
    RowBox[{
-    RowBox[{"-", "1.1704610221369525`"}], "+", 
-    FractionBox["1.314773042360325`", 
+    RowBox[{"-", "18.63785912065671`"}], "+", 
+    FractionBox["4.3592978739078205`", 
      RowBox[{"1", "+", 
       SuperscriptBox["\[ExponentialE]", 
        RowBox[{
-        RowBox[{"0.3611773652205786`", " ", 
+        RowBox[{"0.16613512428662575`", " ", 
          SuperscriptBox[
           RowBox[{"(", 
            RowBox[{
-            RowBox[{"-", "5.593639087694611`"}], "+", "x1"}], ")"}], "2"]}], 
+            RowBox[{"-", "5.1271719933951285`"}], "+", "x1"}], ")"}], "2"]}], 
         "+", 
-        RowBox[{"0.3611773652205786`", " ", 
+        RowBox[{"0.16613512428662575`", " ", 
          SuperscriptBox[
           RowBox[{"(", 
            RowBox[{
-            RowBox[{"-", "2.4889128716570137`"}], "+", "x2"}], ")"}], "2"]}], 
+            RowBox[{"-", "1.9039718229673086`"}], "+", "x2"}], ")"}], "2"]}], 
         "+", 
-        RowBox[{"0.3611773652205786`", " ", 
+        RowBox[{"0.16613512428662575`", " ", 
          SuperscriptBox[
           RowBox[{"(", 
            RowBox[{
-            RowBox[{"-", "5.916841741379075`"}], "+", "x3"}], ")"}], "2"]}], 
+            RowBox[{"-", "6.334361841702119`"}], "+", "x3"}], ")"}], "2"]}], 
         "+", 
-        RowBox[{"0.3611773652205786`", " ", 
+        RowBox[{"0.16613512428662575`", " ", 
          SuperscriptBox[
           RowBox[{"(", 
            RowBox[{
-            RowBox[{"-", "2.320146591576644`"}], "+", "x4"}], ")"}], 
-          "2"]}]}]]}]], "-", 
-    FractionBox["0.17124780989467028`", 
-     RowBox[{"1", "+", 
-      SuperscriptBox["\[ExponentialE]", 
-       RowBox[{
-        RowBox[{"2.9617952535354135`", " ", 
-         SuperscriptBox[
-          RowBox[{"(", 
-           RowBox[{
-            RowBox[{"-", "5.529812868295167`"}], "+", "x1"}], ")"}], "2"]}], 
-        "+", 
-        RowBox[{"2.9617952535354135`", " ", 
-         SuperscriptBox[
-          RowBox[{"(", 
-           RowBox[{
-            RowBox[{"-", "3.353646570943715`"}], "+", "x2"}], ")"}], "2"]}], 
-        "+", 
-        RowBox[{"2.9617952535354135`", " ", 
-         SuperscriptBox[
-          RowBox[{"(", 
-           RowBox[{
-            RowBox[{"-", "4.916676287971073`"}], "+", "x3"}], ")"}], "2"]}], 
-        "+", 
-        RowBox[{"2.9617952535354135`", " ", 
-         SuperscriptBox[
-          RowBox[{"(", 
-           RowBox[{
-            RowBox[{"-", "1.0814769446990782`"}], "+", "x4"}], ")"}], 
+            RowBox[{"-", "3.1174323093574374`"}], "+", "x4"}], ")"}], 
           "2"]}]}]]}]], "+", 
-    FractionBox["94.31347162851705`", 
+    FractionBox["122.42884043056894`", 
      RowBox[{"1", "+", 
       SuperscriptBox["\[ExponentialE]", 
        RowBox[{
-        RowBox[{"0.17224985111637597`", " ", 
+        RowBox[{"0.015420563121759793`", " ", 
          SuperscriptBox[
           RowBox[{"(", 
            RowBox[{
-            RowBox[{"-", "5.3917167272176005`"}], "+", "x1"}], ")"}], "2"]}], 
+            RowBox[{"-", "8.437653323346156`"}], "+", "x1"}], ")"}], "2"]}], 
         "+", 
-        RowBox[{"0.17224985111637597`", " ", 
+        RowBox[{"0.015420563121759793`", " ", 
          SuperscriptBox[
           RowBox[{"(", 
            RowBox[{
-            RowBox[{"-", "2.3137973046670357`"}], "+", "x2"}], ")"}], "2"]}], 
+            RowBox[{"-", "2.9833276459097195`"}], "+", "x2"}], ")"}], "2"]}], 
         "+", 
-        RowBox[{"0.17224985111637597`", " ", 
+        RowBox[{"0.015420563121759793`", " ", 
          SuperscriptBox[
           RowBox[{"(", 
            RowBox[{
-            RowBox[{"-", "3.302422164823528`"}], "+", "x3"}], ")"}], "2"]}], 
+            RowBox[{"-", "1.3834978093002341`"}], "+", "x3"}], ")"}], "2"]}], 
         "+", 
-        RowBox[{"0.17224985111637597`", " ", 
+        RowBox[{"0.015420563121759793`", " ", 
          SuperscriptBox[
           RowBox[{"(", 
            RowBox[{
-            RowBox[{"-", "0.6215291836808464`"}], "+", "x4"}], ")"}], 
+            RowBox[{"-", "2.126395592236601`"}], "+", "x4"}], ")"}], 
           "2"]}]}]]}]], "-", 
-    FractionBox["94.4704021604852`", 
+    FractionBox["13.460212915626386`", 
      RowBox[{"1", "+", 
       SuperscriptBox["\[ExponentialE]", 
        RowBox[{
-        RowBox[{"0.1736113067278404`", " ", 
+        RowBox[{"0.057990293764022406`", " ", 
          SuperscriptBox[
           RowBox[{"(", 
            RowBox[{
-            RowBox[{"-", "5.454509258375997`"}], "+", "x1"}], ")"}], "2"]}], 
+            RowBox[{"-", "5.093243895933949`"}], "+", "x1"}], ")"}], "2"]}], 
         "+", 
-        RowBox[{"0.1736113067278404`", " ", 
+        RowBox[{"0.057990293764022406`", " ", 
          SuperscriptBox[
           RowBox[{"(", 
            RowBox[{
-            RowBox[{"-", "2.309607858334851`"}], "+", "x2"}], ")"}], "2"]}], 
+            RowBox[{"-", "2.205373971987009`"}], "+", "x2"}], ")"}], "2"]}], 
         "+", 
-        RowBox[{"0.1736113067278404`", " ", 
+        RowBox[{"0.057990293764022406`", " ", 
          SuperscriptBox[
           RowBox[{"(", 
            RowBox[{
-            RowBox[{"-", "3.305696948716766`"}], "+", "x3"}], ")"}], "2"]}], 
+            RowBox[{"-", "6.977786998261826`"}], "+", "x3"}], ")"}], "2"]}], 
         "+", 
-        RowBox[{"0.1736113067278404`", " ", 
+        RowBox[{"0.057990293764022406`", " ", 
          SuperscriptBox[
           RowBox[{"(", 
            RowBox[{
-            RowBox[{"-", "0.6181153205248723`"}], "+", "x4"}], ")"}], 
-          "2"]}]}]]}]], "+", 
-    RowBox[{"0.43193655891628074`", " ", "x1"}], "+", 
-    RowBox[{"0.040741203097660876`", " ", "x2"}], "-", 
-    RowBox[{"0.27829609678018447`", " ", "x3"}], "-", 
-    RowBox[{"0.2499931483621681`", " ", "x4"}]}], ",", 
-   RowBox[{"8.507609136834558`", "\[VeryThinSpace]", "-", 
-    FractionBox["5.365918973679304`", 
-     RowBox[{"1", "+", 
-      SuperscriptBox["\[ExponentialE]", 
-       RowBox[{
-        RowBox[{"0.3611773652205786`", " ", 
-         SuperscriptBox[
-          RowBox[{"(", 
-           RowBox[{
-            RowBox[{"-", "5.593639087694611`"}], "+", "x1"}], ")"}], "2"]}], 
-        "+", 
-        RowBox[{"0.3611773652205786`", " ", 
-         SuperscriptBox[
-          RowBox[{"(", 
-           RowBox[{
-            RowBox[{"-", "2.4889128716570137`"}], "+", "x2"}], ")"}], "2"]}], 
-        "+", 
-        RowBox[{"0.3611773652205786`", " ", 
-         SuperscriptBox[
-          RowBox[{"(", 
-           RowBox[{
-            RowBox[{"-", "5.916841741379075`"}], "+", "x3"}], ")"}], "2"]}], 
-        "+", 
-        RowBox[{"0.3611773652205786`", " ", 
-         SuperscriptBox[
-          RowBox[{"(", 
-           RowBox[{
-            RowBox[{"-", "2.320146591576644`"}], "+", "x4"}], ")"}], 
-          "2"]}]}]]}]], "+", 
-    FractionBox["3.3914852256261274`", 
-     RowBox[{"1", "+", 
-      SuperscriptBox["\[ExponentialE]", 
-       RowBox[{
-        RowBox[{"2.9617952535354135`", " ", 
-         SuperscriptBox[
-          RowBox[{"(", 
-           RowBox[{
-            RowBox[{"-", "5.529812868295167`"}], "+", "x1"}], ")"}], "2"]}], 
-        "+", 
-        RowBox[{"2.9617952535354135`", " ", 
-         SuperscriptBox[
-          RowBox[{"(", 
-           RowBox[{
-            RowBox[{"-", "3.353646570943715`"}], "+", "x2"}], ")"}], "2"]}], 
-        "+", 
-        RowBox[{"2.9617952535354135`", " ", 
-         SuperscriptBox[
-          RowBox[{"(", 
-           RowBox[{
-            RowBox[{"-", "4.916676287971073`"}], "+", "x3"}], ")"}], "2"]}], 
-        "+", 
-        RowBox[{"2.9617952535354135`", " ", 
-         SuperscriptBox[
-          RowBox[{"(", 
-           RowBox[{
-            RowBox[{"-", "1.0814769446990782`"}], "+", "x4"}], ")"}], 
+            RowBox[{"-", "1.757015443502576`"}], "+", "x4"}], ")"}], 
           "2"]}]}]]}]], "-", 
-    FractionBox["339.20679602427657`", 
+    FractionBox["70.47758557326362`", 
      RowBox[{"1", "+", 
       SuperscriptBox["\[ExponentialE]", 
        RowBox[{
-        RowBox[{"0.17224985111637597`", " ", 
+        RowBox[{"0.02311331906191247`", " ", 
          SuperscriptBox[
           RowBox[{"(", 
            RowBox[{
-            RowBox[{"-", "5.3917167272176005`"}], "+", "x1"}], ")"}], "2"]}], 
+            RowBox[{"-", "7.968024911735804`"}], "+", "x1"}], ")"}], "2"]}], 
         "+", 
-        RowBox[{"0.17224985111637597`", " ", 
+        RowBox[{"0.02311331906191247`", " ", 
          SuperscriptBox[
           RowBox[{"(", 
            RowBox[{
-            RowBox[{"-", "2.3137973046670357`"}], "+", "x2"}], ")"}], "2"]}], 
+            RowBox[{"-", "3.2041552370191164`"}], "+", "x2"}], ")"}], "2"]}], 
         "+", 
-        RowBox[{"0.17224985111637597`", " ", 
+        RowBox[{"0.02311331906191247`", " ", 
          SuperscriptBox[
           RowBox[{"(", 
            RowBox[{
-            RowBox[{"-", "3.302422164823528`"}], "+", "x3"}], ")"}], "2"]}], 
+            RowBox[{"-", "2.4294141237133617`"}], "+", "x3"}], ")"}], "2"]}], 
         "+", 
-        RowBox[{"0.17224985111637597`", " ", 
+        RowBox[{"0.02311331906191247`", " ", 
          SuperscriptBox[
           RowBox[{"(", 
            RowBox[{
-            RowBox[{"-", "0.6215291836808464`"}], "+", "x4"}], ")"}], 
-          "2"]}]}]]}]], "+", 
-    FractionBox["337.568598743`", 
-     RowBox[{"1", "+", 
-      SuperscriptBox["\[ExponentialE]", 
-       RowBox[{
-        RowBox[{"0.1736113067278404`", " ", 
-         SuperscriptBox[
-          RowBox[{"(", 
-           RowBox[{
-            RowBox[{"-", "5.454509258375997`"}], "+", "x1"}], ")"}], "2"]}], 
-        "+", 
-        RowBox[{"0.1736113067278404`", " ", 
-         SuperscriptBox[
-          RowBox[{"(", 
-           RowBox[{
-            RowBox[{"-", "2.309607858334851`"}], "+", "x2"}], ")"}], "2"]}], 
-        "+", 
-        RowBox[{"0.1736113067278404`", " ", 
-         SuperscriptBox[
-          RowBox[{"(", 
-           RowBox[{
-            RowBox[{"-", "3.305696948716766`"}], "+", "x3"}], ")"}], "2"]}], 
-        "+", 
-        RowBox[{"0.1736113067278404`", " ", 
-         SuperscriptBox[
-          RowBox[{"(", 
-           RowBox[{
-            RowBox[{"-", "0.6181153205248723`"}], "+", "x4"}], ")"}], 
+            RowBox[{"-", "0.5243270457237995`"}], "+", "x4"}], ")"}], 
           "2"]}]}]]}]], "-", 
-    RowBox[{"1.3992176857402077`", " ", "x1"}], "-", 
-    RowBox[{"0.07775792203457921`", " ", "x2"}], "+", 
-    RowBox[{"0.35228672931873334`", " ", "x3"}], "+", 
-    RowBox[{"0.27850973274514285`", " ", "x4"}]}], ",", 
+    RowBox[{"0.7914424894182299`", " ", "x1"}], "+", 
+    RowBox[{"0.13636662573120778`", " ", "x2"}], "+", 
+    RowBox[{"1.692790525970326`", " ", "x3"}], "-", 
+    RowBox[{"1.65736167525146`", " ", "x4"}]}], ",", 
+   RowBox[{"426.7485872228399`", "\[VeryThinSpace]", "-", 
+    FractionBox["10.691744965042144`", 
+     RowBox[{"1", "+", 
+      SuperscriptBox["\[ExponentialE]", 
+       RowBox[{
+        RowBox[{"0.16613512428662575`", " ", 
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"-", "5.1271719933951285`"}], "+", "x1"}], ")"}], "2"]}], 
+        "+", 
+        RowBox[{"0.16613512428662575`", " ", 
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"-", "1.9039718229673086`"}], "+", "x2"}], ")"}], "2"]}], 
+        "+", 
+        RowBox[{"0.16613512428662575`", " ", 
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"-", "6.334361841702119`"}], "+", "x3"}], ")"}], "2"]}], 
+        "+", 
+        RowBox[{"0.16613512428662575`", " ", 
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"-", "3.1174323093574374`"}], "+", "x4"}], ")"}], 
+          "2"]}]}]]}]], "-", 
+    FractionBox["2992.9881959183444`", 
+     RowBox[{"1", "+", 
+      SuperscriptBox["\[ExponentialE]", 
+       RowBox[{
+        RowBox[{"0.015420563121759793`", " ", 
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"-", "8.437653323346156`"}], "+", "x1"}], ")"}], "2"]}], 
+        "+", 
+        RowBox[{"0.015420563121759793`", " ", 
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"-", "2.9833276459097195`"}], "+", "x2"}], ")"}], "2"]}], 
+        "+", 
+        RowBox[{"0.015420563121759793`", " ", 
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"-", "1.3834978093002341`"}], "+", "x3"}], ")"}], "2"]}], 
+        "+", 
+        RowBox[{"0.015420563121759793`", " ", 
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"-", "2.126395592236601`"}], "+", "x4"}], ")"}], 
+          "2"]}]}]]}]], "+", 
+    FractionBox["29.841668285589815`", 
+     RowBox[{"1", "+", 
+      SuperscriptBox["\[ExponentialE]", 
+       RowBox[{
+        RowBox[{"0.057990293764022406`", " ", 
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"-", "5.093243895933949`"}], "+", "x1"}], ")"}], "2"]}], 
+        "+", 
+        RowBox[{"0.057990293764022406`", " ", 
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"-", "2.205373971987009`"}], "+", "x2"}], ")"}], "2"]}], 
+        "+", 
+        RowBox[{"0.057990293764022406`", " ", 
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"-", "6.977786998261826`"}], "+", "x3"}], ")"}], "2"]}], 
+        "+", 
+        RowBox[{"0.057990293764022406`", " ", 
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"-", "1.757015443502576`"}], "+", "x4"}], ")"}], 
+          "2"]}]}]]}]], "+", 
+    FractionBox["1974.0079237599205`", 
+     RowBox[{"1", "+", 
+      SuperscriptBox["\[ExponentialE]", 
+       RowBox[{
+        RowBox[{"0.02311331906191247`", " ", 
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"-", "7.968024911735804`"}], "+", "x1"}], ")"}], "2"]}], 
+        "+", 
+        RowBox[{"0.02311331906191247`", " ", 
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"-", "3.2041552370191164`"}], "+", "x2"}], ")"}], "2"]}], 
+        "+", 
+        RowBox[{"0.02311331906191247`", " ", 
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"-", "2.4294141237133617`"}], "+", "x3"}], ")"}], "2"]}], 
+        "+", 
+        RowBox[{"0.02311331906191247`", " ", 
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"-", "0.5243270457237995`"}], "+", "x4"}], ")"}], 
+          "2"]}]}]]}]], "+", 
+    RowBox[{"11.394439705920815`", " ", "x1"}], "-", 
+    RowBox[{"4.673950722014211`", " ", "x2"}], "-", 
+    RowBox[{"25.43616600343852`", " ", "x3"}], "+", 
+    RowBox[{"36.071814653699775`", " ", "x4"}]}], ",", 
    RowBox[{
-    RowBox[{"-", "6.337148114697607`"}], "+", 
-    FractionBox["4.05114593131898`", 
+    RowBox[{"-", "407.11072810218354`"}], "+", 
+    FractionBox["6.332447091134316`", 
      RowBox[{"1", "+", 
       SuperscriptBox["\[ExponentialE]", 
        RowBox[{
-        RowBox[{"0.3611773652205786`", " ", 
+        RowBox[{"0.16613512428662575`", " ", 
          SuperscriptBox[
           RowBox[{"(", 
            RowBox[{
-            RowBox[{"-", "5.593639087694611`"}], "+", "x1"}], ")"}], "2"]}], 
+            RowBox[{"-", "5.1271719933951285`"}], "+", "x1"}], ")"}], "2"]}], 
         "+", 
-        RowBox[{"0.3611773652205786`", " ", 
+        RowBox[{"0.16613512428662575`", " ", 
          SuperscriptBox[
           RowBox[{"(", 
            RowBox[{
-            RowBox[{"-", "2.4889128716570137`"}], "+", "x2"}], ")"}], "2"]}], 
+            RowBox[{"-", "1.9039718229673086`"}], "+", "x2"}], ")"}], "2"]}], 
         "+", 
-        RowBox[{"0.3611773652205786`", " ", 
+        RowBox[{"0.16613512428662575`", " ", 
          SuperscriptBox[
           RowBox[{"(", 
            RowBox[{
-            RowBox[{"-", "5.916841741379075`"}], "+", "x3"}], ")"}], "2"]}], 
+            RowBox[{"-", "6.334361841702119`"}], "+", "x3"}], ")"}], "2"]}], 
         "+", 
-        RowBox[{"0.3611773652205786`", " ", 
+        RowBox[{"0.16613512428662575`", " ", 
          SuperscriptBox[
           RowBox[{"(", 
            RowBox[{
-            RowBox[{"-", "2.320146591576644`"}], "+", "x4"}], ")"}], 
-          "2"]}]}]]}]], "-", 
-    FractionBox["3.2202374157314595`", 
-     RowBox[{"1", "+", 
-      SuperscriptBox["\[ExponentialE]", 
-       RowBox[{
-        RowBox[{"2.9617952535354135`", " ", 
-         SuperscriptBox[
-          RowBox[{"(", 
-           RowBox[{
-            RowBox[{"-", "5.529812868295167`"}], "+", "x1"}], ")"}], "2"]}], 
-        "+", 
-        RowBox[{"2.9617952535354135`", " ", 
-         SuperscriptBox[
-          RowBox[{"(", 
-           RowBox[{
-            RowBox[{"-", "3.353646570943715`"}], "+", "x2"}], ")"}], "2"]}], 
-        "+", 
-        RowBox[{"2.9617952535354135`", " ", 
-         SuperscriptBox[
-          RowBox[{"(", 
-           RowBox[{
-            RowBox[{"-", "4.916676287971073`"}], "+", "x3"}], ")"}], "2"]}], 
-        "+", 
-        RowBox[{"2.9617952535354135`", " ", 
-         SuperscriptBox[
-          RowBox[{"(", 
-           RowBox[{
-            RowBox[{"-", "1.0814769446990782`"}], "+", "x4"}], ")"}], 
+            RowBox[{"-", "3.1174323093574374`"}], "+", "x4"}], ")"}], 
           "2"]}]}]]}]], "+", 
-    FractionBox["244.89332439575955`", 
+    FractionBox["2870.5593554877782`", 
      RowBox[{"1", "+", 
       SuperscriptBox["\[ExponentialE]", 
        RowBox[{
-        RowBox[{"0.17224985111637597`", " ", 
+        RowBox[{"0.015420563121759793`", " ", 
          SuperscriptBox[
           RowBox[{"(", 
            RowBox[{
-            RowBox[{"-", "5.3917167272176005`"}], "+", "x1"}], ")"}], "2"]}], 
+            RowBox[{"-", "8.437653323346156`"}], "+", "x1"}], ")"}], "2"]}], 
         "+", 
-        RowBox[{"0.17224985111637597`", " ", 
+        RowBox[{"0.015420563121759793`", " ", 
          SuperscriptBox[
           RowBox[{"(", 
            RowBox[{
-            RowBox[{"-", "2.3137973046670357`"}], "+", "x2"}], ")"}], "2"]}], 
+            RowBox[{"-", "2.9833276459097195`"}], "+", "x2"}], ")"}], "2"]}], 
         "+", 
-        RowBox[{"0.17224985111637597`", " ", 
+        RowBox[{"0.015420563121759793`", " ", 
          SuperscriptBox[
           RowBox[{"(", 
            RowBox[{
-            RowBox[{"-", "3.302422164823528`"}], "+", "x3"}], ")"}], "2"]}], 
+            RowBox[{"-", "1.3834978093002341`"}], "+", "x3"}], ")"}], "2"]}], 
         "+", 
-        RowBox[{"0.17224985111637597`", " ", 
+        RowBox[{"0.015420563121759793`", " ", 
          SuperscriptBox[
           RowBox[{"(", 
            RowBox[{
-            RowBox[{"-", "0.6215291836808464`"}], "+", "x4"}], ")"}], 
+            RowBox[{"-", "2.126395592236601`"}], "+", "x4"}], ")"}], 
           "2"]}]}]]}]], "-", 
-    FractionBox["243.09819658251482`", 
+    FractionBox["16.381455369963422`", 
      RowBox[{"1", "+", 
       SuperscriptBox["\[ExponentialE]", 
        RowBox[{
-        RowBox[{"0.1736113067278404`", " ", 
+        RowBox[{"0.057990293764022406`", " ", 
          SuperscriptBox[
           RowBox[{"(", 
            RowBox[{
-            RowBox[{"-", "5.454509258375997`"}], "+", "x1"}], ")"}], "2"]}], 
+            RowBox[{"-", "5.093243895933949`"}], "+", "x1"}], ")"}], "2"]}], 
         "+", 
-        RowBox[{"0.1736113067278404`", " ", 
+        RowBox[{"0.057990293764022406`", " ", 
          SuperscriptBox[
           RowBox[{"(", 
            RowBox[{
-            RowBox[{"-", "2.309607858334851`"}], "+", "x2"}], ")"}], "2"]}], 
+            RowBox[{"-", "2.205373971987009`"}], "+", "x2"}], ")"}], "2"]}], 
         "+", 
-        RowBox[{"0.1736113067278404`", " ", 
+        RowBox[{"0.057990293764022406`", " ", 
          SuperscriptBox[
           RowBox[{"(", 
            RowBox[{
-            RowBox[{"-", "3.305696948716766`"}], "+", "x3"}], ")"}], "2"]}], 
+            RowBox[{"-", "6.977786998261826`"}], "+", "x3"}], ")"}], "2"]}], 
         "+", 
-        RowBox[{"0.1736113067278404`", " ", 
+        RowBox[{"0.057990293764022406`", " ", 
          SuperscriptBox[
           RowBox[{"(", 
            RowBox[{
-            RowBox[{"-", "0.6181153205248723`"}], "+", "x4"}], ")"}], 
-          "2"]}]}]]}]], "+", 
-    RowBox[{"0.9672811268239266`", " ", "x1"}], "+", 
-    RowBox[{"0.037016718936919574`", " ", "x2"}], "-", 
-    RowBox[{"0.07399063253854922`", " ", "x3"}], "-", 
-    RowBox[{"0.028516584382974528`", " ", "x4"}]}]}], "}"}]], "Output",
+            RowBox[{"-", "1.757015443502576`"}], "+", "x4"}], ")"}], 
+          "2"]}]}]]}]], "-", 
+    FractionBox["1903.5303381866584`", 
+     RowBox[{"1", "+", 
+      SuperscriptBox["\[ExponentialE]", 
+       RowBox[{
+        RowBox[{"0.02311331906191247`", " ", 
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"-", "7.968024911735804`"}], "+", "x1"}], ")"}], "2"]}], 
+        "+", 
+        RowBox[{"0.02311331906191247`", " ", 
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"-", "3.2041552370191164`"}], "+", "x2"}], ")"}], "2"]}], 
+        "+", 
+        RowBox[{"0.02311331906191247`", " ", 
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"-", "2.4294141237133617`"}], "+", "x3"}], ")"}], "2"]}], 
+        "+", 
+        RowBox[{"0.02311331906191247`", " ", 
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"-", "0.5243270457237995`"}], "+", "x4"}], ")"}], 
+          "2"]}]}]]}]], "-", 
+    RowBox[{"10.602997216502592`", " ", "x1"}], "+", 
+    RowBox[{"4.537584096283005`", " ", "x2"}], "+", 
+    RowBox[{"23.743375477468213`", " ", "x3"}], "-", 
+    RowBox[{"34.414452978448345`", " ", "x4"}]}]}], "}"}]], "Output",
  CellChangeTimes->{
   3.42260453084375*^9, 3.5109903823480463`*^9, {3.5109912524170313`*^9, 
-   3.5109912787113705`*^9}, 3.510991312928215*^9, 3.513432866028386*^9}]
+   3.5109912787113705`*^9}, 3.510991312928215*^9, 3.513432866028386*^9, 
+   3.5142588976404867`*^9}]
 }, Open  ]],
 
 Cell["\<\
@@ -1818,10 +1098,10 @@ Chlumsk\[EAcute]ho.\
 }, Open  ]]
 },
 WindowSize->{979, 698},
-WindowMargins->{{Automatic, -213}, {Automatic, -5}},
+WindowMargins->{{Automatic, 24}, {Automatic, -4}},
 ShowSelection->True,
 Magnification->1.,
-FrontEndVersion->"8.0 for Microsoft Windows (32-bit) (November 13, 2010)",
+FrontEndVersion->"8.0 for Microsoft Windows (64-bit) (February 23, 2011)",
 StyleDefinitions->FrontEnd`FileName[{"Creative"}, "NaturalColor.nb", 
   CharacterEncoding -> "WindowsEastEurope"]
 ]
@@ -1853,61 +1133,62 @@ Cell[2686, 77, 174, 2, 36, "Subsection"],
 Cell[2863, 81, 461, 8, 29, "Text"],
 Cell[CellGroupData[{
 Cell[3349, 93, 170, 3, 41, "Input"],
-Cell[3522, 98, 262, 4, 40, "Output"]
+Cell[3522, 98, 224, 3, 40, "Output"]
 }, Open  ]],
-Cell[3799, 105, 379, 7, 41, "Input"]
+Cell[3761, 104, 109, 1, 29, "Text"],
+Cell[3873, 107, 379, 7, 41, "Input"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[4215, 117, 198, 3, 36, "Subsection"],
-Cell[4416, 122, 448, 8, 29, "Text"],
-Cell[4867, 132, 305, 8, 41, "Input"]
+Cell[4289, 119, 198, 3, 36, "Subsection"],
+Cell[4490, 124, 448, 8, 29, "Text"],
+Cell[4941, 134, 305, 8, 41, "Input"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[5221, 146, 245, 3, 75, "Section"],
-Cell[5469, 151, 512, 8, 29, "Text"],
-Cell[5984, 161, 1486, 49, 142, "Input"]
+Cell[5295, 148, 245, 3, 75, "Section"],
+Cell[5543, 153, 512, 8, 29, "Text"],
+Cell[6058, 163, 1483, 48, 142, "Input"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[7507, 215, 245, 4, 75, "Section"],
-Cell[7755, 221, 750, 12, 47, "Text"],
-Cell[8508, 235, 241, 5, 29, "Text"],
+Cell[7578, 216, 245, 4, 75, "Section"],
+Cell[7826, 222, 750, 12, 47, "Text"],
+Cell[8579, 236, 241, 5, 29, "Text"],
 Cell[CellGroupData[{
-Cell[8774, 244, 1008, 16, 41, "Input"],
-Cell[9785, 262, 1147, 30, 60, "Output"]
+Cell[8845, 245, 1008, 16, 41, "Input"],
+Cell[9856, 263, 1152, 28, 60, "Output"]
 }, Open  ]],
-Cell[10947, 295, 277, 5, 29, "Text"],
+Cell[11023, 294, 277, 5, 29, "Text"],
 Cell[CellGroupData[{
-Cell[11249, 304, 135, 2, 41, "Input"],
-Cell[11387, 308, 390, 5, 60, "Output"]
+Cell[11325, 303, 135, 2, 41, "Input"],
+Cell[11463, 307, 416, 6, 60, "Output"]
 }, Open  ]],
-Cell[11792, 316, 510, 9, 29, "Text"],
-Cell[12305, 327, 440, 8, 47, "Text"],
+Cell[11894, 316, 510, 9, 29, "Text"],
+Cell[12407, 327, 440, 8, 47, "Text"],
 Cell[CellGroupData[{
-Cell[12770, 339, 482, 11, 41, "Input"],
-Cell[13255, 352, 1343, 30, 263, "Print"]
+Cell[12872, 339, 482, 11, 41, "Input"],
+Cell[13357, 352, 1331, 31, 266, "Print"]
 }, Open  ]],
-Cell[14613, 385, 706, 11, 47, "Text"],
+Cell[14703, 386, 706, 11, 47, "Text"],
 Cell[CellGroupData[{
-Cell[15344, 400, 622, 10, 41, "Input"],
-Cell[15969, 412, 6748, 139, 457, "Output"]
+Cell[15434, 401, 622, 10, 41, "Input"],
+Cell[16059, 413, 6796, 140, 457, "Output"]
 }, Open  ]],
-Cell[22732, 554, 650, 11, 47, "Text"],
+Cell[22870, 556, 650, 11, 47, "Text"],
 Cell[CellGroupData[{
-Cell[23407, 569, 611, 10, 41, "Input"],
-Cell[24021, 581, 35371, 821, 376, "Output"]
+Cell[23545, 571, 611, 10, 41, "Input"],
+Cell[24159, 583, 3833, 98, 376, "Output"]
 }, Open  ]],
-Cell[59407, 1405, 430, 7, 29, "Text"],
-Cell[59840, 1414, 413, 9, 29, "Text"],
+Cell[28007, 684, 430, 7, 29, "Text"],
+Cell[28440, 693, 413, 9, 29, "Text"],
 Cell[CellGroupData[{
-Cell[60278, 1427, 194, 4, 41, "Input"],
-Cell[60475, 1433, 12518, 358, 550, "Output"]
+Cell[28878, 706, 194, 4, 41, "Input"],
+Cell[29075, 712, 12604, 359, 550, "Output"]
 }, Open  ]],
-Cell[73008, 1794, 241, 4, 29, "Text"]
+Cell[41694, 1074, 241, 4, 29, "Text"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[73286, 1803, 119, 1, 75, "Section"],
-Cell[73408, 1806, 514, 9, 47, "Text"]
+Cell[41972, 1083, 119, 1, 75, "Section"],
+Cell[42094, 1086, 514, 9, 47, "Text"]
 }, Open  ]]
 }, Open  ]]
 }
