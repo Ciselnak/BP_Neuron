@@ -315,11 +315,41 @@ Systém Mathematica od firmy Wolfram Research je sofistikovaný matematický ná
 Knihovna Neural Networks rozšiřuje systém \textit{Mathematica} o možnost pracovat s neuronovými sítěmi bez nutnosti vytvářet si její vlastní implementaci. Konkrétně knihovna nabízí práci s těmito konkrétními sítěmi: jednoduchý perceptron, dopředná neuronová síť, RBF neuronová síť, Hopfieldova neuronová síť, dynamická neuronová síť, Kohonenova mapa, LVQ a VQ. Knihovna také poskytuje implementaci různých algoritmů učení sítě, konkrétně jsou to tyto algoritmy: Levenberg-Marquardt, Gauss-Newton, gradientní algoritmus a algoritmus zpětné propagace. Knihovna umožňuje široké možnosti natavení parametrů u jednotlivých sítí a pro méně zkušené uživatele nabízí vytvoření sítě s výchozími parametry. Výchozí parametry jsou voleny tak, aby síť s výchozími parametry podávala dobré výkony a její učení a vybavování netrvalo přehnaně dlouho. Knihovna ještě nabízí široké možnosti vizualizace dat, grafické zobrazení průběhu učení sítě a také grafické zobrazení výstupu naučené neuronové sítě. Ke knihovně patří návod k použití a rozsáhlá dokumentace.
 %*****************************************************************************
 \chapter{Experimenty s neuronovými sítěmi}
+
+
+\begin{center}
+\begin{table}[h]
+\begin{tabular}{|c|l|l|}
+\hline 
+Číslo kapitoly & Název kapitoly & Soubor \\ \hline
+1 & Úvod & 01-uvod.nb \\ \hline
+2 & Algoritmy učení & 02-algoritmy-uceni.nb \\ \hline
+3 & Křížová validace & 03-krossvalidace.nb \\ \hline
+4 & Dopředná síť a umělá data sin(x) & 04-feedforward-sin.nb \\ \hline
+5 & Dopředná síť a Iris data & 05-feedforward-iris.nb \\ \hline
+6 & Přístupy k učení dopředné sítě & 06-feedforward-iris-2.nb \\ \hline
+7 & Pokrytí dat jednoduchou RBF sítí & 07-rbf-neuron.nb \\ \hline
+8 & Pokrytí dat RBF sítí & 08-rbf-neuron-2.nb \\ \hline
+9 & Síť RBF a umělá data sin(x) & 09-rbf-sin.nb \\ \hline
+10 & Síť RBF  Iris data & 10-rbf-iris.nb \\ \hline
+11 & Přístupy k učení RBF sítě & 11-rbf-iris-2.nb \\ \hline
+12 & Hopfieldova síť a umělé vzory & 12-hopfield.nb \\ \hline
+13 & Shlukování dat sítí bez učitele & 13-som-clustering.nb \\ \hline
+14 & Kohonenova síť a Iris data & 14-som-iris.nb \\ \hline
+15 & LVQ a Iris data & 15-lvq-iris.nb \\ \hline
+\end{tabular}
+
+
+\caption{Přehled struktury aplikace}
+\end{table}
+\end{center}
+
+
 \section{Úvod}
 Úvodní kapitola seznamuje studenty s používáním programu \textit{Mathematica} od naprostých základů. Nejprve je probrána základní syntaxe, dále jsou studenti seznámeni s používáním proměnných, funkcí a s možnostmi vizualizace dat. V další části notebooku jsou probrány základy programování v systému \textit{Mathematica}. Prostudování tohoto úvodu umožní rychleji se orientovat v experimentech s neuronovými sítěmi a také dá studentovi znalosti potřebné k úpravám jednotlivých jednotlivých experimentů. Tato kapitola se nachází v souboru \textit{"01-uvod.nb"}.
 
 Soubor vznikl úpravou souboru Petra Chlumského. Změnil jsem grafický vzhled notebooku, změnil a rozšířil jsem textový komentář k jednotlivým příkazům.
-\section{Učicí algoritmy}
+\section{Algoritmy učení}
 Notebook demonstruje použití různých učicích algoritmů. Pro každý učicí algoritmus je graficky zobrazen jeho postup při učení. Jsou zde demonstrovány tyto algoritmy: \textit{Levenberg-Marquardt algoritmus}, \textit{Gauss-Newton algoritmus}, \textit{Algoritmus nejvyššího poklesu (Steepest Descent)} a \textit{Algoritmus zpětné propagace (Backpropagation)}.
 
  Učení je ukázáno na jednoduché dopředné síti s jedním neuronem, jedním vstupem a jedním výstupem. Nejprve je vytvořena potřebná síť, poté jsou pomocí této sítě vygenerovány data, na kterých budeme demonstrovat učení. Poté je pro každý algoritmus ukázáno jakým způsobem ho použít pro učení sítě a je graficky zobrazen průběh učení. U algoritmu zpětné propagace je potřeba nastavit délku kroku (stepLength) a momentum. Jak tyto parametry ovlivňují průběh učení je ilustrováno pomocí interaktivního grafu, kde je možné si pomocí posuvníků měnit hodnotu těchto parametrů, graf se automaticky překresluje podle aktuálně nastavených hodnot parametrů. Tato kapitola se nachází v souboru \textit{02-algoritmy-uceni.nb}.
