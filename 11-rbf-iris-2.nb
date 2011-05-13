@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       145,          7]
-NotebookDataLength[     85440,       1898]
-NotebookOptionsPosition[     82114,       1790]
-NotebookOutlinePosition[     82563,       1807]
-CellTagsIndexPosition[     82520,       1804]
+NotebookDataLength[     84228,       1877]
+NotebookOptionsPosition[     80941,       1770]
+NotebookOutlinePosition[     81388,       1787]
+CellTagsIndexPosition[     81345,       1784]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -1743,26 +1743,6 @@ Cell[BoxData["97.77777777777777777777777777777777777778`5."], "Output",
 }, Open  ]],
 
 Cell["\<\
-Pokud si notebook vyhodnot\[IAcute]te n\[EHacek]kolikr\[AAcute]t, m\[URing]\
-\[ZHacek]ete vypozorovat, \[ZHacek]e u\[CHacek]en\[IAcute] s valida\[CHacek]n\
-\[IAcute] mno\[ZHacek]inou pod\[AAcute]v\[AAcute] lep\[SHacek]\[IAcute] v\
-\[YAcute]sledky ne\[ZHacek] u\[CHacek]en\[IAcute] na v\[SHacek]ech \
-tr\[EAcute]novac\[IAcute]ch datech.\
-\>", "Text",
- CellChangeTimes->{{3.5104202997188473`*^9, 3.510420327396862*^9}, 
-   3.5104250535685096`*^9, {3.51042509271198*^9, 3.5104251282924986`*^9}, {
-   3.5104254235379896`*^9, 3.510425448970219*^9}, {3.510425614099688*^9, 
-   3.5104257254523277`*^9}, {3.5104609234412136`*^9, 3.51046095042714*^9}, {
-   3.5104609937036357`*^9, 3.510461040586089*^9}, {3.510461199056712*^9, 
-   3.5104612236823397`*^9}, {3.5104621815154686`*^9, 
-   3.5104622426942377`*^9}, {3.5104623937549195`*^9, 
-   3.5104623958311834`*^9}, {3.5104624817775974`*^9, 
-   3.5104624951122904`*^9}, {3.510462596499165*^9, 3.5104625996925707`*^9}, {
-   3.510462647385627*^9, 3.5104626795317087`*^9}, {3.5110246309885716`*^9, 
-   3.511024651382161*^9}, {3.5110251638832407`*^9, 3.511025239942399*^9}, {
-   3.51102541060407*^9, 3.5110254116577044`*^9}}],
-
-Cell["\<\
 Pokud bychom se rozhodli nerozd\[EHacek]lovat data ani na testovac\[IAcute] a \
 tr\[EAcute]novac\[IAcute] mno\[ZHacek]inu (viz. p\[RHacek]edchoz\[IAcute] \
 notebook) nem\[AAcute]me ji\[ZHacek] mo\[ZHacek]nost ur\[CHacek]it skute\
@@ -1788,8 +1768,8 @@ s\[IAcute]t\[IAcute]\" na FEL \[CapitalCHacek]VUT 2011.\
 }, Open  ]]
 }, Open  ]]
 },
-WindowSize->{837, 658},
-WindowMargins->{{138, Automatic}, {Automatic, 4}},
+WindowSize->{667, 700},
+WindowMargins->{{Automatic, 0}, {0, Automatic}},
 ShowSelection->True,
 FrontEndVersion->"8.0 for Microsoft Windows (64-bit) (February 23, 2011)",
 StyleDefinitions->FrontEnd`FileName[{"Creative"}, "NaturalColor.nb", 
@@ -1820,7 +1800,7 @@ Cell[CellGroupData[{
 Cell[2937, 77, 95, 1, 75, "Section"],
 Cell[CellGroupData[{
 Cell[3057, 82, 130, 1, 36, "Subsection"],
-Cell[3190, 85, 344, 6, 29, "Text"],
+Cell[3190, 85, 344, 6, 47, "Text"],
 Cell[CellGroupData[{
 Cell[3559, 95, 104, 2, 41, "Input"],
 Cell[3666, 99, 501, 7, 40, "Output"]
@@ -1831,46 +1811,46 @@ Cell[4290, 112, 120, 3, 41, "Input"]
 Cell[CellGroupData[{
 Cell[4447, 120, 223, 3, 36, "Subsection"],
 Cell[4673, 125, 519, 8, 47, "Text"],
-Cell[5195, 135, 404, 9, 41, "Input"]
+Cell[5195, 135, 404, 9, 102, "Input"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
 Cell[5648, 150, 221, 3, 75, "Section"],
-Cell[5872, 155, 487, 8, 29, "Text"],
-Cell[6362, 165, 1807, 53, 142, "Input"],
+Cell[5872, 155, 487, 8, 47, "Text"],
+Cell[6362, 165, 1807, 53, 162, "Input"],
 Cell[8172, 220, 1036, 16, 65, "Text"],
-Cell[9211, 238, 2159, 58, 182, "Input"],
+Cell[9211, 238, 2159, 58, 202, "Input"],
 Cell[11373, 298, 181, 4, 29, "Text"],
 Cell[CellGroupData[{
 Cell[11579, 306, 363, 8, 62, "Input"],
 Cell[11945, 316, 3720, 51, 40, "Output"],
 Cell[15668, 369, 3719, 51, 40, "Output"]
 }, Open  ]],
-Cell[19402, 423, 1033, 16, 83, "Text"],
-Cell[20438, 441, 1134, 30, 102, "Input"],
+Cell[19402, 423, 1033, 16, 101, "Text"],
+Cell[20438, 441, 1134, 30, 142, "Input"],
 Cell[21575, 473, 222, 5, 29, "Text"],
-Cell[21800, 480, 2580, 76, 202, "Input"],
+Cell[21800, 480, 2580, 76, 302, "Input"],
 Cell[24383, 558, 189, 4, 29, "Text"]
 }, Open  ]],
 Cell[CellGroupData[{
 Cell[24609, 567, 370, 5, 75, "Section"],
-Cell[24982, 574, 1489, 22, 83, "Text"],
+Cell[24982, 574, 1489, 22, 101, "Text"],
 Cell[26474, 598, 2352, 40, 82, "Input"],
-Cell[28829, 640, 583, 10, 47, "Text"],
-Cell[29415, 652, 9344, 208, 762, "Input"],
+Cell[28829, 640, 583, 10, 65, "Text"],
+Cell[29415, 652, 9344, 208, 922, "Input"],
 Cell[38762, 862, 388, 7, 47, "Text"],
 Cell[CellGroupData[{
-Cell[39175, 873, 5403, 93, 211, "Input"],
+Cell[39175, 873, 5403, 93, 232, "Input"],
 Cell[44581, 968, 15779, 383, 261, "Output"]
 }, Open  ]],
-Cell[60375, 1354, 723, 12, 29, "Text"],
+Cell[60375, 1354, 723, 12, 47, "Text"],
 Cell[61101, 1368, 411, 8, 41, "Input"],
 Cell[61515, 1378, 634, 10, 47, "Text"],
 Cell[CellGroupData[{
-Cell[62174, 1392, 602, 13, 62, "Input"],
+Cell[62174, 1392, 602, 13, 82, "Input"],
 Cell[62779, 1407, 1912, 40, 266, "Print"]
 }, Open  ]],
-Cell[64706, 1450, 1037, 15, 83, "Text"],
+Cell[64706, 1450, 1037, 15, 101, "Text"],
 Cell[65746, 1467, 550, 8, 47, "Text"],
 Cell[66299, 1477, 2598, 55, 242, "Input"],
 Cell[68900, 1534, 384, 7, 29, "Text"],
@@ -1884,7 +1864,7 @@ Cell[72705, 1601, 262, 4, 75, "Section"],
 Cell[72970, 1607, 829, 12, 47, "Text"],
 Cell[73802, 1621, 623, 10, 47, "Text"],
 Cell[CellGroupData[{
-Cell[74450, 1635, 603, 13, 41, "Input"],
+Cell[74450, 1635, 603, 13, 62, "Input"],
 Cell[75056, 1650, 1420, 32, 266, "Print"]
 }, Open  ]],
 Cell[76491, 1685, 275, 5, 29, "Text"],
@@ -1892,12 +1872,11 @@ Cell[CellGroupData[{
 Cell[76791, 1694, 306, 7, 41, "Input"],
 Cell[77100, 1703, 2771, 38, 40, "Output"]
 }, Open  ]],
-Cell[79886, 1744, 1170, 18, 47, "Text"],
-Cell[81059, 1764, 436, 7, 47, "Text"]
+Cell[79886, 1744, 436, 7, 47, "Text"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[81532, 1776, 121, 1, 75, "Section"],
-Cell[81656, 1779, 430, 7, 47, "Text"]
+Cell[80359, 1756, 121, 1, 75, "Section"],
+Cell[80483, 1759, 430, 7, 47, "Text"]
 }, Open  ]]
 }, Open  ]]
 }
