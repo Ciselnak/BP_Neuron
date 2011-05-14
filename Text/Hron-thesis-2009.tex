@@ -281,10 +281,38 @@ Cílem práce je provést úpravy a rozšíření stávající demonstrační ap
 %*****************************************************************************
 \chapter{Umělé neuronové sítě}
 \section{Historie}
+Za počátek vzniku oboru neuronových sítí je považována práce Warrena McCullocha a Waltera Pittse z roku 1943, ve které vytvořili první, velmi jednoduchý model neuronu. V roce 1949 navrhl Donald Hebb učící pravidlo pro neuronové sítě. V roce 1957 vynalezl Frank Rosenblatt tzv. \textit{perceptron}, pro který navrhl také učící algoritmus. Krátce po objevu perceptronu vyvinul Bernard Widrow další typ neuronu ADALINE (ADAptive LINear Element). V této dochází ke značnému rozvoji neuronových sítí, neuronové sítě se začínají vyrábět jako hardwarové prvky. Přesto došlo koncem šedesátých let k výraznému útlumu výzkumu neuronových sítí. Důvodem toho byly nadměrné očekávání jako například vyvinutí umělého mozku. K opouštění výzkumu neuronových sítí vedla také kampaň Marvina Minského a Seymoura Papertema, kteří poukazovali na fakt, že jeden perceptron není schopen rozhodnout jednoduchou logickou úlohu tzv. XOR problém (vylučovací disjunkce). Z toho vyvodili, že výzkum neuronových sítí není perspektivní.
+
+Další výzkum neuronových sítí nastartovala na počátku osmdesátých let americká grantová agentura DARPA (Defense Advanced Reseach Project Agency), který začala výzkum neuronových sítí finančně podporovat. Výsledky se dostavily v podobě objevu algoritmu zpětné propagace chyby (backpropagation) a vynálezu Hopieldovy neuronové sítě. Tyto objevy obnovily zájem veřejnosti i vědců o neuronové sítě. Objev SOM (Self Organizing Map) Teuva Kohonena přinesl novou myšlenku do oblasti neuronových sítí a to učení sítě bez učitele. Další výzkum neuronových sítí probíhá dodnes. Podrobnější historii je možné nalézt v\cite{teoret}.
+
 \section{Aplikace}
+
+\begin{itemize}
+\item Klasifikace
+
+Klasifikace, někdy také označována jako rozpoznávání, je jedna z nejjednodušších aplikací neuronových sítí. Úkolem klasifikace je rozhodnout do které ze tříd (kategorií) vstupní vektor patří.
+\newpage
+\item Predikce
+
+Predikcí se rozumí předpovídání výstupní hodnoty na základě znalosti jejího průběhu v minulosti. Výhoda neuronových sítí pro predikci spočívá v automatickém naučení pouze z naměřených hodnot, bez nutnosti dodávat další informace a také vysoká schopnost adaptace. Neuronové sítě dokáží odhalit i silně nelineární závislosti. Nevýhodou může být, že se neuronová síť naučí závislost, která je platná pouze v omezeném úseku dat. 
+\item Aproximace
+
+Aproximace spočívá v přibližném určení hodnoty. Aproximace může například sloužit k určení průběhu funkce na základě navzorkovaných hodnot této funkce. Je výhodné ji použít pokud by výpočet této hodnoty nebyl možný případně velmi neefektivní.
+\item Shluková analýza
+
+Cílem shlukové analýzy je nalézt v množině objektů (dat) takové její podmnožiny (shluky), aby si objekty v každém shluku byly vzájemně podobné a zároveň si nebyly příliš podobné s objekty mimo daný shluk. Ke shlukové analýze dat je možné s výhodou použít sítě, které používají učení bez učitele např. samoorganizující se mapy.
+\item Filtrace slouží
+
+Filtrace slouží k vyhlazení průběhu signálu, případně k odstranění šumu. Na vstup neuronové sítě se přivede šumem poškozený signál a z výstupu neuronové sítě je získán nezkreslený výstupní signál. Velmi podobnou funkci jako filtrace umožňuje asociace. Na rozdíl od filtrace je při asociaci neuronová síť naučena na datech bez šumu a poté zpracovává zašuměná data.
+\item Komprese dat
+
+Komprese dat pomocí neuronové sítě je vhodná především pro kompresi videa například při videokonferencích nebo u televizního vysílání. Ke kompresi jdou nejlépe využít vícevrstvé perceptronové sítě.
+\end{itemize}
+
 \section{Využití}
 %*****************************************************************************
 \chapter{Umělý neuron}
+\section{Biologický neuron}
 \section{Struktura neuronu}
 \section{Proces učení}
 \section{Učicí algoritmy}
@@ -308,8 +336,15 @@ Cílem práce je provést úpravy a rozšíření stávající demonstrační ap
 %*****************************************************************************
 \chapter{Implementační prostředí}
 \section{Wolfram Mathematica}
-Systém Mathematica od firmy Wolfram Research je sofistikovaný matematický nástroj, který umožňuje provádět numerické i symbolické výpočty. Systém obsahuje velké množství vestavěných funkcí a umožňuje i přidání dalších uživatelsky definovaných funkcí. Dále nabízí široké možnosti vizualizace dat ve 2D i 3D grafech. Neméně podstatnou funkcí je možnost exportu vyhodnoceného notebooku do formátu pdf. Díky tomu může demonstrační aplikaci vytvořenou v systému Mathematica, byť v omezené míře, využít i student, který nemá na svém počítači systém Mathematica nainstalovaný. Systém je možné rozšířit celou řadou knihoven, jednou z nich je i knihovna Neural Networks, kterou jsem využil ve své demonstrační aplikaci. Demonstrační aplikaci jsem programoval ve verzi Mathematica 8.0.
+Systém Mathematica od firmy Wolfram Research je sofistikovaný matematický nástroj, který umožňuje provádět numerické i symbolické výpočty. Systém obsahuje velké množství vestavěných funkcí a umožňuje i přidání dalších uživatelsky definovaných funkcí. Dále nabízí široké možnosti vizualizace dat ve 2D i 3D grafech. Neméně podstatnou funkcí je možnost exportu vyhodnoceného notebooku do formátu pdf. Díky tomu může demonstrační aplikaci vytvořenou v systému Mathematica, byť v omezené míře, využít i student, který nemá na svém počítači systém Mathematica nainstalovaný. Systém je možné rozšířit celou řadou knihoven, jednou z nich je i knihovna Neural Networks, kterou jsem využil ve své demonstrační aplikaci. Demonstrační aplikaci jsem programoval ve verzi Mathematica 8.0. Pro studium programování v Mathematice jsem použil knihy\cite{mathD} a \cite{mathP}.
 
+\begin{figure}[!h]
+\begin{center}
+\includegraphics[height=10cm]{figures/ukazka01.png}
+\caption{Ukázka prostředí systému Mathematica}
+\label{fig:prostredi}
+\end{center}
+\end{figure}
 
 \section{Knihovna Neural Networks}
 Knihovna Neural Networks rozšiřuje systém \textit{Mathematica} o možnost pracovat s neuronovými sítěmi bez nutnosti vytvářet si její vlastní implementaci. Konkrétně knihovna nabízí práci s těmito konkrétními sítěmi: jednoduchý perceptron, dopředná neuronová síť, RBF neuronová síť, Hopfieldova neuronová síť, dynamická neuronová síť, Kohonenova mapa, LVQ a VQ. Knihovna také poskytuje implementaci různých algoritmů učení sítě, konkrétně jsou to tyto algoritmy: Levenberg-Marquardt, Gauss-Newton, gradientní algoritmus a algoritmus zpětné propagace. Knihovna umožňuje široké možnosti natavení parametrů u jednotlivých sítí a pro méně zkušené uživatele nabízí vytvoření sítě s výchozími parametry. Výchozí parametry jsou voleny tak, aby síť s výchozími parametry podávala dobré výkony a její učení a vybavování netrvalo přehnaně dlouho. Knihovna ještě nabízí široké možnosti vizualizace dat, grafické zobrazení průběhu učení sítě a také grafické zobrazení výstupu naučené neuronové sítě. Ke knihovně patří návod k použití a rozsáhlá dokumentace.
