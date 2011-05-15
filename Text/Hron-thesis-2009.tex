@@ -322,8 +322,20 @@ Neuronovou síť je možné použít k řízení výrobní linky, případně ce
 
 %*****************************************************************************
 \chapter{Umělý neuron}
-\section{Biologický neuron}
-\section{Struktura neuronu}
+\section{Biologický předobraz umělého neuronu}
+Umělé neuronové sítě vznikly na základě svého biologického předobrazu - nervové soustavy. Nervová soustava se skládá s mnoha vzájemně propojených výkonných buněk - neuronů. Neurony mají za úkol zpracování, přenos a uchování informace. Každý neuron je vzájemně propojen se stovkami jiných neuronů, kterých se v lidském těle nachází přibližně 10\begin{math} ^{12}\end{math}.\cite{skripta}
+
+Základem biologického neuronu je buněčné tělo s jádrem (soma), z něj vychází jediný rozvětvený výstup zvaný axon. Axon je zakončen takzvanými terminály axonu, ty se dotýkají dendritů ostatních neuronů a slouží k předávání vzruchů ostatním neuronům. Dendrity slouží naopak k přijímání vzruchů od ostatních neuronů. Strukturu biologického neuronu si můžete prohlédnout na obrázku~\ref{fig:bioneuron} Vlastní přenos vzruchů, tedy informací, zprostředkovávají chemické synapse. Tyto synapse mohou vzruch utlumit nebo zesílit. Učení biologické neuronové sítě je založeno na změně reakce synapse na daný vzruch, případně vytvoření nové synapse nebo zánik stávající.
+
+\begin{figure}[!h]
+\begin{center}
+\includegraphics[height=6cm]{figures/bioneuron.png}
+\caption{Biologický neuron\citep{teoret}}
+\label{fig:bioneuron}
+\end{center}
+\end{figure}
+
+\section{Struktura umělého neuronu}
 \section{Proces učení}
 \section{Učicí algoritmy}
 \subsection{Levenberg-Marquardt algoritmus}
