@@ -330,12 +330,37 @@ Základem biologického neuronu je buněčné tělo s jádrem (soma), z něj vyc
 \begin{figure}[!h]
 \begin{center}
 \includegraphics[height=6cm]{figures/bioneuron.png}
-\caption{Biologický neuron\citep{teoret}}
+\caption{Biologický neuron\cite{teoret}}
 \label{fig:bioneuron}
 \end{center}
 \end{figure}
 
 \section{Struktura umělého neuronu}
+Základním stavebním kamenem neuronových sítí je model neuronu. Nejrozšířenějším modelem neuronu je McCulloch-Pittsův perceptron, pojmenovaný dle svých vynálezců.  Model tohoto neuronu vidíte na obrázku~\ref{fig:perceptron}. Neuron má konečný počet vstupů \begin{math} x_{1}\end{math} až \begin{math}x_{n}\end{math}, každý vstup \begin{math} x_{i}\end{math} je ohodnocen vahou \begin{math} w_{i}\end{math}. Dále je každý neuron vybaven aktivační funkcí \begin{math}S\end{math}, prahovou hodnotou \begin{math}\theta\end{math} a jedním výstupem \begin{math} y\end{math}. Výstup neuronu se řídí následující rovnicí.
+\begin{equation}
+  y=S(\sum\limits_{i=1}^N w_{i}x_{i} + \theta)
+\end{equation}
+
+\begin{figure}[!h]
+\begin{center}
+\includegraphics[height=6cm]{figures/perceptron.png}
+\caption{McCulloch-Pittsův perceptron}
+\label{fig:perceptron}
+\end{center}
+\end{figure}
+
+Na vstupy neuronu se přivádí data ze vstupní množiny (mohou být reálná i binární), nebo spojitá data. Každý vstup \begin{math} x_{i}\end{math} je modifikován vahou daného vstupu \begin{math} w_{i}\end{math}. Tyto váhy vstupů se během učení mění, což představuje základ učení neuronu. Významným vstupům, které výrazně ovlivňují výstup neuronu se přiřazuje vyšší váha a naopak méně významným vstupům se váha snižuje.
+
+Práh je hodnota, po jejímž překročení se neuron stává aktivním. Hodnota prahu se spočítá jako vážený součet vstupů. Pokud tento součet nepřekročí prahovou hodnotu, zůstává neuron neaktivní. Práh je často realizován jako další vstup neuronu s konstantní hodnotou \begin{math} x_{0}=1\end{math}, váha \begin{math} w_{0}\end{math} potom označuje samotný práh. Funkce pro výpočet výstupu poté vypadá následovně.
+
+\begin{equation}
+  y=S(\sum\limits_{i=0}^N w_{i}x_{i} + \theta),\; kde\; x_{0}=1
+\end{equation}
+
+Přenosová funkce je funkce, pomocí které je transformován vnitřní potenciál neuronu do požadovaného oboru hodnot. Pomocí vhodné volby přenosové funkce může neuron produkovat binární nebo spojitý výstup. Pro binární výstup se používají skoková a Heavisideova funkce, pro spojitý výstup se používají saturovaná lineární funkce, Gaussovská funkce, sigmoidní funkce a hyperbolický tangens.\citep{teoret}
+
+
+
 \section{Proces učení}
 \section{Učicí algoritmy}
 \subsection{Levenberg-Marquardt algoritmus}
@@ -396,6 +421,7 @@ Knihovna Neural Networks rozšiřuje systém \textit{Mathematica} o možnost pra
 15 & LVQ a Iris data & 15-lvq-iris.nb \\ \hline
 \end{tabular}
 \caption{Přehled struktury aplikace}
+\label{tab:aplikace}
 \end{table}
 \end{center}
 
