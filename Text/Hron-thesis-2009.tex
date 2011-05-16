@@ -359,9 +359,35 @@ Práh je hodnota, po jejímž překročení se neuron stává aktivním. Hodnota
 
 Přenosová funkce je funkce, pomocí které je transformován vnitřní potenciál neuronu do požadovaného oboru hodnot. Pomocí vhodné volby přenosové funkce může neuron produkovat binární nebo spojitý výstup. Pro binární výstup se používají skoková a Heavisideova funkce, pro spojitý výstup se používají saturovaná lineární funkce, Gaussovská funkce, sigmoidní funkce a hyperbolický tangens.\citep{teoret}
 
-
-
 \section{Proces učení}
+Při učení dochází v neuronové síti ke změnám, kterými se síť adaptuje na řešení daného problému. Učení je u umělé neuronové sítě realizováno nastavováním vah a prahů jednotlivých neuronů. Během učení nedochází nikdy ke změně struktury sítě (s výjimkou sítě GMDH, která není v tomto textu rozebírána). Před začátkem učení se obvykle nastaví váhy a prahy neuronů na náhodné hodnoty.
+
+U učení umělé neuronové sítě můžeme pozorovat paralelu s učením biologické neuronové sítě, kdy v obou případech dochází k opakovanému předkládání vstupních dat a kontrole výstupu. Tímto opakováním se obě sítě učí dokud nereagují na předávané vstupy správně, nebo jen s akceptovatelnou odchylkou, tedy dokud nejsou naučeny.
+
+Existují dva způsoby učení neuronové sítě:
+\begin{itemize}
+\item Učení s učitelem
+
+Při učení s učitelem máme k dispozici správný výstup, který od neuronové sítě požadujeme. Učení probíhá postupným předkládáním trénovacích vzorů. Ke každému vzoru ve vypočte odchylka od požadovaného výstupu a na základě této odchylky se upravují hodnoty vah. Váhy se upraví tak, aby při opětovném předložení vzoru byla odchylka od požadovaného výstupu menší. Tato úprava se řídí učicím algoritmem (probrány dále). Změna vah při jednom učicím kroku je obvykle malá. Poté se předloží nový vzor a celý proces se opakuje. Učicí vzory jsou síti předkládány opakovaně a po provedení dostatečného počtu opakování začne síť podávat stabilní výstup v reakci na předkládaný vstup.
+
+\item Učení bez učitele
+
+Při učení bez učitele nemá neuronová síť žádné vnější kritérium správnosti, síť tedy operuje pouze s informacemi, které získala během učení. Algoritmus učení bez učitele je navržen tak, aby hledal ve vstupních datech vzorky se společnými vlastnostmi. Učení bez učitele je také nazýváno samoorganizací.
+\end{itemize}
+Existuje také učení jednorázové, kdy je síti předložen vzor a síť si jej zapamatuje. Takováto schopnost učení je u neuronových sítí poměrně neobvyklá. Jednorázového učení je schopna například Hopfieldova síť.
+\section{Proces vybavování}
+Vybavování je aktivní fází neuronové sítě a zpracovávají se v ní vstupní data. Neuronová síť, stejně jako lidská mysl, pracuje asociativním způsobem.\citep{skripta} Asociativní paměť pracuje na principu asociovaných prvků např. obličej a jméno člověka, kdy si po spatření člověka vybavíme jeho jméno.
+
+Vybavování je možné rozlišit do dvou variant:
+\begin{itemize}
+\item Autoasociativní vybavování
+
+Při autoasociativním vybavování dochází k vybavování stejného vektoru, který je předložen. Toto se může zdát nepraktické. Tuto vlastnost ale oceníme pokud je náš vzor poškozený nebo neúplný a neuronová síť nám ho dovede opravit. K tomuto účelu se také autoasociativní vybavování používá.
+\item Heteroasociativní vybavování
+
+Při heteroasociativním vybavování dochází po předložení vzoru k vybavení jiného vzoru, který je předloženým asociován. Typickým použitím této varianty vybavování je klasifikace vektorů do tříd.
+\end{itemize}
+
 \section{Učicí algoritmy}
 \subsection{Levenberg-Marquardt algoritmus}
 \subsection{Gauss-Newton algoritmus}
