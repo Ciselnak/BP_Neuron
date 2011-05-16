@@ -368,11 +368,11 @@ Existují dva způsoby učení neuronové sítě:
 \begin{itemize}
 \item Učení s učitelem
 
-Při učení s učitelem máme k dispozici správný výstup, který od neuronové sítě požadujeme. Učení probíhá postupným předkládáním trénovacích vzorů. Ke každému vzoru ve vypočte odchylka od požadovaného výstupu a na základě této odchylky se upravují hodnoty vah. Váhy se upraví tak, aby při opětovném předložení vzoru byla odchylka od požadovaného výstupu menší. Tato úprava se řídí učicím algoritmem (probrány dále). Změna vah při jednom učicím kroku je obvykle malá. Poté se předloží nový vzor a celý proces se opakuje. Učicí vzory jsou síti předkládány opakovaně a po provedení dostatečného počtu opakování začne síť podávat stabilní výstup v reakci na předkládaný vstup.
+Při učení s učitelem máme k dispozici trénovací množinu, která se skládá ze vstupních vektorů a jim odpovídajícím výstupních vektorů. Učení probíhá postupným předkládáním trénovacích vzorů. Ke každému vzoru ve vypočte odchylka od požadovaného výstupu a na základě této odchylky se upravují hodnoty vah. Váhy se upraví tak, aby při opětovném předložení vzoru byla odchylka od požadovaného výstupu menší. Tato úprava se řídí učicím algoritmem (probrán dále). Změna vah při jednom učicím kroku je obvykle malá. Poté se předloží nový vzor a celý proces se opakuje. Učicí vzory jsou síti předkládány opakovaně a po provedení dostatečného počtu opakování začne síť podávat stabilní výstup v reakci na předkládaný vstup.
 
 \item Učení bez učitele
 
-Při učení bez učitele nemá neuronová síť žádné vnější kritérium správnosti, síť tedy operuje pouze s informacemi, které získala během učení. Algoritmus učení bez učitele je navržen tak, aby hledal ve vstupních datech vzorky se společnými vlastnostmi. Učení bez učitele je také nazýváno samoorganizací.
+Při učení bez učitele nemá neuronová síť žádné vnější kritérium správnosti, má k dispozici pouze vstupní vektory. Síť tedy operuje pouze s informacemi, které získala během učení. Algoritmus učení bez učitele je navržen tak, aby hledal ve vstupních datech vzorky se společnými vlastnostmi. Učení bez učitele je také nazýváno samoorganizací.
 \end{itemize}
 Existuje také učení jednorázové, kdy je síti předložen vzor a síť si jej zapamatuje. Takováto schopnost učení je u neuronových sítí poměrně neobvyklá. Jednorázového učení je schopna například Hopfieldova síť.
 \section{Proces vybavování}
@@ -389,11 +389,32 @@ Při heteroasociativním vybavování dochází po předložení vzoru k vybaven
 \end{itemize}
 
 \section{Učicí algoritmy}
-\subsection{Levenberg-Marquardt algoritmus}
-\subsection{Gauss-Newton algoritmus}
+Nyní již víme že neuronová síť se učí pomocí změn vah vstupů u jednotlivých neuronů. Abychom mohli pozorovat a měřit rozdíly v úspěšnosti sítě v průběhu učení, je potřeba zavést nějakou metriku, pomocí které budeme úspěšnost sítě měřit. V praxi se jako metrika používá střední kvadratická chyba (anglicky Mean Squared Error, odtud skratka MSE). MSE sítě se spočítá pomocí následující rovnice, kde \begin{math}n\end{math} je počet vektorů v trénovací množině,  \begin{math}y_{i}\end{math} je výstup sítě po přivedení \textit{i}-tého prvku testovací množiny na vstup a \begin{math}o_{i}\end{math} je požadovaný výstup po přivedení \textit{i}-tého prvku z testovací množiny.
+\begin{equation}
+	MSE=\frac{1}{n}\sum\limits_{i=1}^n (y_{i}-o_{i})^{2} 
+\end{equation}
+Ještě výhodnější metrikou pro měření úspěšnosti sítě během trénování je RMSE (Root Mean Squared Error). Její největší předností je možnost přímo ji porovnat s výstupem sítě, protože je ve stejných jednotkách jako výstup. Hodnota RMSE se spočte následovně:
+\begin{equation}
+RMSE=\sqrt{MSE}
+\end{equation}
+Platí, že čím nižší hodnota RMSE, tím lépe je neuronová síť naučena. Učicí algoritmy se v průběhu učení snaží minimalizovat hodnotu RMSE, rozdíl mezi jednotlivými algoritmy tedy spočívá v postupu, jakým je tato hodnota minimalizována. Všechny popisované algoritmy pracují iterativně.
 \subsection{Algoritmus nejvyššího poklesu}
-\subsection{Algoritmus zpětné propagace}
+Algoritmus začíná s náhodně inicializovaným vektorem vah neuronů a vyžaduje zadat výchozí velikost učicího kroku. V každé iteraci je vektor vah neuronů upraven tak, aby se posunul ve směru nejvyššího poklesu funkce MSE o velikost učicího kroku, pokud by toto posunutí nesnížilo hodnotu MSE, je velikost učicího kroku snížena na polovinu. Snižobvání probíhá dokud posunutí váhového vektoru nezpůsobí pokles hodnoty funkce MSE.  Na závěr iterace je velikost učicího kroku zdvojnásobena, čímž je získána předběžná velikost kroku pro příští iteraci. Algoritmus končí pokud dosáhne minima funkce MSE (může být lokální) nebo vyčerpá přidělený počet iterací.
 
+Algoritmus nejvyššího poklesu je nejjednodušší algoritmus ze zde popisovaných. Potřebuje nejméně výpočetního výkonu a dosahuje mnohem horších výsledků než ostatní popisované algoritmy.\cite{nndocumentation}
+\subsection{Gauss-Newton algoritmus}
+Algoritmus začíná s náhodně inicializovaným vektorem vah. Na začátku každé iterace je nastavena velikost učicího kroku na hodnotu 1. Pro určení směru posunu je použita Gauss-Newtonova metoda, která pro výpočet využívá první a druhé derivace. Ve vypočteném směru je vektor vah posunut o velikost učicího kroku. Posun je uskutečněn pouze pokud způsobí pokles hodnoty funkce MSE, jinak je velikost kroku snížena o polovinu. Poté algoritmus pokračuje další iterací. Algoritmus končí pokud dosáhne minima funkce MSE (může být lokální) nebo vyčerpá přidělený počet iterací.
+
+Gauss-Newton algoritmus je rychlý a spolehlivý algoritmus, který je využívaný v mnoha oblastech k řešení problémů s minimalizací funkcí. Pro řešení problémů v oblasti neuronových sítí nemusí být vždy nejvhodnější volbou, protože může docházet k výpočtům s hodnotami s velkým číselným rozsahem. Pokud k tomuto dojde, bude algoritmus konvergovat velmi pomalu a bude zdržovat celý učicí proces. \cite{nndocumentation}
+\subsection{Levenberg-Marquardt algoritmus}
+Algoritmus začíná, stejně jako předchozí algoritmy, s náhodně inicializovaným vektorem vah. Levenberg-Marquardt algoritmus představuje kompromis mezi dvěma předchozími algoritmy. Výsledný směr posunutí vektoru vah je zjednodušeně dán kompromisem mezi směry, které navrhují algoritmus nejvyššího poklesu a Gauss-Newton algoritmus.  Namísto velikosti učicího kroku, která je u tohoto algoritmu stále 1, se mění hodnota \begin{math}\lambda\end{math}. Na začátku každé iterace se algoritmus pokusí snížit hodnotu \begin{math}\lambda\end{math}, pokud by takováto snížená hodnota \begin{math}\lambda\end{math} nezaručila pokles MSE, je \begin{math}\lambda\end{math} naopak zvětšována dokud nedojde k žádanému poklesu. Hodnota \begin{math}\lambda\end{math} určuje, kterému z navrhovaných směrů bude algoritmus přikládat vyšší váhu. Pokud se \begin{math}\lambda\end{math} blíží k nule, chová se algoritmus jako Gauss-Newton algoritmus, pokud \begin{math}\lambda\end{math} dosahuje vysokých hodnot, chová se jako algoritmus nejvyššího poklesu. Algoritmus končí za stejných podmínek jako Gauss-Newton algoritmus.\cite{nndocumentation}\cite{learningmachines} 
+
+Levenberg-Marquardt algoritmus představuje pravděpodobně nejlepší volbu trénovacího algoritmu pro neuronové sítě.
+
+\subsection{Algoritmus zpětné propagace}
+Algoritmus zpětné propagace začíná stejně jako ostatní algoritmy s náhodně inicializovaným vektorem vah. Před začátkem běhu je algoritmu třeba nastavit délku učicího kroku a momentum. Algoritmus zpětné propagace se chová velmi podobně jako algoritmus nejvyššího poklesu. Také sleduje směr nejvyššího poklesu funkce MSE, ale liší se v délce učicího kroku, která zůstává po celý běh algoritmu stejná. Momentum slouží jako jakási setrvačnost, která ovlivňuje směr posunu vektoru vah. Díky momentu dokáže algoritmus opustit některá lokální minima. 
+
+Algoritmus zpětné propagace je jedním z nejstarších algoritmů pro učení neuronových sítí. I přes použití momenta, které umožní uniknutí z lokálního minima, se nedoporučuje algoritmu zpětné propagace používat. Namísto zpětné propagace se doporučuje použít některý z moderních učicích algoritmů a opakovat trénink pro několik různých, náhodně inicializovaných vektorů vah.\cite{nndocumentation}
 %*****************************************************************************
 \chapter{Neuronové sítě}
 \section{Dopředná síť}
