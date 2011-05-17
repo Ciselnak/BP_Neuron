@@ -349,12 +349,12 @@ Základním stavebním kamenem neuronových sítí je model neuronu. Nejrozší�
 \end{center}
 \end{figure}
 
-Na vstupy neuronu se přivádí data ze vstupní množiny (mohou být reálná i binární), nebo spojitá data. Každý vstup \begin{math} x_{i}\end{math} je modifikován vahou daného vstupu \begin{math} w_{i}\end{math}. Tyto váhy vstupů se během učení mění, což představuje základ učení neuronu. Významným vstupům, které výrazně ovlivňují výstup neuronu se přiřazuje vyšší váha a naopak méně významným vstupům se váha snižuje.
+Na vstupy neuronu se přivádí data ze vstupní množiny. Data mohou být i binární [0,1], nebo spojitá na intervalu <0,1>. Každý vstup \begin{math} x_{i}\end{math} je modifikován vahou daného vstupu \begin{math} w_{i}\end{math}. Tyto váhy vstupů se během učení mění, což představuje základ učení neuronu. Významným vstupům, které výrazně ovlivňují výstup neuronu se přiřazuje vyšší váha a naopak méně významným vstupům se váha snižuje.
 
 Práh je hodnota, po jejímž překročení se neuron stává aktivním. Hodnota prahu se spočítá jako vážený součet vstupů. Pokud tento součet nepřekročí prahovou hodnotu, zůstává neuron neaktivní. Práh je často realizován jako další vstup neuronu s konstantní hodnotou \begin{math} x_{0}=1\end{math}, váha \begin{math} w_{0}\end{math} potom označuje samotný práh. Funkce pro výpočet výstupu poté vypadá následovně.
 
 \begin{equation}
-  y=S(\sum\limits_{i=0}^N w_{i}x_{i} + \theta),\; kde\; x_{0}=1
+  y=S(\sum\limits_{i=0}^N w_{i}x_{i}),\; kde\; x_{0}=1
 \end{equation}
 
 Přenosová funkce je funkce, pomocí které je transformován vnitřní potenciál neuronu do požadovaného oboru hodnot. Pomocí vhodné volby přenosové funkce může neuron produkovat binární nebo spojitý výstup. Pro binární výstup se používají skoková a Heavisideova funkce, pro spojitý výstup se používají saturovaná lineární funkce, Gaussovská funkce, sigmoidní funkce a hyperbolický tangens.\citep{teoret}
@@ -389,13 +389,21 @@ Při heteroasociativním vybavování dochází po předložení vzoru k vybaven
 \end{itemize}
 
 \section{Učicí algoritmy}
-Nyní již víme že neuronová síť se učí pomocí změn vah vstupů u jednotlivých neuronů. Abychom mohli pozorovat a měřit rozdíly v úspěšnosti sítě v průběhu učení, je potřeba zavést nějakou metriku, pomocí které budeme úspěšnost sítě měřit. V praxi se jako metrika používá střední kvadratická chyba (anglicky Mean Squared Error, odtud skratka MSE). MSE sítě se spočítá pomocí následující rovnice, kde \begin{math}n\end{math} je počet vektorů v trénovací množině,  \begin{math}y_{i}\end{math} je výstup sítě po přivedení \textit{i}-tého prvku testovací množiny na vstup a \begin{math}o_{i}\end{math} je požadovaný výstup po přivedení \textit{i}-tého prvku z testovací množiny.
+Nyní již víme že neuronová síť se učí pomocí změn vah vstupů u jednotlivých neuronů. Abychom mohli pozorovat a měřit rozdíly v úspěšnosti sítě v průběhu učení, je potřeba zavést nějakou metriku, pomocí které budeme úspěšnost sítě měřit. V praxi se jako metrika používá střední kvadratická chyba (anglicky Mean Squared Error, odtud skratka MSE). MSE sítě se spočítá pomocí následující rovnice:
 \begin{equation}
-	MSE=\frac{1}{n}\sum\limits_{i=1}^n (y_{i}-o_{i})^{2} 
+	MSE=\frac{1}{n}\sum\limits_{i=1}^n (y_{i}-o_{i})^{2}, 
 \end{equation}
+ kde \begin{math}n\end{math} je počet vektorů v trénovací množině,  \begin{math}y_{i}\end{math} je výstup sítě po přivedení \textit{i}-tého prvku testovací množiny na vstup a \begin{math}o_{i}\end{math} je požadovaný výstup po přivedení \textit{i}-tého prvku z testovací množiny.
+
+Tento vzorec je platný pro síť s jedním výstupním neuronem, pokud má síť výstupních neuronů více, sčítá se chyba na všech výstupních neuronech podle následujícího vzorce:
+\begin{equation}
+	MSE=\frac{1}{n}\sum\limits_{j=1}^m\sum\limits_{i=1}^n (y_{ji}-o_{ji})^{2}, 
+\end{equation}
+kde \begin{math}m\end{math} je počet neuronů výstupní vrstvy, n je počet vzorů v trénovací množině, \begin{math}y_{ji}\end{math} je výstup \textit{j}-tého neuronu po přivedení \textit{i}-tého prvku trénovací množiny a \begin{math}o_{ji}\end{math} je požadovaný výstup \textit{j}-tého neuronu po přivedení \textit{i}-tého prvku trénovací množiny.
+
 Ještě výhodnější metrikou pro měření úspěšnosti sítě během trénování je RMSE (Root Mean Squared Error). Její největší předností je možnost přímo ji porovnat s výstupem sítě, protože je ve stejných jednotkách jako výstup. Hodnota RMSE se spočte následovně:
 \begin{equation}
-RMSE=\sqrt{MSE}
+RMSE=\sqrt{MSE}.
 \end{equation}
 Platí, že čím nižší hodnota RMSE, tím lépe je neuronová síť naučena. Učicí algoritmy se v průběhu učení snaží minimalizovat hodnotu RMSE, rozdíl mezi jednotlivými algoritmy tedy spočívá v postupu, jakým je tato hodnota minimalizována. Všechny popisované algoritmy pracují iterativně.
 \subsection{Algoritmus nejvyššího poklesu}
@@ -405,19 +413,44 @@ Algoritmus nejvyššího poklesu je nejjednodušší algoritmus ze zde popisovan
 \subsection{Gauss-Newton algoritmus}
 Algoritmus začíná s náhodně inicializovaným vektorem vah. Na začátku každé iterace je nastavena velikost učicího kroku na hodnotu 1. Pro určení směru posunu je použita Gauss-Newtonova metoda, která pro výpočet využívá první a druhé derivace. Ve vypočteném směru je vektor vah posunut o velikost učicího kroku. Posun je uskutečněn pouze pokud způsobí pokles hodnoty funkce MSE, jinak je velikost kroku snížena o polovinu. Poté algoritmus pokračuje další iterací. Algoritmus končí pokud dosáhne minima funkce MSE (může být lokální) nebo vyčerpá přidělený počet iterací.
 
-Gauss-Newton algoritmus je rychlý a spolehlivý algoritmus, který je využívaný v mnoha oblastech k řešení problémů s minimalizací funkcí. Pro řešení problémů v oblasti neuronových sítí nemusí být vždy nejvhodnější volbou, protože může docházet k výpočtům s hodnotami s velkým číselným rozsahem. Pokud k tomuto dojde, bude algoritmus konvergovat velmi pomalu a bude zdržovat celý učicí proces. \cite{nndocumentation}
+Gauss-Newton algoritmus je rychlý a spolehlivý algoritmus, který je využívaný v mnoha oblastech k řešení problémů s minimalizací funkcí. Pro řešení problémů v oblasti neuronových sítí nemusí být vždy nejvhodnější volbou, protože může docházet k výpočtům s hodnotami s velkým číselným rozsahem. Pokud k tomuto dojde, bude algoritmus konvergovat velmi pomalu a bude zdržovat celý učicí proces.\cite{nndocumentation}
 \subsection{Levenberg-Marquardt algoritmus}
 Algoritmus začíná, stejně jako předchozí algoritmy, s náhodně inicializovaným vektorem vah. Levenberg-Marquardt algoritmus představuje kompromis mezi dvěma předchozími algoritmy. Výsledný směr posunutí vektoru vah je zjednodušeně dán kompromisem mezi směry, které navrhují algoritmus nejvyššího poklesu a Gauss-Newton algoritmus.  Namísto velikosti učicího kroku, která je u tohoto algoritmu stále 1, se mění hodnota \begin{math}\lambda\end{math}. Na začátku každé iterace se algoritmus pokusí snížit hodnotu \begin{math}\lambda\end{math}, pokud by takováto snížená hodnota \begin{math}\lambda\end{math} nezaručila pokles MSE, je \begin{math}\lambda\end{math} naopak zvětšována dokud nedojde k žádanému poklesu. Hodnota \begin{math}\lambda\end{math} určuje, kterému z navrhovaných směrů bude algoritmus přikládat vyšší váhu. Pokud se \begin{math}\lambda\end{math} blíží k nule, chová se algoritmus jako Gauss-Newton algoritmus, pokud \begin{math}\lambda\end{math} dosahuje vysokých hodnot, chová se jako algoritmus nejvyššího poklesu. Algoritmus končí za stejných podmínek jako Gauss-Newton algoritmus.\cite{nndocumentation}\cite{learningmachines} 
 
 Levenberg-Marquardt algoritmus představuje pravděpodobně nejlepší volbu trénovacího algoritmu pro neuronové sítě.
 
 \subsection{Algoritmus zpětné propagace}
-Algoritmus zpětné propagace začíná stejně jako ostatní algoritmy s náhodně inicializovaným vektorem vah. Před začátkem běhu je algoritmu třeba nastavit délku učicího kroku a momentum. Algoritmus zpětné propagace se chová velmi podobně jako algoritmus nejvyššího poklesu. Také sleduje směr nejvyššího poklesu funkce MSE, ale liší se v délce učicího kroku, která zůstává po celý běh algoritmu stejná. Momentum slouží jako jakási setrvačnost, která ovlivňuje směr posunu vektoru vah. Díky momentu dokáže algoritmus opustit některá lokální minima. 
+Algoritmus zpětné propagace začíná stejně jako ostatní algoritmy s náhodně inicializovaným vektorem vah. Před začátkem běhu je algoritmu třeba nastavit délku učicího kroku a momentum. Algoritmus zpětné propagace se chová velmi podobně jako algoritmus nejvyššího poklesu. Také sleduje směr nejvyššího poklesu funkce MSE, ale liší se v délce učicího kroku, která zůstává po celý běh algoritmu stejná. Momentum slouží jako jakási setrvačnost, která nám říká jak dlouho se budeme držet určitého směru, než zabočíme ve směru nejvyššího poklesu. Díky momentu dokáže algoritmus opustit některá lokální minima. 
 
-Algoritmus zpětné propagace je jedním z nejstarších algoritmů pro učení neuronových sítí. I přes použití momenta, které umožní uniknutí z lokálního minima, se nedoporučuje algoritmu zpětné propagace používat. Namísto zpětné propagace se doporučuje použít některý z moderních učicích algoritmů a opakovat trénink pro několik různých, náhodně inicializovaných vektorů vah.\cite{nndocumentation}
+Algoritmus zpětné propagace je jedním z nejstarších algoritmů pro učení neuronových sítí. I přes použití momenta, které umožní uniknutí z lokálního minima, se nedoporučuje algoritmu zpětné propagace používat. Namísto zpětné propagace se doporučuje použít některý z moderních učicích algoritmů a opakovat trénink pro několik různých, náhodně inicializovaných vektorů vah.\cite{nndocumentation} Podrobnější popis algoritmu naleznete v\citep{skripta}.
 %*****************************************************************************
 \chapter{Neuronové sítě}
 \section{Dopředná síť}
+Dopředná neuronová síť se zpětným šířením chyby, někdy také nazývána síť Back-propagation podle pravděpodobně nejznámějšího algoritmu, který je k učení této sítě využíván, patří mezi vícevrstvé neuronové sítě. Dopředná síť má alespoň jednu skrytou vrstvu neuronů. Dopředná neuronová síť, jak již název napovídá, využívá dopředného šíření signálu. Tato neuronová síť je velmi flexibilní v možnostech použití a je poměrně jednoduchá. Díky těmto vlastnostem je jednou z nejpoužívanějších sítí v praxi.
+
+\subsection{Topologie sítě}
+Síť je složena z McCulloch-Pittsových neuronů, které využívají jako aktivační funkci sigmoidu. Neurony v dopředné síti jsou tedy spojité. Dopředná neuronová síť se skládá minimálně ze tří vrstev - vstupní, skryté a výstupní. Strukturu sítě skládající se ze čtyř vrstev si můžete vidět na obrázku~\ref{fig:ffschema}. Sousední vrstvy jsou mezi sebou propojeny - každý neuron z vyšší vrstvy je propojen s každým neuronem v nižší vrstvě. První vrstva tzv. vstupní vrstva slouží pouze k rozdělení vstupního signálu a jeho přivedení na neurony první skryté vrstvy. Neurony v ostatních vrstvách sítě jsou již výkonné prvky, na kterých probíhá učení.
+\begin{figure}[!h]
+\begin{center}
+\includegraphics[height=4.5cm]{figures/ffschema.png}
+\caption{Schéma dopředné neuronové sítě}
+\label{fig:ffschema}
+\end{center}
+\end{figure}
+\newpage
+Počet použitých skrytých vrstev se liší případ od případu. Zvolení vhodného počtu vrstev je většinou provedeno experimentálně. Pro počet neuronů ve skrytých vrstvách existují doporučení. Následující doporučení je pro síť s jednou skrytou vrstvou:
+\begin{equation}
+N_{skryt}=\sqrt{N_{vst}\cdot N_{vyst}} , 
+\end{equation}
+kde \begin{math}N_{skryt}\end{math} je doporučený doporučený počet ve skryté vrstvě, \begin{math}N_{vst}\end{math} je počet neuronů ve vstupní vrstvě a \begin{math}N_{vyst}\end{math} je počet neuronů ve výstupní vrstvě. Pro síť s dvěma skrytými vrstvami se doporučují následující počty neuronů.
+\begin{equation}
+N_{skryt-1}=N_{vyst}\cdot\left(\sqrt[3]{\frac{N_{vst}}{N_{vyst}}}\right)^{2} \,\mbox{a} \,\,\,\,\,\, N_{skryt-2}=N_{vyst}\cdot\left(\sqrt[3]{\frac{N_{vst}}{N_{vyst}}}\right).
+\end{equation}
+Tato doporučení představují většinou horní odhady a lépe je určit počty neuronů experimentálně.\citep{skripta}
+
+Dopředné šíření signálu probíhá následovně. Nejprve je vstupní vektor přiveden na vstupní vrstvu, tato vrstva vstup přenese na první skrytou vrstvu. Na skryté vrstvě dojde k úpravě tohoto signálu podle váhových vektorů jednotlivých neuronů, výstup těchto neuronů je přenesen na další vrstvu. Takto se dostanou data postupně až na výstup poslední (výstupní) vrstvy, odkud je výstup odebrán.
+
+Učení sítě probíhá s učitelem a využívá se k němu jeden z algoritmů popsaných v předchozí kapitole.
 \section{RBF síť}
 \section{Samoorganizující mapy}
 \section{Hopfieldova síť}
@@ -430,7 +463,7 @@ Algoritmus zpětné propagace je jedním z nejstarších algoritmů pro učení 
 %*****************************************************************************
 \chapter{Implementační prostředí}
 \section{Wolfram Mathematica}
-Systém Mathematica od firmy Wolfram Research je sofistikovaný matematický nástroj, který umožňuje provádět numerické i symbolické výpočty. Systém obsahuje velké množství vestavěných funkcí a umožňuje i přidání dalších uživatelsky definovaných funkcí. Dále nabízí široké možnosti vizualizace dat ve 2D i 3D grafech. Neméně podstatnou funkcí je možnost exportu vyhodnoceného notebooku do formátu pdf. Díky tomu může demonstrační aplikaci vytvořenou v systému Mathematica, byť v omezené míře, využít i student, který nemá na svém počítači systém Mathematica nainstalovaný. Systém je možné rozšířit celou řadou knihoven, jednou z nich je i knihovna Neural Networks, kterou jsem využil ve své demonstrační aplikaci. Demonstrační aplikaci jsem programoval ve verzi Mathematica 8.0. Pro studium programování v Mathematice jsem použil knihy\cite{mathD} a \cite{mathP}.
+Systém Mathematica od firmy Wolfram Research je sofistikovaný matematický nástroj, který umožňuje provádět numerické i symbolické výpočty. Systém obsahuje velké množství vestavěných funkcí a umožňuje i přidání dalších uživatelsky definovaných funkcí. Dále nabízí široké možnosti vizualizace dat ve 2D i 3D grafech. Prostředí systému vidíte na obrázku~\ref{fig:prostredi}. Neméně podstatnou funkcí je možnost exportu vyhodnoceného notebooku do formátu pdf. Díky tomu může demonstrační aplikaci vytvořenou v systému Mathematica, byť v omezené míře, využít i student, který nemá na svém počítači systém Mathematica nainstalovaný. Systém je možné rozšířit celou řadou knihoven, jednou z nich je i knihovna Neural Networks, kterou jsem využil ve své demonstrační aplikaci. Demonstrační aplikaci jsem programoval ve verzi Mathematica 8.0. Pro studium programování v Mathematice jsem použil knihy\cite{mathD} a \cite{mathP}.
 
 \begin{figure}[!h]
 \begin{center}
