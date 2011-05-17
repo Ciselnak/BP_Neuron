@@ -455,7 +455,7 @@ Učení sítě probíhá s učitelem a využívá se k němu jeden z algoritmů 
 RBF (Radial Basis Function) neuronové sítě jsou známe od 80. let dvacátého století. Jejich rozvoj je spjat s výzkumem tzv. radiálních basických funkcí, které jsou použity jako aktivační funkce neuronů. Síť využívá dopředného šíření signálu a její učení probíhá s učitelem. RBF neuronové sítě představují přímou konkurenci pro dopředné neuronové sítě, protože jsou využívány na stejné úlohy (hlavně klasifikace a aproximace) a jejich učení je výrazně rychlejší než u dopředné sítě.
 
 \subsection{Topologie sítě}
-RBF síť se skládá vždy ze tří vrstev neuronů a využívá dopředné šíření signálu. První vrstva je vstupní a slouží pouze k  rozvedení signálu do druhé vrstvy. Druhá vrstva je skrytá a obsahuje RBF neurony (popsány níže). Vstupní a skrytá vrstva jsou úplně propojeny, každý vstupní neuron je propojen s každým RBF neuronem. Výstup z RBF neuronů je přiveden na neurony výstupní vrstvy (popsány níže), které z nich vypočtou výstup sítě. RBF vrstva je obvykle úplně spojena s výstupní vrstvou, ale v případě potřeby je možné některý ze spojů vynechat. Topologii sítě přibližuje obrázek~\ref{fig:rbfschema}
+RBF síť se skládá vždy ze tří vrstev neuronů a využívá dopředné šíření signálu. První vrstva je vstupní a slouží pouze k  rozvedení signálu do druhé vrstvy. Druhá vrstva je skrytá a obsahuje RBF neurony (popsány níže). Vstupní a skrytá vrstva jsou úplně propojeny, každý vstupní neuron je propojen s každým RBF neuronem. Výstup z RBF neuronů je přiveden na neurony výstupní vrstvy (popsány níže), které z nich vypočtou výstup sítě. RBF vrstva je obvykle úplně spojena s výstupní vrstvou, ale v případě potřeby je možné některý ze spojů vynechat. Topologii sítě přibližuje obrázek~\ref{fig:rbfschema}.
 \begin{figure}[!h]
 \begin{center}
 \includegraphics[height=4.5cm]{figures/rbfschema.png}
@@ -479,6 +479,7 @@ kde \begin{math}y^{*}\end{math} určuje výstup RBF neuronu, \begin{math}\varphi
 \begin{equation}
 y^{*}=\varphi
 \end{equation}, kdy se aktivita neuronu se vzrůstající vzdáleností vzoru od prototypu zvyšuje.
+
 \subsubsection{Neuron výstupní vrstvy}
 Neurony ve výstupní vrstvě jsou perceptronovského typu a jejich výstup je definován rovnicí:
 \begin{equation}
@@ -511,6 +512,37 @@ V této fázi dochází k učení pouze neuronů ve výstupní vrstvě, parametr
 \end{itemize} 
 
 \section{Hopfieldova síť}
+Hopfieldova síť je pojmenována po svém objeviteli Johnu Hopfieldovi. Síť funguje jako autoasociativní paměť a používá se převážné ke zpracovávání obrazových vstupů. Díky svým vlastnostem je síť používána k čištění zašuměných vzorů nebo k rekonstrukci neúplných vzorů. Také je možní ji použít k řešení optimalizačních problémů.
+
+\subsection{Topologie sítě}
+Hopfieldova síť se skládá z McCulloch-Pittsových perceptronů, má stejně neuronů jako má vstupů, pokud tedy učíme síť obrázky 8\begin{math}\times\end{math}8 pixelů, má síť 64 neuronů. Každý neuron je pouze jedním svým vstupem napojen na vstup sítě. Výstup z každého neuronu je veden přes synaptické váhy \begin{math}w_{ij}\end{math} na vstup všech ostatních neuronů, čímž se vytváří zpětnovazební smyčky. Síť má tedy symetrickou strukturu. Protože je Hopfieldova síť autoasociativní, musí mít stejně vstupů jako výstupů, každý neuron v síti má tedy kromě jednoho vstupu také jeden výstup. Hodnoty prahů neuronů jsou nulové, přenosovou funkcí je nejčastěji dvouhodnotová skoková funkce. Strukturu sítě znázorňuje obrázek~\ref{fig:hopfieldstr}.
+
+\begin{figure}[!h]
+\begin{center}
+\includegraphics[height=6.5cm]{figures/hopfield.png}
+\caption{Struktura Hopfieldovy neuronové sítě\cite{skripta}}
+\label{fig:hopfieldstr}
+\end{center}
+\end{figure}
+\begin{math}x_{0},x_{1},...,x_{n-1}\end{math} jsou vstupy sítě, \begin{math}\mu _{0},\mu _{1},...,\mu _{n-1}\end{math} jsou stavy v jednotlivých krocích, které se v následujícím kroku stanou vstupy. Výstupy \begin{math}y_{0},y_{1},...,y_{n-1}\end{math} jsou neaktivní, dokud nedojde k vybavení vzoru. Vybavování je u Hopfieldovy neuronové sítě iterativní proces. Jakmile skončí proces vybavování, jsou výstupy \begin{math}y_{0},y_{1},...,y_{n-1}\end{math} nataveny na hodnoty \begin{math}\mu _{0},\mu _{1},...,\mu _{n-1}\end{math}.
+
+\subsection{Učení Hopfieldovy sítě}
+Hopfieldova neuronová síť si uchovává informace v podobě matice vah mezi jednotlivými neurony. Matice má dimenzi N\begin{math}\times\end{math}N, kde N je počet neuronů v síti. Tato matice má na diagonále nuly (žádný neuron není spojen sám se sebou) a je diagonálně souměrná protože dva neurony mají mezi sebou vždy nastavenu stejnou váhu (platí že \begin{math}w_{ij}=w_{ji}\end{math})
+
+Způsob učení si ukážeme na jednodušším binárním modelu.
+
+Učení každého vzoru v Hopfieldově síti probíhá jednorázově. Vzor je předložen a síť se ho naučí. Neuronová síť se učí pomocí změny matice vah. Matice vah naučené sítě získáme součtem dílčích matic vah. Pro každý učený vzor získáme dílčí matici vah následujícím způsobem:
+\begin{equation}
+w_{ij} = \left\{ 
+\begin{array}{l l}
+  x_{i}x_{j} &  \mbox{, pro $i\neq j$, }\\
+  0 & \mbox{,  pro $i=j$, $i\leq0$, $j\leq N-1$}\\ \end{array} \right. \mbox{,}
+\end{equation}
+kde $w_{ij}$ je prvek dílčí váhové matice na pozici $i,j$ a $x_{i}$ resp. $x_{j}$ je \textit{i}-tý resp. \textit{j}-tý prvek na vstupu.
+
+Tímto způsobem jsou předloženy všechny trénovací vzory, kterých je M. Pro získání výsledné matice nám stačí tyto dílčí matice sečíst, čímž získáme výslednou matici vah naučené sítě.
+\subsection{Vybavování}
+
 \section{Samoorganizující mapy}
 \section{LVQ}
 %*****************************************************************************
