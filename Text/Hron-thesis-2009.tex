@@ -529,7 +529,7 @@ Hopfieldova síť se skládá z McCulloch-Pittsových perceptronů, má stejně 
 \subsection{Učení Hopfieldovy sítě}
 Hopfieldova neuronová síť si uchovává informace v podobě matice vah mezi jednotlivými neurony. Matice má dimenzi N\begin{math}\times\end{math}N, kde N je počet neuronů v síti. Tato matice má na diagonále nuly (žádný neuron není spojen sám se sebou) a je diagonálně souměrná protože dva neurony mají mezi sebou vždy nastavenu stejnou váhu (platí že \begin{math}w_{ij}=w_{ji}\end{math})
 
-Způsob učení si ukážeme na jednodušším binárním modelu.
+Způsob učení a vybavování si ukážeme na jednodušším binárním modelu.
 
 Učení každého vzoru v Hopfieldově síti probíhá jednorázově. Vzor je předložen a síť se ho naučí. Neuronová síť se učí pomocí změny matice vah. Matice vah naučené sítě získáme součtem dílčích matic vah. Pro každý učený vzor získáme dílčí matici vah následujícím způsobem:
 \begin{equation}
@@ -541,8 +541,35 @@ w_{ij} = \left\{
 kde $w_{ij}$ je prvek dílčí váhové matice na pozici $i,j$ a $x_{i}$ resp. $x_{j}$ je \textit{i}-tý resp. \textit{j}-tý prvek na vstupu.
 
 Tímto způsobem jsou předloženy všechny trénovací vzory, kterých je M. Pro získání výsledné matice nám stačí tyto dílčí matice sečíst, čímž získáme výslednou matici vah naučené sítě.
-\subsection{Vybavování}
 
+Při učení sítě si můžeme klást otázku kolik vzorů je síť schopna se naučit. Kapacita sítě samozřejmě není neomezená a závisí na počtu použitých neuronů. Experimentálně bylo zjištěno, že počet vzorů musí být nižší než 15\% počtu použitých neuronů\cite{skripta}, musí tedy platit vzorec:
+\begin{equation}
+P\approx 0.15N \mbox{,}
+\end{equation}
+kde \textit{P} je počet učených vzorů a \textit{N} je počet neuronů. Pokud by nebyl tento poměr dodržen, může se stát že si síť bude vybavovat nesmyslné, nenaučené vzory.
+
+Pokud budeme chtít naučit Hopfieldovu síť rozpoznávat všechny znaky české abecedy, kterých je 42 (včetně háčků a čárek), budeme podle předchozího vzorce potřebovat neuronovou síť o minimálně 280 neuronech. Z toho vyplývá, že matice vah bude mít \begin{math}280^{2}=78400\end{math} hodnot. Tím se dostáváme k největší nevýhodě Hopfieldovy sítě, kterou je nízká kapacita při vysokých paměťových nárocích. Další nevýhodou je nulová odolnost proti natočení nebo posunutí vstupu. Díky těmto vlastnostem se základní Hopfieldova síť téměř nepoužívá.
+\subsection{Vybavování vzoru}
+Vybavování u Hopfieldovy sítě je založeno na porovnávání vzorů pomocí Hammingovy vzdálenosti. Za správnou odpověď se považuje ten naučený vzor, který má Hammingovu vzdálenost od předloženého vzoru nejnižší.
+Vybavování v Hopfieldově síti je iterační proces. Po předložení vzoru je tedy nutné počkat, dokud síť nedospěje ke svému výstupu.
+Vybavování probíhá podle následujícího algoritmu\cite{skripta}:
+\begin{enumerate}
+\item Nastavení počátečních stavů neuronů podle předloženého vzoru:
+\begin{equation}
+\mu_{i}(0)=x_{i}\mbox{,}0\leq i\leq N-1 \mbox{,}
+\end{equation}
+kde $\mu_{i}(t)$ je stav \textit{i}-tého neuronu v čase \textit{t} a $x_{i}$ je element vzoru nabývající hodnoty $\pm 1$.
+\item Iterování 
+\begin{equation}
+\mu_{i}(t+1)=f\left[\sum\limits_{j=0}^{N-1}w_{ij}\mu_{i}(t) \right]\mbox{, }0\leq i\leq N-1 \mbox{,}
+\end{equation}
+kde $f$ je skoková aktivační funkce. Tento krok provádíme dokud dochází ke změnám stavů. Jakmile nedojde při iteraci k žádné změně, je algoritmus vybavování ukončen.
+\item Na výstupy sítě jsou předány vnitřní stavy jednotlivých neuronů.
+\begin{equation}
+y_{i}=\mu_{i}(t_{poslední})
+\end{equation}
+Nyní můžeme předložit další vzor k vybavování.
+\end{enumerate}
 \section{Samoorganizující mapy}
 \section{LVQ}
 %*****************************************************************************
