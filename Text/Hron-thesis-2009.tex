@@ -336,9 +336,9 @@ Základem biologického neuronu je buněčné tělo s jádrem (soma), z něj vyc
 \end{figure}
 
 \section{Struktura umělého neuronu}
-Základním stavebním kamenem neuronových sítí je model neuronu. Nejrozšířenějším modelem neuronu je McCulloch-Pittsův perceptron, pojmenovaný dle svých vynálezců.  Model tohoto neuronu vidíte na obrázku~\ref{fig:perceptron}. Neuron má konečný počet vstupů \begin{math} x_{1}\end{math} až \begin{math}x_{n}\end{math}, každý vstup \begin{math} x_{i}\end{math} je ohodnocen vahou \begin{math} w_{i}\end{math}. Dále je každý neuron vybaven aktivační funkcí \begin{math}S\end{math}, prahovou hodnotou \begin{math}\theta\end{math} a jedním výstupem \begin{math} y\end{math}. Výstup neuronu se řídí následující rovnicí.
+Základním stavebním kamenem neuronových sítí je model neuronu. Nejrozšířenějším modelem neuronu je McCulloch-Pittsův perceptron, pojmenovaný dle svých vynálezců.  Model tohoto neuronu vidíte na obrázku~\ref{fig:perceptron}. Neuron má konečný počet vstupů \begin{math} x_{1}\end{math} až \begin{math}x_{n}\end{math}, každý vstup \begin{math} x_{i}\end{math} je ohodnocen vahou \begin{math} w_{i}\end{math}. Dále je každý neuron vybaven aktivační funkcí \begin{math}S\end{math}, prahovou hodnotou \begin{math}\theta\end{math} a jedním výstupem \begin{math} y\end{math}. Výstup neuronu se řídí následující rovnicí:
 \begin{equation}
-  y=S(\sum\limits_{i=1}^N w_{i}x_{i} + \theta)
+  y=S(\sum\limits_{i=1}^N w_{i}x_{i} + \theta)\mbox{.}
 \end{equation}
 
 \begin{figure}[!h]
@@ -351,10 +351,10 @@ Základním stavebním kamenem neuronových sítí je model neuronu. Nejrozší�
 
 Na vstupy neuronu se přivádí data ze vstupní množiny. Data mohou být i binární [0,1], nebo spojitá na intervalu <0,1>. Každý vstup \begin{math} x_{i}\end{math} je modifikován vahou daného vstupu \begin{math} w_{i}\end{math}. Tyto váhy vstupů se během učení mění, což představuje základ učení neuronu. Významným vstupům, které výrazně ovlivňují výstup neuronu se přiřazuje vyšší váha a naopak méně významným vstupům se váha snižuje.
 
-Práh je hodnota, po jejímž překročení se neuron stává aktivním. Hodnota prahu se spočítá jako vážený součet vstupů. Pokud tento součet nepřekročí prahovou hodnotu, zůstává neuron neaktivní. Práh je často realizován jako další vstup neuronu s konstantní hodnotou \begin{math} x_{0}=1\end{math}, váha \begin{math} w_{0}\end{math} potom označuje samotný práh. Funkce pro výpočet výstupu poté vypadá následovně.
+Práh je hodnota, po jejímž překročení se neuron stává aktivním. Hodnota prahu se spočítá jako vážený součet vstupů. Pokud tento součet nepřekročí prahovou hodnotu, zůstává neuron neaktivní. Práh je často realizován jako další vstup neuronu s konstantní hodnotou \begin{math} x_{0}=1\end{math}, váha \begin{math} w_{0}\end{math} potom označuje samotný práh. Funkce pro výpočet výstupu poté vypadá následovně:
 
 \begin{equation}
-  y=S(\sum\limits_{i=0}^N w_{i}x_{i}),\; kde\; x_{0}=1
+  y=S(\sum\limits_{i=0}^N w_{i}x_{i}),\; kde\; x_{0}=1\mbox{.}
 \end{equation}
 
 Přenosová funkce je funkce, pomocí které je transformován vnitřní potenciál neuronu do požadovaného oboru hodnot. Pomocí vhodné volby přenosové funkce může neuron produkovat binární nebo spojitý výstup. Pro binární výstup se používají skoková a Heavisideova funkce, pro spojitý výstup se používají saturovaná lineární funkce, Gaussovská funkce, sigmoidní funkce a hyperbolický tangens.\citep{teoret}
@@ -391,19 +391,19 @@ Při heteroasociativním vybavování dochází po předložení vzoru k vybaven
 \section{Učicí algoritmy}
 Nyní již víme že neuronová síť se učí pomocí změn vah vstupů u jednotlivých neuronů. Abychom mohli pozorovat a měřit rozdíly v úspěšnosti sítě v průběhu učení, je potřeba zavést nějakou metriku, pomocí které budeme úspěšnost sítě měřit. V praxi se jako metrika používá střední kvadratická chyba (anglicky Mean Squared Error, odtud skratka MSE). MSE sítě se spočítá pomocí následující rovnice:
 \begin{equation}
-	MSE=\frac{1}{n}\sum\limits_{i=1}^n (y_{i}-o_{i})^{2}, 
+	MSE=\frac{1}{n}\sum\limits_{i=1}^n (y_{i}-o_{i})^{2}\mbox{,}
 \end{equation}
  kde \begin{math}n\end{math} je počet vektorů v trénovací množině,  \begin{math}y_{i}\end{math} je výstup sítě po přivedení \textit{i}-tého prvku testovací množiny na vstup a \begin{math}o_{i}\end{math} je požadovaný výstup po přivedení \textit{i}-tého prvku z testovací množiny.
 
-Tento vzorec je platný pro síť s jedním výstupním neuronem, pokud má síť výstupních neuronů více, sčítá se chyba na všech výstupních neuronech podle následujícího vzorce:
+Výše uvedený vzorec je platný pro síť s jedním výstupním neuronem, pokud má síť výstupních neuronů více, sčítá se chyba na všech výstupních neuronech podle následujícího vzorce:
 \begin{equation}
-	MSE=\frac{1}{n}\sum\limits_{j=1}^m\sum\limits_{i=1}^n (y_{ji}-o_{ji})^{2}, 
+	MSE=\frac{1}{n}\sum\limits_{j=1}^m\sum\limits_{i=1}^n (y_{ji}-o_{ji})^{2}\mbox{,} 
 \end{equation}
 kde \begin{math}m\end{math} je počet neuronů výstupní vrstvy, n je počet vzorů v trénovací množině, \begin{math}y_{ji}\end{math} je výstup \textit{j}-tého neuronu po přivedení \textit{i}-tého prvku trénovací množiny a \begin{math}o_{ji}\end{math} je požadovaný výstup \textit{j}-tého neuronu po přivedení \textit{i}-tého prvku trénovací množiny.
 
 Ještě výhodnější metrikou pro měření úspěšnosti sítě během trénování je RMSE (Root Mean Squared Error). Její největší předností je možnost přímo ji porovnat s výstupem sítě, protože je ve stejných jednotkách jako výstup. Hodnota RMSE se spočte následovně:
 \begin{equation}
-RMSE=\sqrt{MSE}.
+RMSE=\sqrt{MSE}\mbox{.}
 \end{equation}
 Platí, že čím nižší hodnota RMSE, tím lépe je neuronová síť naučena. Učicí algoritmy se v průběhu učení snaží minimalizovat hodnotu RMSE, rozdíl mezi jednotlivými algoritmy tedy spočívá v postupu, jakým je tato hodnota minimalizována. Všechny popisované algoritmy pracují iterativně.
 \subsection{Algoritmus nejvyššího poklesu}
@@ -437,14 +437,14 @@ Síť je složena z McCulloch-Pittsových neuronů, které využívají jako akt
 \label{fig:ffschema}
 \end{center}
 \end{figure}
-\newpage
+
 Počet použitých skrytých vrstev se liší případ od případu. Zvolení vhodného počtu vrstev je většinou provedeno experimentálně. Pro počet neuronů ve skrytých vrstvách existují doporučení. Následující doporučení je pro síť s jednou skrytou vrstvou:
 \begin{equation}
-N_{skryt}=\sqrt{N_{vst}\cdot N_{vyst}} , 
+N_{skryt}=\sqrt{N_{vst}\cdot N_{vyst}} \mbox{,}
 \end{equation}
 kde \begin{math}N_{skryt}\end{math} je doporučený doporučený počet ve skryté vrstvě, \begin{math}N_{vst}\end{math} je počet neuronů ve vstupní vrstvě a \begin{math}N_{vyst}\end{math} je počet neuronů ve výstupní vrstvě. Pro síť s dvěma skrytými vrstvami se doporučují následující počty neuronů.
 \begin{equation}
-N_{skryt-1}=N_{vyst}\cdot\left(\sqrt[3]{\frac{N_{vst}}{N_{vyst}}}\right)^{2} \,\mbox{a} \,\,\,\,\,\, N_{skryt-2}=N_{vyst}\cdot\left(\sqrt[3]{\frac{N_{vst}}{N_{vyst}}}\right).
+N_{skryt-1}=N_{vyst}\cdot\left(\sqrt[3]{\frac{N_{vst}}{N_{vyst}}}\right)^{2} \,\mbox{a} \,\,\,\,\,\, N_{skryt-2}=N_{vyst}\cdot\left(\sqrt[3]{\frac{N_{vst}}{N_{vyst}}}\right)\mbox{.}
 \end{equation}
 Tato doporučení představují většinou horní odhady a lépe je určit počty neuronů experimentálně.\citep{skripta}
 
@@ -452,8 +452,66 @@ Dopředné šíření signálu probíhá následovně. Nejprve je vstupní vekto
 
 Učení sítě probíhá s učitelem a využívá se k němu jeden z algoritmů popsaných v předchozí kapitole.
 \section{RBF síť}
-\section{Samoorganizující mapy}
+RBF (Radial Basis Function) neuronové sítě jsou známe od 80. let dvacátého století. Jejich rozvoj je spjat s výzkumem tzv. radiálních basických funkcí, které jsou použity jako aktivační funkce neuronů. Síť využívá dopředného šíření signálu a její učení probíhá s učitelem. RBF neuronové sítě představují přímou konkurenci pro dopředné neuronové sítě, protože jsou využívány na stejné úlohy (hlavně klasifikace a aproximace) a jejich učení je výrazně rychlejší než u dopředné sítě.
+
+\subsection{Topologie sítě}
+RBF síť se skládá vždy ze tří vrstev neuronů a využívá dopředné šíření signálu. První vrstva je vstupní a slouží pouze k  rozvedení signálu do druhé vrstvy. Druhá vrstva je skrytá a obsahuje RBF neurony (popsány níže). Vstupní a skrytá vrstva jsou úplně propojeny, každý vstupní neuron je propojen s každým RBF neuronem. Výstup z RBF neuronů je přiveden na neurony výstupní vrstvy (popsány níže), které z nich vypočtou výstup sítě. RBF vrstva je obvykle úplně spojena s výstupní vrstvou, ale v případě potřeby je možné některý ze spojů vynechat. Topologii sítě přibližuje obrázek~\ref{fig:rbfschema}
+\begin{figure}[!h]
+\begin{center}
+\includegraphics[height=4.5cm]{figures/rbfschema.png}
+\caption{Schéma RBF neuronové sítě}
+\label{fig:rbfschema}
+\end{center}
+\end{figure}
+\subsubsection{RBF neuron}
+RBF neuron se od McCulloch-Pittsova neuronu nejvíce odlišuje v použité aktivační funkci a způsobu výpočtu vnitřního potenciálu neuronu. Vnitřní potenciál neuronu se vypočte následovně:
+\begin{equation}
+\varphi =\sqrt{\sum\limits_{i=1}^n(x_{i}-c_{i})^{2}} \mbox{,}
+\end{equation}
+kde \begin{math}\varphi\end{math} je vnitřní potenciál neuronu, \begin{math}x_{i}\end{math} je \textit{i}-tý prvek vstupního vektoru a 
+\begin{math}c_{i}\end{math} je váha \textit{i}-tého vstupu RBF neuronu. Vidíme, že vnitřní potenciál udává Eukleidovská vzdálenost předloženého vektoru od vektoru vah RBF neuronu (tento vektor se někdy také nazývá prototyp, protože je reprezentantem určité podmnožiny dat ve formě shluku).
+
+Jako aktivační funkce se nejčastěji používá Gaussova funkce, která je známa ze statistiky. Gaussova funkce má následující rovnici:
+\begin{equation}
+y^{*}=e^{-\frac{\varphi^{2}}{\sigma^{2}}}\mbox{,}
+\end{equation}
+kde \begin{math}y^{*}\end{math} určuje výstup RBF neuronu, \begin{math}\varphi\end{math} je hodnota vnitřního potenciálu neuronu a \begin{math}\sigma\end{math} je parametr, který určuje strmost Gaussovy funkce. Gaussova funkce je výhodná protože určuje míru příslušnosti vzoru k prototypu. Pokud je vzor totožný s prototypem, nabývá hodnota Gaussovy funkce hodnoty 1, se vzrůstající vzdáleností vzoru od prototypu hodnota funkce klesá. Kromě Gaussovy funkce se jako aktivační funkce používají ještě další funkce. Jednou z nich je funkce
+\begin{equation}
+y^{*}=\varphi
+\end{equation}, kdy se aktivita neuronu se vzrůstající vzdáleností vzoru od prototypu zvyšuje.
+\subsubsection{Neuron výstupní vrstvy}
+Neurony ve výstupní vrstvě jsou perceptronovského typu a jejich výstup je definován rovnicí:
+\begin{equation}
+y=\sum\limits_{i=1}^n(w_{i}y^{*}_{i})\mbox{,}
+\end{equation}
+kde \begin{math}w_{i}\end{math} je váha daného vstupu, \begin{math}y^{*}_{i}\end{math} je výstup RBF neuronů a \textit{y} je výstup neuronové sítě.
+\subsection{Učení RBF sítě}
+Učení RBF sítě se provádí s učitelem. K učení sítě je potřeba stejná množina trénovacích dat, jaká je používána pro učení dopředné sítě. Učení RBF sítě se dělí do dvou fází.\cite{skripta} V první fázi se nastavují váhové vektory \begin{math}c_{i}\end{math} u RBF neuronů, ve druhé fázi se učí neurony výstupní vrstvy.
+\begin{itemize}
+\item 1. fáze
+
+V této fázi je potřeba určit pozice prototypů. K tomuto účelu se využívá adaptivní K-means algoritmus, používaný především ke shlukové analýze. Tento algoritmus zde bude popsán jen obecně, podrobný popis algoritmu, včetně rovnic, naleznete v\cite{skripta}. Algoritmus K-means se skládá z následujících čtyř kroků:
+\begin{enumerate}
+\item Náhodně se inicializují pozice prototypů.
+\item Načte se jeden vzor z trénovací množiny.
+\item Určí se prototyp, který je načtenému vzoru nejblíže. Tento prototyp se posune o \begin{math}\eta\end{math} násobek vzdálenosti vzor-prototyp směrem ke vzoru.
+\item Konec pokud \begin{math}\eta =0\end{math}, nebo po určitém počtu iterací. Jinak se pokračuje bodem 2.
+\end{enumerate}
+Velikost \begin{math}\eta\end{math} se v průběhu učení snižuje.
+
+Velikost parametru \begin{math}\sigma\end{math} (strmost Gaussovy funkce) se vypočte pro každý shluk (neuron) jako střední kvadratická vzdálenost všech vektorů, patřících do shluku, od prototypu:
+\begin{equation}
+\sigma =\sqrt{\frac{1}{Q}\sum\limits_{q=1}^Q||\overline{C}-\overline{X}_{q}||^{2}} \mbox{,}
+\end{equation}
+kde \begin{math}C\end{math} je ptorotyp daného shluku, \begin{math}Q\end{math} udává počet prvků patřící do shluku a \begin{math}\overline{X}_{q}\end{math} je \textit{q}/tý vektor shluku.
+Tato fáze učení probíhá formou samoorganizace tedy učením bez učitele.   
+\item 2. fáze 
+
+V této fázi dochází k učení pouze neuronů ve výstupní vrstvě, parametry RBF neuronů zůstávají po 1. fázi nezměněny. V této fázi probíhá učení s učitelem. K učení výstupní vrstvy je použit algoritmus nejvyššího sestupu popsaný v předchozí kapitole.
+\end{itemize} 
+
 \section{Hopfieldova síť}
+\section{Samoorganizující mapy}
 \section{LVQ}
 %*****************************************************************************
 \chapter{Učení sítě}
@@ -477,7 +535,6 @@ Systém Mathematica od firmy Wolfram Research je sofistikovaný matematický ná
 Knihovna Neural Networks rozšiřuje systém \textit{Mathematica} o možnost pracovat s neuronovými sítěmi bez nutnosti vytvářet si její vlastní implementaci. Konkrétně knihovna nabízí práci s těmito konkrétními sítěmi: jednoduchý perceptron, dopředná neuronová síť, RBF neuronová síť, Hopfieldova neuronová síť, dynamická neuronová síť, Kohonenova mapa, LVQ a VQ. Knihovna také poskytuje implementaci různých algoritmů učení sítě, konkrétně jsou to tyto algoritmy: Levenberg-Marquardt, Gauss-Newton, gradientní algoritmus a algoritmus zpětné propagace. Knihovna umožňuje široké možnosti natavení parametrů u jednotlivých sítí a pro méně zkušené uživatele nabízí vytvoření sítě s výchozími parametry. Výchozí parametry jsou voleny tak, aby síť s výchozími parametry podávala dobré výkony a její učení a vybavování netrvalo přehnaně dlouho. Knihovna ještě nabízí široké možnosti vizualizace dat, grafické zobrazení průběhu učení sítě a také grafické zobrazení výstupu naučené neuronové sítě. Ke knihovně patří návod k použití a rozsáhlá dokumentace.
 %*****************************************************************************
 \chapter{Experimenty s neuronovými sítěmi}
-
 
 \begin{center}
 \begin{table}[h]
@@ -509,9 +566,6 @@ Knihovna Neural Networks rozšiřuje systém \textit{Mathematica} o možnost pra
 V úvodní kapitole seznamuji studenty s používáním programu \textit{Mathematica} od naprostých základů. Nejprve probírám základní syntaxi a ovládání, dále seznamuji studenty s používáním proměnných, funkcí a s možnostmi vizualizace dat. V další části notebooku probírám základy programování v systému \textit{Mathematica}. Prostudování tohoto úvodu umožní rychleji se orientovat v experimentech s neuronovými sítěmi a také dá studentovi znalosti potřebné k úpravám jednotlivých experimentů. Tato kapitola se nachází v souboru \textit{"01-uvod.nb"}.
 
 Soubor vznikl úpravou souboru Petra Chlumského. Změnil jsem grafický vzhled notebooku, změnil a rozšířil jsem textový komentář k jednotlivým příkazům.
-
-
-
 
 \section{Algoritmy učení}
 V notebooku demonstruji použití různých učicích algoritmů. Pro každý učicí algoritmus graficky zobrazuji jeho postup při učení. Demonstruji zde tyto algoritmy: \textit{Levenberg-Marquardt algoritmus}, \textit{Gauss-Newton algoritmus}, \textit{Algoritmus nejvyššího poklesu (Steepest Descent)} a \textit{Algoritmus zpětné propagace (Backpropagation)}.
@@ -733,50 +787,6 @@ Soubor vznikl úpravou souboru Petra Chlumského. Změnil jsem grafickou podobu 
 %*****************************************************************************
 \appendix
 
-\chapter{Testování zaplnění stránky a odsazení odstavců}
-\textbf{\large Tato příloha nebude součástí vaší práce. 
-Slouží pouze jako příklad formátování textu.}
-
-\section*{}
-Určitě existuje nějaká pěkná latinská věta, která se k tomuhle testování používá, ale co mají dělat ti, kteří se nikdy latinsky neučili? Určitě existuje nějaká pěkná latinská věta, která se k tomuhle testování používá, ale co mají dělat ti, kteří se nikdy latinsky neučili? Určitě existuje nějaká pěkná latinská věta, která se k tomuhle testování používá, ale co mají dělat ti, kteří se nikdy latinsky neučili?
-
-Určitě existuje nějaká pěkná latinská věta, která se k tomuhle testování používá, ale co mají dělat ti, kteří se nikdy latinsky neučili? Určitě existuje nějaká pěkná latinská věta, která se k tomuhle testování používá, ale co mají dělat ti, kteří se nikdy latinsky neučili? Určitě existuje nějaká pěkná latinská věta, která se k tomuhle testování používá, ale co mají dělat ti, kteří se nikdy latinsky neučili?
-
-Určitě existuje nějaká pěkná latinská věta, která se k tomuhle testování používá, ale co mají dělat ti, kteří se nikdy latinsky neučili? Určitě existuje nějaká pěkná latinská věta, která se k tomuhle testování používá, ale co mají dělat ti, kteří se nikdy latinsky neučili? Určitě existuje nějaká pěkná latinská věta, která se k tomuhle testování používá, ale co mají dělat ti, kteří se nikdy latinsky neučili?
-
-Určitě existuje nějaká pěkná latinská věta, která se k tomuhle testování používá, ale co mají dělat ti, kteří se nikdy latinsky neučili? Určitě existuje nějaká pěkná latinská věta, která se k tomuhle testování používá, ale co mají dělat ti, kteří se nikdy latinsky neučili? Určitě existuje nějaká pěkná latinská věta, která se k tomuhle testování používá, ale co mají dělat ti, kteří se nikdy latinsky neučili? Určitě existuje nějaká pěkná latinská věta, která se k tomuhle testování používá, ale co mají dělat ti, kteří se nikdy latinsky neučili? Určitě existuje nějaká pěkná latinská věta, která se k tomuhle testování používá, ale co mají dělat ti, kteří se nikdy latinsky neučili? Určitě existuje nějaká pěkná latinská věta, která se k tomuhle testování používá, ale co mají dělat ti, kteří se nikdy latinsky neučili?
-
-Určitě existuje nějaká pěkná latinská věta, která se k tomuhle testování používá, ale co mají dělat ti, kteří se nikdy latinsky neučili? Určitě existuje nějaká pěkná latinská věta, která se k tomuhle testování používá, ale co mají dělat ti, kteří se nikdy latinsky neučili?
-
-Určitě existuje nějaká pěkná latinská věta, která se k tomuhle testování používá, ale co mají dělat ti, kteří se nikdy latinsky neučili? Určitě existuje nějaká pěkná latinská věta, která se k tomuhle testování používá, ale co mají dělat ti, kteří se nikdy latinsky neučili? Určitě existuje nějaká pěkná latinská věta, která se k tomuhle testování používá, ale co mají dělat ti, kteří se nikdy latinsky neučili? Určitě existuje nějaká pěkná latinská věta, která se k tomuhle testování používá, ale co mají dělat ti, kteří se nikdy latinsky neučili? Určitě existuje nějaká pěkná latinská věta, která se k tomuhle testování používá, ale co mají dělat ti, kteří se nikdy latinsky neučili?
-
-Určitě existuje nějaká pěkná latinská věta, která se k tomuhle testování používá, ale co mají dělat ti, kteří se nikdy latinsky neučili? Určitě existuje nějaká pěkná latinská věta, která se k tomuhle testování používá, ale co mají dělat ti, kteří se nikdy latinsky neučili? Určitě existuje nějaká pěkná latinská věta, která se k tomuhle testování používá, ale co mají dělat ti, kteří se nikdy latinsky neučili? Určitě existuje nějaká pěkná latinská věta, která se k tomuhle testování používá, ale co mají dělat ti, kteří se nikdy latinsky neučili? Určitě existuje nějaká pěkná latinská věta, která se k tomuhle testování používá, ale co mají dělat ti, kteří se nikdy latinsky neučili?
-
-Určitě existuje nějaká pěkná latinská věta, která se k tomuhle testování používá, ale co mají dělat ti, kteří se nikdy latinsky neučili? Určitě existuje nějaká pěkná latinská věta, která se k tomuhle testování používá, ale co mají dělat ti, kteří se nikdy latinsky neučili? Určitě existuje nějaká pěkná latinská věta, která se k tomuhle testování používá, ale co mají dělat ti, kteří se nikdy latinsky neučili? Určitě existuje nějaká pěkná latinská věta, která se k tomuhle testování používá, ale co mají dělat ti, kteří se nikdy latinsky neučili? Určitě existuje nějaká pěkná latinská věta, která se k tomuhle testování používá, ale co mají dělat ti, kteří se nikdy latinsky neučili?
-
-Určitě existuje nějaká pěkná latinská věta, která se k tomuhle testování používá, ale co mají dělat ti, kteří se nikdy latinsky neučili? Určitě existuje nějaká pěkná latinská věta, která se k tomuhle testování používá, ale co mají dělat ti, kteří se nikdy latinsky neučili? Určitě existuje nějaká pěkná latinská věta, která se k tomuhle testování používá, ale co mají dělat ti, kteří se nikdy latinsky neučili? Určitě existuje nějaká pěkná latinská věta, která se k tomuhle testování používá, ale co mají dělat ti, kteří se nikdy latinsky neučili? Určitě existuje nějaká pěkná latinská věta, která se k tomuhle testování používá, ale co mají dělat ti, kteří se nikdy latinsky neučili?
-
-Určitě existuje nějaká pěkná latinská věta, která se k tomuhle testování používá, ale co mají dělat ti, kteří se nikdy latinsky neučili? Určitě existuje nějaká pěkná latinská věta, která se k tomuhle testování používá, ale co mají dělat ti, kteří se nikdy latinsky neučili? Určitě existuje nějaká pěkná latinská věta, která se k tomuhle testování používá, ale co mají dělat ti, kteří se nikdy latinsky neučili? Určitě existuje nějaká pěkná latinská věta, která se k tomuhle testování používá, ale co mají dělat ti, kteří se nikdy latinsky neučili? Určitě existuje nějaká pěkná latinská věta, která se k tomuhle testování používá, ale co mají dělat ti, kteří se nikdy latinsky neučili?
-
-Určitě existuje nějaká pěkná latinská věta, která se k tomuhle testování používá, ale co mají dělat ti, kteří se nikdy latinsky neučili? Určitě existuje nějaká pěkná latinská věta, která se k tomuhle testování používá, ale co mají dělat ti, kteří se nikdy latinsky neučili? Určitě existuje nějaká pěkná latinská věta, která se k tomuhle testování používá, ale co mají dělat ti, kteří se nikdy latinsky neučili? Určitě existuje nějaká pěkná latinská věta, která se k tomuhle testování používá, ale co mají dělat ti, kteří se nikdy latinsky neučili? Určitě existuje nějaká pěkná latinská věta, která se k tomuhle testování používá, ale co mají dělat ti, kteří se nikdy latinsky neučili?
-
-Určitě existuje nějaká pěkná latinská věta, která se k tomuhle testování používá, ale co mají dělat ti, kteří se nikdy latinsky neučili? Určitě existuje nějaká pěkná latinská věta, která se k tomuhle testování používá, ale co mají dělat ti, kteří se nikdy latinsky neučili? Určitě existuje nějaká pěkná latinská věta, která se k tomuhle testování používá, ale co mají dělat ti, kteří se nikdy latinsky neučili? Určitě existuje nějaká pěkná latinská věta, která se k tomuhle testování používá, ale co mají dělat ti, kteří se nikdy latinsky neučili? Určitě existuje nějaká pěkná latinská věta, která se k tomuhle testování používá, ale co mají dělat ti, kteří se nikdy latinsky neučili?
-
-Určitě existuje nějaká pěkná latinská věta, která se k tomuhle testování používá, ale co mají dělat ti, kteří se nikdy latinsky neučili? Určitě existuje nějaká pěkná latinská věta, která se k tomuhle testování používá, ale co mají dělat ti, kteří se nikdy latinsky neučili? Určitě existuje nějaká pěkná latinská věta, která se k tomuhle testování používá, ale co mají dělat ti, kteří se nikdy latinsky neučili? Určitě existuje nějaká pěkná latinská věta, která se k tomuhle testování používá, ale co mají dělat ti, kteří se nikdy latinsky neučili? Určitě existuje nějaká pěkná latinská věta, která se k tomuhle testování používá, ale co mají dělat ti, kteří se nikdy latinsky neučili?
-
-Určitě existuje nějaká pěkná latinská věta, která se k tomuhle testování používá, ale co mají dělat ti, kteří se nikdy latinsky neučili? Určitě existuje nějaká pěkná latinská věta, která se k tomuhle testování používá, ale co mají dělat ti, kteří se nikdy latinsky neučili? Určitě existuje nějaká pěkná latinská věta, která se k tomuhle testování používá, ale co mají dělat ti, kteří se nikdy latinsky neučili? Určitě existuje nějaká pěkná latinská věta, která se k tomuhle testování používá, ale co mají dělat ti, kteří se nikdy latinsky neučili? Určitě existuje nějaká pěkná latinská věta, která se k tomuhle testování používá, ale co mají dělat ti, kteří se nikdy latinsky neučili?
-
-Určitě existuje nějaká pěkná latinská věta, která se k tomuhle testování používá, ale co mají dělat ti, kteří se nikdy latinsky neučili? Určitě existuje nějaká pěkná latinská věta, která se k tomuhle testování používá, ale co mají dělat ti, kteří se nikdy latinsky neučili? Určitě existuje nějaká pěkná latinská věta, která se k tomuhle testování používá, ale co mají dělat ti, kteří se nikdy latinsky neučili? Určitě existuje nějaká pěkná latinská věta, která se k tomuhle testování používá, ale co mají dělat ti, kteří se nikdy latinsky neučili? Určitě existuje nějaká pěkná latinská věta, která se k tomuhle testování používá, ale co mají dělat ti, kteří se nikdy latinsky neučili?
-
-Určitě existuje nějaká pěkná latinská věta, která se k tomuhle testování používá, ale co mají dělat ti, kteří se nikdy latinsky neučili? Určitě existuje nějaká pěkná latinská věta, která se k tomuhle testování používá, ale co mají dělat ti, kteří se nikdy latinsky neučili? Určitě existuje nějaká pěkná latinská věta, která se k tomuhle testování používá, ale co mají dělat ti, kteří se nikdy latinsky neučili? Určitě existuje nějaká pěkná latinská věta, která se k tomuhle testování používá, ale co mají dělat ti, kteří se nikdy latinsky neučili? Určitě existuje nějaká pěkná latinská věta, která se k tomuhle testování používá, ale co mají dělat ti, kteří se nikdy latinsky neučili?
-
-Určitě existuje nějaká pěkná latinská věta, která se k tomuhle testování používá, ale co mají dělat ti, kteří se nikdy latinsky neučili? Určitě existuje nějaká pěkná latinská věta, která se k tomuhle testování používá, ale co mají dělat ti, kteří se nikdy latinsky neučili? Určitě existuje nějaká pěkná latinská věta, která se k tomuhle testování používá, ale co mají dělat ti, kteří se nikdy latinsky neučili? Určitě existuje nějaká pěkná latinská věta, která se k tomuhle testování používá, ale co mají dělat ti, kteří se nikdy latinsky neučili? Určitě existuje nějaká pěkná latinská věta, která se k tomuhle testování používá, ale co mají dělat ti, kteří se nikdy latinsky neučili?
-
-Určitě existuje nějaká pěkná latinská věta, která se k tomuhle testování používá, ale co mají dělat ti, kteří se nikdy latinsky neučili? Určitě existuje nějaká pěkná latinská věta, která se k tomuhle testování používá, ale co mají dělat ti, kteří se nikdy latinsky neučili? Určitě existuje nějaká pěkná latinská věta, která se k tomuhle testování používá, ale co mají dělat ti, kteří se nikdy latinsky neučili? Určitě existuje nějaká pěkná latinská věta, která se k tomuhle testování používá, ale co mají dělat ti, kteří se nikdy latinsky neučili? Určitě existuje nějaká pěkná latinská věta, která se k tomuhle testování používá, ale co mají dělat ti, kteří se nikdy latinsky neučili?
-
-Určitě existuje nějaká pěkná latinská věta, která se k tomuhle testování používá, ale co mají dělat ti, kteří se nikdy latinsky neučili? Určitě existuje nějaká pěkná latinská věta, která se k tomuhle testování používá, ale co mají dělat ti, kteří se nikdy latinsky neučili? Určitě existuje nějaká pěkná latinská věta, která se k tomuhle testování používá, ale co mají dělat ti, kteří se nikdy latinsky neučili? Určitě existuje nějaká pěkná latinská věta, která se k tomuhle testování používá, ale co mají dělat ti, kteří se nikdy latinsky neučili? Určitě existuje nějaká pěkná latinská věta, která se k tomuhle testování používá, ale co mají dělat ti, kteří se nikdy latinsky neučili?
-
-Určitě existuje nějaká pěkná latinská věta, která se k tomuhle testování používá, ale co mají dělat ti, kteří se nikdy latinsky neučili? Určitě existuje nějaká pěkná latinská věta, která se k tomuhle testování používá, ale co mají dělat ti, kteří se nikdy latinsky neučili? Určitě existuje nějaká pěkná latinská věta, která se k tomuhle testování používá, ale co mají dělat ti, kteří se nikdy latinsky neučili? Určitě existuje nějaká pěkná latinská věta, která se k tomuhle testování používá, ale co mají dělat ti, kteří se nikdy latinsky neučili? Určitě existuje nějaká pěkná latinská věta, která se k tomuhle testování používá, ale co mají dělat ti, kteří se nikdy latinsky neučili?
 
 %*****************************************************************************
 \chapter{Pokyny a návody k formátování textu práce}
