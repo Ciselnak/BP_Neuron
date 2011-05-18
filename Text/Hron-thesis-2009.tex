@@ -566,11 +566,33 @@ kde $\mu_{i}(t)$ je stav \textit{i}-tého neuronu v čase \textit{t} a $x_{i}$ j
 kde $f$ je skoková aktivační funkce. Tento krok provádíme dokud dochází ke změnám stavů. Jakmile nedojde při iteraci k žádné změně, je algoritmus vybavování ukončen.
 \item Na výstupy sítě jsou předány vnitřní stavy jednotlivých neuronů.
 \begin{equation}
-y_{i}=\mu_{i}(t_{poslední})
+y_{i}=\mu_{i}(t_{posledni})
 \end{equation}
 Nyní můžeme předložit další vzor k vybavování.
 \end{enumerate}
-\section{Samoorganizující mapy}
+\section{Samoorganizující mapa}
+Samoorganizující mapa, zkráceně SOM (Self Organizing Map), byla objevena na počátku osmdesátých let dvacátého století. Jejím objevitelem je finský profesor Teuvo Kohonen, podle něho je také někdy nazývána Kohonenova síť nebo Kohonenova mapa. Samoorganizující mapa pracuje na principu shlukové analýzy. SOM se učí metodou bez učitele a využívá soutěžní strategii učení. V jeden časový okamžik je v síti pouze jeden neuron aktivní a neurony mezi sebou soutěží o to, který bude aktivní. Kohonen také formuloval algoritmus učení samoorganizující mapy, který si klade za cíl vytvoření množiny reprezentantů, kteří mají stejnou pravděpodobnost výběru.\cite{teoret} 
+
+Samoorganizující mapy jsou nejčastěji používány k vizualizováni topologie a hierarchické struktury vícerozměrných dat. Vstupní data jsou pomocí samoorganizující mapy transformována do prostoru s nižší dimenzí (nejčastěji dvoudimenzionálního). Další možností využití je rozpoznávání řeči.\cite{skripta} 
+\subsection{Topologie sítě}
+Samoorganizující mapa se skládá ze dvou vrstev. První vrstvou je vrstva vstupní, ta pouze distribuuje vstupní vektor na vstupy každého neuronu ve druhé vrstvě. Tyto dvě vrstvy jsou tedy úplně propojeny. Druhá vrstva je někdy nazývána Kohonenova vrstva. Neurony v Kohonenově vrstvě jsou uspořádány (nejčastěji do dvoudimenzionální mřížky). Neurony mají tedy pevně definované sousedy. Každý neuron v Kohonenově vrstvě reprezentuje určitý bod (včetně jistého okolí) ve vstupním prostoru. Neuron v Kohonenově vrstvě má stejný počet vstupů jako samotná SOM. Váhy vstupů u neuronu slouží k uložení pozice bodu, který neuron reprezentuje. Přenosovou funkcí neuronu je Eukleidovská vzdálenost. Výstupem neuronu je Eukleidovská vzdálenost vektoru uloženého ve vahách vstupů a předkládaného vektoru. Výstupem celé sítě  je (podle principu vítěz bere vše) ten neuron, který má spočtenou Eukleidovskou vzdálenost nejmenší.
+Strukturu Kohonenovy sítě ukazuje obrázek~\ref{fig:kohonen1}
+
+\begin{figure}[!h]
+\begin{center}
+\includegraphics[height=5cm]{figures/kohonen1.png}
+\caption{Struktura samoorganizující mapy\cite{SDL}}
+\label{fig:kohonen1}
+\end{center}
+\end{figure}
+\subsection{Učení sítě}
+Učicí algoritmus se pokouší uspořádat neurony v mřížce do takové podoby, aby mřížka co nejlépe vystihovala vstupní data. Učení probíhá bez učitele a iterativně. Učicí algoritmus samoorganizující mapy je velmi jednoduchý, proto jej zde uvedeme pouze neformálně. Podrobnější popis algoritmu včetně rovnic naleznete v \cite{skripta}.
+
+Nejprve se nastaví váhy vstupů u všech neuronů na náhodné hodnoty. Zvolí se velikost učicího kroku (tímto parametrem je možné ovlivnit jak rychlost učení sítě) a nastaví se velikost okolí neuronu tak, aby do tohoto okolí spadaly všechny ostatní neurony. Okolí neuronu si představme jako skupinu neuronů, které se nachází do určité vzdálenosti od zvoleného neuronu (příkladem okolí mohou být červené neurony na obrázku~\ref{fig:kohonen1}). Poté je neuronové síti předložen trénovací vzor. Vypočteme Eukleidovskou vzdálenost všech neuronů od předloženého vzoru a vybereme nejbližší neuron. Tomuto neuronu a všem neuronům v jeho okolí přizpůsobíme váhy směrem k předloženému vzoru o rozdíl odpovídajících si prvků vynásobený velikostí učicího kroku. Zmenšíme okolí a pokračujeme předložením dalšího vzoru.
+
+Proces učení si můžeme představit jako rozprostírání původně zmačkaného papíru do roviny tak, aby pokrýval celý vstupní prostor.
+\subsection{Vybavování vzorů}
+Vybavování v samoorganizující mapě je velmi snadné, probíhá formou hledání reprezentanta pro předložený vektor. Tímto reprezentantem se stane neuron, jehož váhový vektor nejvíce odpovídá předloženému vzoru. Algoritmus vybavování je následující: Předloží se vstupní vektor, pro všechny neurony se vypočte Eukleidovská vzdálenost od vstupního vektoru a neuron s nejmenší Eukleidovskou vzdáleností vítězí a je vybrán jako reprezentant.
 \section{LVQ}
 %*****************************************************************************
 \chapter{Učení sítě}
