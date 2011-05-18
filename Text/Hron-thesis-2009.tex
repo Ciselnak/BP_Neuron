@@ -594,6 +594,7 @@ Proces učení si můžeme představit jako rozprostírání původně zmačkan�
 \subsection{Vybavování vzorů}
 Vybavování v samoorganizující mapě je velmi snadné, probíhá formou hledání reprezentanta pro předložený vektor. Tímto reprezentantem se stane neuron, jehož váhový vektor nejvíce odpovídá předloženému vzoru. Algoritmus vybavování je následující: Předloží se vstupní vektor, pro všechny neurony se vypočte Eukleidovská vzdálenost od vstupního vektoru a neuron s nejmenší Eukleidovskou vzdáleností vítězí a je vybrán jako reprezentant.
 \section{LVQ}
+\subsection{Topologie sítě}
 %*****************************************************************************
 \chapter{Učení sítě}
 \section{Rozdělení vstupních dat}
@@ -829,12 +830,11 @@ Nejprve jsem načetl Iris data (dávám možnost načtení ze souboru nebo z int
 Soubor vznikl úpravou souboru Petra Chlumského. Změnil jsem grafickou podobu notebooku. V doprovodném komentáři jsem nahradil slovo \uv{skupina} slovem \uv{třída}, které lépe vystihuje popisovanou skutečnost. Komentář jsem ještě drobně rozšířil a upravil. Upravil jsem a výrazně zkrátil předzpracování dat. Ponechal jsem pouze kód, který skutečně manipuluje s daty a uvedl odkaz na notebook, ve kterém se nachází detailně popsaný proces předzpracování dat. 
 %*****************************************************************************
 \chapter{Závěr}
+V rámci své bakalářské práce jsem rozšířil demonstrační aplikaci pro podporu výuky neuronových sítí na FEL ČVUT. Původní aplikace se skládala z 8 souborů, já jsem ji rozšířil na 15 souborů a soubory původní aplikace jsem upravil a částečné přepracoval. Původní aplikace pokrývala základní práci s dopřednou, RBF, Hopfieldovou, Kohonenovou a LVQ sítí. Já jsem ji rozšířil o demonstraci různých trénovacích algoritmů, křížovou validaci, ukázal jsem různé přístupy k učení sítě z pohledu dělení dat na validační, trénovací a testovaní množinu a podrobně jsem rozebral \uv{vnitřnosti} RBF neuronové sítě. Součástí práce je také teoretická část, ve které jsem popsal základní principy a strukturu vybraných neuronových sítí.
 
-\begin{itemize}
-\item Zhodnocení splnění cílů DP/BP a  vlastního přínosu práce (při formulaci je třeba vzít v potaz zadání práce).
-\item Diskuse dalšího možného pokračování práce.
-\end{itemize} 
+Díky bakalářské jsem si značně rozšířil své znalosti neuronových sítí a také jsem rozšířil své schopnosti programovat v systému Mathematica, se kterým jsem měl do té doby pouze pasivní zkušenosti.
 
+Cíle bakalářské práce se mi podařilo naplnit. Výstup této práce bude použit ve cvičeních předmětu \uv{Neuronové sítě a neuropočítače}.
 %*****************************************************************************
 % Seznam literatury je v samostatnem souboru reference.bib. Ten
 % upravte dle vlastnich potreb, potom zpracujte (a do textu
