@@ -646,7 +646,19 @@ Po naučení neuronové sítě je vhodné vědět jak dobře bude síť vykonáv
 Jedním z nebezpečí při učení neuronové sítě je její přeučení. Přeučení sítě znamená, že je síť příliš přizpůsobena trénovacím datům (např. se přizpůsobila šumu v datech). Takto přeučená síť poté podává výborné výsledky na trénovacích datech, v praxi nebo na testovacích datech by již byly její výsledky podstatně horší. Tomuto problému je možné předejít použitím validační množiny. Validační množina slouží k ověření úspěšnosti sítě během učení. V každé iteraci učicího algoritmu je vyhodnocena úspěšnost sítě na validační množině a v případě že by provedením iterace došlo ke zvýšení chyby na validačních datech, není již tato iterace provedena a síť je prohlášena za naučenou. Druhou možností je nechat proběhnout požadovaný počet iterací učicího algoritmy, v jeho průběhu sledovat vývoj chyby na validační množina a za naučenou síť prohlásit síť v té iteraci, kdy byla chyba na validačních datech nejmenší.
 Jako validační množinu je možné použít testovací množinu. Pokud chceme striktně dodržet postup, že neuronová síť nesmí v průběhu učení přijít do styku s testovací množinou, je možné validační množinu získat jako podmnožinu trénovacích dat.
 \section{Křížová validace}
-Křížová validace slouží k  
+Při učení sítě může mít významnou roli na její úspěšnost náhodné rozdělení dat na trénovací, testovací a případně validační množinu nebo náhodná počáteční inicializace sítě.
+Křížová validace může sloužit právě k omezení vlivu těchto náhodných jevů na odhad úspěšnosti sítě, nejčastěji je však využívána k nastavení parametrů různých algoritmů. V našem případě ji tedy můžeme použít k vybrání nejlepší struktury sítě. Křížová validace probíhá následujícím způsobem:
+\begin{enumerate}
+\item Trénovací data se náhodně rozdělí do $k$ stejně velkých množin. Hodnota $k$ určuje stupeň křížové validace. Množiny dat se nazývají foldy.
+\item Pro každý fold je vytvořena náhodně inicializovaná neuronová síť, která je na zbývajících foldech naučena a tento jeden fold slouží jako testovací množina, pro určení úspěšnosti sítě.
+\item Z úspěšností sítě pro všechny foldy se spočte průměr. Tento průměr je neovlivněným odhadem úspěšnosti dané sítě.
+\end{enumerate}
+Existuje několik různých typů křížové validace:
+\begin{itemize}
+\item K-stupňová křížová validace je popsána výše.
+\item Stratifikovaná křížová validace. Při stratifikované křížové validaci jsou data rozdělena do foldů tak, aby v každém foldu byly třídy zastoupeny ve stejném poměru jako v trénovacích datech.
+\item Leave-one-out křížová validace je extrémní případ k-stupňové křížové validaci, kde k je rovno počtu vektorů v trénovacích datech.
+\end{itemize}
 %*****************************************************************************
 \chapter{Implementační prostředí}
 \section{Wolfram Mathematica}
