@@ -411,7 +411,7 @@ Algoritmus začíná s náhodně inicializovaným vektorem vah neuronů a vyžad
 
 Algoritmus nejvyššího poklesu je nejjednodušší algoritmus ze zde popisovaných. Potřebuje nejméně výpočetního výkonu a dosahuje mnohem horších výsledků než ostatní popisované algoritmy.\cite{nndocumentation}
 \subsection{Gauss-Newton algoritmus}
-Algoritmus začíná s náhodně inicializovaným vektorem vah. Na začátku každé iterace je nastavena velikost učicího kroku na hodnotu 1. Pro určení směru posunu je použita Gauss-Newtonova metoda, která pro výpočet využívá první a druhé derivace. Ve vypočteném směru je vektor vah posunut o velikost učicího kroku. Posun je uskutečněn pouze pokud způsobí pokles hodnoty funkce MSE, jinak je velikost kroku snížena o polovinu. Poté algoritmus pokračuje další iterací. Algoritmus končí pokud dosáhne minima funkce MSE (může být lokální) nebo vyčerpá přidělený počet iterací.
+Algoritmus začíná s náhodně inicializovaným vektorem vah. Na začátku každé iterace je nastavena velikost učicího kroku na hodnotu 1. Pro určení směru posunu je použita Gauss-Newtonova metoda(rozebrána v\citep{learningmachines}), která pro výpočet využívá první a druhé derivace. Ve vypočteném směru je vektor vah posunut o velikost učicího kroku. Posun je uskutečněn pouze pokud způsobí pokles hodnoty funkce MSE, jinak je velikost kroku snížena o polovinu. Poté algoritmus pokračuje další iterací. Algoritmus končí pokud dosáhne minima funkce MSE (může být lokální) nebo vyčerpá přidělený počet iterací.
 
 Gauss-Newton algoritmus je rychlý a spolehlivý algoritmus, který je využívaný v mnoha oblastech k řešení problémů s minimalizací funkcí. Pro řešení problémů v oblasti neuronových sítí nemusí být vždy nejvhodnější volbou, protože může docházet k výpočtům s hodnotami s velkým číselným rozsahem. Pokud k tomuto dojde, bude algoritmus konvergovat velmi pomalu a bude zdržovat celý učicí proces.\cite{nndocumentation}
 \subsection{Levenberg-Marquardt algoritmus}
@@ -593,8 +593,51 @@ Nejprve se nastaví váhy vstupů u všech neuronů na náhodné hodnoty. Zvolí
 Proces učení si můžeme představit jako rozprostírání původně zmačkaného papíru do roviny tak, aby pokrýval celý vstupní prostor.
 \subsection{Vybavování vzorů}
 Vybavování v samoorganizující mapě je velmi snadné, probíhá formou hledání reprezentanta pro předložený vektor. Tímto reprezentantem se stane neuron, jehož váhový vektor nejvíce odpovídá předloženému vzoru. Algoritmus vybavování je následující: Předloží se vstupní vektor, pro všechny neurony se vypočte Eukleidovská vzdálenost od vstupního vektoru a neuron s nejmenší Eukleidovskou vzdáleností vítězí a je vybrán jako reprezentant.
-\section{LVQ}
-\subsection{Topologie sítě}
+\section{Learning Vector Quantization (LVQ)}
+Learning Vector Quantization (LVQ) je rozšířením samoorganizující mapy o učení s učitelem. Toto rozšíření navrhl stejně jako samoorganizující mapu Teuvo Kohonen. LVQ má k dispozici k učicím vzorům jejich správné třídy, bude tedy moci klasifikovat i neznámá data. Struktura LVQ sítě je stejná jako struktura SOM.
+
+Hlavní použití LVQ spočívá v klasifikaci dat.
+\subsection{Učení sítě}
+V prvním kroku učení se použije standardní algoritmus pro učení samoorganizující mapy. Pomocí tohoto algoritmu dojde k rozmístění reprezentantů (neuronů) v prostoru vstupních dat. V druhém kroku se znovu předloží vstupní data tentokrát i s informací o jejich příslušnosti ke třídě. Pro každý vstupní vektor se určí vítězný (nejbližší) neuron a zapamatuje se informace o příslušnosti vstupního vektoru ke třídě. Po tomto průchodu je pro každý neuron vytvořena tabulka četností tříd, které k tomuto neuronu náleží. Neuronu je přiřazena ta třída, kterou má v tabulce zastoupenu nejčastěji. Posledním krokem učení je zpřesnění pozic neuronů. K tomuto zpřesnění se používají tři algoritmy LVQ1, LVQ2 a LVQ3.
+\begin{itemize}
+\item LVQ1
+
+U metody LVQ1 dojde k opětovnému předložení vzorů, pro každý vzor je vybrán neuron resp. jeho váhový vektor, který je předloženému vzoru podle Eukleidovské metriky nejblíže. Pouze tomuto vybranému neuronu upravíme váhový vektor podle následující rovnice:
+\begin{equation}
+w_{i}(t+1)=w_{i}(t)+\eta (t)\left[x_{i}(t)-w_{i}(t)\right]\mbox{,}
+\end{equation}
+pokud je vzor klasifikován dobře(učení),
+\begin{equation}
+w_{i}(t+1)=w_{i}(t)-\eta (t)\left[x_{i}(t)-w_{i}(t)\right]\mbox{,}
+\end{equation}
+pokud je vzor klasifikován spatně(odučení), kde $0<i<N-1$, $w_{i}$ jsou složky váhového vektoru neuronu, $x_{i}$ jsou složky vstupního vektoru a $\eta$ je parametr učení. Nejbližší neuron je tedy \uv{přisunut} k předloženému vzoru nebo je od něj \uv{odsunut}. Ostatním neuronům zůstávají jejich původní váhy.
+
+Hranice vytvořená pomocí této metody se nachází ve středu spojnice dvou neuronů patřících do rozdílných tříd.
+\item LVQ2
+
+Metoda LVQ2 zpřesňuje metodu LVQ1. Na rozdíl od předchozí metody si metoda LVQ2 vybírá dva nejbližší neurony a úpravu vah provádí pouze v případě, kdy jeden neuron klasifikuje správně a druhý špatně. Předpokládejme dva váhové vektory $w^{1}_{i}$ a $w^{2}_{i}$ reprezentující dvě různé třídy $T_{1}$ a $T_{2}$. Rozhodovací hranice mezi nimi je zde nahrazena okénkem (pásem), které má nenulovou šířku (šířka se určuje experimentálně\cite{skripta}) a jehož středem prochází hranice. Algoritmus uvažuje modifikaci vektorů pouze pokud vstupní vektor leží v okénku a patří do opačné třídy než vektor, který je mu nejblíže. Váhy neuronů jsou poté upraveny následovně:
+\begin{equation}
+w_{i}^{1}(t+1)=w_{i}^{1}(t)-\eta (t)\left[x_{i}(t)-w_{i}^{1}(t)\right]\mbox{,}
+\end{equation}
+odsunutí chybně klasifikujícího neuronu od vstupního vektoru,
+\begin{equation}
+w_{i}^{2}(t+1)=w_{i}^{2}(t)+\eta (t)\left[x_{i}(t)-w_{i}^{2}(t)\right]\mbox{,}
+\end{equation}
+přisunutí správně klasifikujícího neuronu k vstupnímu vektoru, kde $x_{i}$ jsou složky vstupního vektoru, $0<i<N-1$ a $\eta$ je velikost učicího kroku. Ostatní neurony zůstávají beze změny.
+
+Algoritmus zprvu skutečně zlepšuje pozici hranice mezi třídami, po větším počtu iterací se však začne pozice hranice zhoršovat. Proto je výhodné použít tento algoritmus jen pro menší počat iterací (např. 10000)\cite{courseware}.
+\item LVQ3
+
+Z důvodu nestability metody LVQ2 pro pro velký počet iterací vznikl algoritmus LVQ3, který tento nedostatek odstraňuje. Algoritmus LVQ3 rozšiřuje algoritmus LVQ2 o pravidlo, které zajišťuje přibližování správně klasifikujících neuronů k tréningovým vzorům.Rozšiřující pravidlo je následující:
+
+V případě, kdy předložený vzor i oba nejbližší neurony mají stejnou třídu, proveď u obou neuronů následující úpravy:
+\begin{equation}
+w_{i}(t+1)=w_{i}(t)+\lambda \eta(t)\left[x_{i}(t)-w_{i}(t)\right]\mbox{,}
+\end{equation}
+kde hodnota koeficientu $\lambda\in\left\lbrace0.1,0.5\right\rbrace$ je přímo úměrná velikosti okénka, její hodnota byla odhadnuta experimentálně.
+
+Algoritmus LVQ3 je již dostatečně stabilní, tzn. že po nalezení optimálního váhového vektoru neuronu se již tato hodnota nebude měnit.
+\end{itemize}
 %*****************************************************************************
 \chapter{Učení sítě}
 \section{Rozdělení vstupních dat}
@@ -870,14 +913,14 @@ Cíle bakalářské práce se mi podařilo naplnit. Výstup této práce bude po
 
 
 %*****************************************************************************
-\chapter{Seznam použitých zkratek}
+%\chapter{Seznam použitých zkratek}
 
-\begin{description}
-\item[2D] Two-Dimensional
-\item[ABN] Abstract Boolean Networks
-\item[ASIC] Application-Specific Integrated Circuit
-\end{description}
-\vdots
+%\begin{description}
+%\item[2D] Two-Dimensional
+%\item[ABN] Abstract Boolean Networks
+%\item[ASIC] Application-Specific Integrated Circuit
+%\end{description}
+%\vdots
 
 
 %*****************************************************************************
