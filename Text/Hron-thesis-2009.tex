@@ -634,15 +634,19 @@ V případě, kdy předložený vzor i oba nejbližší neurony mají stejnou t�
 \begin{equation}
 w_{i}(t+1)=w_{i}(t)+\lambda \eta(t)\left[x_{i}(t)-w_{i}(t)\right]\mbox{,}
 \end{equation}
-kde hodnota koeficientu $\lambda\in\left\lbrace0.1,0.5\right\rbrace$ je přímo úměrná velikosti okénka, její hodnota byla odhadnuta experimentálně.
+kde hodnota koeficientu $\lambda\in\left\lbrace0.1,0.5\right\rbrace$ je přímo úměrná velikosti okénka, její hodnota byla odhadnuta experimentálně.\cite{skripta}
 
 Algoritmus LVQ3 je již dostatečně stabilní, tzn. že po nalezení optimálního váhového vektoru neuronu se již tato hodnota nebude měnit.
 \end{itemize}
 %*****************************************************************************
-\chapter{Učení sítě}
+\chapter{Učení a hodnocení sítě}
 \section{Rozdělení vstupních dat}
-\section{Křížová validace}
+Po naučení neuronové sítě je vhodné vědět jak dobře bude síť vykonávat činnost, kterou byla naučena. K tomuto vyhodnocení bychom ideálně potřebovali další vstupní data (pro síť neznámá), pomocí kterých bychom změřili úspěšnost sítě. Tato data většinou k dispozici nemáme, proto je potřeba si je nějak obstarat. Tato testovací data se získají rozdělením množiny dat, kterou máme k dispozici, na dvě menší množiny tzv. trénovací a testovací množinu. V jakém poměru data rozdělit je závislé na mnoha faktorech, v praxi se často tento poměr určuje experimentálně. Učení sítě je poté provedeno na trénovací množině a na testovací množině je určena skutečná chybovost sítě.
 
+Jedním z nebezpečí při učení neuronové sítě je její přeučení. Přeučení sítě znamená, že je síť příliš přizpůsobena trénovacím datům (např. se přizpůsobila šumu v datech). Takto přeučená síť poté podává výborné výsledky na trénovacích datech, v praxi nebo na testovacích datech by již byly její výsledky podstatně horší. Tomuto problému je možné předejít použitím validační množiny. Validační množina slouží k ověření úspěšnosti sítě během učení. V každé iteraci učicího algoritmu je vyhodnocena úspěšnost sítě na validační množině a v případě že by provedením iterace došlo ke zvýšení chyby na validačních datech, není již tato iterace provedena a síť je prohlášena za naučenou. Druhou možností je nechat proběhnout požadovaný počet iterací učicího algoritmy, v jeho průběhu sledovat vývoj chyby na validační množina a za naučenou síť prohlásit síť v té iteraci, kdy byla chyba na validačních datech nejmenší.
+Jako validační množinu je možné použít testovací množinu. Pokud chceme striktně dodržet postup, že neuronová síť nesmí v průběhu učení přijít do styku s testovací množinou, je možné validační množinu získat jako podmnožinu trénovacích dat.
+\section{Křížová validace}
+Křížová validace slouží k  
 %*****************************************************************************
 \chapter{Implementační prostředí}
 \section{Wolfram Mathematica}
