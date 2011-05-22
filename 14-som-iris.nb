@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       145,          7]
-NotebookDataLength[     52243,       1387]
-NotebookOptionsPosition[     48719,       1264]
-NotebookOutlinePosition[     49188,       1282]
-CellTagsIndexPosition[     49145,       1279]
+NotebookDataLength[     54493,       1441]
+NotebookOptionsPosition[     50667,       1309]
+NotebookOutlinePosition[     51304,       1332]
+CellTagsIndexPosition[     51261,       1329]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -37,21 +37,42 @@ neuronov\[EAcute] s\[IAcute]t\[EHacek] na datech z datab\[AAcute]ze UCI.", \
 
 Cell[CellGroupData[{
 
-Cell["Inicializace knihovny NeuralNetworks", "Section",
- CellChangeTimes->{{3.4017018798191338`*^9, 3.401701891453323*^9}, {
-  3.401702244721938*^9, 3.401702247490888*^9}, {3.402213786262855*^9, 
-  3.402213791290463*^9}, {3.403530541666153*^9, 3.403530548125923*^9}}],
+Cell["\<\
+Na\[CHacek]ten\[IAcute] knihovny NeuralNetworks\
+\>", "Section",
+ CellChangeTimes->{{3.5073602800352573`*^9, 3.5073603289964743`*^9}}],
 
 Cell["\<\
-Nejprve na\[CHacek]teme knihovnu pro neuronov\[EAcute] s\[IAcute]t\[EHacek].\
+Nejd\[RHacek]\[IAcute]ve na\[CHacek]teme knihovnu neuronov\[YAcute]ch s\
+\[IAcute]t\[IAcute].\
 \>", "Text",
- CellChangeTimes->{{3.403530519862419*^9, 3.403530534534667*^9}, {
-  3.40760443459375*^9, 3.407604441953125*^9}}],
+ CellChangeTimes->{{3.507360408586581*^9, 3.507360469435308*^9}, {
+  3.5073605129338317`*^9, 3.5073605139169564`*^9}, {3.507360599217788*^9, 
+  3.50736063908185*^9}, {3.5073606876975236`*^9, 3.5073607032795024`*^9}, {
+  3.5073607601777277`*^9, 3.5073607715351696`*^9}, {3.5084334105739098`*^9, 
+  3.5084334111769867`*^9}}],
 
 Cell[BoxData[
- RowBox[{"<<", "NeuralNetworks`"}]], "Input",
- CellChangeTimes->{{3.402213973734511*^9, 3.402213981537317*^9}, 
-   3.510994142302*^9}]
+ StyleBox[
+  RowBox[{"<<", " ", "NeuralNetworks`"}], "Input"]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.507360750489497*^9, 3.5073607641152277`*^9}}],
+
+Cell["\<\
+Pokud pracujete v Mathematice 8.0, vypn\[EHacek]te je\[SHacek]t\[EHacek] \
+zobrazov\[AAcute]n\[IAcute] chybov\[EAcute] hl\[AAcute]\[SHacek]ky \
+Remove::rmnsm. Tuto hl\[AAcute]\[SHacek]ku vyhazuj\[IAcute] funkce knihovny \
+NeuralNetworks. Na funkci knihovny toto nem\[AAcute] \[ZHacek]\[AAcute]dn\
+\[YAcute] vliv.\
+\>", "Text",
+ CellChangeTimes->{{3.5073722663308234`*^9, 3.5073724902892623`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Off", "[", 
+  StyleBox[
+   RowBox[{"Remove", "::", "rmnsm"}], "MessageName"], "]"}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.507372496128004*^9, 3.5073725146658583`*^9}}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -85,7 +106,7 @@ Cell[BoxData[
 
 Cell[BoxData["\<\"D:\\\\Dokumenty\\\\BP\"\>"], "Output",
  CellChangeTimes->{3.511001659601076*^9, 3.5110017468866596`*^9, 
-  3.513449902443736*^9, 3.51425921257384*^9}]
+  3.513449902443736*^9, 3.51425921257384*^9, 3.515094491780595*^9}]
 }, Open  ]],
 
 Cell["A na\[CHacek]teme data.", "Text",
@@ -295,7 +316,7 @@ Cell[BoxData[
   TicksStyle->{}]], "Output",
  CellChangeTimes->{3.42260665559375*^9, 3.422616249390625*^9, 
   3.422616338921875*^9, 3.511001660982251*^9, 3.5110017478127775`*^9, 
-  3.5134499071123285`*^9, 3.5142592135878415`*^9}]
+  3.5134499071123285`*^9, 3.5142592135878415`*^9, 3.5150944925796404`*^9}]
 }, Open  ]],
 
 Cell["\<\
@@ -337,14 +358,14 @@ Cell[BoxData[
 Cell[BoxData[
  GraphicsBox[{{}, {}, 
    {Hue[0.67, 0.6, 0.6], LineBox[CompressedData["
-1:eJxTTMoPSmViYGCQB2IQDQOWN8KDNTb+s4fwPtgHvXDfu7//N5TP4GA01evb
-rY8/oXwOB/GAx+tKtX5B+QIOW/csfP3+FUxexCGCz6iEdf0PKF/CocvWTlS2
-5TuUL+NwdZu71aUNn6F8BYc7S/ImzDn1AcpXcujMbPsyU/Y1lK/i4KZknKEw
-+RmUr+bgeY3tzIvOl1C+hsPdpA4/hQVPoXwtBx7BTU9VLWHqdRwC+dVTT59+
-DOXrOUyskJayUIbxDRx+LJtRxfjlEZRv6LAw49/8xxVPoHwjhxfZ82f2mMHk
-jR1ee6fG3KiC8U0cfm66Y3t730Mo39ThtlmNsvtfGN/MQe/ZKiZfA5h6cwfW
-7UvDmthgfAuHSvWixFmcML6lw4pJ60X5O2H6rRw4GxvP/VwL41s7PLQMfuWa
-B+PbOOw5v3CuXzuMb+ugcLR0zdEtML6dQ+D7Y4nzKh/aAwBc1ZBJ
+1:eJxTTMoPSmViYGCQB2IQDQNZnxWCl1z4Zw/hfbC/NEu38F/zbyifwSHBN7vz
+QP4vKJ/DITbn6YRIaRhfwOFObVohLyeML+KQb6m93mghjC/hIDB7+lb7k1+g
+fBmHOitDL0Hhr1C+gsOco5KrhOZ/gPKVHATOPTjF/QzGV3Hwubu/6Gb3ayhf
+zeFIf/L/pWteQfkaDjys1/ZuD34B5Ws5zDJb0XF7Ikxex2HW69dPpyc+g/L1
+HBbu8j35fSaMb+BQsSPNKO3MEyjf0GFnyaSgTXthfCOHiyutV/w6+BjKN3YQ
+D37z7PW8h1C+iUNVkNa5Yj6YvKmD86ncnc0ij6B8M4ftLJKuvBdhfHMHjUun
+E92jYOotHKL2TXywXgxmnqXDrhstupr8MPVWDn98/TSYDz6A8q0dtn98sVt5
+Eoxv41BR96X431QY39bh42Wl9MvHYXw7h/3SbaJdpg/sAWWGkzs=
      "]]}},
   AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
   AxesOrigin->{0, 0},
@@ -363,7 +384,7 @@ B+PbOOw5v3CuXzuMb+ugcLR0zdEtML6dQ+D7Y4nzKh/aAwBc1ZBJ
   PlotRange->{All, All},
   PlotRangeClipping->True,
   PlotRangePadding->{Automatic, Automatic}]], "Print",
- CellChangeTimes->{3.514259214087043*^9}]
+ CellChangeTimes->{3.514259214087043*^9, 3.515094493343684*^9}]
 }, Open  ]],
 
 Cell["\<\
@@ -391,10 +412,11 @@ Cell[BoxData[
 Cell[BoxData[
  RowBox[{"{", 
   RowBox[{"{", 
-   RowBox[{"1", ",", "2"}], "}"}], "}"}]], "Output",
+   RowBox[{"3", ",", "2"}], "}"}], "}"}]], "Output",
  CellChangeTimes->{3.42260665659375*^9, 3.42261625053125*^9, 
   3.422616339859375*^9, 3.511001417393319*^9, 3.511001662445937*^9, 
-  3.5110017493039665`*^9, 3.5134499090075693`*^9, 3.514259214102643*^9}]
+  3.5110017493039665`*^9, 3.5134499090075693`*^9, 3.514259214102643*^9, 
+  3.5150944934016876`*^9}]
 }, Open  ]],
 
 Cell["\<\
@@ -428,35 +450,39 @@ Cell[BoxData[
 Cell[BoxData[
  GraphicsBox[{InsetBox[
     TagBox[
-     StyleBox["\<\"2:7\"\>",
+     StyleBox["\<\"3:12\"\>",
       FontSize->14],
      StyleForm[#, FontSize -> 14]& ], {0, 0}, {-1, -1}], InsetBox[
     TagBox[
-     StyleBox["\<\"1:50\"\>",
+     StyleBox["\<\"3:22\"\>",
       FontSize->14],
      StyleForm[#, FontSize -> 14]& ], {0, 1}, {-1, -1}], InsetBox[
     TagBox[
-     StyleBox["\<\"2:27\"\>",
+     StyleBox["\<\"2:3\"\>",
       FontSize->14],
      StyleForm[#, FontSize -> 14]& ], {1, 0}, {-1, -1}], InsetBox[
     TagBox[
-     StyleBox["\<\"3:1\"\>",
+     StyleBox["\<\"3:15\"\>",
       FontSize->14],
      StyleForm[#, FontSize -> 14]& ], 
     NCache[{1, Rational[1, 2]}, {1, 0.5}], {-1, -1}], InsetBox[
     TagBox[
-     StyleBox["\<\"3:23\"\>",
+     StyleBox["\<\"2:20\"\>",
+      FontSize->14],
+     StyleForm[#, FontSize -> 14]& ], {1, 1}, {-1, -1}], InsetBox[
+    TagBox[
+     StyleBox["\<\"2:27\"\>",
       FontSize->14],
      StyleForm[#, FontSize -> 14]& ], {2, 0}, {-1, -1}], InsetBox[
     TagBox[
-     StyleBox["\<\"2:16\"\>",
-      FontSize->14],
-     StyleForm[#, FontSize -> 14]& ], {2, 1}, {-1, -1}], InsetBox[
-    TagBox[
-     StyleBox["\<\"3:26\"\>",
+     StyleBox["\<\"3:1\"\>",
       FontSize->14],
      StyleForm[#, FontSize -> 14]& ], 
-    NCache[{2, Rational[3, 2]}, {2, 1.5}], {-1, -1}]},
+    NCache[{2, Rational[1, 2]}, {2, 0.5}], {-1, -1}], InsetBox[
+    TagBox[
+     StyleBox["\<\"1:50\"\>",
+      FontSize->14],
+     StyleForm[#, FontSize -> 14]& ], {2, 1}, {-1, -1}]},
   AspectRatio->0.6666666666666666,
   GridLines->{{0, 1, 2, 3}, {0, 1, 2}},
   PlotLabel->FormBox["\"SOM Clustering\"", TraditionalForm],
@@ -464,7 +490,8 @@ Cell[BoxData[
  CellChangeTimes->{
   3.422606656765625*^9, 3.42261625059375*^9, 3.422616339921875*^9, {
    3.5110014689978724`*^9, 3.511001474164028*^9}, 3.5110016625299473`*^9, 
-   3.511001749384977*^9, 3.513449909097581*^9, 3.5142592141494427`*^9}]
+   3.511001749384977*^9, 3.513449909097581*^9, 3.5142592141494427`*^9, 
+   3.51509449344169*^9}]
 }, Open  ]],
 
 Cell["\<\
@@ -494,35 +521,35 @@ Cell[BoxData[
  GraphicsBox[{{}, {InsetBox[
      GraphicsBox[{InsetBox[
         TagBox[
+         StyleBox["\<\"2:34\"\>",
+          FontSize->14],
+         StyleForm[#, FontSize -> 14]& ], {0, 0}, {-1, -1}], InsetBox[
+        TagBox[
+         StyleBox["\<\"3:50\"\>",
+          FontSize->14],
+         StyleForm[#, FontSize -> 14]& ], 
+        NCache[{0, Rational[1, 2]}, {0, 0.5}], {-1, -1}], InsetBox[
+        TagBox[
          StyleBox["\<\"1:50\"\>",
           FontSize->14],
-         StyleForm[#, FontSize -> 14]& ], {0, 1}, {-1, -1}], InsetBox[
-        TagBox[
-         StyleBox["\<\"2:2\"\>",
-          FontSize->14],
          StyleForm[#, FontSize -> 14]& ], {1, 0}, {-1, -1}], InsetBox[
+        TagBox[
+         StyleBox["\<\"2:1\"\>",
+          FontSize->14],
+         StyleForm[#, FontSize -> 14]& ], 
+        NCache[{1, Rational[1, 2]}, {1, 0.5}], {-1, -1}], InsetBox[
         TagBox[
          StyleBox["\<\"2:7\"\>",
           FontSize->14],
          StyleForm[#, FontSize -> 14]& ], {1, 1}, {-1, -1}], InsetBox[
         TagBox[
-         StyleBox["\<\"2:36\"\>",
+         StyleBox["\<\"2:3\"\>",
           FontSize->14],
          StyleForm[#, FontSize -> 14]& ], {2, 0}, {-1, -1}], InsetBox[
         TagBox[
-         StyleBox["\<\"3:49\"\>",
-          FontSize->14],
-         StyleForm[#, FontSize -> 14]& ], 
-        NCache[{2, Rational[1, 2]}, {2, 0.5}], {-1, -1}], InsetBox[
-        TagBox[
          StyleBox["\<\"2:5\"\>",
           FontSize->14],
-         StyleForm[#, FontSize -> 14]& ], {2, 1}, {-1, -1}], InsetBox[
-        TagBox[
-         StyleBox["\<\"3:1\"\>",
-          FontSize->14],
-         StyleForm[#, FontSize -> 14]& ], 
-        NCache[{2, Rational[3, 2]}, {2, 1.5}], {-1, -1}]},
+         StyleForm[#, FontSize -> 14]& ], {2, 1}, {-1, -1}]},
       AspectRatio->0.6666666666666666,
       GridLines->{{0, 1, 2, 3}, {0, 1, 2}},
       PlotLabel->FormBox["\"Iteration: 0\"", TraditionalForm],
@@ -530,39 +557,31 @@ Cell[BoxData[
      ImageScaled[{0.5, 0.5}], {360., 240.}], InsetBox[
      GraphicsBox[{InsetBox[
         TagBox[
-         StyleBox["\<\"2:1\"\>",
+         StyleBox["\<\"2:40\"\>",
           FontSize->14],
          StyleForm[#, FontSize -> 14]& ], {0, 0}, {-1, -1}], InsetBox[
-        TagBox[
-         StyleBox["\<\"1:50\"\>",
-          FontSize->14],
-         StyleForm[#, FontSize -> 14]& ], {0, 1}, {-1, -1}], InsetBox[
-        TagBox[
-         StyleBox["\<\"2:4\"\>",
-          FontSize->14],
-         StyleForm[#, FontSize -> 14]& ], 
-        NCache[{0, Rational[3, 2]}, {0, 1.5}], {-1, -1}], InsetBox[
-        TagBox[
-         StyleBox["\<\"2:4\"\>",
-          FontSize->14],
-         StyleForm[#, FontSize -> 14]& ], {1, 0}, {-1, -1}], InsetBox[
-        TagBox[
-         StyleBox["\<\"2:3\"\>",
-          FontSize->14],
-         StyleForm[#, FontSize -> 14]& ], {1, 1}, {-1, -1}], InsetBox[
-        TagBox[
-         StyleBox["\<\"2:33\"\>",
-          FontSize->14],
-         StyleForm[#, FontSize -> 14]& ], {2, 0}, {-1, -1}], InsetBox[
         TagBox[
          StyleBox["\<\"3:50\"\>",
           FontSize->14],
          StyleForm[#, FontSize -> 14]& ], 
-        NCache[{2, Rational[1, 2]}, {2, 0.5}], {-1, -1}], InsetBox[
+        NCache[{0, Rational[1, 2]}, {0, 0.5}], {-1, -1}], InsetBox[
         TagBox[
          StyleBox["\<\"2:5\"\>",
           FontSize->14],
-         StyleForm[#, FontSize -> 14]& ], {2, 1}, {-1, -1}]},
+         StyleForm[#, FontSize -> 14]& ], {1, 0}, {-1, -1}], InsetBox[
+        TagBox[
+         StyleBox["\<\"2:2\"\>",
+          FontSize->14],
+         StyleForm[#, FontSize -> 14]& ], {1, 1}, {-1, -1}], InsetBox[
+        TagBox[
+         StyleBox["\<\"1:50\"\>",
+          FontSize->14],
+         StyleForm[#, FontSize -> 14]& ], {2, 1}, {-1, -1}], InsetBox[
+        TagBox[
+         StyleBox["\<\"2:3\"\>",
+          FontSize->14],
+         StyleForm[#, FontSize -> 14]& ], 
+        NCache[{2, Rational[3, 2]}, {2, 1.5}], {-1, -1}]},
       AspectRatio->0.6666666666666666,
       GridLines->{{0, 1, 2, 3}, {0, 1, 2}},
       PlotLabel->FormBox["\"Iteration: 5\"", TraditionalForm],
@@ -570,37 +589,46 @@ Cell[BoxData[
      ImageScaled[{0.5, 0.5}], {360., 240.}], InsetBox[
      GraphicsBox[{InsetBox[
         TagBox[
-         StyleBox["\<\"1:50\"\>",
+         StyleBox["\<\"3:32\"\>",
+          FontSize->14],
+         StyleForm[#, FontSize -> 14]& ], {0, 0}, {-1, -1}], InsetBox[
+        TagBox[
+         StyleBox["\<\"2:5\"\>",
           FontSize->14],
          StyleForm[#, FontSize -> 14]& ], {0, 1}, {-1, -1}], InsetBox[
         TagBox[
-         StyleBox["\<\"2:23\"\>",
+         StyleBox["\<\"3:3\"\>",
+          FontSize->14],
+         StyleForm[#, FontSize -> 14]& ], 
+        NCache[{0, Rational[3, 2]}, {0, 1.5}], {-1, -1}], InsetBox[
+        TagBox[
+         StyleBox["\<\"2:16\"\>",
           FontSize->14],
          StyleForm[#, FontSize -> 14]& ], {1, 0}, {-1, -1}], InsetBox[
         TagBox[
-         StyleBox["\<\"3:1\"\>",
+         StyleBox["\<\"3:14\"\>",
           FontSize->14],
          StyleForm[#, FontSize -> 14]& ], 
         NCache[{1, Rational[1, 2]}, {1, 0.5}], {-1, -1}], InsetBox[
         TagBox[
-         StyleBox["\<\"2:5\"\>",
+         StyleBox["\<\"2:10\"\>",
           FontSize->14],
          StyleForm[#, FontSize -> 14]& ], {1, 1}, {-1, -1}], InsetBox[
         TagBox[
-         StyleBox["\<\"2:6\"\>",
+         StyleBox["\<\"2:18\"\>",
           FontSize->14],
          StyleForm[#, FontSize -> 14]& ], {2, 0}, {-1, -1}], InsetBox[
         TagBox[
-         StyleBox["\<\"3:48\"\>",
+         StyleBox["\<\"3:1\"\>",
           FontSize->14],
          StyleForm[#, FontSize -> 14]& ], 
         NCache[{2, Rational[1, 2]}, {2, 0.5}], {-1, -1}], InsetBox[
         TagBox[
-         StyleBox["\<\"2:16\"\>",
+         StyleBox["\<\"1:50\"\>",
           FontSize->14],
          StyleForm[#, FontSize -> 14]& ], {2, 1}, {-1, -1}], InsetBox[
         TagBox[
-         StyleBox["\<\"3:1\"\>",
+         StyleBox["\<\"2:1\"\>",
           FontSize->14],
          StyleForm[#, FontSize -> 14]& ], 
         NCache[{2, Rational[3, 2]}, {2, 1.5}], {-1, -1}]},
@@ -611,40 +639,44 @@ Cell[BoxData[
      ImageScaled[{0.5, 0.5}], {360., 240.}], InsetBox[
      GraphicsBox[{InsetBox[
         TagBox[
-         StyleBox["\<\"2:3\"\>",
+         StyleBox["\<\"3:29\"\>",
           FontSize->14],
          StyleForm[#, FontSize -> 14]& ], {0, 0}, {-1, -1}], InsetBox[
         TagBox[
-         StyleBox["\<\"1:50\"\>",
+         StyleBox["\<\"2:10\"\>",
           FontSize->14],
          StyleForm[#, FontSize -> 14]& ], {0, 1}, {-1, -1}], InsetBox[
-        TagBox[
-         StyleBox["\<\"2:24\"\>",
-          FontSize->14],
-         StyleForm[#, FontSize -> 14]& ], {1, 0}, {-1, -1}], InsetBox[
         TagBox[
          StyleBox["\<\"3:1\"\>",
           FontSize->14],
          StyleForm[#, FontSize -> 14]& ], 
+        NCache[{0, Rational[3, 2]}, {0, 1.5}], {-1, -1}], InsetBox[
+        TagBox[
+         StyleBox["\<\"2:8\"\>",
+          FontSize->14],
+         StyleForm[#, FontSize -> 14]& ], {1, 0}, {-1, -1}], InsetBox[
+        TagBox[
+         StyleBox["\<\"3:19\"\>",
+          FontSize->14],
+         StyleForm[#, FontSize -> 14]& ], 
         NCache[{1, Rational[1, 2]}, {1, 0.5}], {-1, -1}], InsetBox[
         TagBox[
-         StyleBox["\<\"2:2\"\>",
+         StyleBox["\<\"2:17\"\>",
+          FontSize->14],
+         StyleForm[#, FontSize -> 14]& ], {1, 1}, {-1, -1}], InsetBox[
+        TagBox[
+         StyleBox["\<\"2:15\"\>",
           FontSize->14],
          StyleForm[#, FontSize -> 14]& ], {2, 0}, {-1, -1}], InsetBox[
         TagBox[
-         StyleBox["\<\"3:38\"\>",
+         StyleBox["\<\"3:1\"\>",
           FontSize->14],
          StyleForm[#, FontSize -> 14]& ], 
         NCache[{2, Rational[1, 2]}, {2, 0.5}], {-1, -1}], InsetBox[
         TagBox[
-         StyleBox["\<\"2:21\"\>",
+         StyleBox["\<\"1:50\"\>",
           FontSize->14],
-         StyleForm[#, FontSize -> 14]& ], {2, 1}, {-1, -1}], InsetBox[
-        TagBox[
-         StyleBox["\<\"3:11\"\>",
-          FontSize->14],
-         StyleForm[#, FontSize -> 14]& ], 
-        NCache[{2, Rational[3, 2]}, {2, 1.5}], {-1, -1}]},
+         StyleForm[#, FontSize -> 14]& ], {2, 1}, {-1, -1}]},
       AspectRatio->0.6666666666666666,
       GridLines->{{0, 1, 2, 3}, {0, 1, 2}},
       PlotLabel->FormBox["\"Iteration: 15\"", TraditionalForm],
@@ -652,35 +684,39 @@ Cell[BoxData[
      ImageScaled[{0.5, 0.5}], {360., 240.}], InsetBox[
      GraphicsBox[{InsetBox[
         TagBox[
-         StyleBox["\<\"2:4\"\>",
+         StyleBox["\<\"3:12\"\>",
           FontSize->14],
          StyleForm[#, FontSize -> 14]& ], {0, 0}, {-1, -1}], InsetBox[
         TagBox[
-         StyleBox["\<\"1:50\"\>",
+         StyleBox["\<\"3:19\"\>",
           FontSize->14],
          StyleForm[#, FontSize -> 14]& ], {0, 1}, {-1, -1}], InsetBox[
         TagBox[
-         StyleBox["\<\"2:28\"\>",
+         StyleBox["\<\"2:5\"\>",
           FontSize->14],
          StyleForm[#, FontSize -> 14]& ], {1, 0}, {-1, -1}], InsetBox[
         TagBox[
-         StyleBox["\<\"3:1\"\>",
+         StyleBox["\<\"3:18\"\>",
           FontSize->14],
          StyleForm[#, FontSize -> 14]& ], 
         NCache[{1, Rational[1, 2]}, {1, 0.5}], {-1, -1}], InsetBox[
         TagBox[
-         StyleBox["\<\"3:32\"\>",
+         StyleBox["\<\"2:21\"\>",
+          FontSize->14],
+         StyleForm[#, FontSize -> 14]& ], {1, 1}, {-1, -1}], InsetBox[
+        TagBox[
+         StyleBox["\<\"2:24\"\>",
           FontSize->14],
          StyleForm[#, FontSize -> 14]& ], {2, 0}, {-1, -1}], InsetBox[
         TagBox[
-         StyleBox["\<\"2:18\"\>",
-          FontSize->14],
-         StyleForm[#, FontSize -> 14]& ], {2, 1}, {-1, -1}], InsetBox[
-        TagBox[
-         StyleBox["\<\"3:17\"\>",
+         StyleBox["\<\"3:1\"\>",
           FontSize->14],
          StyleForm[#, FontSize -> 14]& ], 
-        NCache[{2, Rational[3, 2]}, {2, 1.5}], {-1, -1}]},
+        NCache[{2, Rational[1, 2]}, {2, 0.5}], {-1, -1}], InsetBox[
+        TagBox[
+         StyleBox["\<\"1:50\"\>",
+          FontSize->14],
+         StyleForm[#, FontSize -> 14]& ], {2, 1}, {-1, -1}]},
       AspectRatio->0.6666666666666666,
       GridLines->{{0, 1, 2, 3}, {0, 1, 2}},
       PlotLabel->FormBox["\"Iteration: 20\"", TraditionalForm],
@@ -688,35 +724,39 @@ Cell[BoxData[
      ImageScaled[{0.5, 0.5}], {360., 240.}], InsetBox[
      GraphicsBox[{InsetBox[
         TagBox[
-         StyleBox["\<\"2:4\"\>",
+         StyleBox["\<\"3:12\"\>",
           FontSize->14],
          StyleForm[#, FontSize -> 14]& ], {0, 0}, {-1, -1}], InsetBox[
         TagBox[
-         StyleBox["\<\"1:50\"\>",
+         StyleBox["\<\"3:21\"\>",
           FontSize->14],
          StyleForm[#, FontSize -> 14]& ], {0, 1}, {-1, -1}], InsetBox[
         TagBox[
-         StyleBox["\<\"2:28\"\>",
+         StyleBox["\<\"2:2\"\>",
           FontSize->14],
          StyleForm[#, FontSize -> 14]& ], {1, 0}, {-1, -1}], InsetBox[
         TagBox[
-         StyleBox["\<\"3:1\"\>",
+         StyleBox["\<\"3:16\"\>",
           FontSize->14],
          StyleForm[#, FontSize -> 14]& ], 
         NCache[{1, Rational[1, 2]}, {1, 0.5}], {-1, -1}], InsetBox[
         TagBox[
-         StyleBox["\<\"3:27\"\>",
+         StyleBox["\<\"2:22\"\>",
+          FontSize->14],
+         StyleForm[#, FontSize -> 14]& ], {1, 1}, {-1, -1}], InsetBox[
+        TagBox[
+         StyleBox["\<\"2:26\"\>",
           FontSize->14],
          StyleForm[#, FontSize -> 14]& ], {2, 0}, {-1, -1}], InsetBox[
         TagBox[
-         StyleBox["\<\"2:18\"\>",
-          FontSize->14],
-         StyleForm[#, FontSize -> 14]& ], {2, 1}, {-1, -1}], InsetBox[
-        TagBox[
-         StyleBox["\<\"3:22\"\>",
+         StyleBox["\<\"3:1\"\>",
           FontSize->14],
          StyleForm[#, FontSize -> 14]& ], 
-        NCache[{2, Rational[3, 2]}, {2, 1.5}], {-1, -1}]},
+        NCache[{2, Rational[1, 2]}, {2, 0.5}], {-1, -1}], InsetBox[
+        TagBox[
+         StyleBox["\<\"1:50\"\>",
+          FontSize->14],
+         StyleForm[#, FontSize -> 14]& ], {2, 1}, {-1, -1}]},
       AspectRatio->0.6666666666666666,
       GridLines->{{0, 1, 2, 3}, {0, 1, 2}},
       PlotLabel->FormBox["\"Iteration: 25\"", TraditionalForm],
@@ -724,35 +764,39 @@ Cell[BoxData[
      ImageScaled[{0.5, 0.5}], {360., 240.}], InsetBox[
      GraphicsBox[{InsetBox[
         TagBox[
-         StyleBox["\<\"2:7\"\>",
+         StyleBox["\<\"3:12\"\>",
           FontSize->14],
          StyleForm[#, FontSize -> 14]& ], {0, 0}, {-1, -1}], InsetBox[
         TagBox[
-         StyleBox["\<\"1:50\"\>",
+         StyleBox["\<\"3:22\"\>",
           FontSize->14],
          StyleForm[#, FontSize -> 14]& ], {0, 1}, {-1, -1}], InsetBox[
         TagBox[
-         StyleBox["\<\"2:27\"\>",
+         StyleBox["\<\"2:3\"\>",
           FontSize->14],
          StyleForm[#, FontSize -> 14]& ], {1, 0}, {-1, -1}], InsetBox[
         TagBox[
-         StyleBox["\<\"3:1\"\>",
+         StyleBox["\<\"3:15\"\>",
           FontSize->14],
          StyleForm[#, FontSize -> 14]& ], 
         NCache[{1, Rational[1, 2]}, {1, 0.5}], {-1, -1}], InsetBox[
         TagBox[
-         StyleBox["\<\"3:23\"\>",
+         StyleBox["\<\"2:20\"\>",
+          FontSize->14],
+         StyleForm[#, FontSize -> 14]& ], {1, 1}, {-1, -1}], InsetBox[
+        TagBox[
+         StyleBox["\<\"2:27\"\>",
           FontSize->14],
          StyleForm[#, FontSize -> 14]& ], {2, 0}, {-1, -1}], InsetBox[
         TagBox[
-         StyleBox["\<\"2:16\"\>",
-          FontSize->14],
-         StyleForm[#, FontSize -> 14]& ], {2, 1}, {-1, -1}], InsetBox[
-        TagBox[
-         StyleBox["\<\"3:26\"\>",
+         StyleBox["\<\"3:1\"\>",
           FontSize->14],
          StyleForm[#, FontSize -> 14]& ], 
-        NCache[{2, Rational[3, 2]}, {2, 1.5}], {-1, -1}]},
+        NCache[{2, Rational[1, 2]}, {2, 0.5}], {-1, -1}], InsetBox[
+        TagBox[
+         StyleBox["\<\"1:50\"\>",
+          FontSize->14],
+         StyleForm[#, FontSize -> 14]& ], {2, 1}, {-1, -1}]},
       AspectRatio->0.6666666666666666,
       GridLines->{{0, 1, 2, 3}, {0, 1, 2}},
       PlotLabel->FormBox["\"Iteration: 30\"", TraditionalForm],
@@ -783,7 +827,7 @@ Cell[BoxData[
   PlotRangePadding->{6, 5}]], "Output",
  CellChangeTimes->{3.422606657171875*^9, 3.422616251*^9, 3.4226163403125*^9, 
   3.5110015912368946`*^9, 3.5110016628299856`*^9, 3.511001749693516*^9, 
-  3.513449909401119*^9, 3.514259214461443*^9}]
+  3.513449909401119*^9, 3.514259214461443*^9, 3.5150944937647085`*^9}]
 }, Open  ]],
 
 Cell["\<\
@@ -813,12 +857,13 @@ Cell[BoxData[
  RowBox[{"{", 
   RowBox[{
    RowBox[{"{", 
-    RowBox[{"1", ",", "2"}], "}"}], ",", 
+    RowBox[{"3", ",", "2"}], "}"}], ",", 
    RowBox[{"{", 
-    RowBox[{"1", ",", "2"}], "}"}]}], "}"}]], "Output",
+    RowBox[{"3", ",", "2"}], "}"}]}], "}"}]], "Output",
  CellChangeTimes->{3.422606657203125*^9, 3.422616251046875*^9, 
   3.422616340359375*^9, 3.5110016156905003`*^9, 3.511001662908996*^9, 
-  3.511001749772526*^9, 3.5134499094691277`*^9, 3.5142592144926434`*^9}]
+  3.511001749772526*^9, 3.5134499094691277`*^9, 3.5142592144926434`*^9, 
+  3.51509449380171*^9}]
 }, Open  ]],
 
 Cell["\<\
@@ -845,12 +890,12 @@ Cell[BoxData[
  CellChangeTimes->{{3.414166656015625*^9, 3.4141666750625*^9}, {
   3.5134508850010047`*^9, 3.513450894104161*^9}}],
 
-Cell[BoxData["5.2781624524176145`"], "Output",
+Cell[BoxData["5.49892926638333`"], "Output",
  CellChangeTimes->{
   3.422606657234375*^9, 3.4226162510625*^9, 3.422616340375*^9, {
    3.511001634926943*^9, 3.5110016629780045`*^9}, 3.5110017498070307`*^9, 
    3.511001798848258*^9, 3.5134499095101333`*^9, {3.5134508893590584`*^9, 
-   3.513450894828253*^9}, 3.5142592145082436`*^9}]
+   3.513450894828253*^9}, 3.5142592145082436`*^9, 3.5150944938167114`*^9}]
 }, Open  ]],
 
 Cell["\<\
@@ -894,8 +939,8 @@ Cell[BoxData[
        RowBox[{"CreationDate", " ", "\[Rule]", " ", 
         RowBox[{"{", 
          RowBox[{
-         "2011", ",", " ", "5", ",", " ", "13", ",", " ", "9", ",", " ", "6", 
-          ",", " ", "54.5238434`9.489161303646789"}], "}"}]}], ",", " ", 
+         "2011", ",", " ", "5", ",", " ", "23", ",", " ", "1", ",", " ", "8", 
+          ",", " ", "13.827712`8.89332527929377"}], "}"}]}], ",", " ", 
        RowBox[{"Connect", " ", "\[Rule]", " ", "False"}], ",", " ", 
        RowBox[{"SOM", " ", "\[Rule]", " ", 
         RowBox[{"{", 
@@ -909,7 +954,7 @@ Cell[BoxData[
   3.42260665725*^9, 3.42261625109375*^9, 3.42261634040625*^9, {
    3.5110016474475327`*^9, 3.511001663044513*^9}, 3.5110017499015427`*^9, {
    3.5110017832597785`*^9, 3.5110018484610577`*^9}, 3.513449909544138*^9, 
-   3.5142592145238433`*^9}]
+   3.5142592145238433`*^9, 3.5150944938307123`*^9}]
 }, Open  ]],
 
 Cell["\<\
@@ -929,28 +974,28 @@ Cell[BoxData[
 Cell[BoxData[
  GraphicsBox[{InsetBox[
     TagBox[
-     StyleBox["\<\"1:50\"\>",
+     StyleBox["\<\"2:19\"\>",
       FontSize->14],
      StyleForm[#, FontSize -> 14]& ], {0, 0}, {-1, -1}], InsetBox[
     TagBox[
-     StyleBox["\<\"2:48\"\>",
+     StyleBox["\<\"3:49\"\>",
       FontSize->14],
      StyleForm[#, FontSize -> 14]& ], 
-    NCache[{0, Rational[1, 3]}, {0, 0.3333333333333333}], {-1, -1}], InsetBox[
+    NCache[{0, Rational[1, 2]}, {0, 0.5}], {-1, -1}], InsetBox[
     TagBox[
-     StyleBox["\<\"3:14\"\>",
-      FontSize->14],
-     StyleForm[#, FontSize -> 14]& ], 
-    NCache[{0, Rational[2, 3]}, {0, 0.6666666666666666}], {-1, -1}], InsetBox[
-    TagBox[
-     StyleBox["\<\"2:2\"\>",
+     StyleBox["\<\"1:50\"\>",
       FontSize->14],
      StyleForm[#, FontSize -> 14]& ], {1, 0}, {-1, -1}], InsetBox[
     TagBox[
-     StyleBox["\<\"3:36\"\>",
+     StyleBox["\<\"2:31\"\>",
       FontSize->14],
      StyleForm[#, FontSize -> 14]& ], 
-    NCache[{1, Rational[1, 2]}, {1, 0.5}], {-1, -1}]},
+    NCache[{1, Rational[1, 3]}, {1, 0.3333333333333333}], {-1, -1}], InsetBox[
+    TagBox[
+     StyleBox["\<\"3:1\"\>",
+      FontSize->14],
+     StyleForm[#, FontSize -> 14]& ], 
+    NCache[{1, Rational[2, 3]}, {1, 0.6666666666666666}], {-1, -1}]},
   AspectRatio->0.5,
   GridLines->{{0, 1, 2}, {0, 1}},
   PlotLabel->FormBox["\"SOM Clustering\"", TraditionalForm],
@@ -959,7 +1004,7 @@ Cell[BoxData[
   3.422606657296875*^9, 3.422616251140625*^9, 3.422616340453125*^9, {
    3.5110016521121244`*^9, 3.5110016631115217`*^9}, 3.5110017499635506`*^9, {
    3.5110017858511076`*^9, 3.511001851123396*^9}, 3.5134499095961437`*^9, 
-   3.514259214555043*^9}]
+   3.514259214555043*^9, 3.5150944938597136`*^9}]
 }, Open  ]],
 
 Cell["\<\
@@ -1018,11 +1063,10 @@ Cell[CellGroupData[{
 Cell[BoxData[
  GraphicsBox[{{}, {}, 
    {Hue[0.67, 0.6, 0.6], LineBox[CompressedData["
-1:eJxTTMoPSmViYGCQB2IQDQMr9Fpd1t/6Zw/hfbA/cKl8wvUjz6B8Bof5v+V4
-W048hPI5HG7nvc2omvoAyhdw2P3CWm2eBowv4nDp7vp2TiEYX8Lh+AlJ0VsM
-ML6Mw1SBp5/smWF8BYd8l7x7jZwwvhIaXwWNr4bG10Dja6HxddD4emh8AzS+
-IRrfCI1vjMY3QeObovHN0PjmaHwLNL4lGt8KjW+NxrdB49ui8e3gfAAY74V7
-
+1:eJxTTMoPSmViYGCQB2IQDQM3LvBva97/zx7C+2B/9vVH8+sPnkL5DA4ymyq+
+upY/hvI5HE6rhVetnfcQyhdw+JNd39Z44wGUL+JwbEtLxMyDML6EQ9qTEucf
+a2B8GYc9szYzuC+E8RXQ+EpofBU0vhoaXwONr4XG10Hj66HxDdD4hmh8IzS+
+MRrfBI1visY3Q+Obo/Et0PiWaHwrNL41Gt8GjW+LxreD8wHUcpHx
      "]]}},
   AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
   AxesOrigin->{0, 0},
@@ -1041,19 +1085,20 @@ IRrfCI1vjMY3QeObovHN0PjmaHwLNL4lGt8KjW+NxrdB49ui8e3gfAAY74V7
   PlotRange->{All, All},
   PlotRangeClipping->True,
   PlotRangePadding->{Automatic, Automatic}]], "Print",
- CellChangeTimes->{3.5142592151166444`*^9}],
+ CellChangeTimes->{3.5142592151166444`*^9, 3.515094494559754*^9}],
 
 Cell[BoxData[
  GraphicsBox[{{}, {}, 
    {Hue[0.67, 0.6, 0.6], LineBox[CompressedData["
-1:eJxTTMoPSmViYGCQB2IQDQNxmac+bH7wzx7C+2CvyKlx+UjJbyifwUE7bcFa
-h8JfUD6HwyUVqQy1mz+hfAGHw2vXChgFw+RFHFRPMhiJFcP4Eg7GXKXni6y+
-Q/kyDnfvbbXj3vkWyldwcL85vYpb7D2Ur+Sw5P1v7aRmGF/FwTneL27uzhdQ
-vpoD300d1e0KML6GQ/Mm/TrGhmdQvpbDHM07kTUaz6F8HYdOtxhBL4EnUL6e
-wxYR7eCb22F8AweOk7KKVT+fQvmGDnIsx5fO2AaTN3II2DBvWvLMx1C+scPE
-SkVHzUkwvonDBsvkl7zFML6pQ2AT1xfvahjfzKHrVni7TzSMb+7Q/3xTwMLp
-ML6FQ5BHkcqnDBjf0uFewauo+rswvpWDn59GV74gjG/t4NHEt7zlyiMo38Zh
-baLOias7YXxbh13q6lbhmjC+nYOw5I7CricP7QGq/IZN
+1:eJxTTMoPSmViYGCQB2IQDQO/9JdFnbj4zx7C+2C/03NNw0S2v1A+g0PqabXq
+dYm/oXwOhx/qX6bvyfoF5Qs4zHkTLPDw/08oX8Qh0vnz0sRsmHoJB6boulkv
+p3+D8mUcmN7Ix3/J+QzlKzi47Ze9yLLoE5Sv5PDS5KPjucr3UL6Kg9eqC4qP
+/7+G8tUcpt998rbuwVsoX8PBb8bRL3MbXkD5Wg4CcUs673x9AuXrOFhWsDxZ
+6/kKytdz2HJ86+/d/c+gfAMHvmPhd2clPoXyDR2mfuOzW17xCMo3cuDrKdq9
+/sxjKN/YgeWRRajxBhjfxOHnr0MyAT8eQvmmDncfVX5f8QjGN3NolXrxgr8E
+xjd3MPh4K9H8AIxv4bD/bshqnicPoHxLh+At5rHVJ2B8K4eJ3y0d4nfC+NYO
+c0ydzR9uhfFtHNSUf2zmEISZZ+vgdHKdkPVUmLydA3f6LKXHEx/YAwDCLpff
+
      "]]}},
   AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
   AxesOrigin->{0, 0},
@@ -1072,7 +1117,7 @@ baLOias7YXxbh13q6lbhmjC+nYOw5I7CricP7QGq/IZN
   PlotRange->{All, All},
   PlotRangeClipping->True,
   PlotRangePadding->{Automatic, Automatic}]], "Print",
- CellChangeTimes->{3.514259215709446*^9}]
+ CellChangeTimes->{3.5142592151166444`*^9, 3.5150944952407928`*^9}]
 }, Open  ]]
 }, Open  ]],
 
@@ -1106,10 +1151,10 @@ Cell[CellGroupData[{
 Cell[BoxData[
  GraphicsBox[{{}, {}, 
    {Hue[0.67, 0.6, 0.6], 
-    LineBox[{{0., 0.5011605591154317}, {1., 0.5011605591154317}, {2., 
-     0.5011605591154317}, {3., 0.5011605591154317}, {4., 
-     0.5011605591154317}, {5., 0.5011605591154317}, {6., 
-     0.5011605591154317}}]}},
+    LineBox[{{0., 0.5196871770575267}, {1., 0.5196871770575267}, {2., 
+     0.5196871770575267}, {3., 0.5196871770575267}, {4., 
+     0.5196871770575267}, {5., 0.5196871770575267}, {6., 
+     0.5196871770575267}}]}},
   AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
   AxesOrigin->{0, 0},
   Frame->True,
@@ -1127,17 +1172,17 @@ Cell[BoxData[
   PlotRange->{All, All},
   PlotRangeClipping->True,
   PlotRangePadding->{Automatic, Automatic}]], "Print",
- CellChangeTimes->{3.5142592158966455`*^9}],
+ CellChangeTimes->{3.5142592158966455`*^9, 3.5150944954818068`*^9}],
 
 Cell[BoxData[
  GraphicsBox[{{}, {}, 
    {Hue[0.67, 0.6, 0.6], 
-    LineBox[{{0., 0.5011605591154317}, {1., 0.5257950527425249}, {2., 
-     0.5429607682451089}, {3., 0.5385357636104646}, {4., 
-     0.5338522038929812}, {5., 0.5360740245361387}, {6., 
-     0.5323138625309984}}]}},
+    LineBox[{{0., 0.5196871770575267}, {1., 0.5495049422009701}, {2., 
+     0.5743360375282626}, {3., 0.5718732160218768}, {4., 
+     0.5550008309579837}, {5., 0.531772134173461}, {6., 
+     0.5460365266626964}}]}},
   AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
-  AxesOrigin->{0, 0.502},
+  AxesOrigin->{0, 0.52},
   Frame->True,
   FrameLabel->{
     FormBox["\"Iterations\"", TraditionalForm], None},
@@ -1153,16 +1198,17 @@ Cell[BoxData[
   PlotRange->{All, All},
   PlotRangeClipping->True,
   PlotRangePadding->{Automatic, Automatic}]], "Print",
- CellChangeTimes->{3.514259216037046*^9}]
+ CellChangeTimes->{3.5142592158966455`*^9, 3.5150944956848183`*^9}]
 }, Open  ]]
 }, Open  ]],
 
 Cell["\<\
 A dou\[CHacek]en\[IAcute] s\[IAcute]t\[EHacek], kter\[AAcute] byla vytvo\
-\[RHacek]ena s parametrem Recursive -> True, nejprve  Recursive -> True, pot\
-\[EAcute] s hodnotou False.\
+\[RHacek]ena s parametrem Recursive -> True, nejprve  Recursive -> False, pot\
+\[EAcute] s hodnotou True.\
 \>", "Text",
- CellChangeTimes->{{3.417455472515625*^9, 3.41745554525*^9}}],
+ CellChangeTimes->{{3.417455472515625*^9, 3.41745554525*^9}, {
+  3.515095149352206*^9, 3.5150951584217243`*^9}}],
 
 Cell[CellGroupData[{
 
@@ -1192,12 +1238,12 @@ Cell[CellGroupData[{
 Cell[BoxData[
  GraphicsBox[{{}, {}, 
    {Hue[0.67, 0.6, 0.6], 
-    LineBox[{{0., 0.5591480465962227}, {1., 0.5321370805914357}, {2., 
-     0.5175044615497586}, {3., 0.5057834669106065}, {4., 
-     0.5001042925703453}, {5., 0.49998985592864664`}, {6., 
-     0.4992892273245298}}]}},
+    LineBox[{{0., 0.5178085018007733}, {1., 0.5004951913374149}, {2., 
+     0.5011696331479304}, {3., 0.5011696331479304}, {4., 
+     0.5011696331479304}, {5., 0.5011696331479304}, {6., 
+     0.5011696331479304}}]}},
   AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
-  AxesOrigin->{0, 0.5},
+  AxesOrigin->{0, 0.501},
   Frame->True,
   FrameLabel->{
     FormBox["\"Iterations\"", TraditionalForm], None},
@@ -1213,17 +1259,16 @@ Cell[BoxData[
   PlotRange->{All, All},
   PlotRangeClipping->True,
   PlotRangePadding->{Automatic, Automatic}]], "Print",
- CellChangeTimes->{3.5142592162086463`*^9}],
+ CellChangeTimes->{3.5142592162086463`*^9, 3.5150944958968306`*^9}],
 
 Cell[BoxData[
  GraphicsBox[{{}, {}, 
    {Hue[0.67, 0.6, 0.6], 
-    LineBox[{{0., 0.5591480465962227}, {1., 0.5611898596806321}, {2., 
-     0.5547516179784461}, {3., 0.5533561612924526}, {4., 
-     0.5593500913622167}, {5., 0.5580029532962266}, {6., 
-     0.554426428864204}}]}},
+    LineBox[{{0., 0.5178085018007733}, {1., 0.5196546420452205}, {2., 
+     0.5197670188326013}, {3., 0.5133350969608241}, {4., 0.517263042762898}, {
+     5., 0.5146530575255487}, {6., 0.5159700231155523}}]}},
   AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
-  AxesOrigin->{0, 0.5532},
+  AxesOrigin->{0, 0.5132},
   Frame->True,
   FrameLabel->{
     FormBox["\"Iterations\"", TraditionalForm], None},
@@ -1239,7 +1284,7 @@ Cell[BoxData[
   PlotRange->{All, All},
   PlotRangeClipping->True,
   PlotRangePadding->{Automatic, Automatic}]], "Print",
- CellChangeTimes->{3.5142592163490467`*^9}]
+ CellChangeTimes->{3.5142592162086463`*^9, 3.515094496101842*^9}]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]],
@@ -1263,7 +1308,12 @@ Chlumsk\[EAcute]ho.\
 }, Open  ]]
 },
 WindowSize->{724, 730},
-WindowMargins->{{Automatic, 157}, {Automatic, -9}},
+WindowMargins->{{Automatic, 274}, {Automatic, 14}},
+PrintingCopies->1,
+PrintingPageRange->{32000, 32000},
+PrintingOptions->{"Magnification"->1.,
+"PaperOrientation"->"Portrait",
+"PaperSize"->{594.9599999999999, 842.04}},
 ShowSelection->True,
 Magnification->1.,
 FrontEndVersion->"8.0 for Microsoft Windows (64-bit) (February 23, 2011)",
@@ -1285,108 +1335,112 @@ Cell[CellGroupData[{
 Cell[567, 22, 536, 7, 42, "Subtitle"],
 Cell[1106, 31, 265, 4, 25, "Subsubtitle"],
 Cell[CellGroupData[{
-Cell[1396, 39, 267, 3, 75, "Section"],
-Cell[1666, 44, 214, 4, 29, "Text"],
-Cell[1883, 50, 148, 3, 41, "Input"]
+Cell[1396, 39, 144, 3, 75, "Section"],
+Cell[1543, 44, 440, 8, 29, "Text"],
+Cell[1986, 54, 181, 4, 41, "Input",
+ InitializationCell->True],
+Cell[2170, 60, 406, 7, 47, "Text"],
+Cell[2579, 69, 213, 5, 41, "Input",
+ InitializationCell->True]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[2068, 58, 95, 1, 75, "Section"],
+Cell[2829, 79, 95, 1, 75, "Section"],
 Cell[CellGroupData[{
-Cell[2188, 63, 174, 2, 36, "Subsection"],
-Cell[2365, 67, 437, 8, 47, "Text"],
+Cell[2949, 84, 174, 2, 36, "Subsection"],
+Cell[3126, 88, 437, 8, 47, "Text"],
 Cell[CellGroupData[{
-Cell[2827, 79, 214, 4, 41, "Input"],
-Cell[3044, 85, 168, 2, 40, "Output"]
+Cell[3588, 100, 214, 4, 41, "Input"],
+Cell[3805, 106, 190, 2, 40, "Output"]
 }, Open  ]],
-Cell[3227, 90, 109, 1, 29, "Text"],
-Cell[3339, 93, 473, 8, 41, "Input"]
+Cell[4010, 111, 109, 1, 29, "Text"],
+Cell[4122, 114, 473, 8, 41, "Input"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[3849, 106, 198, 3, 36, "Subsection"],
-Cell[4050, 111, 448, 8, 47, "Text"],
-Cell[4501, 121, 305, 8, 62, "Input"]
+Cell[4632, 127, 198, 3, 36, "Subsection"],
+Cell[4833, 132, 448, 8, 47, "Text"],
+Cell[5284, 142, 305, 8, 62, "Input"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[4855, 135, 221, 3, 75, "Section"],
-Cell[5079, 140, 318, 6, 29, "Text"],
-Cell[5400, 148, 1483, 48, 142, "Input"]
+Cell[5638, 156, 221, 3, 75, "Section"],
+Cell[5862, 161, 318, 6, 29, "Text"],
+Cell[6183, 169, 1483, 48, 142, "Input"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[6920, 201, 245, 4, 75, "Section"],
-Cell[7168, 207, 517, 9, 47, "Text"],
+Cell[7703, 222, 245, 4, 75, "Section"],
+Cell[7951, 228, 517, 9, 47, "Text"],
 Cell[CellGroupData[{
-Cell[7710, 220, 1272, 22, 62, "Input"],
-Cell[8985, 244, 1782, 53, 248, "Output"]
+Cell[8493, 241, 1272, 22, 62, "Input"],
+Cell[9768, 265, 1806, 53, 248, "Output"]
 }, Open  ]],
-Cell[10782, 300, 1066, 15, 65, "Text"],
+Cell[11589, 321, 1066, 15, 65, "Text"],
 Cell[CellGroupData[{
-Cell[11873, 319, 704, 15, 41, "Input"],
-Cell[12580, 336, 1310, 29, 269, "Print"]
+Cell[12680, 340, 704, 15, 41, "Input"],
+Cell[13387, 357, 1332, 29, 269, "Print"]
 }, Open  ]],
-Cell[13905, 368, 481, 8, 47, "Text"],
+Cell[14734, 389, 481, 8, 47, "Text"],
 Cell[CellGroupData[{
-Cell[14411, 380, 459, 8, 41, "Input"],
-Cell[14873, 390, 301, 6, 40, "Output"]
+Cell[15240, 401, 459, 8, 41, "Input"],
+Cell[15702, 411, 328, 7, 40, "Output"]
 }, Open  ]],
-Cell[15189, 399, 806, 12, 47, "Text"],
+Cell[16045, 421, 806, 12, 47, "Text"],
 Cell[CellGroupData[{
-Cell[16020, 415, 631, 10, 41, "Input"],
-Cell[16654, 427, 1423, 39, 280, "Output"]
+Cell[16876, 437, 631, 10, 41, "Input"],
+Cell[17510, 449, 1578, 44, 280, "Output"]
 }, Open  ]],
-Cell[18092, 469, 479, 8, 29, "Text"],
+Cell[19103, 496, 479, 8, 29, "Text"],
 Cell[CellGroupData[{
-Cell[18596, 481, 583, 9, 41, "Input"],
-Cell[19182, 492, 11519, 293, 457, "Output"]
+Cell[19607, 508, 583, 9, 41, "Input"],
+Cell[20193, 519, 12169, 310, 457, "Output"]
 }, Open  ]],
-Cell[30716, 788, 465, 8, 47, "Text"],
+Cell[32377, 832, 465, 8, 47, "Text"],
 Cell[CellGroupData[{
-Cell[31206, 800, 314, 9, 41, "Input"],
-Cell[31523, 811, 379, 9, 40, "Output"]
+Cell[32867, 844, 314, 9, 41, "Input"],
+Cell[33184, 855, 403, 10, 40, "Output"]
 }, Open  ]],
-Cell[31917, 823, 441, 7, 47, "Text"],
+Cell[33602, 868, 441, 7, 47, "Text"],
 Cell[CellGroupData[{
-Cell[32383, 834, 417, 11, 41, "Input"],
-Cell[32803, 847, 332, 5, 40, "Output"]
+Cell[34068, 879, 417, 11, 41, "Input"],
+Cell[34488, 892, 354, 5, 40, "Output"]
 }, Open  ]],
-Cell[33150, 855, 737, 12, 83, "Text"],
+Cell[34857, 900, 737, 12, 83, "Text"],
 Cell[CellGroupData[{
-Cell[33912, 871, 346, 9, 41, "Input"],
-Cell[34261, 882, 1092, 29, 79, "Output"]
+Cell[35619, 916, 346, 9, 41, "Input"],
+Cell[35968, 927, 1114, 29, 79, "Output"]
 }, Open  ]],
-Cell[35368, 914, 172, 4, 29, "Text"],
+Cell[37097, 959, 172, 4, 29, "Text"],
 Cell[CellGroupData[{
-Cell[35565, 922, 225, 4, 41, "Input"],
-Cell[35793, 928, 1242, 33, 221, "Output"]
+Cell[37294, 967, 225, 4, 41, "Input"],
+Cell[37522, 973, 1266, 33, 221, "Output"]
 }, Open  ]],
-Cell[37050, 964, 1470, 21, 137, "Text"],
+Cell[38803, 1009, 1470, 21, 137, "Text"],
 Cell[CellGroupData[{
-Cell[38545, 989, 894, 24, 82, "Input"],
+Cell[40298, 1034, 894, 24, 82, "Input"],
 Cell[CellGroupData[{
-Cell[39464, 1017, 1077, 26, 269, "Print"],
-Cell[40544, 1045, 1302, 29, 269, "Print"]
+Cell[41217, 1062, 1090, 25, 269, "Print"],
+Cell[42310, 1089, 1345, 30, 269, "Print"]
 }, Open  ]]
 }, Open  ]],
-Cell[41873, 1078, 280, 5, 47, "Text"],
+Cell[43682, 1123, 280, 5, 47, "Text"],
 Cell[CellGroupData[{
-Cell[42178, 1087, 647, 14, 62, "Input"],
+Cell[43987, 1132, 647, 14, 62, "Input"],
 Cell[CellGroupData[{
-Cell[42850, 1105, 1001, 24, 269, "Print"],
-Cell[43854, 1131, 1003, 24, 266, "Print"]
+Cell[44659, 1150, 1025, 24, 269, "Print"],
+Cell[45687, 1176, 1027, 24, 266, "Print"]
 }, Open  ]]
 }, Open  ]],
-Cell[44884, 1159, 265, 5, 47, "Text"],
+Cell[46741, 1204, 316, 6, 47, "Text"],
 Cell[CellGroupData[{
-Cell[45174, 1168, 805, 19, 62, "Input"],
+Cell[47082, 1214, 805, 19, 62, "Input"],
 Cell[CellGroupData[{
-Cell[46004, 1191, 1005, 24, 268, "Print"],
-Cell[47012, 1217, 1005, 24, 263, "Print"]
+Cell[47912, 1237, 1029, 24, 263, "Print"],
+Cell[48944, 1263, 1021, 23, 263, "Print"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[48078, 1248, 119, 1, 75, "Section"],
-Cell[48200, 1251, 491, 9, 47, "Text"]
+Cell[50026, 1293, 119, 1, 75, "Section"],
+Cell[50148, 1296, 491, 9, 47, "Text"]
 }, Open  ]]
 }, Open  ]]
 }
