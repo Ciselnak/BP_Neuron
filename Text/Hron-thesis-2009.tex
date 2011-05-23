@@ -274,7 +274,7 @@ Problematika neuronových sítí není triviální záležitostí. Pro pochopen�
 
 Součástí Courseware je také demonstrační aplikace v programu Mathematica, kterou jsem v rámci této bakalářské práce přepracoval a rozšířil. Demonstrační aplikace nevyžaduje téměř žádné znalosti programování v systému Mathematica, umožňuje velmi snadno měnit parametry a strukturu zadaných sítí, vizualizovat průběh učení sítě, vizualizovat výstup sítě a upravovat vstupní data. Celá aplikace je doplněna vysvětlujícím komentářem. Věřím, že moje práce pomůže studentům snáze se v neuronových sítích zorientovat.
 \section{Vymezení cíle práce}
-Cílem práce je provést úpravy a rozšíření stávající demonstrační aplikace. Výstup této práce nahradí stávající aplikaci a bude používán při výuce předmětu \uv{Neuronové sítě a neuropočítače}.
+Cílem práce je provést úpravy a rozšíření stávající demonstrační aplikace. Výstup této práce nahradí stávající aplikaci a bude používán při výuce například v předmětech Neuronové sítě a neuropočítače, Vytěžování dat a Biologicky inspirované algoritmy.
 \section{Struktura práce}
 V úvodní kapitole popisuji problémy řešitelné pomocí neuronových sítí a uvádím příklady skutečného využití neuronových sítí. V následující kapitole teoreticky popisuji funkci umělého neuronu a věnuji se popisu učicích algoritmů pro neuronové sítě. V nejobsáhlejší teoretické kapitole popisuji vybrané neuronové sítě, konkrétně rozebírám dopřednou neuronovou síť, RBF síť, Hopfieldovu síť, samoorganizující mapu a LVQ síť. V poslední teoretické kapitole rozebírám dělení dat na trénovací a testovací a také zmiňuji křížovou validaci. Následují kapitoly se již věnují popisu demonstrační aplikace. V první z nich popisuji systém Mathematica a také knihovnu Neural Networks. V druhé již konkrétně rozebírám jednotlivé kapitoly demonstrační aplikace a popisuji experimenty v nich prováděné. V přílohách naleznete pdf verzi vytvoření aplikace a také obsah CD.
 
@@ -312,11 +312,11 @@ Komprese dat pomocí neuronové sítě je vhodná především pro kompresi vide
 \section{Využití}
 Neuronové sítě se používají všude tam, kde nám nevadí případná chyba (neuronové sítě dosahují úspěšnosti okolo 95\%) a kde je přesný algoritmus náročný na finanční prostředky (hardware) nebo na čas (potřeba rychle rozhodnout). Dále je možné neuronové sítě použít k řešení problému, k jejichž řešení neznáme přesný algoritmus. Následuje několik konkrétních příkladů použití neuronových sítí.
 
-Neuronové sítě byly využity v systému AMT, který optimalizuje rezervace letenek. V první fázi neuronová síť předpovídá poptávku po volných místech v letadlech. Podle těchto předpovědí se navrhuje rozložení letů.
+Neuronové sítě byly využity v systému AMT, který optimalizuje rezervace letenek. V první fázi neuronová síť předpovídá poptávku po volných místech v letadlech. Podle těchto předpovědí se navrhuje rozložení letů.\cite{kacenka}
 
-Neuronové sítě jsou používány také ve zdravotnictví k analýze EKG křivky, ve které vyhledává určité složky, čímž dokáže ušetřit velké množství času lékařům, kteří by záznam procházeli ručně. Existuje také systém, který na základě analýzy EKG křivky umožňuje odhadnout nemoc pacienta. Další využití v lékařství je při podávání antibiotik, kdy neuronová síť pracovala 4\begin{math}\times\end{math} přesněji než lékaři (např. nepředepisovala antibiotika, na které mohl být pacient alergický). Lékařům sloužila jako konzultant.
+Neuronové sítě jsou používány také ve zdravotnictví k analýze EKG křivky, ve které vyhledává určité složky, čímž dokáže ušetřit velké množství času lékařům, kteří by záznam procházeli ručně. Existuje také systém, který na základě analýzy EKG křivky umožňuje odhadnout nemoc pacienta. Další využití v lékařství je při podávání antibiotik, kdy neuronová síť pracovala 4\begin{math}\times\end{math} přesněji než lékaři (např. nepředepisovala antibiotika, na které mohl být pacient alergický). Lékařům sloužila jako konzultant.\cite{kacenka}
 
-Další poměrně lákavé využití přináší finančnictví. Pomocí neuronových sítí se predikuje vývoj kurzů měn a také vývoj kurzů akcií. Zatímco při použití klasických metod je úspěšnost predikce cca 55\%, při použití neuronových sítí dosahuje až 75\%. Stejným způsobem se pomocí neuronových sítí predikuje spojení a krach podniků. Jiným využitím ve finančnictví je testování, zda daný klient bude schopen splácet půjčku, případně návrh výše půjčky a doby splácení.
+Další poměrně lákavé využití přináší finančnictví. Pomocí neuronových sítí se predikuje vývoj kurzů měn a také vývoj kurzů akcií. Zatímco při použití klasických metod je úspěšnost predikce cca 55\%, při použití neuronových sítí dosahuje až 75\%. Stejným způsobem se pomocí neuronových sítí predikuje spojení a krach podniků. Jiným využitím ve finančnictví je testování, zda daný klient bude schopen splácet půjčku, případně návrh výše půjčky a doby splácení.\cite{kacenka}
 
 Neuronovou síť je možné použít k řízení výrobní linky, případně celého závodu. Nejprve je neuronová síť nainstalována a učí se reagovat na podněty od svého \uv{učitele} - člověka vykonávajícího stejnou práci, která se požaduje od neuronové sítě. Poté, co je síť dostatečně naučena je schopna reagovat správně i na neznáme podněty. Podobným způsobem byly provedeny pokusy, při kterých se neuronová síť učila řídit automobil. Naučená síť potom řídila podobným způsobem jako její \uv{učitel} - agresivně brzda, plyn, nebo naopak opatrně.\cite{kacenka}
 
@@ -415,14 +415,14 @@ Algoritmus začíná s náhodně inicializovaným vektorem vah. Na začátku ka�
 
 Gauss-Newtonův algoritmus je rychlý a spolehlivý algoritmus, který je využívaný v mnoha oblastech k řešení problémů s minimalizací funkcí. Pro řešení problémů v oblasti neuronových sítí nemusí být vždy nejvhodnější volbou, protože může docházet k výpočtům s hodnotami s velkým číselným rozsahem. Pokud k tomu dojde, bude algoritmus konvergovat velmi pomalu a bude zdržovat celý učicí proces.\cite{nndocumentation}
 \subsection{Levenberg-Marquardtův algoritmus}
-Algoritmus začíná, stejně jako předchozí algoritmy, s náhodně inicializovaným vektorem vah. Levenberg-Marquardtův algoritmus představuje kompromis mezi dvěma předchozími algoritmy. Výsledný směr posunutí vektoru vah je zjednodušeně dán kompromisem mezi směry, které navrhují algoritmus nejvyššího poklesu a Gauss-Newtonův algoritmus.  Namísto velikosti učicího kroku, která je u tohoto algoritmu stále 1, se mění hodnota \begin{math}\lambda\end{math}. Na začátku každé iterace se algoritmus pokusí snížit hodnotu \begin{math}\lambda\end{math}, pokud by takováto snížená hodnota \begin{math}\lambda\end{math} nezaručila pokles MSE, je \begin{math}\lambda\end{math} naopak zvětšována dokud nedojde k žádanému poklesu. Hodnota \begin{math}\lambda\end{math} určuje, kterému z navrhovaných směrů bude algoritmus přikládat vyšší váhu. Pokud se \begin{math}\lambda\end{math} blíží k nule, chová se algoritmus jako Gauss-Newtonův algoritmus, pokud \begin{math}\lambda\end{math} dosahuje vysokých hodnot, chová se jako algoritmus nejvyššího poklesu. Algoritmus končí za stejných podmínek jako Gauss-Newtonův algoritmus.\cite{nndocumentation}\cite{learningmachines} 
+Algoritmus začíná, stejně jako předchozí algoritmy, s náhodně inicializovaným vektorem vah. Levenberg-Marquardtův algoritmus představuje kompromis mezi dvěma předchozími algoritmy. Výsledný směr posunutí vektoru vah je zjednodušeně dán kompromisem mezi směry, které navrhují algoritmus nejvyššího poklesu a Gauss-Newtonův algoritmus.  Namísto velikosti učicího kroku, která je u tohoto algoritmu stále 1, se mění hodnota \begin{math}\lambda\end{math}, která určuje zda algoritmus přikládá větší váhu směru navrženému Gauss-Newtonovým algoritmem nebo směru navrženému algoritmem nejvyššího poklesu. Pokud se \begin{math}\lambda\end{math} blíží k nule, chová se algoritmus jako Gauss-Newtonův algoritmus, pokud \begin{math}\lambda\end{math} dosahuje vysokých hodnot, chová se jako algoritmus nejvyššího poklesu. Na začátku každé iterace se algoritmus pokusí snížit hodnotu \begin{math}\lambda\end{math}, pokud by takováto snížená hodnota \begin{math}\lambda\end{math} nezaručila pokles MSE, je \begin{math}\lambda\end{math} naopak zvětšována dokud nedojde k žádanému poklesu. Algoritmus končí za stejných podmínek jako Gauss-Newtonův algoritmus.\cite{nndocumentation, learningmachines} 
 
 Levenberg-Marquardtův algoritmus představuje pravděpodobně nejlepší volbu trénovacího algoritmu pro neuronové sítě.
 
 \subsection{Algoritmus zpětné propagace}
-Algoritmus zpětné propagace začíná stejně jako ostatní algoritmy s náhodně inicializovaným vektorem vah. Před začátkem běhu je algoritmu třeba nastavit délku učicího kroku a momentum. Algoritmus zpětné propagace se chová velmi podobně jako algoritmus nejvyššího poklesu. Také sleduje směr nejvyššího poklesu funkce MSE, ale liší se v délce učicího kroku, která zůstává po celý běh algoritmu stejná. Momentum slouží jako jakási setrvačnost, která nám říká, jak dlouho se budeme držet určitého směru, než zabočíme ve směru nejvyššího poklesu. Díky momentu dokáže algoritmus opustit některá lokální minima. 
+Algoritmus zpětné propagace začíná stejně jako ostatní algoritmy s náhodně inicializovaným vektorem vah. Před začátkem běhu je algoritmu třeba nastavit délku učicího kroku a setrvačnost. Algoritmus zpětné propagace se chová velmi podobně jako algoritmus nejvyššího poklesu. Také sleduje směr nejvyššího poklesu funkce MSE, ale liší se v délce učicího kroku, která zůstává po celý běh algoritmu stejná. Setrvačnost nám říká, jak dlouho se budeme držet určitého směru, než zabočíme ve směru nejvyššího poklesu. Díky setrvačnosti dokáže algoritmus opustit některá lokální minima. 
 
-Algoritmus zpětné propagace je jedním z nejstarších algoritmů pro učení neuronových sítí. I přes použití momenta, které umožní uniknutí z lokálního minima, se nedoporučuje algoritmus zpětné propagace používat. Namísto zpětné propagace se doporučuje použít některý z moderních učicích algoritmů a opakovat trénink pro několik různých, náhodně inicializovaných vektorů vah.\cite{nndocumentation} Podrobnější popis algoritmu naleznete v\citep{skripta}.
+Algoritmus zpětné propagace je jedním z nejstarších algoritmů pro učení neuronových sítí. I přes použití setrvačnosti, které umožní uniknutí z lokálního minima, se nedoporučuje algoritmus zpětné propagace používat. Namísto zpětné propagace se doporučuje použít některý z moderních učicích algoritmů a opakovat trénink pro několik různých, náhodně inicializovaných vektorů vah.\cite{nndocumentation} Podrobnější popis algoritmu naleznete v\citep{skripta}.
 %*****************************************************************************
 \chapter{Neuronové sítě}
 \section{Dopředná síť}
@@ -636,7 +636,7 @@ w_{i}(t+1)=w_{i}(t)+\lambda \eta(t)\left[x_{i}(t)-w_{i}(t)\right]\mbox{,}
 \end{equation}
 kde hodnota koeficientu $\lambda\in\left\lbrace0.1,0.5\right\rbrace$ je přímo úměrná velikosti okénka, její hodnota byla odhadnuta experimentálně.\cite{skripta}
 
-Algoritmus LVQ3 je již dostatečně stabilní, tzn. že po nalezení optimálního váhového vektoru neuronu se již tato hodnota nebude měnit.
+Algoritmus LVQ3 je již dostatečně stabilní, tzn. že po nalezení optimálního váhového vektoru neuronu se již tato hodnota nebude měnit.\cite{skripta}
 \end{itemize}
 %*****************************************************************************
 \chapter{Učení a hodnocení sítě}
@@ -684,7 +684,7 @@ Knihovna Neural Networks rozšiřuje systém \textit{Mathematica} o možnost pra
 Číslo kapitoly & Název kapitoly & Soubor \\ \hline
 1 & Úvod & 01-uvod.nb \\ \hline
 2 & Algoritmy učení & 02-algoritmy-uceni.nb \\ \hline
-3 & Křížová validace & 03-krossvalidace.nb \\ \hline
+3 & Křížová validace & 03-crossvalidation.nb \\ \hline
 4 & Dopředná síť a umělá data sin(x) & 04-feedforward-sin.nb \\ \hline
 5 & Dopředná síť a Iris data & 05-feedforward-iris.nb \\ \hline
 6 & Přístupy k učení dopředné sítě & 06-feedforward-iris-2.nb \\ \hline
@@ -706,7 +706,7 @@ Knihovna Neural Networks rozšiřuje systém \textit{Mathematica} o možnost pra
 \section{Úvod}
 V úvodní kapitole seznamuji studenty s používáním programu \textit{Mathematica} od naprostých základů. Nejprve jsem probíral základní syntaxi a ovládání, dále jsem seznámil studenty s používáním proměnných, funkcí a s možnostmi vizualizace dat. V další části notebooku jsem probral základy programování v systému \textit{Mathematica}. Prostudování tohoto úvodu umožní rychleji se orientovat v experimentech s neuronovými sítěmi a také dá studentovi znalosti potřebné k úpravám jednotlivých experimentů. Tato kapitola se nachází v souboru \textit{"01-uvod.nb"}.
 
-Soubor vznikl úpravou souboru Petra Chlumského. Změnil jsem grafický vzhled notebooku, změnil a rozšířil jsem textový komentář k jednotlivým příkazům.
+Soubor vznikl úpravou souboru Petra Chlumského.\cite{chlumsky} Změnil jsem grafický vzhled notebooku, změnil a rozšířil jsem textový komentář k jednotlivým příkazům.
 
 \section{Algoritmy učení}
 V notebooku demonstruji použití různých učicích algoritmů. Pro každý učicí algoritmus graficky zobrazuji jeho postup při učení. Demonstruji zde tyto algoritmy: \textit{Levenberg-Marquardtův algoritmus}, \textit{Gauss-Newtonúv algoritmus}, \textit{Algoritmus nejvyššího poklesu (Steepest Descent)} a \textit{Algoritmus zpětné propagace (Backpropagation)}.
@@ -724,12 +724,12 @@ Učení jsem demonstroval na jednoduché dopředné síti s jedním neuronem, je
 \section{Křížová validace}
 V kapitole křížová validace seznamuji studenty s principem fungování křížové validace. Křížovou validaci ukazuji na Iris datech a jednoduché dopředné síti.
 
-Nejprve jsem načetl data. Iris data jsem rozdělil na vstupní a výstupní vektory, výstupní vektory jsem zakódoval kódem 1 z N. Poté detailně rozebral předzpracování dat pro křížovou validaci. Dále jsem vytvořil neuronovou síť, kterou jsem pomocí křížové validace testoval. Následně jsem naimplementoval samotnou křížovou validaci. V této implementaci jsem vypisoval pro každý fold úspěšnost RMSE, kterou síť dosáhla. Po skončení všech kol křížové validace jsem zobrazil boxový graf s výsledky křížové validace viditelný na obrázku~\ref{fig:krossvalidace}. Po najetí myší na graf se k němu zobrazí legenda. Studentům jsem dal také možnost nechat si vypsat výsledky křížové validace v textovém formátu. Textový formát vypíše nejlepší výsledek, nejhorší výsledek a aritmetický průměr všech výsledků. Na závěr jsem dal studentům možnost provést si křížovou validaci vlastní sítě s vlastními daty. Vlastní křížové validaci nastaví student parametry jednoduchým přiřazením do proměnných, je potřeba aby  zadaná síť odpovídala zadaným vstupním a výstupním datům a data byla předzpracována pomocí postupu uvedeného v této kapitole. Tato kapitola se nachází v souboru \textit{03-krossvalidace.nb}.
+Nejprve jsem načetl data. Iris data jsem rozdělil na vstupní a výstupní vektory, výstupní vektory jsem zakódoval kódem 1 z N. Poté detailně rozebral předzpracování dat pro křížovou validaci. Dále jsem vytvořil neuronovou síť, kterou jsem pomocí křížové validace testoval. Následně jsem naimplementoval samotnou křížovou validaci. V této implementaci jsem vypisoval pro každý fold úspěšnost RMSE, kterou síť dosáhla. Po skončení všech kol křížové validace jsem zobrazil boxový graf s výsledky křížové validace viditelný na obrázku~\ref{fig:krossvalidace}. Po najetí myší na graf se k němu zobrazí legenda. Studentům jsem dal také možnost nechat si vypsat výsledky křížové validace v textovém formátu. Textový formát vypíše nejlepší výsledek, nejhorší výsledek a aritmetický průměr všech výsledků. Na závěr jsem dal studentům možnost provést si křížovou validaci vlastní sítě s vlastními daty. Vlastní křížové validaci nastaví student parametry jednoduchým přiřazením do proměnných, je potřeba aby  zadaná síť odpovídala zadaným vstupním a výstupním datům a data byla předzpracována pomocí postupu uvedeného v této kapitole. Tato kapitola se nachází v souboru \textit{03-crossvalidation.nb}.
 
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[height=10cm]{figures/ukazka03.png}
-\caption{Ukázka souboru 03-krossvalidace.nb}
+\caption{Ukázka souboru 03-crossvalidation.nb}
 \label{fig:krossvalidace}
 \end{center}
 \end{figure}
@@ -748,7 +748,7 @@ Nejprve jsem připravil jednoduchá trénovací data navzorkováním funkce sinu
 \end{center}
 \end{figure}
 
-Soubor vznikl úpravou souboru Petra Chlumského. Změnil jsem vzhled notebooku a upravil doprovodný komentář.
+Soubor vznikl úpravou souboru Petra Chlumského.\cite{chlumsky} Změnil jsem vzhled notebooku a upravil doprovodný komentář.
 
 \subsection{Iris data}
 V této kapitole ukazuji jakým způsobem pomocí dopředné sítě klasifikovat Iris data.
@@ -763,7 +763,7 @@ Nejprve jsem načetl data. Studentům jsme dal na výběr zda chtějí načíst 
 \end{center}
 \end{figure}
 
-Soubor vznikl úpravou souboru Petra Chlumského. Změnil jsem vzhled notebooku. V doprovodném komentáři jsem nahradil sousloví \uv{skupina v datech} slovem \uv{třída}, které podle mého názoru lépe vystihuje popisovanou skutečnost. Dále jsem komentář rozšířil. V závěru notebooku jsem nezobrazoval vývoj úspěšnosti klasifikace během učení ve 3D grafu, který podle mě nebyl tak přehledný a jasný jako 2D graf, který je zobrazen.
+Soubor vznikl úpravou souboru Petra Chlumského.\cite{chlumsky} Změnil jsem vzhled notebooku. V doprovodném komentáři jsem nahradil sousloví \uv{skupina v datech} slovem \uv{třída}, které podle mého názoru lépe vystihuje popisovanou skutečnost. Dále jsem komentář rozšířil. V závěru notebooku jsem nezobrazoval vývoj úspěšnosti klasifikace během učení ve 3D grafu, který podle mě nebyl tak přehledný a jasný jako 2D graf, který je zobrazen.
 
 \subsection{Různé přístupy k učení sítě}
 V tomto notebooku ukazuji několik různých přístupů k učení dopředné sítě. Tyto přístupy se liší hlavně v dělení dat na trénovací, testovací a validační množinu. Ukazuji také použití křížové validace a rozebírám vyhodnocení úspěšnosti neuronové sítě.
@@ -818,14 +818,14 @@ Nejprve jsem vygeneroval data navzorkováním funkce sinus na intervalu <0, 2\be
 \end{center}
 \end{figure}
 
-Soubor vznikl úpravou souboru Petra Chlumského. Změnil jsem vzhled a rozšířil doprovodný komentář. Dále jsem odstranil nepřesné a nepravdivé popisky u vytváření RBF sítě a nahradil je správnou verzí.
+Soubor vznikl úpravou souboru Petra Chlumského.\cite{chlumsky} Změnil jsem vzhled a rozšířil doprovodný komentář. Dále jsem odstranil nepřesné a nepravdivé popisky u vytváření RBF sítě a nahradil je správnou verzí.
 \newpage
 \subsection{Iris data}
 Touto kapitolou ukazuji zpracování složitějších dat neuronovou sítí RBF. V notebooku provádím klasifikování Iris dat z UCI databáze \cite{UCI}.
 
 Nejprve jsem načetl Iris data (opět jsem dal na výběr za je načíst ze souboru nebo z internetu), poté jsem provedl rozdělení dat na vstupní a výstupní vektory a výstupní data jsem zakódoval algoritmem 1 z N. Dále jsem vytvořil RBF síť, kterou jsem následně naučil na datech. Potom jsem zobrazil graf, který ukazuje jak se vyvíjela úspěšnost klasifikace v průběhu učení. Níže jsem ještě vykreslil graf porovnávající zadaná data s výstupem naší naučené RBF sítě. Na závěr jsem ukázal možnost symbolického vyhodnocení sítě. Kapitolu naleznete v souboru \textit{10-rbf-iris.nb}.
 
-Soubor vznikl úpravou souboru Petra Chlumského. Změnil jsem grafický vzhled notebooku. Dále jsem významně zkrátil sekci předzpracování dat. V původním notebooku bylo předzpracování stejně rozsáhlé jako v souboru \textit{05-feedforward-iris.nb}, já ponechal pouze kód, který skutečně zpracovává Iris data a uvedl odkaz na soubor ve kterém je předzpracování popsáno podrobněji. Dále jsem na závěr notebooku nezobrazoval 3D graf s vývojem úspěšnosti klasifikace, který podle mého názoru není tolik vypovídající. Ponechal jsem 2D graf s vývojem klasifikace. Také jsem rozšířil komentář a opravil špatný popis u vytváření RBF sítě.
+Soubor vznikl úpravou souboru Petra Chlumského.\cite{chlumsky} Změnil jsem grafický vzhled notebooku. Dále jsem významně zkrátil sekci předzpracování dat. V původním notebooku bylo předzpracování stejně rozsáhlé jako v souboru \textit{05-feedforward-iris.nb}, já ponechal pouze kód, který skutečně zpracovává Iris data a uvedl odkaz na soubor ve kterém je předzpracování popsáno podrobněji. Dále jsem na závěr notebooku nezobrazoval 3D graf s vývojem úspěšnosti klasifikace, který podle mého názoru není tolik vypovídající. Ponechal jsem 2D graf s vývojem klasifikace. Také jsem rozšířil komentář a opravil špatný popis u vytváření RBF sítě.
 \subsection{Různé přístupy k učení sítě}
 Kapitolou chci demonstrovat různé možnosti jak přistoupit k učení RBF sítě z hlediska rozdělení dat na trénovací, testovací a validační množinu. Také ukazuji možnost využití křížové validace k určení nejvhodnější struktury sítě. Na závěr ukazuji jak vyhodnotit úspěšnost sítě.
 
@@ -843,7 +843,7 @@ Jako vstupní data jsem použil obrázky číslic 1, 2 a 3 zobrazené v poli 8x8
 \end{center}
 \end{figure}
 
-Soubor vznikl úpravou souboru Petra Chlumského. Mimo úpravy celkového vzhledu notebooku a drobných úprav doprovodného komentáře spočívá hlavní úprava v nahrazení funkce GraphicsArray funkcí GraphicsGrid. Funkce GraphicsArray je v Mathematice 8 zastaralá a nedoporučuje se používat. Také jsem upravil funkci pro aplikaci šumu, která nyní zašumí předložený vzor o trochu více než tomu bylo dříve.
+Soubor vznikl úpravou souboru Petra Chlumského.\cite{chlumsky} Mimo úpravy celkového vzhledu notebooku a drobných úprav doprovodného komentáře spočívá hlavní úprava v nahrazení funkce GraphicsArray funkcí GraphicsGrid. Funkce GraphicsArray je v Mathematice 8 zastaralá a nedoporučuje se používat. Také jsem upravil funkci pro aplikaci šumu, která nyní zašumí předložený vzor o trochu více než tomu bylo dříve.
 \newpage
 \section{Samoorganizující mapy}
 \subsection{Shlukování dat}
@@ -872,7 +872,7 @@ Nejprve jsem načetl Iris data(studentům jsem dal možnost načtení ze souboru
 \end{center}
 \end{figure}
 
-Soubor vznikl úpravou souboru Petra Chlumského. Změnil jsem celkový vzhled notebooku, v komentáři jsem nahradil slovo \uv{skupina} slovem \uv{třída}, které podle mě lépe vystihuje popisovanou věc. Udělal jsem ještě několik menších úprav a rozšíření v komentáři. Dále jsem provedl úpravu předzpracování dat, které bylo zbytečně rozsáhlé a tím pádem zdlouhavé. Ponechal jsem pouze minimální potřebný kód a uvedl odkaz na notebook ve kterém je předzpracování dat detailně popsáno.
+Soubor vznikl úpravou souboru Petra Chlumského.\cite{chlumsky} Změnil jsem celkový vzhled notebooku, v komentáři jsem nahradil slovo \uv{skupina} slovem \uv{třída}, které podle mě lépe vystihuje popisovanou věc. Udělal jsem ještě několik menších úprav a rozšíření v komentáři. Dále jsem provedl úpravu předzpracování dat, které bylo zbytečně rozsáhlé a tím pádem zdlouhavé. Ponechal jsem pouze minimální potřebný kód a uvedl odkaz na notebook ve kterém je předzpracování dat detailně popsáno.
 \section{LVQ}
 V poslední kapitole seznamuji studenty s použitím LVQ sítě. Použití LVQ sítě je ukázáno na klasifikaci Iris dat.
 
@@ -886,14 +886,14 @@ Nejprve jsem načetl Iris data (dávám možnost načtení ze souboru nebo z int
 \end{center}
 \end{figure}
 
-Soubor vznikl úpravou souboru Petra Chlumského. Změnil jsem grafickou podobu notebooku. V doprovodném komentáři jsem nahradil slovo \uv{skupina} slovem \uv{třída}, které lépe vystihuje popisovanou skutečnost. Komentář jsem ještě drobně rozšířil a upravil. Upravil jsem a výrazně zkrátil předzpracování dat. Ponechal jsem pouze kód, který skutečně manipuluje s daty a uvedl odkaz na notebook, ve kterém se nachází detailně popsaný proces předzpracování dat. 
+Soubor vznikl úpravou souboru Petra Chlumského.\cite{chlumsky} Změnil jsem grafickou podobu notebooku. V doprovodném komentáři jsem nahradil slovo \uv{skupina} slovem \uv{třída}, které lépe vystihuje popisovanou skutečnost. Komentář jsem ještě drobně rozšířil a upravil. Upravil jsem a výrazně zkrátil předzpracování dat. Ponechal jsem pouze kód, který skutečně manipuluje s daty a uvedl odkaz na notebook, ve kterém se nachází detailně popsaný proces předzpracování dat. 
 %*****************************************************************************
 \chapter{Závěr}
 V rámci své bakalářské práce jsem rozšířil demonstrační aplikaci pro podporu výuky neuronových sítí na FEL ČVUT. Původní aplikace se skládala z 8 souborů, já jsem ji rozšířil na 15 souborů a soubory původní aplikace jsem upravil a částečné přepracoval. Původní aplikace pokrývala základní práci s dopřednou, RBF, Hopfieldovou, Kohonenovou a LVQ sítí. Já jsem ji rozšířil o demonstraci různých trénovacích algoritmů, křížovou validaci, ukázal jsem různé přístupy k učení sítě z pohledu dělení dat na validační, trénovací a testovaní množinu a podrobně jsem rozebral \uv{vnitřnosti} RBF neuronové sítě. Součástí práce je také teoretická část, ve které jsem popsal základní principy a strukturu vybraných neuronových sítí.
 
 Díky bakalářské práci jsem si značně rozšířil své znalosti neuronových sítí a také jsem rozšířil své schopnosti programovat v systému Mathematica, se kterým jsem měl do té doby pouze pasivní zkušenosti.
 
-Cíle bakalářské práce se mi podařilo naplnit. Výstup této práce bude použit ve cvičeních předmětu \uv{Neuronové sítě a neuropočítače}.
+Cíle bakalářské práce se mi podařilo naplnit. Výstup této práce bude použit ve výuce a to například v předmětech Neuronové sítě a neuropočítače, Vytěžování dat a Biologicky inspirované algoritmy.
 %*****************************************************************************
 % Seznam literatury je v samostatnem souboru reference.bib. Ten
 % upravte dle vlastnich potreb, potom zpracujte (a do textu
@@ -947,7 +947,7 @@ Adresář obsahuje vyhodnocené demonstrační soubory z programu Mathematica p�
 
 
 %*****************************************************************************
-\chapter{Prostředí demonstrační aplikace}
+\chapter{Ukázka vybraných kapitol demonstrační aplikace}
 
 
 %*****************************************************************************
