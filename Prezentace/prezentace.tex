@@ -1,7 +1,7 @@
 \documentclass{beamer}
 \usepackage[utf8]{inputenc}
-\usepackage[czech, english]{babel}
-
+%\usepackage[czech, english]{babel}
+\usepackage{czech}
 \usetheme{Warsaw}
 \title[Demonstrační aplikace pro podporu kurzu neuronových sítí]{Demonstrační aplikace pro podporu kurzu neuronových sítí}
 \author{Adam Činčura}
@@ -44,24 +44,68 @@ Seznamte se s elektronickou přílohou skript pro předmět "neuronové sítě a
 
 \begin{frame}{Cíle práce}
 \begin{itemize}
-\item Rozšíření elektronické přílohy skript Neuronové sítě a neuropočítače - Courseware
+\item Rozšíření elektronické přílohy skript Neuronové sítě a neuropočítače -tzv. Courseware
 \item Vytvořit podpůrný materiál pro výuku (36NAN, Y336VD)
 \item Umožnit studentům snadné experimentování s neuronovými sítěmi
 \item Pomocí interaktivních příkladů přiblížit fungování sítí
 \end{itemize}
-
 \end{frame}
 
-\begin{frame}{Struktura práce}
+\begin{frame}{Proč nová demonstrační aplikace?}
 \begin{itemize}
-\item Demonstrační aplikace
-\item Teoretická část
-\item HTML stránka
+\item Původní aplikace neobsahuje vyhodnocení naučených sítí
+\item Byla zaměřena pouze na popis používání sítí, nedemonstruje fungování sítí
+\item Během používání bylo objeveno několik nepříjemných vlastností
 \end{itemize}
 \end{frame}
 
-
 \section{Demonstrační aplikace}
+\begin{frame}{Vývojové prostředí}
+\begin{figure}
+   \includegraphics[width=10cm]{schema.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Struktura aplikace}
+\begin{footnotesize}
+\begin{table}[t]
+\begin{tabular}{|c|l|l|}
+\hline 
+Kapitola & Název kapitoly & Soubor \\ \hline
+1 & Úvod & 01-uvod.nb \\ \hline
+2 & Algoritmy učení & 02-algoritmy-uceni.nb \\ \hline
+3 & Křížová validace & 03-crossvalidation.nb \\ \hline
+4 & Dopředná síť a umělá data sin(x) & 04-feedforward-sin.nb \\ \hline
+5 & Dopředná síť a Iris data & 05-feedforward-iris.nb \\ \hline
+6 & Přístupy k učení dopředné sítě & 06-feedforward-iris-2.nb \\ \hline
+7 & Pokrytí dat jednoduchou RBF sítí & 07-rbf-neuron.nb \\ \hline
+8 & Pokrytí dat RBF sítí & 08-rbf-neuron-2.nb \\ \hline
+9 & Síť RBF a umělá data sin(x) & 09-rbf-sin.nb \\ \hline
+10 & Síť RBF a Iris data & 10-rbf-iris.nb \\ \hline
+11 & Přístupy k učení RBF sítě & 11-rbf-iris-2.nb \\ \hline
+12 & Hopfieldova síť a umělé vzory & 12-hopfield.nb \\ \hline
+13 & Shlukování dat sítí bez učitele & 13-som-clustering.nb \\ \hline
+14 & Kohonenova síť a Iris data & 14-som-iris.nb \\ \hline
+15 & LVQ a Iris data & 15-lvq-iris.nb \\ \hline
+\end{tabular}
+\label{tab:aplikace}
+\end{table}
+\end{footnotesize}
+\end{frame}
+
+\begin{frame}{Struktura souboru}
+\begin{figure}
+   \includegraphics[width=6cm]{ukc1.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Dělení souborů podle obsahu}
+\begin{itemize}
+\item Soubory demonstrující principy neuronových sítí
+\item Soubory demonstrující použití neuronových sítí
+\item Soubory demonstrující vyhodnocení neuronových sítí
+\end{itemize}
+\end{frame}
 \begin{frame}{Demonstrace principu neuronové sítě}
 \begin{itemize}
 \item Slouží k pochopení vnitřní funkcionality sítě a učicích algoritmů
@@ -69,11 +113,16 @@ Seznamte se s elektronickou přílohou skript pro předmět "neuronové sítě a
   \begin{columns}[T]
     \column{5cm}
       \begin{figure}
+     
    \includegraphics[width=5.5cm]{uk1.png}
+    \caption{02-algoritmy-uceni.nb}
+   
 \end{figure}
     \column{5cm}
       \begin{figure}
+   
    \includegraphics[width=5.5cm]{uk2.png}
+      \caption{08-rbf-neuron-2.nb}
 \end{figure}
   \end{columns}
 \end{frame}
@@ -87,10 +136,12 @@ Seznamte se s elektronickou přílohou skript pro předmět "neuronové sítě a
     \column{5cm}
       \begin{figure}
    \includegraphics[width=5.5cm]{uk3.png}
+   \caption{09-rbf-sin.nb}
 \end{figure}
     \column{5cm}
       \begin{figure}
    \includegraphics[width=5.5cm]{uk4.png}
+   \caption{15-lvq-iris.nb}
 \end{figure}
   \end{columns}
 \end{frame}
@@ -103,38 +154,15 @@ Seznamte se s elektronickou přílohou skript pro předmět "neuronové sítě a
     \column{5cm}
       \begin{figure}
    \includegraphics[width=5.5cm]{uk5.png}
+   \caption{03-crossvalidation.nb}
 \end{figure}
     \column{5cm}
       \begin{figure}
    \includegraphics[width=5.5cm]{uk6.png}
+   \caption{11-rbf-iris-2.nb}
 \end{figure}
   \end{columns}
 \end{frame}
-
-\begin{frame}{Původní demonstrační aplikace}
-\begin{itemize}
-\item Autorem Petr Chlumský
-\item Z roku 2008
-\item Obsahovala 8 interaktivních souborů
-\item Pokrývala základní použití neuronových sítí
-\end{itemize}
-\end{frame}
-\begin{frame}{Nová demonstrační aplikace}
-\begin{itemize}
-\item 15 interaktivních souborů
-\item Mezi nimi i přepracované soubory z původní aplikace
-\item Rozšiřuje původní aplikaci hlavně o:
-\begin{itemize}
-\item Porovnání různých učicích algoritmů u dopředných sítí
-\item Vyhodnocení úspěšnosti sítě pomocí křížové validace
-\item Možnost určení úspěšnosti sítě v procentech
-\item Příklady učení sítě s využitím trénovací, testovací a validační množiny
-\item Demonstraci fungování RBF sítě
-\item Ukázku průběhu učení samoorganizující se mapy
-\end{itemize}
-\end{itemize}
-\end{frame}
-
 
 \section{Teoretická část práce}
 \begin{frame}{Teoretická část práce}
@@ -152,30 +180,25 @@ Seznamte se s elektronickou přílohou skript pro předmět "neuronové sítě a
 \item Popis křížové validace
 \end{itemize}
 \end{frame}
-\section{Vývojové prostředí}
-\begin{frame}{Wolfram Mathematica}
-\begin{itemize}
-\item Sofistikovaný systém pro matematické výpočty
-\item Široké možnosti vizualizace dat
-\item Rozšiřitelné o velké množství knihoven 
-\item Použita verze 8.0
-\end{itemize}
 
-\end{frame}
-
-\begin{frame}{Knihovna Neural Networks}
+\begin{frame}{Výstup práce}
 \begin{itemize}
-\item Autorem Jonas Sjöberg 
-\item Implementuje základní neuronové sítě
-\item Implementuje učicí algoritmy pro jednotlivé sítě
-\item Nabízí základní možnosti vizualizace sítí
-\item Použita verze 1.1.0.0, později verze 1.1.2
+\item Demonstrační aplikace - 15 interaktivních souborů
+\item Doprovodný teoretický text
+\item HTML stránka
 \end{itemize}
 \end{frame}
+
 \begin{frame}{Zhodnocení práce}
 \begin{itemize}
-\item Splněny cíle práce
-\item Aplikaci je možné okamžitě použít ve výuce
+\item Výrazně jsem rozšířil Courseware k neuronovým sítím
+\item Aplikace bude použita při výuce předmětu 36NAN
+\item Její využití je možné i v dalších předmětech
+\end{itemize}
+\begin{itemize}
+\item Seznámil jsem se s programováním v prostředí Mathematica
+\item Výrazně si rozšířil znalosti v oblasti neuronových sítí
+\item Naučil jsem se používat LaTeX
 \end{itemize}
 \end{frame}
 
